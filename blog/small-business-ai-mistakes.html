@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Small Business Owners Get Wrong About AI — gonzalo.tech</title>
+<meta name="description" content="AI tools are everywhere, but most small business owners are using them wrong. Here's what's actually missing.">
+<meta property="og:title" content="What Small Business Owners Get Wrong About AI — gonzalo.tech">
+<meta property="og:description" content="AI tools are everywhere, but most small business owners are using them wrong. Here's what's actually missing.">
+<link rel="canonical" href="https://gonzalo.tech">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--ink:#0F172A;--slate:#334155;--muted:#64748B;--subtle:#94A3B8;--border:#E2E8F0;--surface:#F8FAFC;--white:#FFFFFF;--red:#DC2626;--red-light:#FEF2F2;--green:#16A34A;--green-light:#F0FDF4;--amber:#D97706;--amber-light:#FFFBEB;--font-h:Georgia,'Times New Roman',serif;--font-b:Calibri,'Segoe UI',system-ui,sans-serif;--font-c:Consolas,'Courier New',monospace;--max-w:1080px}
+body{font-family:var(--font-b);color:var(--slate);background:var(--white);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 1px 8px rgba(15,23,42,0.06)}
+.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{font-family:var(--font-h);font-size:20px;font-weight:bold;color:var(--ink);letter-spacing:-0.5px}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:14px;color:var(--muted);font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{font-size:13px!important;font-weight:600!important;color:var(--white)!important;background:var(--ink);padding:8px 18px;border-radius:6px;transition:opacity .2s}
+.nav-cta:hover{opacity:.88}
+.hamburger{display:none;background:none;border:none;cursor:pointer;width:28px;height:20px;position:relative}
+.hamburger span{display:block;width:100%;height:2px;background:var(--ink);position:absolute;left:0;transition:all .3s}
+.hamburger span:nth-child(1){top:0}.hamburger span:nth-child(2){top:9px}.hamburger span:nth-child(3){top:18px}
+footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 32px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;margin-bottom:32px}
+.footer-brand{font-family:var(--font-h);font-size:18px;font-weight:bold;color:var(--ink);margin-bottom:8px}
+.footer-tagline{font-size:13px;color:var(--muted);max-width:280px;line-height:1.5}
+.footer-col h4{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.footer-col a{display:block;font-size:14px;color:var(--slate);padding:4px 0;transition:color .2s}
+.footer-col a:hover{color:var(--ink)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:24px;font-size:12px;color:var(--subtle);display:flex;justify-content:space-between;align-items:center}
+.btn-primary{display:inline-block;padding:14px 28px;background:var(--ink);color:var(--white);font-weight:600;font-size:15px;border-radius:6px;transition:opacity .2s;border:none;cursor:pointer}
+.btn-primary:hover{opacity:.88}
+.btn-secondary{display:inline-block;padding:14px 28px;border:1px solid var(--border);color:var(--ink);font-weight:600;font-size:15px;border-radius:6px;transition:all .2s;background:transparent;cursor:pointer}
+.btn-secondary:hover{border-color:var(--ink)}
+.fade-in{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+@media(max-width:768px){
+  .nav-links{display:none}.hamburger{display:block}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);padding:20px 24px;gap:16px}
+  .footer-grid{grid-template-columns:1fr;gap:32px}
+}
+/* Article styles */
+.article-header{padding:120px 0 48px}
+.article-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.article-title{font-family:var(--font-h);font-size:38px;font-weight:bold;color:var(--ink);line-height:1.2;margin-bottom:16px;max-width:720px}
+.article-meta{font-size:14px;color:var(--subtle);margin-bottom:32px}
+.article-body{max-width:720px;margin:0 auto;padding:0 24px 96px}
+.article-body h2{font-family:var(--font-h);font-size:24px;color:var(--ink);margin:40px 0 16px;line-height:1.3}
+.article-body h3{font-size:18px;font-weight:600;color:var(--ink);margin:32px 0 12px}
+.article-body p{font-size:16px;color:var(--slate);line-height:1.7;margin-bottom:16px;max-width:65ch}
+.article-body strong{color:var(--ink)}
+.article-body blockquote{border-left:3px solid var(--border);padding:12px 20px;margin:24px 0;background:var(--surface);border-radius:0 6px 6px 0}
+.article-body blockquote p{color:var(--muted);font-size:15px;margin-bottom:0}
+.article-cta{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;margin:48px 0;text-align:center}
+.article-cta h3{font-family:var(--font-h);font-size:20px;color:var(--ink);margin-bottom:8px}
+.article-cta p{font-size:14px;color:var(--muted);margin-bottom:16px}
+.article-bio{border-top:1px solid var(--border);padding-top:24px;margin-top:48px;font-size:14px;color:var(--muted);font-style:italic;font-family:var(--font-h)}
+/* Course/product page styles */
+.page-header{padding:120px 0 48px;border-bottom:1px solid var(--border)}
+.page-title{font-family:var(--font-h);font-size:38px;font-weight:bold;color:var(--ink);line-height:1.2;margin-bottom:12px;max-width:640px}
+.page-desc{font-size:17px;color:var(--slate);line-height:1.65;max-width:600px;margin-bottom:24px}
+.page-section{padding:64px 0}
+.page-section h2{font-family:var(--font-h);font-size:26px;color:var(--ink);margin-bottom:24px}
+.module-list{list-style:none;counter-reset:module}
+.module-list li{counter-increment:module;padding:20px 0;border-bottom:1px solid var(--border);display:flex;gap:16px;align-items:start}
+.module-list li::before{content:counter(module,decimal-leading-zero);font-family:var(--font-h);font-size:24px;color:var(--subtle);font-weight:bold;min-width:36px}
+.module-title{font-weight:600;color:var(--ink);font-size:16px;margin-bottom:4px}
+.module-desc{font-size:14px;color:var(--muted);line-height:1.55}
+.price-box{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;display:inline-block}
+.price-box .price{font-family:var(--font-h);font-size:48px;font-weight:bold;color:var(--ink)}
+.price-box .note{font-size:14px;color:var(--subtle);margin-top:4px}
+.product-features{list-style:none}
+.product-features li{padding:10px 0;border-bottom:1px solid var(--border);font-size:15px;color:var(--slate);padding-left:24px;position:relative}
+.product-features li::before{content:"\2713";position:absolute;left:0;color:var(--green);font-weight:bold}
+@media(max-width:768px){
+  .article-title,.page-title{font-size:28px}
+  .article-body p{font-size:15px}
+}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">gonzalo.tech</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="/#about">About</a>
+<a href="/courses/ai-augmented-pm.html">Courses</a>
+<a href="/#resources">Resources</a>
+<a href="/#blog" style="color:#0F172A;font-weight:600;">Blog</a>
+<a href="/#newsletter" class="nav-cta">Get the Toolkit</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="article-header">
+    <div class="article-label">Small Business</div>
+    <h1 class="article-title">What Small Business Owners Get Wrong About AI</h1>
+    <div class="article-meta">Gonzalo Aguilar &middot; 6 min read</div>
+  </div>
+</div>
+<div class="article-body">
+  <p>You've probably been told you need to "start using AI" in your business. Maybe you've tried ChatGPT a few times. Maybe you generated a few social media captions or asked it to write an email. Maybe it felt useful but also kind of... random.</p>
+<p>That's because the tool isn't the problem. The problem is that nobody taught you the layer underneath — the thinking that makes AI actually useful for your specific business.</p>
+<p>That layer is called product thinking. And once you understand it, AI stops being a novelty and starts being a multiplier.</p>
+<h2>The Tool Trap</h2>
+<p>Here's the pattern I see constantly. A small business owner hears about AI. They sign up for a tool. They type something in. They get something out. It's fine — maybe even impressive. But then what?</p>
+<p>They don't know how to connect that output to a business outcome. They generated a blog post, but they don't know if anyone will read it. They created social media content, but they have no idea whether it drives actual customers. They built an "automated" workflow, but it breaks every third time and they don't know why.</p>
+<p>This is what I call the <strong>Tool Trap</strong>: confusing access to a tool with the ability to use it strategically. Owning a hammer doesn't make you a carpenter. Having access to Claude or ChatGPT doesn't make you an AI-powered business.</p>
+<h2>What's Actually Missing</h2>
+<p>The gap isn't technical knowledge. You don't need to understand machine learning, neural networks, or how large language models work under the hood. That's like saying you need to understand internal combustion engines to drive a car.</p>
+<p>What's missing is a set of skills that professional product builders use every day, skills that happen to be exactly what makes AI useful:</p>
+<p><strong>Knowing what problem you're actually solving.</strong> Most small business owners jump to solutions ("I need a chatbot") without clearly defining the problem ("My customers ask the same 12 questions and I spend 3 hours a day answering them"). AI is powerful when pointed at a specific, well-defined problem. It's useless when pointed at a vague desire to "be more efficient."</p>
+<p><strong>Understanding your user's journey.</strong> Your customer goes through a series of steps before they buy from you — they discover you, they evaluate you, they decide, they purchase, they come back (or don't). Each step has friction points where people give up. If you don't know where those friction points are, you can't use AI to fix them.</p>
+<p><strong>Measuring what matters.</strong> If you can't tell me your conversion rate — the percentage of people who visit your site and actually buy something — then AI can't help you improve it. You need a baseline before you can improve anything. This isn't complicated math. It's counting.</p>
+<h2>The Three Questions Framework</h2>
+<p>Before you use any AI tool for your business, answer these three questions:</p>
+<p><strong>What specific problem am I solving?</strong> Not "grow my business" or "save time." Something concrete: "Reduce the time between a customer inquiry and my first response from 4 hours to 15 minutes." Or: "Figure out why 70% of people who visit my menu page don't make a reservation."</p>
+<p><strong>Who is this for, and what do they need?</strong> Your customers aren't a monolith. A first-time visitor to your website needs different things than a returning customer. A price-sensitive buyer behaves differently than a convenience-driven one. If you use AI to write copy, and that copy doesn't speak to a specific person with a specific need, it'll sound generic — because it is.</p>
+<p><strong>How will I know if it worked?</strong> Define success before you start. "More engagement" is not a metric. "Email open rate increases from 18% to 25%" is a metric. "Revenue from online orders increases by $2,000/month" is a metric. If you can't measure the outcome, you can't tell whether AI helped or you just got lucky.</p>
+<h2>Real Examples of Product Thinking + AI</h2>
+<p>Let me show you what this looks like when it works.</p>
+<p><strong>The bakery owner</strong> who used AI to rewrite her online ordering page. She didn't just say "make it sound better." She looked at her analytics (free with Google), saw that 60% of visitors left the ordering page without completing a purchase, and identified that the menu was overwhelming — 47 items with no organization. She used AI to restructure the menu into categories, write concise descriptions, and create a "most popular" section at the top. Orders increased 30%. The AI wrote the words. She defined the problem.</p>
+<p><strong>The fitness instructor</strong> who automated his client onboarding. He used to spend 45 minutes per new client explaining his program, sending waivers, and scheduling the first session. He mapped out the steps (there were seven), identified which ones didn't require his personal input, and used AI to generate a welcome email sequence with all the information pre-packaged. New client onboarding dropped to 10 minutes of his time. The AI generated the content. He designed the process.</p>
+<p><strong>The consultant</strong> who used AI to analyze her sales calls. She recorded 20 calls, transcribed them, and asked AI to identify the top 5 objections prospects raised. Then she created responses for each objection and a one-page FAQ she sends before every call. Her close rate went from 20% to 35%. The AI found the patterns. She decided what to do about them.</p>
+<p>In every case, the business owner brought the product thinking — the problem definition, the user understanding, the measurement — and AI brought the speed.</p>
+<h2>Why This Matters Now</h2>
+<p>AI tools are getting cheaper, faster, and more accessible every month. That's the good news. The bad news is that accessibility without strategy creates noise. If every bakery, gym, and consultant is generating the same generic AI content with the same generic prompts, none of it stands out.</p>
+<p>The small business owners who will win are the ones who pair these tools with actual understanding of their customers, their data, and their business model. That's not a technology skill. It's a thinking skill.</p>
+<p>And here's the part that should encourage you: product thinking is learnable. It's not a talent you're born with. It's a set of frameworks and habits that professionals use, and they translate directly to small business contexts.</p>
+<p>You don't need to become a product manager. You need to think like one — for about 30 minutes a week. Define the problem. Understand the user. Measure the outcome. Then point AI at the gap.</p>
+<p>That's the difference between a small business owner who uses AI and a small business owner who uses AI well.</p>
+<p>*Gonzalo Aguilar helps small business owners and aspiring PMs build things that actually work — with AI as the accelerant, not the answer. More at gonzalo.tech.*</p>
+  <div class="article-cta">
+    <h3>Want frameworks like these?</h3>
+    <p>Get the free AI Product Toolkit — prompt library, decision frameworks, and quickstart guide.</p>
+    <a href="/#newsletter" class="btn-primary">Get the free toolkit</a>
+  </div>
+  <div class="article-bio">Gonzalo Aguilar helps small business owners and aspiring PMs build things that actually work — with AI as the accelerant, not the answer. <a href="/" style="color:var(--ink);border-bottom:1px solid var(--border);">More at gonzalo.tech</a></div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">gonzalo.tech</div>
+        <div class="footer-tagline">Courses, toolkits, and frameworks for builders who use AI. Built with rigor, explained with care.</div>
+      </div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <a href="/courses/ai-augmented-pm.html">Courses</a>
+        <a href="/#resources">Digital products</a>
+        <a href="/#blog">Blog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://linkedin.com/in/gonzaloeaguilar" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://medium.com/@gonzaloeaguilar" target="_blank" rel="noopener">Medium</a>
+        <a href="mailto:hello@gonzalo.tech">hello@gonzalo.tech</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Gonzalo Aguilar. All rights reserved.</span>
+      <span>Built in Fort Lauderdale, FL</span>
+    </div>
+  </div>
+</footer>
+<script>
+const nav = document.getElementById('navbar');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => { navLinks.classList.toggle('open'); });
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    const href = link.getAttribute('href');
+    if (href.startsWith('/#')) { return; }
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); navLinks.classList.remove('open'); }
+  });
+});
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

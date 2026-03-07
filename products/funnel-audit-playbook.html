@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Funnel Audit Playbook — gonzalo.tech</title>
+<meta name="description" content="Diagnose why your website isn't converting. Step-by-step playbook with templates and checklists.">
+<meta property="og:title" content="Funnel Audit Playbook — gonzalo.tech">
+<meta property="og:description" content="Diagnose why your website isn't converting. Step-by-step playbook with templates and checklists.">
+<link rel="canonical" href="https://gonzalo.tech">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--ink:#0F172A;--slate:#334155;--muted:#64748B;--subtle:#94A3B8;--border:#E2E8F0;--surface:#F8FAFC;--white:#FFFFFF;--red:#DC2626;--red-light:#FEF2F2;--green:#16A34A;--green-light:#F0FDF4;--amber:#D97706;--amber-light:#FFFBEB;--font-h:Georgia,'Times New Roman',serif;--font-b:Calibri,'Segoe UI',system-ui,sans-serif;--font-c:Consolas,'Courier New',monospace;--max-w:1080px}
+body{font-family:var(--font-b);color:var(--slate);background:var(--white);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 1px 8px rgba(15,23,42,0.06)}
+.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{font-family:var(--font-h);font-size:20px;font-weight:bold;color:var(--ink);letter-spacing:-0.5px}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:14px;color:var(--muted);font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{font-size:13px!important;font-weight:600!important;color:var(--white)!important;background:var(--ink);padding:8px 18px;border-radius:6px;transition:opacity .2s}
+.nav-cta:hover{opacity:.88}
+.hamburger{display:none;background:none;border:none;cursor:pointer;width:28px;height:20px;position:relative}
+.hamburger span{display:block;width:100%;height:2px;background:var(--ink);position:absolute;left:0;transition:all .3s}
+.hamburger span:nth-child(1){top:0}.hamburger span:nth-child(2){top:9px}.hamburger span:nth-child(3){top:18px}
+footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 32px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;margin-bottom:32px}
+.footer-brand{font-family:var(--font-h);font-size:18px;font-weight:bold;color:var(--ink);margin-bottom:8px}
+.footer-tagline{font-size:13px;color:var(--muted);max-width:280px;line-height:1.5}
+.footer-col h4{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.footer-col a{display:block;font-size:14px;color:var(--slate);padding:4px 0;transition:color .2s}
+.footer-col a:hover{color:var(--ink)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:24px;font-size:12px;color:var(--subtle);display:flex;justify-content:space-between;align-items:center}
+.btn-primary{display:inline-block;padding:14px 28px;background:var(--ink);color:var(--white);font-weight:600;font-size:15px;border-radius:6px;transition:opacity .2s;border:none;cursor:pointer}
+.btn-primary:hover{opacity:.88}
+.btn-secondary{display:inline-block;padding:14px 28px;border:1px solid var(--border);color:var(--ink);font-weight:600;font-size:15px;border-radius:6px;transition:all .2s;background:transparent;cursor:pointer}
+.btn-secondary:hover{border-color:var(--ink)}
+.fade-in{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+@media(max-width:768px){
+  .nav-links{display:none}.hamburger{display:block}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);padding:20px 24px;gap:16px}
+  .footer-grid{grid-template-columns:1fr;gap:32px}
+}
+/* Article styles */
+.article-header{padding:120px 0 48px}
+.article-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.article-title{font-family:var(--font-h);font-size:38px;font-weight:bold;color:var(--ink);line-height:1.2;margin-bottom:16px;max-width:720px}
+.article-meta{font-size:14px;color:var(--subtle);margin-bottom:32px}
+.article-body{max-width:720px;margin:0 auto;padding:0 24px 96px}
+.article-body h2{font-family:var(--font-h);font-size:24px;color:var(--ink);margin:40px 0 16px;line-height:1.3}
+.article-body h3{font-size:18px;font-weight:600;color:var(--ink);margin:32px 0 12px}
+.article-body p{font-size:16px;color:var(--slate);line-height:1.7;margin-bottom:16px;max-width:65ch}
+.article-body strong{color:var(--ink)}
+.article-body blockquote{border-left:3px solid var(--border);padding:12px 20px;margin:24px 0;background:var(--surface);border-radius:0 6px 6px 0}
+.article-body blockquote p{color:var(--muted);font-size:15px;margin-bottom:0}
+.article-cta{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;margin:48px 0;text-align:center}
+.article-cta h3{font-family:var(--font-h);font-size:20px;color:var(--ink);margin-bottom:8px}
+.article-cta p{font-size:14px;color:var(--muted);margin-bottom:16px}
+.article-bio{border-top:1px solid var(--border);padding-top:24px;margin-top:48px;font-size:14px;color:var(--muted);font-style:italic;font-family:var(--font-h)}
+/* Course/product page styles */
+.page-header{padding:120px 0 48px;border-bottom:1px solid var(--border)}
+.page-title{font-family:var(--font-h);font-size:38px;font-weight:bold;color:var(--ink);line-height:1.2;margin-bottom:12px;max-width:640px}
+.page-desc{font-size:17px;color:var(--slate);line-height:1.65;max-width:600px;margin-bottom:24px}
+.page-section{padding:64px 0}
+.page-section h2{font-family:var(--font-h);font-size:26px;color:var(--ink);margin-bottom:24px}
+.module-list{list-style:none;counter-reset:module}
+.module-list li{counter-increment:module;padding:20px 0;border-bottom:1px solid var(--border);display:flex;gap:16px;align-items:start}
+.module-list li::before{content:counter(module,decimal-leading-zero);font-family:var(--font-h);font-size:24px;color:var(--subtle);font-weight:bold;min-width:36px}
+.module-title{font-weight:600;color:var(--ink);font-size:16px;margin-bottom:4px}
+.module-desc{font-size:14px;color:var(--muted);line-height:1.55}
+.price-box{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;display:inline-block}
+.price-box .price{font-family:var(--font-h);font-size:48px;font-weight:bold;color:var(--ink)}
+.price-box .note{font-size:14px;color:var(--subtle);margin-top:4px}
+.product-features{list-style:none}
+.product-features li{padding:10px 0;border-bottom:1px solid var(--border);font-size:15px;color:var(--slate);padding-left:24px;position:relative}
+.product-features li::before{content:"\2713";position:absolute;left:0;color:var(--green);font-weight:bold}
+@media(max-width:768px){
+  .article-title,.page-title{font-size:28px}
+  .article-body p{font-size:15px}
+}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">gonzalo.tech</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="/#about">About</a>
+<a href="/courses/ai-augmented-pm.html">Courses</a>
+<a href="/#resources" style="color:#0F172A;font-weight:600;">Resources</a>
+<a href="/#blog">Blog</a>
+<a href="/#newsletter" class="nav-cta">Get the Toolkit</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="page-header">
+    <span style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:4px;background:#FFFBEB;color:#D97706;margin-bottom:12px;">COMING SOON</span>
+    <h1 class="page-title">Funnel Audit Playbook</h1>
+    <p class="page-desc">Step-by-step guide to diagnose why your website or app isn't converting. Includes templates, checklists, and real frameworks from regulated markets.</p>
+    <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+      <div class="price-box">
+        <div class="price">$19</div>
+      </div>
+      <a href="/#newsletter" class="btn-primary">Join waitlist &rarr;</a>
+    </div>
+  </div>
+  <div class="page-section">
+    <h2>What's included</h2>
+    <ul class="product-features">
+      <li>Complete drop-off mapping framework (the same one behind the 24% conversion lift)</li>
+<li>Field-level analytics setup guide — know exactly which input causes users to leave</li>
+<li>Error message audit template with before/after examples</li>
+<li>Friction-to-Trust Pipeline worksheet</li>
+<li>Post-completion screen checklist</li>
+<li>Works for any website, app, or digital product</li>
+    </ul>
+  </div>
+  <div class="page-section" style="border-top:1px solid var(--border);text-align:center;">
+    <h3 style="font-family:var(--font-h);font-size:22px;color:var(--ink);margin-bottom:8px;">Ready to start?</h3>
+    <p style="font-size:15px;color:var(--muted);margin-bottom:24px;">Every toolkit comes from real work, not theory. If it doesn't help, I want to know.</p>
+    <a href="/#newsletter" class="btn-primary" style="font-size:17px;padding:16px 36px;">Join waitlist &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">gonzalo.tech</div>
+        <div class="footer-tagline">Courses, toolkits, and frameworks for builders who use AI. Built with rigor, explained with care.</div>
+      </div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <a href="/courses/ai-augmented-pm.html">Courses</a>
+        <a href="/#resources">Digital products</a>
+        <a href="/#blog">Blog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://linkedin.com/in/gonzaloeaguilar" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://medium.com/@gonzaloeaguilar" target="_blank" rel="noopener">Medium</a>
+        <a href="mailto:hello@gonzalo.tech">hello@gonzalo.tech</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Gonzalo Aguilar. All rights reserved.</span>
+      <span>Built in Fort Lauderdale, FL</span>
+    </div>
+  </div>
+</footer>
+<script>
+const nav = document.getElementById('navbar');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => { navLinks.classList.toggle('open'); });
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    const href = link.getAttribute('href');
+    if (href.startsWith('/#')) { return; }
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); navLinks.classList.remove('open'); }
+  });
+});
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
