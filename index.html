@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>gonzalo.tech — Product thinking for builders who use AI</title>
+<meta name="description" content="Courses, toolkits, and frameworks for small business owners and aspiring PMs who want to build properly with AI. From a senior PM who's done it in regulated markets.">
+<meta name="keywords" content="product management course, AI for small business, growth PM, conversion optimization, product thinking, gonzalo.tech">
+<meta property="og:title" content="gonzalo.tech — Product thinking for builders who use AI">
+<meta property="og:description" content="Courses, toolkits, and frameworks. Build properly with AI — with rigor, process, and quality standards.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gonzalo.tech">
+<link rel="canonical" href="https://gonzalo.tech">
+<style>
+  /* ── RESET ── */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  /* ── BRAND TOKENS ── */
+  :root {
+    --ink: #0F172A;
+    --slate: #334155;
+    --muted: #64748B;
+    --subtle: #94A3B8;
+    --border: #E2E8F0;
+    --surface: #F8FAFC;
+    --white: #FFFFFF;
+    --red: #DC2626;
+    --red-light: #FEF2F2;
+    --green: #16A34A;
+    --green-light: #F0FDF4;
+    --amber: #D97706;
+    --amber-light: #FFFBEB;
+    --font-h: Georgia, 'Times New Roman', serif;
+    --font-b: Calibri, 'Segoe UI', system-ui, sans-serif;
+    --font-c: Consolas, 'Courier New', monospace;
+    --max-w: 1080px;
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 32px;
+    --space-xl: 64px;
+    --space-2xl: 96px;
+  }
+
+  body {
+    font-family: var(--font-b);
+    color: var(--slate);
+    background: var(--white);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 1px 8px rgba(15,23,42,0.06); }
+  .nav-inner {
+    max-width: var(--max-w); margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .nav-brand {
+    font-family: var(--font-h); font-size: 20px; font-weight: bold;
+    color: var(--ink); letter-spacing: -0.5px;
+  }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a {
+    font-size: 14px; color: var(--muted); font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-cta {
+    font-size: 13px; font-weight: 600; color: var(--white) !important;
+    background: var(--ink); padding: 8px 18px; border-radius: 6px;
+    transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.88; }
+  .hamburger {
+    display: none; background: none; border: none; cursor: pointer;
+    width: 28px; height: 20px; position: relative;
+  }
+  .hamburger span {
+    display: block; width: 100%; height: 2px; background: var(--ink);
+    position: absolute; left: 0; transition: all 0.3s;
+  }
+  .hamburger span:nth-child(1) { top: 0; }
+  .hamburger span:nth-child(2) { top: 9px; }
+  .hamburger span:nth-child(3) { top: 18px; }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 140px 0 var(--space-2xl);
+    min-height: 90vh; display: flex; align-items: center;
+  }
+  .hero-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+    align-items: center;
+  }
+  .hero-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-family: var(--font-h); font-size: 44px; font-weight: bold;
+    color: var(--ink); line-height: 1.15; margin-bottom: 20px;
+    max-width: 520px;
+  }
+  .hero p {
+    font-size: 17px; color: var(--slate); line-height: 1.65;
+    max-width: 480px; margin-bottom: 32px;
+  }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-block; padding: 14px 28px; background: var(--ink);
+    color: var(--white); font-weight: 600; font-size: 15px;
+    border-radius: 6px; transition: opacity 0.2s; border: none; cursor: pointer;
+  }
+  .btn-primary:hover { opacity: 0.88; }
+  .btn-secondary {
+    display: inline-block; padding: 14px 28px;
+    border: 1px solid var(--border); color: var(--ink);
+    font-weight: 600; font-size: 15px; border-radius: 6px;
+    transition: all 0.2s; background: transparent; cursor: pointer;
+  }
+  .btn-secondary:hover { border-color: var(--ink); }
+  .hero-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  }
+  .stat-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 24px;
+  }
+  .stat-number {
+    font-family: var(--font-h); font-size: 36px; font-weight: bold;
+    color: var(--ink); line-height: 1;
+  }
+  .stat-label {
+    font-size: 13px; color: var(--muted); margin-top: 6px; line-height: 1.4;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: var(--space-2xl) 0; }
+  .section-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: var(--font-h); font-size: 32px; font-weight: bold;
+    color: var(--ink); margin-bottom: 16px; max-width: 600px;
+  }
+  .section-desc {
+    font-size: 16px; color: var(--slate); max-width: 560px;
+    line-height: 1.65; margin-bottom: 48px;
+  }
+
+  /* ── ABOUT ── */
+  .about-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: start; }
+  .about-timeline { list-style: none; position: relative; padding-left: 24px; }
+  .about-timeline::before {
+    content: ''; position: absolute; left: 5px; top: 8px; bottom: 8px;
+    width: 1px; background: var(--border);
+  }
+  .about-timeline li {
+    position: relative; margin-bottom: 28px; padding-left: 20px;
+  }
+  .about-timeline li::before {
+    content: ''; position: absolute; left: -22px; top: 7px;
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--white); border: 2px solid var(--muted);
+  }
+  .about-timeline li:first-child::before { border-color: var(--green); background: var(--green-light); }
+  .tl-title { font-weight: 600; color: var(--ink); font-size: 15px; }
+  .tl-role { font-size: 13px; color: var(--muted); margin-top: 2px; }
+  .tl-desc { font-size: 14px; color: var(--slate); margin-top: 6px; line-height: 1.55; }
+
+  /* ── AUDIENCE CARDS ── */
+  .audience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .audience-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 8px; padding: 28px; transition: border-color 0.2s;
+  }
+  .audience-card:hover { border-color: var(--subtle); }
+  .audience-icon {
+    width: 40px; height: 40px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; margin-bottom: 16px;
+  }
+  .audience-card h3 { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+  .audience-card p { font-size: 14px; color: var(--muted); line-height: 1.55; }
+
+  /* ── COURSES ── */
+  .course-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .course-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 8px; overflow: hidden; transition: border-color 0.2s;
+  }
+  .course-card:hover { border-color: var(--subtle); }
+  .course-badge {
+    display: inline-block; font-size: 10px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 4px; margin-bottom: 12px;
+  }
+  .badge-live { background: var(--green-light); color: var(--green); }
+  .badge-soon { background: var(--amber-light); color: var(--amber); }
+  .course-body { padding: 28px; }
+  .course-card h3 { font-family: var(--font-h); font-size: 18px; color: var(--ink); margin-bottom: 10px; line-height: 1.3; }
+  .course-card p { font-size: 14px; color: var(--muted); line-height: 1.55; margin-bottom: 16px; }
+  .course-modules {
+    list-style: none; border-top: 1px solid var(--border); padding-top: 16px;
+  }
+  .course-modules li {
+    font-size: 13px; color: var(--slate); padding: 6px 0;
+    padding-left: 16px; position: relative;
+  }
+  .course-modules li::before {
+    content: ''; position: absolute; left: 0; top: 13px;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--border);
+  }
+  .course-price {
+    margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border);
+    display: flex; align-items: baseline; gap: 8px;
+  }
+  .course-price .price {
+    font-family: var(--font-h); font-size: 28px; font-weight: bold; color: var(--ink);
+  }
+  .course-price .note { font-size: 13px; color: var(--subtle); }
+
+  /* ── RESOURCES ── */
+  .resources-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .resource-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 28px; display: flex; gap: 20px;
+    align-items: start; transition: border-color 0.2s;
+  }
+  .resource-card:hover { border-color: var(--subtle); }
+  .resource-icon {
+    width: 48px; height: 48px; border-radius: 8px;
+    background: var(--white); border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; flex-shrink: 0;
+  }
+  .resource-card h3 { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+  .resource-card p { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 10px; }
+  .resource-tag {
+    display: inline-block; font-size: 10px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+    color: var(--subtle); background: var(--white);
+    border: 1px solid var(--border); padding: 2px 8px; border-radius: 3px;
+  }
+
+  /* ── BLOG ── */
+  .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .blog-card {
+    border: 1px solid var(--border); border-radius: 8px;
+    overflow: hidden; transition: border-color 0.2s;
+  }
+  .blog-card:hover { border-color: var(--subtle); }
+  .blog-body { padding: 24px; }
+  .blog-meta { font-size: 12px; color: var(--subtle); margin-bottom: 10px; }
+  .blog-card h3 { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 8px; line-height: 1.35; }
+  .blog-card p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+  .blog-link {
+    display: inline-block; margin-top: 14px; font-size: 13px;
+    font-weight: 600; color: var(--ink);
+    border-bottom: 1px solid var(--border); padding-bottom: 1px;
+    transition: border-color 0.2s;
+  }
+  .blog-link:hover { border-color: var(--ink); }
+
+  /* ── CTA STRIP ── */
+  .cta-strip {
+    background: var(--ink); padding: var(--space-xl) 0;
+  }
+  .cta-inner {
+    display: flex; justify-content: space-between;
+    align-items: center; gap: 32px;
+  }
+  .cta-strip h2 {
+    font-family: var(--font-h); font-size: 28px; color: var(--white);
+    max-width: 480px; line-height: 1.3;
+  }
+  .cta-strip p { font-size: 15px; color: var(--subtle); margin-top: 8px; max-width: 480px; }
+  .btn-white {
+    display: inline-block; padding: 14px 32px; background: var(--white);
+    color: var(--ink); font-weight: 600; font-size: 15px;
+    border-radius: 6px; transition: opacity 0.2s; white-space: nowrap;
+  }
+  .btn-white:hover { opacity: 0.92; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--surface); border-top: 1px solid var(--border);
+    padding: 48px 0 32px;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px;
+    margin-bottom: 32px;
+  }
+  .footer-brand {
+    font-family: var(--font-h); font-size: 18px; font-weight: bold;
+    color: var(--ink); margin-bottom: 8px;
+  }
+  .footer-tagline { font-size: 13px; color: var(--muted); max-width: 280px; line-height: 1.5; }
+  .footer-col h4 {
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 16px;
+  }
+  .footer-col a {
+    display: block; font-size: 14px; color: var(--slate);
+    padding: 4px 0; transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--ink); }
+  .footer-bottom {
+    border-top: 1px solid var(--border); padding-top: 24px;
+    font-size: 12px; color: var(--subtle);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  /* ── NEWSLETTER INLINE ── */
+  .newsletter-form {
+    display: flex; gap: 8px; max-width: 420px; margin-top: 20px;
+  }
+  .newsletter-form input {
+    flex: 1; padding: 12px 16px; border: 1px solid var(--border);
+    border-radius: 6px; font-size: 14px; font-family: var(--font-b);
+    color: var(--ink); background: var(--white); outline: none;
+    transition: border-color 0.2s;
+  }
+  .newsletter-form input:focus { border-color: var(--muted); }
+  .newsletter-form input::placeholder { color: var(--subtle); }
+  .newsletter-form button {
+    padding: 12px 24px; background: var(--ink); color: var(--white);
+    border: none; border-radius: 6px; font-weight: 600; font-size: 14px;
+    cursor: pointer; transition: opacity 0.2s; white-space: nowrap;
+  }
+  .newsletter-form button:hover { opacity: 0.88; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: block; }
+    .nav-links.open {
+      display: flex; flex-direction: column;
+      position: absolute; top: 60px; left: 0; right: 0;
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 20px 24px; gap: 16px;
+    }
+    .hero { padding: 100px 0 var(--space-xl); min-height: auto; }
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero h1 { font-size: 32px; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .audience-grid { grid-template-columns: 1fr; }
+    .course-grid { grid-template-columns: 1fr; }
+    .resources-grid { grid-template-columns: 1fr; }
+    .blog-grid { grid-template-columns: 1fr; }
+    .cta-inner { flex-direction: column; text-align: left; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .section-title { font-size: 26px; }
+    .newsletter-form { flex-direction: column; }
+  }
+
+  /* ── FADE IN ── */
+  .fade-in {
+    opacity: 0; transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">gonzalo.tech</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#courses">Courses</a>
+      <a href="#resources">Resources</a>
+      <a href="#blog">Blog</a>
+      <a href="#newsletter" class="nav-cta">Get the Toolkit</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-label">Product thinking for builders who use AI</div>
+        <h1>Build things that actually work — with AI as your edge, not your crutch.</h1>
+        <p>Most people use AI to generate stuff. That's the easy part. The hard part is knowing what to build, who it's for, and why it matters. That's product thinking — and it's what separates tools from results.</p>
+        <div class="hero-btns">
+          <a href="#courses" class="btn-primary">Browse courses</a>
+          <a href="#resources" class="btn-secondary">Free resources</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-number">24.1%</div>
+          <div class="stat-label">Registration conversion lift in a regulated market</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">4.78%</div>
+          <div class="stat-label">First deposit conversion increase through UX copy</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">1.7M+</div>
+          <div class="stat-label">User registrations optimized across multiple products</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">3x</div>
+          <div class="stat-label">Faster spec-to-prototype cycle using AI workflows</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHO THIS IS FOR ══ -->
+<section style="padding-bottom: var(--space-2xl);">
+  <div class="container">
+    <div class="section-label">Who this is for</div>
+    <div class="section-title">You don't need a tech team. You need product thinking.</div>
+    <div class="section-desc">Whether you run a shop or you're launching a new career, the core skill is the same: understanding people, measuring what matters, and building for outcomes.</div>
+    <div class="audience-grid">
+      <div class="audience-card fade-in">
+        <div class="audience-icon" style="background: var(--amber-light);">&#128218;</div>
+        <h3>Small business owners</h3>
+        <p>You've tried AI tools but can't connect the output to actual business results. You need the layer underneath — the thinking that makes AI a multiplier, not a novelty.</p>
+      </div>
+      <div class="audience-card fade-in">
+        <div class="audience-icon" style="background: var(--green-light);">&#127919;</div>
+        <h3>Aspiring product managers</h3>
+        <p>You want to break into PM but every resource assumes you already know the jargon. We explain it without making you feel stupid, and give you the portfolio to prove you can do the work.</p>
+      </div>
+      <div class="audience-card fade-in">
+        <div class="audience-icon" style="background: var(--surface);">&#9889;</div>
+        <h3>Builders and founders</h3>
+        <p>You're shipping things with AI but without a process — no user research, no metrics, no conversion thinking. You're building fast but not building right.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <div class="section-label">About</div>
+        <div class="section-title">I took the long way into tech. That's exactly why I can teach this.</div>
+        <p style="font-size: 15px; color: var(--slate); line-height: 1.65; margin-bottom: 20px;">
+          I started in luxury hospitality — learning how to read what people need before they say it. Then aviation, where I optimized digital experiences for millions of travelers. Then gaming, where I owned registration, identity verification, and conversion funnels across 20+ regulated US markets.
+        </p>
+        <p style="font-size: 15px; color: var(--slate); line-height: 1.65; margin-bottom: 20px;">
+          I know where users drop off. What friction looks like. Which numbers actually matter. Now I pair that instinct with AI tools to move faster than most teams — prototyping in hours, analyzing data in minutes, writing specs that engineers want to read.
+        </p>
+        <p style="font-size: 15px; color: var(--ink); font-weight: 600; line-height: 1.65;">
+          Don't stress — I got you.
+        </p>
+      </div>
+      <div>
+        <ul class="about-timeline">
+          <li>
+            <div class="tl-title">Senior Product Manager — Growth & Identity</div>
+            <div class="tl-role">Fortune 500 gaming operator &middot; 2022–present</div>
+            <div class="tl-desc">Registration, KYC, onboarding, and first-deposit conversion across sportsbook and casino products in 20+ US states.</div>
+          </li>
+          <li>
+            <div class="tl-title">Product Manager — Digital Experience</div>
+            <div class="tl-role">Major US airline &middot; 2020–2022</div>
+            <div class="tl-desc">Guest-facing digital products, booking flow optimization, and ancillary revenue features serving millions of monthly users.</div>
+          </li>
+          <li>
+            <div class="tl-title">Technology & Guest Experience</div>
+            <div class="tl-role">Luxury cruise line &middot; 2019–2020</div>
+            <div class="tl-desc">Onboard guest communication systems and AI-powered service prototypes.</div>
+          </li>
+          <li>
+            <div class="tl-title">Hospitality Operations</div>
+            <div class="tl-role">Luxury hotel brand &middot; 2015–2019</div>
+            <div class="tl-desc">Where it started — learning to read people, anticipate needs, and deliver experiences before anyone asks.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COURSES ══ -->
+<section id="courses">
+  <div class="container">
+    <div class="section-label">Courses</div>
+    <div class="section-title">Learn the skills that make AI actually useful.</div>
+    <div class="section-desc">Each course is built from real work — anonymized case studies, frameworks I use daily, and exercises that give you something tangible by the end.</div>
+    <div class="course-grid">
+      <!-- Course 1 -->
+      <div class="course-card fade-in">
+        <div class="course-body">
+          <span class="course-badge badge-live">Available</span>
+          <h3>AI-Augmented Product Management</h3>
+          <p>How to use AI as a professional multiplier — not a replacement. Spec writing, copy iteration, rapid prototyping, experiment evaluation, and the judgment layer AI can't replace.</p>
+          <ul class="course-modules">
+            <li>Why AI changes the PM role (and what it doesn't change)</li>
+            <li>Spec and PRD writing with AI scaffolding</li>
+            <li>UX copy iteration workflows</li>
+            <li>Rapid prototyping with Claude Code</li>
+            <li>Experiment evaluation and analysis</li>
+            <li>AI for stakeholder communication</li>
+          </ul>
+          <div class="course-price">
+            <span class="price">$49</span>
+            <span class="note">Early bird</span>
+          </div>
+        </div>
+      </div>
+      <!-- Course 2 -->
+      <div class="course-card fade-in">
+        <div class="course-body">
+          <span class="course-badge badge-soon">Coming soon</span>
+          <h3>Break Into Product Management</h3>
+          <p>The non-traditional path into PM — for career switchers who don't have a CS degree or FAANG on their resume. Portfolio, interview prep, and real positioning strategy.</p>
+          <ul class="course-modules">
+            <li>What PMs actually do (not the job description version)</li>
+            <li>Building your portfolio from scratch</li>
+            <li>The resume that gets past ATS</li>
+            <li>Interview frameworks (STAR, case studies)</li>
+            <li>Non-traditional background as advantage</li>
+          </ul>
+          <div class="course-price">
+            <span class="price">$39</span>
+            <span class="note">Pre-order</span>
+          </div>
+        </div>
+      </div>
+      <!-- Course 3 -->
+      <div class="course-card fade-in">
+        <div class="course-body">
+          <span class="course-badge badge-soon">Coming soon</span>
+          <h3>Founder's PM Playbook</h3>
+          <p>Product thinking for non-technical founders and small business owners. Understand users, measure what matters, and stop building features nobody asked for.</p>
+          <ul class="course-modules">
+            <li>Your customer's journey (mapped, not guessed)</li>
+            <li>Finding friction points in your business</li>
+            <li>Metrics that matter vs. vanity metrics</li>
+            <li>AI as your research assistant</li>
+            <li>Building your first experiment</li>
+          </ul>
+          <div class="course-price">
+            <span class="price">$29</span>
+            <span class="note">Pre-order</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RESOURCES ══ -->
+<section id="resources" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-label">Digital products</div>
+    <div class="section-title">Grab a toolkit. Start building.</div>
+    <div class="section-desc">Each product is a distilled version of something I've actually used in the field. No filler — just the frameworks and templates that move the needle.</div>
+    <div class="resources-grid">
+      <div class="resource-card fade-in">
+        <div class="resource-icon">&#128221;</div>
+        <div>
+          <h3>Funnel Audit Playbook</h3>
+          <p>Your website gets traffic but not sales? This playbook walks you through exactly where to look, what to measure, and what to fix — step by step.</p>
+          <span class="resource-tag">Framework</span>
+        </div>
+      </div>
+      <div class="resource-card fade-in">
+        <div class="resource-icon">&#129302;</div>
+        <div>
+          <h3>AI for PMs Starter Kit</h3>
+          <p>My actual prompt library, workflow templates, and tool comparison. Copy, paste, adapt — you'll be faster by tomorrow.</p>
+          <span class="resource-tag">Toolkit</span>
+        </div>
+      </div>
+      <div class="resource-card fade-in">
+        <div class="resource-icon">&#128188;</div>
+        <div>
+          <h3>PM Interview Toolkit</h3>
+          <p>Resume templates, STAR method framework, 50+ practice questions, and a real case walkthrough. Everything in one place so you stop Googling and start preparing.</p>
+          <span class="resource-tag">Templates</span>
+        </div>
+      </div>
+      <div class="resource-card fade-in">
+        <div class="resource-icon">&#127978;</div>
+        <div>
+          <h3>Small Biz Digital Toolkit</h3>
+          <p>Landing page checklist, analytics setup, SEO basics, and conversion tips. Written for the business owner who doesn't have a tech team and doesn't want to become one.</p>
+          <span class="resource-tag">Toolkit</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOG ══ -->
+<section id="blog">
+  <div class="container">
+    <div class="section-label">Blog</div>
+    <div class="section-title">Learn product thinking — for free.</div>
+    <div class="section-desc">Short, practical articles. No 4,000-word SEO filler.</div>
+    <div class="blog-grid">
+      <div class="blog-card fade-in">
+        <div class="blog-body">
+          <div class="blog-meta">Growth &middot; 8 min read</div>
+          <h3>How I Increased Registration Conversion by 24.1%</h3>
+          <p>The specific UX, copy, and flow changes that moved a real conversion funnel in a regulated market. Frameworks included.</p>
+          <a href="#" class="blog-link">Read article &rarr;</a>
+        </div>
+      </div>
+      <div class="blog-card fade-in">
+        <div class="blog-body">
+          <div class="blog-meta">AI Workflows &middot; 7 min read</div>
+          <h3>How I Actually Use AI as a Product Manager</h3>
+          <p>Not theory. The daily workflows — spec writing, copy iteration, rapid prototyping, experiment analysis — and where AI falls short.</p>
+          <a href="#" class="blog-link">Read article &rarr;</a>
+        </div>
+      </div>
+      <div class="blog-card fade-in">
+        <div class="blog-body">
+          <div class="blog-meta">Small Business &middot; 6 min read</div>
+          <h3>What Small Business Owners Get Wrong About AI</h3>
+          <p>You don't need more tools. You need the thinking layer underneath — the one that turns AI from a novelty into a multiplier.</p>
+          <a href="#" class="blog-link">Read article &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA / NEWSLETTER ══ -->
+<section class="cta-strip" id="newsletter">
+  <div class="container">
+    <div class="cta-inner">
+      <div>
+        <h2>Get the free AI Product Toolkit.</h2>
+        <p>A curated prompt library, decision framework, and quickstart guide — the same tools I use daily. Delivered to your inbox.</p>
+        <div class="newsletter-form" style="margin-top: 24px;">
+          <input type="email" placeholder="you@email.com" aria-label="Email address">
+          <button type="button">Send it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">gonzalo.tech</div>
+        <div class="footer-tagline">Courses, toolkits, and frameworks for builders who use AI. Built with rigor, explained with care.</div>
+      </div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <a href="#courses">Courses</a>
+        <a href="#resources">Digital products</a>
+        <a href="#blog">Blog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://linkedin.com/in/gonzaloeaguilar" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://medium.com/@gonzaloeaguilar" target="_blank" rel="noopener">Medium</a>
+        <a href="mailto:hello@gonzalo.tech">hello@gonzalo.tech</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Gonzalo Aguilar. All rights reserved.</span>
+      <span>Built in Fort Lauderdale, FL</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ SCRIPTS ══ -->
+<script>
+// Nav scroll
+const nav = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Mobile menu
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      navLinks.classList.remove('open');
+    }
+  });
+});
+
+// Fade in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
