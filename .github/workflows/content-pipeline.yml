@@ -1,0 +1,55 @@
+name: Content Pipeline
+
+on:
+  schedule:
+    # Daily at 6am ET (10:00 UTC)
+    - cron: '0 10 * * *'
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'Number of topics to process (default 1)'
+        required: false
+        default: '1'
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      CI: true
+      GIT_COMMIT: true
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install chromium --with-deps
+
+      - name: Run content pipeline
+        run: |
+          COUNT=${{ github.event.inputs.count || '1' }}
+          for i in $(seq 1 $COUNT); do
+            echo "--- Pipeline run $i of $COUNT ---"
+            node scripts/orchestrator.js
+          done
+
+      - name: Push changes
+        run: |
+          git config user.name "gonzalo-bot"
+          git config user.email "bot@gonzalo.tech"
+          git push

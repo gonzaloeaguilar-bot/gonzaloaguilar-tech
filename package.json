@@ -1,0 +1,22 @@
+{
+  "name": "gonzaloaguilar-tech",
+  "version": "1.0.0",
+  "description": "gonzalo.tech content pipeline — autonomous blog generation, PDF creation, and content repurposing",
+  "scripts": {
+    "generate": "node scripts/generate-blog.js",
+    "qa": "node scripts/qa-gate.js posts/latest.md",
+    "build-html": "node scripts/build-blog-html.js posts/latest.md",
+    "pdf": "node scripts/generate-pdf.js posts/latest.md",
+    "qa-pdf": "node scripts/qa-pdf.js pdfs/latest.pdf",
+    "resources": "node scripts/build-resources-page.js",
+    "repurpose": "node scripts/repurpose.js posts/latest.md",
+    "pipeline": "node scripts/orchestrator.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "latest",
+    "marked": "latest"
+  },
+  "devDependencies": {
+    "playwright": "latest"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "topics": [
+    {"slug": "ai-tool-trap", "title": "Why Most Small Businesses Waste Money on AI Tools", "keywords": ["small business AI", "AI tools ROI"], "framework": "Three Questions Framework", "language": "EN", "status": "pending"},
+    {"slug": "friction-to-trust", "title": "The Hidden Friction That Kills Your Customer Journey", "keywords": ["customer journey", "conversion optimization"], "framework": "Friction-to-Trust Pipeline", "language": "EN", "status": "pending"},
+    {"slug": "ai-readiness-checklist", "title": "Is Your Business Actually Ready for AI? A Honest Checklist", "keywords": ["AI readiness", "small business technology"], "framework": "Three Questions Framework", "language": "EN", "status": "pending"},
+    {"slug": "anxiety-map-guide", "title": "Map Your Customer's Anxiety Before Building Anything", "keywords": ["customer anxiety", "user research"], "framework": "Anxiety Map", "language": "EN", "status": "pending"},
+    {"slug": "ai-setup-mistakes", "title": "5 AI Setup Mistakes That Cost Small Businesses Thousands", "keywords": ["AI implementation", "small business mistakes"], "framework": "Friction-to-Trust Pipeline", "language": "EN", "status": "pending"},
+    {"slug": "product-thinking-founders", "title": "Product Thinking for Non-Technical Founders", "keywords": ["product management", "startup founders"], "framework": "Three Questions Framework", "language": "EN", "status": "pending"},
+    {"slug": "conversion-audit-diy", "title": "How to Run a Conversion Audit Without Hiring a Consultant", "keywords": ["conversion audit", "DIY optimization"], "framework": "Friction-to-Trust Pipeline", "language": "EN", "status": "pending"},
+    {"slug": "ai-workflow-automation", "title": "Automate the Boring Stuff: AI Workflows That Save 10 Hours a Week", "keywords": ["AI automation", "workflow optimization"], "framework": "Three Questions Framework", "language": "EN", "status": "pending"},
+    {"slug": "trampa-herramientas-ia", "title": "La Trampa de las Herramientas de IA para Negocios", "keywords": ["IA para negocios", "herramientas IA"], "framework": "Three Questions Framework", "language": "ES", "status": "pending"},
+    {"slug": "pensamiento-producto", "title": "Pensamiento de Producto para Emprendedores No Técnicos", "keywords": ["product management", "emprendedores"], "framework": "Three Questions Framework", "language": "ES", "status": "pending"},
+    {"slug": "first-ai-project", "title": "Your First AI Project Should Be Boring (Here's Why)", "keywords": ["AI getting started", "first AI project"], "framework": "Anxiety Map", "language": "EN", "status": "pending"},
+    {"slug": "chatbot-waste", "title": "Why Your AI Chatbot Is Wasting Money and What to Build Instead", "keywords": ["AI chatbot", "customer service AI"], "framework": "Three Questions Framework", "language": "EN", "status": "pending"},
+    {"slug": "data-before-ai", "title": "You Don't Need AI — You Need Better Data", "keywords": ["data quality", "AI prerequisites"], "framework": "Friction-to-Trust Pipeline", "language": "EN", "status": "pending"},
+    {"slug": "pm-ai-workflow", "title": "How I Use AI to Ship Faster as a Product Manager", "keywords": ["PM workflow", "AI productivity"], "framework": "Three Questions Framework", "language": "EN", "status": "pending"},
+    {"slug": "onboarding-friction", "title": "Your Onboarding Flow Is Losing You Customers — Here's the Fix", "keywords": ["onboarding optimization", "user retention"], "framework": "Friction-to-Trust Pipeline", "language": "EN", "status": "pending"},
+    {"slug": "mapa-ansiedad-clientes", "title": "Cómo Mapear la Ansiedad de Tus Clientes Antes de Construir", "keywords": ["mapa de ansiedad", "experiencia del cliente"], "framework": "Anxiety Map", "language": "ES", "status": "pending"},
+    {"slug": "ai-consultant-guide", "title": "What to Look for When Hiring an AI Consultant", "keywords": ["AI consulting", "hire AI expert"], "framework": "Three Questions Framework", "language": "EN", "status": "pending"},
+    {"slug": "measure-ai-roi", "title": "How to Measure AI ROI Without a Data Team", "keywords": ["AI ROI", "business metrics"], "framework": "Three Questions Framework", "language": "EN", "status": "pending"},
+    {"slug": "flujo-conversion-diy", "title": "Auditoría de Conversión: Hazlo Tú Mismo Sin Consultores", "keywords": ["auditoría conversión", "optimización"], "framework": "Friction-to-Trust Pipeline", "language": "ES", "status": "pending"},
+    {"slug": "trust-signals", "title": "The Trust Signals Your Website Is Missing", "keywords": ["trust signals", "website credibility"], "framework": "Friction-to-Trust Pipeline", "language": "EN", "status": "pending"}
+  ]
+}
