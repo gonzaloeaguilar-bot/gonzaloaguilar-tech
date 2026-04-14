@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7 Errores de UX Que Destruyen Tus Conversiones — gonzalo.tech</title>
+  <meta name="description" content="Descubre los 7 errores de UX que están matando tus conversiones y cómo el Anxiety Map puede salvarte de perder clientes y dinero.">
+  <meta name="keywords" content="errores UX, conversiones, diseño interfaz">
+  <meta name="author" content="Gonzalo Aguilar">
+  <meta property="og:title" content="7 Errores de UX Que Destruyen Tus Conversiones — gonzalo.tech">
+  <meta property="og:description" content="Descubre los 7 errores de UX que están matando tus conversiones y cómo el Anxiety Map puede salvarte de perder clientes y dinero.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://gonzalo.tech/output/errores-ux-conversiones.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="7 Errores de UX Que Destruyen Tus Conversiones">
+  <meta name="twitter:description" content="Descubre los 7 errores de UX que están matando tus conversiones y cómo el Anxiety Map puede salvarte de perder clientes y dinero.">
+  <link rel="canonical" href="https://gonzalo.tech/output/errores-ux-conversiones.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "7 Errores de UX Que Destruyen Tus Conversiones",
+    "description": "Descubre los 7 errores de UX que están matando tus conversiones y cómo el Anxiety Map puede salvarte de perder clientes y dinero.",
+    "author": {
+      "@type": "Person",
+      "name": "Gonzalo Aguilar",
+      "url": "https://gonzalo.tech"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "gonzalo.tech"
+    },
+    "url": "https://gonzalo.tech/output/errores-ux-conversiones.html",
+    "inLanguage": "en"
+  }
+  </script>
+  <style>
+    /* Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Brand tokens */
+    :root {
+      --ink: #0F172A;
+      --slate: #334155;
+      --muted: #64748B;
+      --subtle: #94A3B8;
+      --border: #E2E8F0;
+      --surface: #F8FAFC;
+      --white: #FFFFFF;
+      --red: #DC2626;
+      --green: #16A34A;
+      --amber: #D97706;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: Calibri, 'Gill Sans', 'Segoe UI', sans-serif;
+      --font-code: Consolas, 'Courier New', monospace;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--slate);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* Header */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+      margin-bottom: 3rem;
+    }
+    .site-header a {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    /* Article */
+    article { text-align: left; }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--ink);
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--ink);
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+    }
+
+    ul, ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    li { margin-bottom: 0.4rem; }
+
+    blockquote {
+      border-left: 3px solid var(--ink);
+      padding: 0.75rem 1.25rem;
+      margin: 1.5rem 0;
+      background: var(--surface);
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    code {
+      font-family: var(--font-code);
+      background: var(--surface);
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+
+    pre {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.25rem;
+      overflow-x: auto;
+      margin-bottom: 1.25rem;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    strong { color: var(--ink); }
+
+    a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    a:hover { color: var(--muted); }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* PDF download banner */
+    .pdf-download {
+      margin-top: 2.5rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .pdf-download p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--slate);
+    }
+    .pdf-download a {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      background: var(--ink);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .pdf-download a:hover {
+      background: var(--slate);
+      color: var(--white);
+    }
+
+    /* Author bio */
+    .author-bio {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Footer */
+    .site-footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--subtle);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.3rem; }
+      .container { padding: 1rem; }
+    }
+
+    /* Print */
+    @media print {
+      body { font-size: 12pt; color: #000; }
+      .site-header, .site-footer { display: none; }
+      .container { max-width: 100%; padding: 0; }
+      a { text-decoration: none; color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="../index.html">gonzalo.tech</a>
+    </header>
+
+    <article>
+      <h1>7 Errores de UX Que Destruyen Tus Conversiones</h1>
+<p>¿Sabías que el 88% de los usuarios no regresa a un sitio web después de una mala experiencia? Según un estudio de Forrester (2022), las empresas que invierten en UX ven un retorno de hasta $100 por cada dólar invertido. Pero aquí está el problema: la mayoría de los pequeños negocios están cometiendo errores básicos de diseño de interfaz que literalmente están espantando a sus clientes potenciales.</p>
+<p>Como dueño de negocio, no necesitas ser diseñador para entender esto. Solo necesitas reconocer que cada clic perdido es dinero que se va por el desagüe. Hoy te voy a mostrar los 7 errores más comunes y cómo el <strong>Anxiety Map</strong> —una herramienta súper práctica— puede ayudarte a identificar exactamente dónde tus usuarios se sienten confundidos, frustrados o simplemente se van.</p>
+<h2>¿Qué Es el Anxiety Map y Por Qué Lo Necesitas?</h2>
+<p>Imagina que pudieras ver exactamente dónde tus clientes potenciales sienten miedo, confusión o desconfianza en tu sitio web. Eso es exactamente lo que hace el Anxiety Map: mapea todos los puntos donde los usuarios experimentan ansiedad o fricción que los puede hacer abandonar tu sitio.</p>
+<p><strong>Versión simple:</strong> Es como un mapa del tesoro, pero al revés. En lugar de mostrar dónde está el oro, muestra dónde están los hoyos que hacen que la gente se caiga y no llegue al tesoro (tu producto o servicio).</p>
+<p><strong>Consecuencia de ignorarlo:</strong> Sin identificar estos puntos de fricción, estás perdiendo clientes en cada paso del proceso. McKinsey (2021) encontró que mejorar la experiencia del cliente puede incrementar las ventas entre 10-15% y reducir los costos de servicio hasta en 20%.</p>
+<p><strong>Analogía:</strong> Piensa en tu sitio web como un puente. Si hay tablones sueltos, agujeros o señales confusas, la gente se va a dar vuelta antes de cruzar, sin importar qué tan increíble sea lo que tienes del otro lado.</p>
+<p>El Anxiety Map tiene cuatro componentes clave:</p>
+<ul>
+<li><strong>Puntos de confusión:</strong> Dónde los usuarios no entienden qué hacer</li>
+<li><strong>Barreras emocionales:</strong> Dónde sienten desconfianza o miedo</li>
+<li><strong>Obstáculos técnicos:</strong> Dónde algo simplemente no funciona bien</li>
+<li><strong>Momentos de abandono:</strong> Los lugares exactos donde se van</li>
+</ul>
+<h2>Error #1: Navegación Confusa Que Hace Que Los Usuarios Se Pierdan</h2>
+<p><strong>El problema simple:</strong> Tus menús son un laberinto sin salida clara.</p>
+<p>Tu navegación es como las señales en una autopista. Si son confusas, contradictorias o simplemente no están donde la gente las espera, van a tomar la próxima salida. Un estudio del Nielsen Norman Group (2022) mostró que el 79% de los usuarios escanean las páginas en lugar de leerlas completamente, y buscan pistas visuales claras sobre dónde ir.</p>
+<p><strong>Cómo detectarlo con el Anxiety Map:</strong> Marca cada punto donde un usuario podría preguntarse &quot;¿Dónde diablos está lo que busco?&quot; Estos son típicamente: menús con más de 7 elementos, categorías con nombres creativos pero confusos, y falta de un buscador visible.</p>
+<p><strong>Consecuencia de negocio:</strong> Usuarios perdidos = ventas perdidas. Si alguien no puede encontrar tu producto en 30 segundos, hay un 67% de probabilidad de que se vaya a la competencia.</p>
+<p><strong>Solución práctica:</strong> Usa nombres que tu abuela entendería. &quot;Servicios&quot; es mejor que &quot;Soluciones Innovadoras&quot;. Limita tu menú principal a 5-7 elementos máximo. Y por favor, pon un buscador donde la gente lo espera: arriba a la derecha.</p>
+<h2>Error #2: Formularios Que Parecen Interrogatorios de la CIA</h2>
+<p><strong>El problema simple:</strong> Pides demasiada información muy pronto.</p>
+<p>Los formularios largos son como pedirle a alguien su número de teléfono en la primera cita. Incómodo y desesperante. Cada campo adicional en tu formulario puede reducir las conversiones entre 5-20%, según datos de Baymard Institute (2023).</p>
+<p><strong>Cómo aplicar el Anxiety Map:</strong> Identifica cada campo que hace que el usuario piense &quot;¿Por qué necesitan esto?&quot; o &quot;Esto va a tomar demasiado tiempo&quot;. Márcalos como puntos rojos de alta ansiedad.</p>
+<p><strong>Consecuencia de negocio:</strong> Formularios largos pueden destruir hasta el 80% de tus conversiones potenciales. Es literalmente como tener un vendedor que interroga a cada cliente antes de mostrarle el producto.</p>
+<p><strong>Analogía:</strong> Piensa en tu formulario como una conversación. No empezarías pidiendo el número de seguro social, ¿verdad? Empieza con lo básico: nombre y email. Todo lo demás puede esperar.</p>
+<h2>Error #3: Tiempos de Carga Que Prueban La Paciencia Humana</h2>
+<p><strong>El problema simple:</strong> Tu sitio carga más lento que un caracol subiendo una montaña.</p>
+<p>Un segundo adicional de carga puede reducir tus conversiones en 7%, según Google (2022). Tres segundos y el 53% de los usuarios móviles ya se fueron. Es matemática cruel pero simple.</p>
+<p><strong>Anxiety Map aplicado:</strong> Cada página que tarde más de 2 segundos en cargar es un punto rojo gigante. Los usuarios modernos tienen la paciencia de un niño de 3 años esperando dulces.</p>
+<p><strong>Consecuencia de negocio:</strong> Sitios lentos no solo pierden ventas inmediatas, también afectan tu posicionamiento en Google. Es como tener la tienda más bonita del mundo, pero con la puerta más pesada que nadie puede abrir.</p>
+<p><strong>Solución inmediata:</strong> Usa herramientas gratuitas como PageSpeed Insights de Google para medir tu velocidad. Si sale rojo, llama a tu desarrollador. Si no tienes desarrollador, considera plataformas más rápidas como Shopify o WordPress optimizado.</p>
+<h2>Error #4: Falta de Pruebas Sociales Que Genera Desconfianza</h2>
+<p><strong>El problema simple:</strong> Tu sitio parece una tienda vacía en un centro comercial fantasma.</p>
+<p>Los humanos somos animales sociales. Necesitamos saber que otros han comprado antes que nosotros y vivieron para contarlo. El 92% de los consumidores lee reseñas antes de comprar, según BrightLocal (2023).</p>
+<p><strong>Anxiety Map:</strong> Marca todas las páginas importantes que no tienen testimonios, reseñas, logos de clientes, o números de clientes satisfechos. Estos son puntos donde la desconfianza crece como mala hierba.</p>
+<p><strong>Consecuencia de negocio:</strong> Sin pruebas sociales, tus visitantes asumen que eres nuevo, no confiable, o simplemente no muy bueno. Es como ser el único restaurante vacío en una calle llena de opciones.</p>
+<p><strong>Analogía:</strong> Imagínate entrando a dos restaurantes: uno vacío y otro con fila de gente esperando. ¿Dónde comerías? Tu sitio web necesita mostrar esa &quot;fila de gente&quot;.</p>
+<h2>Error #5: Llamadas a la Acción Que No Llaman a Nada</h2>
+<p><strong>El problema simple:</strong> Tus botones son invisibles o dicen cosas aburridas como &quot;Enviar&quot;.</p>
+<p>Tu botón de acción es como el vendedor de tu tienda. Si está escondido en una esquina susurrando &quot;tal vez compres&quot;, nadie lo va a escuchar. HubSpot (2022) encontró que cambiar &quot;Enviar&quot; por &quot;Obtener Mi Cotización Gratuita&quot; puede incrementar conversiones hasta 161%.</p>
+<p><strong>Cómo mapear la ansiedad:</strong> Encuentra todos los botones que son difíciles de ver, que usan colores que se confunden con el fondo, o que no le dicen claramente al usuario qué va a pasar cuando haga clic.</p>
+<p><strong>Consecuencia de negocio:</strong> Botones débiles = conversiones débiles. Es como tener el mejor producto del mundo pero un vendedor que habla en susurros.</p>
+<p><strong>Solución:</strong> Usa verbos de acción específicos: &quot;Descargar Guía Gratuita&quot;, &quot;Agendar Llamada de 15 Minutos&quot;, &quot;Ver Precios Ahora&quot;. Y hazlos imposibles de ignorar con colores contrastantes.</p>
+<h2>Error #6: Diseño Móvil Que Odia Los Dedos Humanos</h2>
+<p><strong>El problema simple:</strong> Tu sitio en móvil parece diseñado para hormiguitas con dedos de palillo.</p>
+<p>El 58% del tráfico web mundial viene de móviles, según Statista (2023). Si tu sitio no funciona perfectamente en teléfonos, estás rechazando a más de la mitad de tus clientes potenciales antes de que siquiera vean tu propuesta.</p>
+<p><strong>Anxiety Map móvil:</strong> Revisa tu sitio en tu teléfono y marca cada vez que tienes que hacer zoom para leer algo, o cuando tocas un botón y no pasa nada, o peor, pasa algo diferente a lo que esperabas.</p>
+<p><strong>Consecuencia de negocio:</strong> Usuarios móviles frustrados no solo no compran, también tienen 5 veces más probabilidad de irse y nunca regresar.</p>
+<p><strong>Analogía:</strong> Es como construir una tienda con puertas para gigantes y esperar que la gente normal haga compras cómodamente.</p>
+<h2>Error #7: Checkout Complejo Que Asusta Hasta a Los Compradores Decididos</h2>
+<p><strong>El problema simple:</strong> Tu proceso de compra tiene más pasos que armar un mueble de IKEA.</p>
+<p>El 69.8% de los carritos de compra se abandonan, según Baymard Institute (2023). La mayoría de las veces no es porque no quieran comprar, sino porque el proceso es más complicado que hacer la declaración de impuestos.</p>
+<p><strong>Aplicando el Anxiety Map al checkout:</strong></p>
+<ul>
+<li>Marca cada paso adicional innecesario</li>
+<li>Identifica campos obligatorios que no deberían serlo</li>
+<li>Encuentra puntos donde no está claro cuánto va a costar en total</li>
+<li>Señala donde no hay opciones de pago que la gente reconoce</li>
+</ul>
+<p><strong>Consecuencia de negocio:</strong> Un checkout complejo puede destruir hasta el 70% de tus ventas potenciales. Es como tener una tienda increíble pero una caja registradora que solo acepta monedas de oro antiguas.</p>
+<p><strong>Solución:</strong> Menos pasos, más claridad. Muestra el costo total desde el principio, ofrece opciones de pago conocidas (PayPal, tarjetas principales), y nunca, JAMÁS, sorprendas con costos adicionales al final.</p>
+<h2>Cómo Crear Tu Propio Anxiety Map en 4 Pasos</h2>
+<p><strong>Paso 1: Recorre tu sitio como si fueras tu cliente ideal.</strong> Anota cada momento donde te sientes confundido, frustrado o donde no sabes qué hacer después.</p>
+<p><strong>Paso 2: Pide a 3 personas (que no trabajen contigo) que naveguen tu sitio.</strong> Obsérvalos sin decir nada. Cada vez que duden, se confundan o hagan click en algo incorrecto, márcalo.</p>
+<p><strong>Paso 3: Revisa tus analíticas.</strong> ¿Dónde se van más usuarios? ¿Qué páginas tienen la tasa de rebote más alta? Estos son puntos rojos automáticos en tu mapa.</p>
+<p><strong>Paso 4: Prioriza por impacto.</strong> No puedes arreglar todo de una vez. Empieza por los puntos que más conversiones te están costando.</p>
+<h2>Tu Próximo Paso: No Dejes Que Los Errores Te Sigan Costando Dinero</h2>
+<p>Los errores de UX no son solo problemas técnicos, son pérdidas de dinero reales y medibles. Cada día que pasa sin arreglarlos es dinero que se va directamente a la competencia.</p>
+<p>La buena noticia es que no necesitas ser diseñador para aplicar el Anxiety Map y empezar a identificar dónde estás perdiendo clientes. Solo necesitas ponerte en los zapatos de tus usuarios y ser honesto sobre lo que encuentras.</p>
+<p>¿Listo para convertir tu sitio web de un filtro de clientes a un imán de ventas? En gonzalo.tech tengo más herramientas y frameworks prácticos que puedes implementar inmediatamente para mejorar tus conversiones sin necesidad de un equipo técnico gigante.</p>
+<hr>
+<p><em>Gonzalo Aguilar es un Senior Product Manager especializado en crecimiento, identidad y onboarding en mercados regulados. Escribe sobre estrategia de producto, optimización de conversiones y flujos prácticos de IA en gonzalo.tech.</em></p>
+
+
+      <div class="pdf-download">
+        <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
+        <a href="../pdfs/errores-ux-conversiones.pdf" download>Download PDF</a>
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      &copy; 2026 gonzalo.tech — Gonzalo Aguilar
+    </footer>
+  </div>
+</body>
+</html>

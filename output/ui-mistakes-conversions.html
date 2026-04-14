@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7 UI Mistakes That Tank Your Conversions — gonzalo.tech</title>
+  <meta name="description" content="Discover 7 common UI design mistakes that kill conversions and learn the Anxiety Map framework to boost your website's sales performance.">
+  <meta name="keywords" content="UI design mistakes, conversion rate, user interface">
+  <meta name="author" content="Gonzalo Aguilar">
+  <meta property="og:title" content="7 UI Mistakes That Tank Your Conversions — gonzalo.tech">
+  <meta property="og:description" content="Discover 7 common UI design mistakes that kill conversions and learn the Anxiety Map framework to boost your website's sales performance.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://gonzalo.tech/output/ui-mistakes-conversions.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="7 UI Mistakes That Tank Your Conversions">
+  <meta name="twitter:description" content="Discover 7 common UI design mistakes that kill conversions and learn the Anxiety Map framework to boost your website's sales performance.">
+  <link rel="canonical" href="https://gonzalo.tech/output/ui-mistakes-conversions.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "7 UI Mistakes That Tank Your Conversions",
+    "description": "Discover 7 common UI design mistakes that kill conversions and learn the Anxiety Map framework to boost your website's sales performance.",
+    "author": {
+      "@type": "Person",
+      "name": "Gonzalo Aguilar",
+      "url": "https://gonzalo.tech"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "gonzalo.tech"
+    },
+    "url": "https://gonzalo.tech/output/ui-mistakes-conversions.html",
+    "inLanguage": "en"
+  }
+  </script>
+  <style>
+    /* Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Brand tokens */
+    :root {
+      --ink: #0F172A;
+      --slate: #334155;
+      --muted: #64748B;
+      --subtle: #94A3B8;
+      --border: #E2E8F0;
+      --surface: #F8FAFC;
+      --white: #FFFFFF;
+      --red: #DC2626;
+      --green: #16A34A;
+      --amber: #D97706;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: Calibri, 'Gill Sans', 'Segoe UI', sans-serif;
+      --font-code: Consolas, 'Courier New', monospace;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--slate);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* Header */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+      margin-bottom: 3rem;
+    }
+    .site-header a {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    /* Article */
+    article { text-align: left; }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--ink);
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--ink);
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+    }
+
+    ul, ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    li { margin-bottom: 0.4rem; }
+
+    blockquote {
+      border-left: 3px solid var(--ink);
+      padding: 0.75rem 1.25rem;
+      margin: 1.5rem 0;
+      background: var(--surface);
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    code {
+      font-family: var(--font-code);
+      background: var(--surface);
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+
+    pre {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.25rem;
+      overflow-x: auto;
+      margin-bottom: 1.25rem;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    strong { color: var(--ink); }
+
+    a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    a:hover { color: var(--muted); }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* PDF download banner */
+    .pdf-download {
+      margin-top: 2.5rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .pdf-download p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--slate);
+    }
+    .pdf-download a {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      background: var(--ink);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .pdf-download a:hover {
+      background: var(--slate);
+      color: var(--white);
+    }
+
+    /* Author bio */
+    .author-bio {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Footer */
+    .site-footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--subtle);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.3rem; }
+      .container { padding: 1rem; }
+    }
+
+    /* Print */
+    @media print {
+      body { font-size: 12pt; color: #000; }
+      .site-header, .site-footer { display: none; }
+      .container { max-width: 100%; padding: 0; }
+      a { text-decoration: none; color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="../index.html">gonzalo.tech</a>
+    </header>
+
+    <article>
+      <h1>7 UI Mistakes That Tank Your Conversions</h1>
+<p>Your website looks professional. Your product is solid. But visitors keep bouncing without buying. What&#39;s going on?</p>
+<p>The culprit might be hiding in plain sight: your user interface (UI). Small design choices that seem harmless can create massive friction in your customer&#39;s buying journey. According to Forrester Research (2022), a well-designed user interface can increase conversion rates by up to 200%, while a better UX design could yield conversion rates up to 400%.</p>
+<p>Today, I&#39;ll walk you through seven deadly UI mistakes that are quietly sabotaging your sales—and show you exactly how to fix them using a powerful tool called the Anxiety Map.</p>
+<h2>What Is the Anxiety Map Framework?</h2>
+<p>Before we dive into the mistakes, let&#39;s understand the Anxiety Map—your secret weapon for spotting conversion killers.</p>
+<p><strong>Simple version:</strong> The Anxiety Map is a mental exercise where you map out every moment in your customer&#39;s journey where they might feel worried, confused, or uncertain about moving forward.</p>
+<p><strong>Business consequence:</strong> When customers feel anxious or confused, they abandon ship. The Baymard Institute found that the average cart abandonment rate across industries is 70.19%. That&#39;s seven out of ten potential sales walking away—often due to preventable anxiety triggers.</p>
+<p><strong>Real-world analogy:</strong> Imagine you&#39;re at a new restaurant. If the menu is confusing, the waiter seems unprepared, or you&#39;re not sure about the prices, you might just leave and go somewhere else. Your website works the same way—every moment of uncertainty pushes customers toward the exit.</p>
+<p>Here&#39;s how to create your Anxiety Map:</p>
+<ol>
+<li>Walk through your website as a first-time visitor</li>
+<li>Note every moment you feel uncertain, confused, or hesitant</li>
+<li>Ask: &quot;What information am I missing?&quot; or &quot;What could go wrong here?&quot;</li>
+<li>Mark these anxiety points on your customer journey</li>
+</ol>
+<p>Now let&#39;s use this framework to identify the seven most dangerous UI mistakes.</p>
+<h2>Mistake #1: Vague or Missing Call-to-Action Buttons</h2>
+<p>Your call-to-action (CTA) button is where the magic happens—or where it dies.</p>
+<p><strong>The mistake:</strong> Using generic buttons like &quot;Submit,&quot; &quot;Click Here,&quot; or &quot;Learn More.&quot; Even worse? Making your CTA hard to find or unclear about what happens next.</p>
+<p><strong>Anxiety Map reveals:</strong> Customers think, &quot;Submit what exactly? What happens when I click this? Am I committing to something I don&#39;t want?&quot;</p>
+<p><strong>The fix:</strong> Use specific, action-oriented language that tells customers exactly what they&#39;ll get. Instead of &quot;Submit,&quot; try &quot;Get My Free Quote&quot; or &quot;Download the Guide Now.&quot;</p>
+<p>Make your CTA button the most obvious element on the page. Use contrasting colors and ensure it&#39;s large enough to spot immediately. According to HubSpot&#39;s 2023 research, personalized CTAs convert 42% better than generic ones.</p>
+<h2>Mistake #2: Overwhelming Forms That Ask for Too Much</h2>
+<p>Nothing kills conversions faster than a form that looks like a government application.</p>
+<p><strong>The mistake:</strong> Asking for every piece of information upfront—full name, address, phone, company size, budget, favorite color, mother&#39;s maiden name. Okay, maybe not the last two, but you get the idea.</p>
+<p><strong>Anxiety Map reveals:</strong> Customers wonder, &quot;Why do they need all this information? Are they going to spam me? Is this going to take forever? What if I don&#39;t want to share my phone number?&quot;</p>
+<p><strong>The fix:</strong> Follow the &quot;progressive disclosure&quot; principle. Start with the absolute minimum—usually just an email address. You can always gather more information later in the relationship.</p>
+<p>If you must ask for more details, explain why you need each piece of information. &quot;We need your phone number to send SMS updates about your order&quot; feels much less invasive than a blank phone field with no context.</p>
+<h2>Mistake #3: Hidden or Confusing Pricing</h2>
+<p>Price mystery is conversion poison. Yet many businesses treat their pricing like a state secret.</p>
+<p><strong>The mistake:</strong> Making customers hunt for pricing information, using confusing pricing tiers, or hitting them with surprise costs at checkout.</p>
+<p><strong>Anxiety Map reveals:</strong> Customers think, &quot;If they won&#39;t show me the price upfront, it&#39;s probably too expensive. What other costs are they hiding? I don&#39;t have time to play hide-and-seek with pricing.&quot;</p>
+<p><strong>The fix:</strong> Be transparent about your pricing from the start. If you offer multiple tiers, make the differences crystal clear. Use comparison tables that highlight what&#39;s included at each level.</p>
+<p>For service businesses where pricing varies, provide ranges or starting prices. &quot;Website design starting at $2,500&quot; gives customers a baseline expectation.</p>
+<h2>Mistake #4: Slow Loading Times That Test Patience</h2>
+<p>Speed isn&#39;t just nice to have—it&#39;s make-or-break for conversions.</p>
+<p><strong>The mistake:</strong> Ignoring page load speeds, using oversized images, or cramming too much onto a single page.</p>
+<p><strong>Anxiety Map reveals:</strong> While customers wait, they think, &quot;Is this site broken? If their website is this slow, how bad is their service? I bet their competitor&#39;s site works better.&quot;</p>
+<p><strong>The fix:</strong> Aim for pages that load in under three seconds. Google&#39;s research shows that 53% of mobile users abandon sites that take longer than three seconds to load.</p>
+<p>Optimize your images, choose a reliable hosting provider, and regularly test your site speed using free tools like Google PageSpeed Insights. Think of page speed like the greeting at a restaurant—it sets the tone for everything that follows.</p>
+<h2>Mistake #5: Mobile-Unfriendly Design</h2>
+<p>With mobile commerce expected to account for $710 billion by 2025 (Statista, 2023), a poor mobile experience is conversion suicide.</p>
+<p><strong>The mistake:</strong> Designing for desktop first (or only), using tiny buttons that require precise tapping, or creating forms that are impossible to fill out on a phone.</p>
+<p><strong>Anxiety Map reveals:</strong> Mobile users think, &quot;This is impossible to use on my phone. I can&#39;t read this tiny text. Why is this button so hard to tap? I&#39;ll just find a competitor with a better mobile site.&quot;</p>
+<p><strong>The fix:</strong> Design mobile-first. Make buttons large enough for thumbs (at least 44 pixels), use readable font sizes (16px minimum), and test every interaction on actual mobile devices.</p>
+<p>Ensure your checkout process works seamlessly on mobile. Many customers browse on desktop but buy on mobile, so a broken mobile checkout kills conversions even if your desktop experience is perfect.</p>
+<h2>Mistake #6: Lack of Trust Signals and Social Proof</h2>
+<p>Trust is the currency of online business. Without it, even perfect customers won&#39;t convert.</p>
+<p><strong>The mistake:</strong> Missing or weak trust signals like customer testimonials, security badges, money-back guarantees, or contact information.</p>
+<p><strong>Anxiety Map reveals:</strong> Customers wonder, &quot;Is this company legitimate? What if the product doesn&#39;t work? Can I get my money back? Have other people actually bought from them and been happy?&quot;</p>
+<p><strong>The fix:</strong> Sprinkle trust signals throughout your customer journey, not just on your homepage. Include customer testimonials with photos and full names (with permission), display security badges near payment forms, and showcase your contact information prominently.</p>
+<p>Consider adding elements like &quot;30-day money-back guarantee,&quot; customer count (&quot;Join 50,000+ happy customers&quot;), or recent purchase notifications (&quot;Sarah from Austin just bought this 5 minutes ago&quot;).</p>
+<h2>Mistake #7: Confusing Navigation That Creates Dead Ends</h2>
+<p>Lost customers are lost sales. Period.</p>
+<p><strong>The mistake:</strong> Complex navigation menus, broken internal links, or unclear site structure that leaves visitors wondering where to go next.</p>
+<p><strong>Anxiety Map reveals:</strong> Customers think, &quot;I can&#39;t find what I&#39;m looking for. This site is confusing. I don&#39;t have time to figure out their weird navigation system.&quot;</p>
+<p><strong>The fix:</strong> Keep navigation simple and intuitive. Use clear, descriptive labels for menu items. Include a search function for content-heavy sites.</p>
+<p>Create clear pathways to conversion on every page. Ask yourself: &quot;If someone lands on this page, what should they do next?&quot; Then make that next step obvious and easy to find.</p>
+<p>Think of your navigation like signs in a shopping mall—they should help people find exactly what they want without thinking too hard about it.</p>
+<h2>Putting It All Together: Your Anxiety Map Action Plan</h2>
+<p>Now that you know the seven deadly UI mistakes, here&#39;s how to fix them systematically:</p>
+<p><strong>Week 1:</strong> Create your Anxiety Map by walking through your site as a first-time visitor. Note every moment of confusion, uncertainty, or friction.</p>
+<p><strong>Week 2:</strong> Audit your CTAs and forms. Make buttons specific and forms shorter.</p>
+<p><strong>Week 3:</strong> Review your pricing presentation and page load speeds.</p>
+<p><strong>Week 4:</strong> Test your mobile experience and add missing trust signals.</p>
+<p>Remember, you don&#39;t need to fix everything at once. Pick the biggest anxiety point from your map and start there. Small improvements compound into significant conversion gains over time.</p>
+<p>Your customers want to buy from you—they just need you to make it easy and anxiety-free. Use the Anxiety Map framework to spot friction points before they spot you, and watch your conversion rates climb.</p>
+<p>Ready to turn your website into a conversion machine? Start with your Anxiety Map today, and visit gonzalo.tech for more practical guides on growing your business with smart design and AI-powered insights.</p>
+<hr>
+<p>Gonzalo Aguilar is a Senior Product Manager specializing in growth, identity, and onboarding in regulated markets. He writes about product strategy, conversion optimization, and practical AI workflows at gonzalo.tech.</p>
+
+
+      <div class="pdf-download">
+        <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
+        <a href="../pdfs/ui-mistakes-conversions.pdf" download>Download PDF</a>
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      &copy; 2026 gonzalo.tech — Gonzalo Aguilar
+    </footer>
+  </div>
+</body>
+</html>

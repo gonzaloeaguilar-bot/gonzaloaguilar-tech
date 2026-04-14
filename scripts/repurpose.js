@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 // repurpose.js — Blog markdown → 18+ social content pieces via Claude API
+require('dotenv').config({ path: require('path').join(__dirname, '..', '.env') });
 const Anthropic = require('@anthropic-ai/sdk');
 const fs = require('fs');
 const path = require('path');

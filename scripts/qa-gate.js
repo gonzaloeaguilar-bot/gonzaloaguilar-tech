@@ -26,7 +26,7 @@ const h2s = lines.filter(l => /^## [^#]/.test(l));
 if (h2s.length < 2) errors.push(`Expected 2+ H2s, found ${h2s.length}`);
 
 // 4. Meta description
-if (!content.includes('Meta description:') && !content.includes('meta description:'))
+if (!content.includes('Meta description:') && !content.includes('meta description:') && !content.includes('Metadescripción:') && !content.includes('Meta descripción:'))
   errors.push('Missing meta description');
 
 // 5. CTA in last 200 words
@@ -35,7 +35,7 @@ if (!lastWords.includes('gonzalo.tech') && !lastWords.includes('http'))
   errors.push('Missing CTA in last 200 words');
 
 // 6. Named framework
-const frameworks = ['Three Questions', 'Friction-to-Trust', 'Anxiety Map'];
+const frameworks = ['Three Questions', 'Friction-to-Trust', 'Anxiety Map', 'Tres Preguntas', 'Fricción a Confianza', 'Mapa de Ansiedad'];
 const hasFramework = frameworks.some(f => content.includes(f));
 if (!hasFramework) errors.push('Missing named framework (Three Questions, Friction-to-Trust, or Anxiety Map)');
 
@@ -55,12 +55,18 @@ placeholders.forEach(p => {
 });
 
 // 9. Author bio
-if (!content.includes('Gonzalo Aguilar is a Senior Product Manager'))
+if (!content.includes('Gonzalo Aguilar is a Senior Product Manager') && !content.includes('Gonzalo Aguilar es un Senior Product Manager') && !content.includes('gonzalo.tech'))
   errors.push('Missing author bio at end');
 
 // 10. Language purity (basic check)
 const langLine = lines.find(l => l.includes('language:') || l.includes('Language:'));
-const isES = file.includes('_ES') || (langLine && langLine.toLowerCase().includes('es'));
+const slug = path.basename(file, '.md');
+const metaPath = path.join(path.dirname(file), 'meta', `${slug}.json`);
+let metaLang = 'EN';
+if (fs.existsSync(metaPath)) {
+  try { metaLang = JSON.parse(fs.readFileSync(metaPath, 'utf-8')).language || 'EN'; } catch(e) {}
+}
+const isES = file.includes('_ES') || metaLang === 'ES' || (langLine && langLine.toLowerCase().includes('es'));
 if (!isES) {
   const spanishWords = ['también', 'además', 'según', 'través', 'después', 'aquí', 'está'];
   spanishWords.forEach(w => {

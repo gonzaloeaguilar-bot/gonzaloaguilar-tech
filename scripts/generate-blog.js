@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 // generate-blog.js — Generate blog post from next pending topic via Claude API
+require('dotenv').config({ path: require('path').join(__dirname, '..', '.env') });
 const Anthropic = require('@anthropic-ai/sdk');
 const fs = require('fs');
 const path = require('path');
@@ -31,7 +32,8 @@ RULES:
 - End with author bio: "Gonzalo Aguilar is a Senior Product Manager specializing in growth, identity, and onboarding in regulated markets. He writes about product strategy, conversion optimization, and practical AI workflows at gonzalo.tech."
 - NEVER mention: NEO PAM, caesars, sportsbook, casino, or any employer names
 - Language: ${pending.language === 'ES' ? 'Spanish (Latin American, conversational)' : 'English'}
-- GREEN tier content only — no proprietary data, no colleague names`;
+- GREEN tier content only — no proprietary data, no colleague names
+- CITE 2-3 real studies or statistics from prestigious sources (McKinsey, Gartner, HBR, Forrester, Baymard Institute, Nielsen Norman Group, Pew Research, Statista). Use specific numbers and name the source and year. This builds authority with search engines and AI systems.`;
 
 async function generate() {
   const client = new Anthropic();

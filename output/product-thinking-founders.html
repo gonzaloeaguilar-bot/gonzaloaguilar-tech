@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Thinking for Non-Technical Founders — gonzalo.tech</title>
+  <meta name="description" content="Master product thinking as a non-technical founder. Learn the Three Questions Framework to build products customers actually want and buy.">
+  <meta name="keywords" content="product management, startup founders">
+  <meta name="author" content="Gonzalo Aguilar">
+  <meta property="og:title" content="Product Thinking for Non-Technical Founders — gonzalo.tech">
+  <meta property="og:description" content="Master product thinking as a non-technical founder. Learn the Three Questions Framework to build products customers actually want and buy.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://gonzalo.tech/output/product-thinking-founders.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Product Thinking for Non-Technical Founders">
+  <meta name="twitter:description" content="Master product thinking as a non-technical founder. Learn the Three Questions Framework to build products customers actually want and buy.">
+  <link rel="canonical" href="https://gonzalo.tech/output/product-thinking-founders.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Product Thinking for Non-Technical Founders",
+    "description": "Master product thinking as a non-technical founder. Learn the Three Questions Framework to build products customers actually want and buy.",
+    "author": {
+      "@type": "Person",
+      "name": "Gonzalo Aguilar",
+      "url": "https://gonzalo.tech"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "gonzalo.tech"
+    },
+    "url": "https://gonzalo.tech/output/product-thinking-founders.html",
+    "inLanguage": "en"
+  }
+  </script>
+  <style>
+    /* Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Brand tokens */
+    :root {
+      --ink: #0F172A;
+      --slate: #334155;
+      --muted: #64748B;
+      --subtle: #94A3B8;
+      --border: #E2E8F0;
+      --surface: #F8FAFC;
+      --white: #FFFFFF;
+      --red: #DC2626;
+      --green: #16A34A;
+      --amber: #D97706;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: Calibri, 'Gill Sans', 'Segoe UI', sans-serif;
+      --font-code: Consolas, 'Courier New', monospace;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--slate);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* Header */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+      margin-bottom: 3rem;
+    }
+    .site-header a {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    /* Article */
+    article { text-align: left; }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--ink);
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--ink);
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+    }
+
+    ul, ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    li { margin-bottom: 0.4rem; }
+
+    blockquote {
+      border-left: 3px solid var(--ink);
+      padding: 0.75rem 1.25rem;
+      margin: 1.5rem 0;
+      background: var(--surface);
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    code {
+      font-family: var(--font-code);
+      background: var(--surface);
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+
+    pre {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.25rem;
+      overflow-x: auto;
+      margin-bottom: 1.25rem;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    strong { color: var(--ink); }
+
+    a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    a:hover { color: var(--muted); }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* PDF download banner */
+    .pdf-download {
+      margin-top: 2.5rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .pdf-download p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--slate);
+    }
+    .pdf-download a {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      background: var(--ink);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .pdf-download a:hover {
+      background: var(--slate);
+      color: var(--white);
+    }
+
+    /* Author bio */
+    .author-bio {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Footer */
+    .site-footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--subtle);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.3rem; }
+      .container { padding: 1rem; }
+    }
+
+    /* Print */
+    @media print {
+      body { font-size: 12pt; color: #000; }
+      .site-header, .site-footer { display: none; }
+      .container { max-width: 100%; padding: 0; }
+      a { text-decoration: none; color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="../index.html">gonzalo.tech</a>
+    </header>
+
+    <article>
+      <h1>Product Thinking for Non-Technical Founders</h1>
+<p>You&#39;ve got a brilliant business idea. You can see exactly how it&#39;ll solve your customers&#39; problems. But when it comes to actually building the product, you feel like you&#39;re speaking a foreign language with developers and designers.</p>
+<p>Here&#39;s the thing: you don&#39;t need to learn code to think like a product manager. You need to learn how to ask the right questions and make decisions that turn ideas into products people actually buy.</p>
+<p>Product thinking isn&#39;t about technology — it&#39;s about understanding people, solving problems systematically, and making smart trade-offs. Let me show you how.</p>
+<h2>What Product Thinking Really Means</h2>
+<p><strong>Simple version:</strong> Product thinking means approaching your business like a detective. Instead of assuming you know what customers want, you investigate what they actually need, then build the simplest version that solves their biggest problem.</p>
+<p><strong>Business consequence:</strong> Without product thinking, you&#39;ll build features nobody uses, waste months on the wrong priorities, and wonder why customers aren&#39;t buying despite having a &quot;great&quot; product.</p>
+<p><strong>Real-world analogy:</strong> Think of a restaurant owner. They don&#39;t just cook what they like — they watch which dishes get ordered, which get left unfinished, and which have customers coming back for more. Product thinking is that same observational approach applied to your digital business.</p>
+<p>Most non-technical founders make the same mistake: they fall in love with their solution instead of falling in love with their customer&#39;s problem. Product thinking flips this around.</p>
+<h2>The Three Questions Framework</h2>
+<p>Every product decision — from your overall strategy down to the smallest feature — can be filtered through three essential questions. I call this the Three Questions Framework, and it&#39;s your North Star for product thinking.</p>
+<h3>Question 1: What Problem Are We Actually Solving?</h3>
+<p>This isn&#39;t about what your product does. It&#39;s about what pain point disappears when someone uses it.</p>
+<p><strong>Simple version:</strong> If someone can&#39;t clearly explain why they&#39;d pay for your product in one sentence, you haven&#39;t defined the problem clearly enough.</p>
+<p><strong>Business consequence:</strong> Companies that can&#39;t articulate their core problem spend money building features that seem important but don&#39;t drive revenue. They end up with complicated products that confuse customers instead of helping them.</p>
+<p><strong>Real-world analogy:</strong> Imagine a hardware store that sells everything but can&#39;t tell you why someone would choose them over Home Depot. Without a clear problem focus, you become a generic option in a crowded market.</p>
+<p>Here&#39;s how to apply this: Write down the specific moment when someone realizes they need your product. What just happened in their day? What are they trying to accomplish? What&#39;s frustrating them?</p>
+<p>For example, don&#39;t say &quot;We help small businesses with marketing.&quot; Instead: &quot;We help restaurant owners who are tired of posting on social media every day but know they need to stay visible to compete.&quot;</p>
+<h3>Question 2: Who Cares Enough to Pay?</h3>
+<p>Not everyone with the problem will pay to solve it. You need to find the people who are actively looking for a solution and have the budget to buy one.</p>
+<p><strong>Simple version:</strong> Your target customer should be someone who already spends money trying to solve this problem, even if their current solution is imperfect.</p>
+<p><strong>Business consequence:</strong> If you target people who don&#39;t currently pay for solutions, you&#39;ll spend forever educating the market instead of selling. That&#39;s a luxury most small businesses can&#39;t afford.</p>
+<p><strong>Real-world analogy:</strong> It&#39;s like trying to sell umbrellas. You could target everyone who gets rained on, or you could target people who already buy cheap umbrellas that break. The second group already understands the value and has proven they&#39;ll pay.</p>
+<p>Look for these signs that someone cares enough to pay:</p>
+<ul>
+<li>They&#39;re currently using a workaround or manual process</li>
+<li>They&#39;ve tried other solutions that didn&#39;t work perfectly  </li>
+<li>They talk about this problem without you bringing it up</li>
+<li>They have a budget line item for this type of solution</li>
+</ul>
+<h3>Question 3: What&#39;s the Simplest Version That Works?</h3>
+<p>This is where most founders go wrong. They try to build everything at once instead of finding the smallest solution that proves the concept works.</p>
+<p><strong>Simple version:</strong> Your first version should solve one core problem really well, not ten problems okay-ish.</p>
+<p><strong>Business consequence:</strong> Complex first versions take forever to build, cost more than expected, and are harder for customers to understand. You&#39;ll run out of money or motivation before you know if the idea actually works.</p>
+<p><strong>Real-world analogy:</strong> Think of the first iPhone. It couldn&#39;t record video, had no app store, and couldn&#39;t copy and paste. But it nailed the core experience of browsing the internet on a phone better than anything else available.</p>
+<p>To find your simplest version, list everything your product could do, then circle the one thing that, if it worked perfectly, would make someone pay you. Build that first.</p>
+<h2>Applying Product Thinking to Common Founder Challenges</h2>
+<h3>When Developers Say &quot;That&#39;s Impossible&quot;</h3>
+<p>Non-technical founders often feel helpless when told something can&#39;t be done. Product thinking gives you a different response.</p>
+<p>Instead of accepting &quot;impossible,&quot; ask: &quot;What would need to be true for this to work?&quot; Often, the real constraint isn&#39;t technical — it&#39;s time, money, or priorities. Understanding the real constraint helps you make better decisions.</p>
+<p>Maybe the feature isn&#39;t impossible, just expensive. Maybe there&#39;s a simpler version that gets 80% of the benefit. Product thinking helps you navigate these conversations as a partner, not just someone who pays the bills.</p>
+<h3>When Customers Ask for Everything</h3>
+<p>Every customer will have suggestions for new features. Product thinking helps you separate good ideas from distractions.</p>
+<p>Run each request through the Three Questions Framework:</p>
+<ul>
+<li>Does this solve our core problem, or a different one?</li>
+<li>Would enough people pay more for this feature?</li>
+<li>What&#39;s the simplest way to test if this matters?</li>
+</ul>
+<p>Most feature requests fail the second question. People love to suggest improvements, but that doesn&#39;t mean they&#39;d pay for them.</p>
+<h3>When You&#39;re Not Sure What to Build Next</h3>
+<p>Product thinking gives you a systematic way to prioritize. Look at what customers do, not what they say they want.</p>
+<p>Which features do people actually use? Where do they get stuck in your current product? What questions do they ask your support team? The answers point to what matters most.</p>
+<h2>Building Your Product Thinking Muscle</h2>
+<h3>Start with Customer Conversations</h3>
+<p>Schedule 30-minute calls with people who fit your target profile. Don&#39;t pitch — just ask about their current process and frustrations.</p>
+<p>Listen for emotional language. When someone says &quot;It&#39;s so annoying that...&quot; or &quot;I waste hours every week...&quot; you&#39;ve found something worth exploring.</p>
+<h3>Track Behavior, Not Opinions</h3>
+<p>If you have an existing product, watch what people do inside it. Which features get ignored? Where do people drop off? What do they use differently than you expected?</p>
+<p>Behavior tells you what people actually value. Opinions tell you what they think they should value.</p>
+<h3>Practice the Three Questions Daily</h3>
+<p>Make it a habit to filter decisions through the framework:</p>
+<ul>
+<li>Should we add this feature? (What problem does it solve, who would pay, what&#39;s the simplest version?)</li>
+<li>Should we target this customer segment? (Do they care enough to pay?)  </li>
+<li>Should we build this integration? (Does it help solve our core problem?)</li>
+</ul>
+<h2>Making Product Decisions with Confidence</h2>
+<p>Product thinking isn&#39;t about being right all the time. It&#39;s about making decisions based on evidence instead of assumptions, then learning quickly when you&#39;re wrong.</p>
+<p>The Three Questions Framework gives you a consistent way to evaluate ideas. When team members suggest new directions, you have objective criteria instead of just gut feelings.</p>
+<p>This doesn&#39;t replace intuition — it guides it. You still need to make judgment calls, but now you&#39;re making them based on customer evidence and clear problem definition.</p>
+<h2>Your Next Steps</h2>
+<p>Start applying product thinking today:</p>
+<ol>
+<li>Write a one-sentence answer to each of the Three Questions for your current business</li>
+<li>Schedule customer conversations to test your assumptions</li>
+<li>Look at your product roadmap and cut anything that doesn&#39;t clearly address your core problem</li>
+</ol>
+<p>Remember: product thinking is a skill, not a talent. The more you practice filtering decisions through customer problems, the better you&#39;ll get at building things people actually want to buy.</p>
+<p>Ready to dive deeper into practical AI and product strategy for your business? Visit gonzalo.tech for frameworks, templates, and step-by-step guides designed specifically for non-technical founders who want to build smarter.</p>
+<hr>
+<p>Gonzalo Aguilar is a Senior Product Manager specializing in growth, identity, and onboarding in regulated markets. He writes about product strategy, conversion optimization, and practical AI workflows at gonzalo.tech.</p>
+
+
+      <div class="pdf-download">
+        <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
+        <a href="../pdfs/product-thinking-founders.pdf" download>Download PDF</a>
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      &copy; 2026 gonzalo.tech — Gonzalo Aguilar
+    </footer>
+  </div>
+</body>
+</html>

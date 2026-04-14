@@ -10,10 +10,30 @@
   <meta property="og:title" content="{{TITLE}} — gonzalo.tech">
   <meta property="og:description" content="{{META_DESCRIPTION}}">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://gonzalo.tech/{{SLUG}}">
+  <meta property="og:url" content="https://gonzalo.tech/output/{{SLUG}}.html">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{TITLE}}">
   <meta name="twitter:description" content="{{META_DESCRIPTION}}">
+  <link rel="canonical" href="https://gonzalo.tech/output/{{SLUG}}.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{TITLE}}",
+    "description": "{{META_DESCRIPTION}}",
+    "author": {
+      "@type": "Person",
+      "name": "Gonzalo Aguilar",
+      "url": "https://gonzalo.tech"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "gonzalo.tech"
+    },
+    "url": "https://gonzalo.tech/output/{{SLUG}}.html",
+    "inLanguage": "{{LANG}}"
+  }
+  </script>
   <style>
     /* Reset */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -225,7 +245,7 @@
 <body>
   <div class="container">
     <header class="site-header">
-      <a href="/">gonzalo.tech</a>
+      <a href="../index.html">gonzalo.tech</a>
     </header>
 
     <article>
@@ -233,7 +253,7 @@
 
       <div class="pdf-download">
         <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
-        <a href="pdfs/{{SLUG}}.pdf" download>Download PDF</a>
+        <a href="../pdfs/{{SLUG}}.pdf" download>Download PDF</a>
       </div>
     </article>
 

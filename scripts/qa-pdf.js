@@ -39,9 +39,15 @@ if (!textContent.includes('gonzalo.tech')) {
 // 5. Check for forbidden terms in PDF text
 const forbidden = ['NEO PAM', 'GROWTH-', 'WHUSP-', 'caesars', 'sportsbook', 'casino',
   'hard rock', 'draftkings', 'fanduel', 'betmgm', 'czr'];
-const textLower = textContent.toLowerCase();
+// Extract only text streams from PDF (between BT/ET markers) to avoid binary false positives
+const textStreams = textContent.match(/BT[\s\S]*?ET/g) || [];
+const decodedText = textStreams.join(' ').toLowerCase();
+// Also check parenthesized strings (PDF text objects)
+const parenStrings = textContent.match(/\(([^)]+)\)/g) || [];
+const parenText = parenStrings.join(' ').toLowerCase();
+const searchText = decodedText + ' ' + parenText;
 forbidden.forEach(term => {
-  if (textLower.includes(term.toLowerCase()))
+  if (searchText.includes(term.toLowerCase()))
     errors.push(`FORBIDDEN TERM in PDF: "${term}"`);
 });
 

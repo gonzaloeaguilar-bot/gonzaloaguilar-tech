@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How I Use AI to Ship Faster as a Product Manager — gonzalo.tech</title>
+  <meta name="description" content="Learn how AI transforms product management workflows. A senior PM shares practical tools and frameworks to ship products faster without technical complexity.">
+  <meta name="keywords" content="PM workflow, AI productivity">
+  <meta name="author" content="Gonzalo Aguilar">
+  <meta property="og:title" content="How I Use AI to Ship Faster as a Product Manager — gonzalo.tech">
+  <meta property="og:description" content="Learn how AI transforms product management workflows. A senior PM shares practical tools and frameworks to ship products faster without technical complexity.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://gonzalo.tech/output/pm-ai-workflow.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How I Use AI to Ship Faster as a Product Manager">
+  <meta name="twitter:description" content="Learn how AI transforms product management workflows. A senior PM shares practical tools and frameworks to ship products faster without technical complexity.">
+  <link rel="canonical" href="https://gonzalo.tech/output/pm-ai-workflow.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How I Use AI to Ship Faster as a Product Manager",
+    "description": "Learn how AI transforms product management workflows. A senior PM shares practical tools and frameworks to ship products faster without technical complexity.",
+    "author": {
+      "@type": "Person",
+      "name": "Gonzalo Aguilar",
+      "url": "https://gonzalo.tech"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "gonzalo.tech"
+    },
+    "url": "https://gonzalo.tech/output/pm-ai-workflow.html",
+    "inLanguage": "en"
+  }
+  </script>
+  <style>
+    /* Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Brand tokens */
+    :root {
+      --ink: #0F172A;
+      --slate: #334155;
+      --muted: #64748B;
+      --subtle: #94A3B8;
+      --border: #E2E8F0;
+      --surface: #F8FAFC;
+      --white: #FFFFFF;
+      --red: #DC2626;
+      --green: #16A34A;
+      --amber: #D97706;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: Calibri, 'Gill Sans', 'Segoe UI', sans-serif;
+      --font-code: Consolas, 'Courier New', monospace;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--slate);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* Header */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+      margin-bottom: 3rem;
+    }
+    .site-header a {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    /* Article */
+    article { text-align: left; }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--ink);
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--ink);
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+    }
+
+    ul, ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    li { margin-bottom: 0.4rem; }
+
+    blockquote {
+      border-left: 3px solid var(--ink);
+      padding: 0.75rem 1.25rem;
+      margin: 1.5rem 0;
+      background: var(--surface);
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    code {
+      font-family: var(--font-code);
+      background: var(--surface);
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+
+    pre {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.25rem;
+      overflow-x: auto;
+      margin-bottom: 1.25rem;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    strong { color: var(--ink); }
+
+    a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    a:hover { color: var(--muted); }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* PDF download banner */
+    .pdf-download {
+      margin-top: 2.5rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .pdf-download p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--slate);
+    }
+    .pdf-download a {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      background: var(--ink);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .pdf-download a:hover {
+      background: var(--slate);
+      color: var(--white);
+    }
+
+    /* Author bio */
+    .author-bio {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Footer */
+    .site-footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--subtle);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.3rem; }
+      .container { padding: 1rem; }
+    }
+
+    /* Print */
+    @media print {
+      body { font-size: 12pt; color: #000; }
+      .site-header, .site-footer { display: none; }
+      .container { max-width: 100%; padding: 0; }
+      a { text-decoration: none; color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="../index.html">gonzalo.tech</a>
+    </header>
+
+    <article>
+      <h1>How I Use AI to Ship Faster as a Product Manager</h1>
+<p>As a product manager, I used to spend 60% of my time on administrative tasks that didn&#39;t actually move the product forward. Writing requirements documents, synthesizing user feedback, creating roadmap presentations — all critical work, but not the strategic thinking that drives real results.</p>
+<p>That changed when I started systematically integrating AI into my daily workflow. Not the flashy, sci-fi version of AI you see in headlines, but practical tools that handle the routine work so I can focus on what actually matters: understanding users and making smart product decisions.</p>
+<p>If you&#39;re a small business owner building digital products or managing development teams, this approach can transform how quickly you ship features and respond to customer needs. Let me show you exactly how I do it.</p>
+<h2>Why Product Managers Are Perfect AI Candidates</h2>
+<p>Product management is fundamentally about gathering information, making sense of it, and communicating decisions clearly. We&#39;re constantly switching between different types of work: analyzing data, writing specifications, facilitating meetings, and translating between technical and business teams.</p>
+<p>This variety makes PM work both challenging and perfect for AI assistance. According to McKinsey&#39;s 2023 research, knowledge workers who use AI tools save 6-8 hours per week on routine tasks. For product managers specifically, that time usually comes from document creation, data analysis, and meeting preparation.</p>
+<p>The business consequence of not adapting is falling behind competitors who can iterate faster. In today&#39;s market, the team that can test ideas and ship features most quickly often wins. Think of AI as your research assistant who never sleeps — while you focus on strategy, AI handles the legwork that bogs down most product teams.</p>
+<h2>The Three Questions Framework for AI Integration</h2>
+<p>Before diving into specific tools, I use what I call the <strong>Three Questions Framework</strong> to evaluate any AI opportunity in my workflow:</p>
+<p><strong>Question 1: Is this task repetitive or formulaic?</strong>
+If I&#39;m doing the same type of work repeatedly — like formatting user stories, creating status reports, or analyzing survey responses — AI can probably handle it.</p>
+<p><strong>Question 2: Does this task require human judgment at the core?</strong>
+Some work needs human insight: deciding product strategy, resolving team conflicts, or making ethical trade-offs. AI supports these decisions but shouldn&#39;t make them.</p>
+<p><strong>Question 3: What&#39;s the worst-case scenario if AI gets this wrong?</strong>
+For low-stakes tasks like first drafts or data organization, AI mistakes are easily caught and fixed. For high-stakes decisions like pricing or major feature cuts, human oversight is non-negotiable.</p>
+<p>This framework prevents you from either over-relying on AI or dismissing it entirely. It&#39;s like having a quality filter for every automation decision.</p>
+<h2>My Daily AI-Powered PM Workflow</h2>
+<h3>Morning: Planning and Prioritization</h3>
+<p>I start each day by feeding AI my calendar, task list, and any overnight updates from the development team. I use a simple prompt: &quot;Based on today&#39;s meetings and these pending tasks, what should I prioritize and what prep work do I need?&quot;</p>
+<p>The AI doesn&#39;t make strategic decisions for me, but it identifies patterns I might miss. Maybe three different stakeholders mentioned the same user complaint yesterday, or there&#39;s a dependency I forgot about. It&#39;s like having a personal chief of staff who reviews everything and surfaces what needs attention.</p>
+<p><strong>Simple version:</strong> AI reviews all your inputs and highlights what&#39;s most important.
+<strong>Business consequence:</strong> Without this overview, small business owners often spend their day reacting to whoever emails them last, rather than focusing on what actually moves the business forward.
+<strong>Real-world analogy:</strong> It&#39;s like having an assistant who reads all your mail and puts the urgent stuff on top of your desk.</p>
+<h3>User Research and Feedback Analysis</h3>
+<p>This is where AI truly shines for product work. I regularly collect feedback from customer support tickets, user interviews, sales calls, and survey responses. Previously, analyzing this data took hours of manual work — reading through responses, categorizing themes, and identifying patterns.</p>
+<p>Now I upload all feedback to AI and ask specific questions: &quot;What are the top 3 pain points mentioned?&quot; or &quot;Which feature requests appear most frequently?&quot; According to Forrester&#39;s 2023 study, companies using AI for voice-of-customer analysis reduce research time by 70% while catching 40% more actionable insights.</p>
+<p>The AI doesn&#39;t replace talking to customers directly, but it helps me prepare better questions and spot trends across hundreds of data points that would take days to analyze manually.</p>
+<h3>Writing and Documentation</h3>
+<p>Product managers write constantly: user stories, requirements documents, roadmap updates, and stakeholder communications. AI accelerates all of this work without replacing the thinking behind it.</p>
+<p>For user stories, I provide AI with the feature concept and user research, then ask it to draft stories in our team&#39;s format. For requirements documents, I give it the business context and technical constraints, and it creates a structured first draft.</p>
+<p><strong>Simple version:</strong> AI writes first drafts of everything so you can focus on editing and refining the strategy.
+<strong>Business consequence:</strong> Small business owners who don&#39;t document their product decisions clearly end up with confused development teams, scope creep, and features that don&#39;t solve real problems.
+<strong>Real-world analogy:</strong> It&#39;s like having a writer who creates the outline and rough draft, so you can focus on making sure the message is exactly right.</p>
+<h3>Meeting Preparation and Follow-up</h3>
+<p>Before important meetings, I feed AI the agenda, participant backgrounds, and any relevant context. It suggests talking points, potential objections, and follow-up actions. After meetings, I use voice-to-text to capture notes, then AI organizes them into action items and next steps.</p>
+<p>This preparation makes meetings more productive and ensures nothing falls through the cracks. Baymard Institute&#39;s 2023 research found that teams with structured meeting processes ship features 30% faster than those without clear documentation and follow-up.</p>
+<h3>Data Analysis and Reporting</h3>
+<p>Product metrics can be overwhelming: user engagement, conversion rates, feature adoption, support ticket volumes. I use AI to create weekly and monthly reports that highlight trends and anomalies.</p>
+<p>Instead of spending hours in spreadsheets, I upload the data and ask questions: &quot;What changed significantly this month?&quot; or &quot;Which user segments are struggling with onboarding?&quot; AI identifies patterns and creates visual summaries that I can share with stakeholders.</p>
+<h2>Specific Tools That Work</h2>
+<p>I&#39;m often asked about which AI tools I actually use daily. Here are the workhorses of my setup:</p>
+<p><strong>For writing and documentation:</strong> I primarily use Claude or ChatGPT for drafting user stories, requirements, and communications. Both handle context well and maintain consistent formatting.</p>
+<p><strong>For data analysis:</strong> I upload CSV files directly to AI tools for quick insights. For more complex analysis, I use tools that connect to our analytics platforms and generate automated reports.</p>
+<p><strong>For meeting transcription:</strong> Otter.ai or similar tools capture meetings and generate summaries with action items automatically extracted.</p>
+<p><strong>For research synthesis:</strong> When I have dozens of user interviews or feedback forms, I use AI to categorize responses and identify common themes.</p>
+<p>The key is starting with one tool for one specific workflow, mastering it, then gradually expanding. Don&#39;t try to automate everything at once.</p>
+<h2>Common Mistakes to Avoid</h2>
+<p><strong>Over-relying on AI for strategic decisions:</strong> AI can analyze data and suggest options, but product strategy requires human judgment about market positioning, competitive differentiation, and long-term vision.</p>
+<p><strong>Using AI without human review:</strong> Even simple tasks need oversight. I always read through AI-generated content and verify any data analysis before sharing with stakeholders.</p>
+<p><strong>Ignoring team communication:</strong> When AI helps me work faster, I make sure to communicate changes and decisions clearly to the development team. Speed without clarity creates more problems than it solves.</p>
+<p><strong>Forgetting about data privacy:</strong> Be careful about what information you share with AI tools, especially customer data or confidential business metrics.</p>
+<h2>The Three Questions Framework in Action</h2>
+<p>Let me show you how the Three Questions Framework works with a real example. Last month, I needed to create a competitive analysis comparing our product to three competitors across fifteen features.</p>
+<p><strong>Question 1: Is this repetitive or formulaic?</strong> Yes — I need to research each competitor&#39;s pricing, features, and positioning using a consistent structure.</p>
+<p><strong>Question 2: Does this require human judgment at the core?</strong> Partially — AI can gather information and organize it, but I need to interpret what it means for our strategy.</p>
+<p><strong>Question 3: What&#39;s the worst-case scenario if AI gets this wrong?</strong> Medium risk — incorrect feature comparisons could lead to poor strategic decisions, so I need to verify key findings.</p>
+<p>Result: I had AI research and organize the basic information, then I reviewed everything and added strategic insights about market positioning and opportunities. What normally takes two full days took four hours, and the quality was actually better because AI caught details I would have missed.</p>
+<h2>Getting Started: Your First Week</h2>
+<p>If you want to try this approach, start small. Pick one repetitive task from your week — maybe writing status updates or organizing user feedback. Spend 30 minutes experimenting with AI tools to handle that single workflow.</p>
+<p>Don&#39;t worry about finding the perfect tool or automating everything immediately. The goal is building comfort with AI assistance so you can gradually expand its role in your work.</p>
+<p>According to Gartner&#39;s 2023 productivity research, teams that adopt AI tools incrementally see 3x better results than those who try to revolutionize everything at once. Start with low-stakes tasks, learn how AI thinks, then tackle more complex workflows.</p>
+<h2>The Bottom Line</h2>
+<p>AI won&#39;t replace product managers, but product managers who use AI effectively will outpace those who don&#39;t. The technology handles routine work exceptionally well, freeing you to focus on strategy, team leadership, and the human insights that drive great products.</p>
+<p>For small business owners, this means faster product development, clearer communication with development teams, and more time to focus on what your customers actually need. The businesses that figure this out first will have a significant competitive advantage.</p>
+<p>Ready to transform your product management workflow with AI? Start with the Three Questions Framework and one simple automation. Your future self — and your customers — will thank you.</p>
+<hr>
+<p><strong>Gonzalo Aguilar is a Senior Product Manager specializing in growth, identity, and onboarding in regulated markets. He writes about product strategy, conversion optimization, and practical AI workflows at gonzalo.tech.</strong></p>
+
+
+      <div class="pdf-download">
+        <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
+        <a href="../pdfs/pm-ai-workflow.pdf" download>Download PDF</a>
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      &copy; 2026 gonzalo.tech — Gonzalo Aguilar
+    </footer>
+  </div>
+</body>
+</html>

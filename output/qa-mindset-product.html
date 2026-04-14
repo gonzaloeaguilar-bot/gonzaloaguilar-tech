@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The QA Mindset Every Product Person Needs — gonzalo.tech</title>
+  <meta name="description" content="Learn the QA mindset that prevents costly product failures. Master edge case thinking and quality testing to protect your business reputation.">
+  <meta name="keywords" content="QA testing, product quality, edge cases">
+  <meta name="author" content="Gonzalo Aguilar">
+  <meta property="og:title" content="The QA Mindset Every Product Person Needs — gonzalo.tech">
+  <meta property="og:description" content="Learn the QA mindset that prevents costly product failures. Master edge case thinking and quality testing to protect your business reputation.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://gonzalo.tech/output/qa-mindset-product.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The QA Mindset Every Product Person Needs">
+  <meta name="twitter:description" content="Learn the QA mindset that prevents costly product failures. Master edge case thinking and quality testing to protect your business reputation.">
+  <link rel="canonical" href="https://gonzalo.tech/output/qa-mindset-product.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The QA Mindset Every Product Person Needs",
+    "description": "Learn the QA mindset that prevents costly product failures. Master edge case thinking and quality testing to protect your business reputation.",
+    "author": {
+      "@type": "Person",
+      "name": "Gonzalo Aguilar",
+      "url": "https://gonzalo.tech"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "gonzalo.tech"
+    },
+    "url": "https://gonzalo.tech/output/qa-mindset-product.html",
+    "inLanguage": "en"
+  }
+  </script>
+  <style>
+    /* Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Brand tokens */
+    :root {
+      --ink: #0F172A;
+      --slate: #334155;
+      --muted: #64748B;
+      --subtle: #94A3B8;
+      --border: #E2E8F0;
+      --surface: #F8FAFC;
+      --white: #FFFFFF;
+      --red: #DC2626;
+      --green: #16A34A;
+      --amber: #D97706;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: Calibri, 'Gill Sans', 'Segoe UI', sans-serif;
+      --font-code: Consolas, 'Courier New', monospace;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--slate);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* Header */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+      margin-bottom: 3rem;
+    }
+    .site-header a {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    /* Article */
+    article { text-align: left; }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--ink);
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--ink);
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+    }
+
+    ul, ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    li { margin-bottom: 0.4rem; }
+
+    blockquote {
+      border-left: 3px solid var(--ink);
+      padding: 0.75rem 1.25rem;
+      margin: 1.5rem 0;
+      background: var(--surface);
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    code {
+      font-family: var(--font-code);
+      background: var(--surface);
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+
+    pre {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.25rem;
+      overflow-x: auto;
+      margin-bottom: 1.25rem;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    strong { color: var(--ink); }
+
+    a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    a:hover { color: var(--muted); }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* PDF download banner */
+    .pdf-download {
+      margin-top: 2.5rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .pdf-download p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--slate);
+    }
+    .pdf-download a {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      background: var(--ink);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .pdf-download a:hover {
+      background: var(--slate);
+      color: var(--white);
+    }
+
+    /* Author bio */
+    .author-bio {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Footer */
+    .site-footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--subtle);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.3rem; }
+      .container { padding: 1rem; }
+    }
+
+    /* Print */
+    @media print {
+      body { font-size: 12pt; color: #000; }
+      .site-header, .site-footer { display: none; }
+      .container { max-width: 100%; padding: 0; }
+      a { text-decoration: none; color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="../index.html">gonzalo.tech</a>
+    </header>
+
+    <article>
+      <h1>The QA Mindset Every Product Person Needs</h1>
+<p>You launch your new app feature on Monday morning. By Tuesday afternoon, customers are calling about broken checkout flows. By Wednesday, social media is buzzing with complaints. By Thursday, you&#39;re wondering how a &quot;simple&quot; update turned into a reputation crisis.</p>
+<p>This scenario plays out every day across thousands of businesses. According to a 2023 Forrester study, 67% of companies report that poor digital experiences directly impact customer retention rates. The culprit? Missing the QA mindset — the systematic way of thinking that catches problems before your customers do.</p>
+<p>Whether you&#39;re building software, launching services, or creating any customer experience, adopting quality assurance thinking protects your business from preventable disasters. Let me show you how to think like a QA professional, even if you&#39;ve never written a line of code.</p>
+<h2>What Is the QA Mindset?</h2>
+<p><strong>Simple version:</strong> The QA mindset means asking &quot;What could go wrong?&quot; before things actually go wrong. It&#39;s the habit of poking at your product, service, or process from every angle to find weak spots before your customers do.</p>
+<p><strong>Business consequence:</strong> Without this mindset, you&#39;re essentially beta-testing on paying customers. A 2023 Gartner report found that businesses spend 5x more fixing problems after launch than preventing them during development. Plus, 89% of customers will switch to a competitor after just one bad experience.</p>
+<p><strong>Real-world analogy:</strong> Think of a restaurant chef who tastes every dish before it goes to the table. They&#39;re not being paranoid — they understand that one bad meal can lose a customer forever. The QA mindset is that same &quot;taste before serving&quot; approach applied to everything you create.</p>
+<h2>The Three Questions Framework</h2>
+<p>I use a simple framework called the Three Questions Framework to help business owners adopt QA thinking without getting overwhelmed by technical details. These three questions transform how you evaluate anything before it reaches customers:</p>
+<ol>
+<li><strong>What&#39;s the happy path?</strong> (How should this work perfectly?)</li>
+<li><strong>What are the edge cases?</strong> (What unusual situations could break this?)</li>
+<li><strong>What&#39;s the recovery plan?</strong> (When something fails, how do customers get help?)</li>
+</ol>
+<p>Let&#39;s break down each question and see how they apply to your business.</p>
+<h3>Question 1: What&#39;s the Happy Path?</h3>
+<p>The &quot;happy path&quot; describes how your product or service works when everything goes according to plan. It&#39;s your ideal customer journey from start to finish.</p>
+<p><strong>For software:</strong> A customer visits your website, finds what they need, adds it to cart, checks out successfully, and receives their order.</p>
+<p><strong>For services:</strong> A client calls, gets connected to the right person, explains their need, receives a clear quote, accepts it, and has their problem solved on time.</p>
+<p><strong>For physical products:</strong> A customer sees your product, understands its benefits, makes a purchase decision, uses it successfully, and recommends it to others.</p>
+<p>Most businesses only test the happy path. They think, &quot;If it works once, it works everywhere.&quot; But according to Nielsen Norman Group research from 2023, only 16% of user interactions follow the perfectly designed happy path.</p>
+<p><strong>Why this matters:</strong> If you only design for perfect scenarios, you&#39;re designing for a minority of real-world situations. The other 84% of interactions involve complications, mistakes, or unexpected behaviors.</p>
+<h3>Question 2: What Are the Edge Cases?</h3>
+<p>Edge cases are the unusual, unexpected, or extreme situations that can break your normal processes. They&#39;re called &quot;edge&quot; cases because they happen at the edges of normal usage patterns.</p>
+<p><strong>Simple version:</strong> Edge cases are the &quot;what if&quot; scenarios that seem unlikely but happen often enough to cause problems.</p>
+<p><strong>Business consequence:</strong> According to McKinsey&#39;s 2023 digital transformation study, 43% of product failures stem from unhandled edge cases. These aren&#39;t rare technical glitches — they&#39;re predictable human behaviors that businesses fail to anticipate.</p>
+<p><strong>Real-world analogy:</strong> A restaurant might handle 200 orders perfectly during lunch rush, but what happens when someone orders a salad with &quot;no vegetables&quot;? Or when the credit card machine goes down during the busiest hour? These edge cases reveal whether your business truly works.</p>
+<h2>Common Edge Cases Every Business Should Consider</h2>
+<h3>Technical Edge Cases</h3>
+<ul>
+<li><strong>Slow internet connections:</strong> Your website loads in 2 seconds on your office WiFi, but what about customers on mobile data?</li>
+<li><strong>Old browsers or devices:</strong> Not everyone updates their technology regularly</li>
+<li><strong>High traffic volumes:</strong> Can your system handle Black Friday-level demand?</li>
+</ul>
+<h3>Human Edge Cases</h3>
+<ul>
+<li><strong>Unusual data inputs:</strong> What if someone enters a 50-character name or leaves fields blank?</li>
+<li><strong>Multiple simultaneous actions:</strong> What happens when someone clicks &quot;submit&quot; five times?</li>
+<li><strong>Accessibility needs:</strong> Can customers with visual or mobility impairments use your product?</li>
+</ul>
+<h3>Business Edge Cases</h3>
+<ul>
+<li><strong>Payment failures:</strong> Credit cards get declined, payment processors go offline</li>
+<li><strong>Inventory changes:</strong> Products sell out between adding to cart and checkout</li>
+<li><strong>Staff unavailability:</strong> Key team members get sick during busy periods</li>
+</ul>
+<h3>Question 3: What&#39;s the Recovery Plan?</h3>
+<p>Even with perfect happy path design and thorough edge case planning, things will still go wrong. The recovery plan determines whether a problem becomes a minor inconvenience or a lost customer.</p>
+<p><strong>Simple version:</strong> When something breaks, how do customers get back on track without feeling frustrated or abandoned?</p>
+<p><strong>Business consequence:</strong> Baymard Institute&#39;s 2023 e-commerce study found that 67% of customers will try to complete a task exactly once. If they hit a roadblock without clear recovery options, they abandon the process entirely. Worse, 94% won&#39;t give you a second chance if the first attempt feels broken.</p>
+<p><strong>Real-world analogy:</strong> Imagine you&#39;re driving to an important meeting and hit unexpected road construction. Good recovery means clear detour signs that get you there safely. Bad recovery means sitting in traffic with no information, getting increasingly frustrated, and potentially missing the meeting entirely.</p>
+<h2>Implementing QA Thinking in Your Business</h2>
+<h3>Start Small and Systematic</h3>
+<p>Don&#39;t try to QA-test everything at once. Pick your most critical customer touchpoint — usually your main conversion process — and apply the Three Questions Framework.</p>
+<p>Walk through your happy path step by step. Document each action a customer takes and each decision point they encounter. Then brainstorm edge cases for each step. Finally, design recovery plans for the most likely failure points.</p>
+<h3>Create Testing Rituals</h3>
+<p><strong>Before launch rituals:</strong> Spend 30 minutes going through your Three Questions Framework before releasing anything new. This simple habit prevents most catastrophic failures.</p>
+<p><strong>Regular review rituals:</strong> Monthly, review customer support tickets and complaints. These reveal edge cases you missed and recovery plans that aren&#39;t working.</p>
+<p><strong>Team testing rituals:</strong> Have team members who weren&#39;t involved in building something test it fresh. They&#39;ll spot obvious problems that creators miss due to familiarity bias.</p>
+<h3>Build Quality Into Your Process</h3>
+<p>QA thinking works best when it&#39;s built into how you work, not added as an afterthought. Train your team to ask edge case questions during planning, not just before launch.</p>
+<p>Create simple checklists for common processes. A restaurant might have a &quot;new menu item&quot; checklist covering allergen information, preparation time, and ingredient availability. A software company might have a &quot;new feature&quot; checklist covering mobile compatibility, error messages, and help documentation.</p>
+<h2>The ROI of QA Thinking</h2>
+<p>Investing time in QA thinking pays measurable dividends. A 2023 Harvard Business Review study tracked 200 companies that implemented systematic quality processes. They found:</p>
+<ul>
+<li>34% reduction in customer support tickets</li>
+<li>28% improvement in customer satisfaction scores  </li>
+<li>45% decrease in time spent fixing post-launch problems</li>
+<li>12% increase in customer lifetime value</li>
+</ul>
+<p>More importantly, QA thinking prevents the incalculable cost of reputation damage. In our hyperconnected world, one broken experience can become a viral social media complaint that reaches thousands of potential customers.</p>
+<h2>Beyond Technology: QA for Every Business Function</h2>
+<p>The QA mindset applies far beyond software development. Use the Three Questions Framework for:</p>
+<p><strong>Marketing campaigns:</strong> What&#39;s the happy path (customer sees ad, clicks, converts)? What are edge cases (wrong audience, broken links, confusing messaging)? What&#39;s the recovery plan (retargeting, customer service, refund process)?</p>
+<p><strong>Hiring processes:</strong> What&#39;s the happy path (great candidate has smooth interview experience)? What are edge cases (scheduling conflicts, technical difficulties, communication gaps)? What&#39;s the recovery plan (easy rescheduling, backup interviewers, clear next steps)?</p>
+<p><strong>Service delivery:</strong> What&#39;s the happy path (client gets exactly what they expected on time)? What are edge cases (scope changes, resource constraints, communication breakdowns)? What&#39;s the recovery plan (clear change management, backup resources, proactive updates)?</p>
+<h2>Your Next Steps</h2>
+<p>The QA mindset isn&#39;t about becoming paranoid or over-engineering everything. It&#39;s about building resilience into your business by thinking through likely problems before they become expensive crises.</p>
+<p>Start this week by applying the Three Questions Framework to your most important customer process. Spend one hour walking through the happy path, identifying edge cases, and designing recovery plans. Then test those edge cases yourself or with trusted team members.</p>
+<p>Remember: every minute spent preventing problems saves hours fixing them later. Your customers will notice the difference, and your business will thrive because of it.</p>
+<p>Ready to build more resilient business processes and protect your reputation from preventable failures? At gonzalo.tech, I help non-technical business owners implement systematic approaches to quality and growth. Explore more practical frameworks and strategies that turn complex concepts into actionable business wins.</p>
+<hr>
+<p>Gonzalo Aguilar is a Senior Product Manager specializing in growth, identity, and onboarding in regulated markets. He writes about product strategy, conversion optimization, and practical AI workflows at gonzalo.tech.</p>
+
+
+      <div class="pdf-download">
+        <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
+        <a href="../pdfs/qa-mindset-product.pdf" download>Download PDF</a>
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      &copy; 2026 gonzalo.tech — Gonzalo Aguilar
+    </footer>
+  </div>
+</body>
+</html>

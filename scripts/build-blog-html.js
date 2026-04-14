@@ -43,12 +43,15 @@ if (fs.existsSync(metaJsonPath)) {
 // Detect language
 const lang = slug.match(/_(ES|es)$/) || markdown.includes('Tranquilo') ? 'es' : 'en';
 
+// Strip meta description line from body content (it goes in <head>, not article)
+const cleanedMarkdown = markdown.replace(/^\*?[Mm]eta [Dd]escription:.*\*?$/m, '').trim();
+
 // Convert markdown to HTML
 marked.setOptions({
   gfm: true,
   breaks: false
 });
-const htmlContent = marked.parse(markdown);
+const htmlContent = marked.parse(cleanedMarkdown);
 
 // Fill template
 const html = template

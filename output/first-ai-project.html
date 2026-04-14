@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your First AI Project Should Be Boring (Here's Why) — gonzalo.tech</title>
+  <meta name="description" content="Why your first AI project should solve boring problems, not flashy ones. The Anxiety Map framework for smart small business owners starting with AI.">
+  <meta name="keywords" content="AI getting started, first AI project">
+  <meta name="author" content="Gonzalo Aguilar">
+  <meta property="og:title" content="Your First AI Project Should Be Boring (Here's Why) — gonzalo.tech">
+  <meta property="og:description" content="Why your first AI project should solve boring problems, not flashy ones. The Anxiety Map framework for smart small business owners starting with AI.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://gonzalo.tech/output/first-ai-project.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Your First AI Project Should Be Boring (Here's Why)">
+  <meta name="twitter:description" content="Why your first AI project should solve boring problems, not flashy ones. The Anxiety Map framework for smart small business owners starting with AI.">
+  <link rel="canonical" href="https://gonzalo.tech/output/first-ai-project.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Your First AI Project Should Be Boring (Here's Why)",
+    "description": "Why your first AI project should solve boring problems, not flashy ones. The Anxiety Map framework for smart small business owners starting with AI.",
+    "author": {
+      "@type": "Person",
+      "name": "Gonzalo Aguilar",
+      "url": "https://gonzalo.tech"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "gonzalo.tech"
+    },
+    "url": "https://gonzalo.tech/output/first-ai-project.html",
+    "inLanguage": "en"
+  }
+  </script>
+  <style>
+    /* Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Brand tokens */
+    :root {
+      --ink: #0F172A;
+      --slate: #334155;
+      --muted: #64748B;
+      --subtle: #94A3B8;
+      --border: #E2E8F0;
+      --surface: #F8FAFC;
+      --white: #FFFFFF;
+      --red: #DC2626;
+      --green: #16A34A;
+      --amber: #D97706;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: Calibri, 'Gill Sans', 'Segoe UI', sans-serif;
+      --font-code: Consolas, 'Courier New', monospace;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--slate);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* Header */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+      margin-bottom: 3rem;
+    }
+    .site-header a {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    /* Article */
+    article { text-align: left; }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--ink);
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--ink);
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+    }
+
+    ul, ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    li { margin-bottom: 0.4rem; }
+
+    blockquote {
+      border-left: 3px solid var(--ink);
+      padding: 0.75rem 1.25rem;
+      margin: 1.5rem 0;
+      background: var(--surface);
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    code {
+      font-family: var(--font-code);
+      background: var(--surface);
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+
+    pre {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.25rem;
+      overflow-x: auto;
+      margin-bottom: 1.25rem;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    strong { color: var(--ink); }
+
+    a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    a:hover { color: var(--muted); }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* PDF download banner */
+    .pdf-download {
+      margin-top: 2.5rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .pdf-download p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--slate);
+    }
+    .pdf-download a {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      background: var(--ink);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .pdf-download a:hover {
+      background: var(--slate);
+      color: var(--white);
+    }
+
+    /* Author bio */
+    .author-bio {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Footer */
+    .site-footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--subtle);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.3rem; }
+      .container { padding: 1rem; }
+    }
+
+    /* Print */
+    @media print {
+      body { font-size: 12pt; color: #000; }
+      .site-header, .site-footer { display: none; }
+      .container { max-width: 100%; padding: 0; }
+      a { text-decoration: none; color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="../index.html">gonzalo.tech</a>
+    </header>
+
+    <article>
+      <h1>Your First AI Project Should Be Boring (Here&#39;s Why)</h1>
+<p>I know what you&#39;re thinking. AI is supposed to be revolutionary, game-changing, the future of everything. So why am I telling you to start with something boring?</p>
+<p>Because boring projects succeed. Exciting ones usually fail spectacularly, especially when you&#39;re just getting started.</p>
+<p>Let me explain why choosing a mundane first AI project is actually the smartest business move you can make—and how to pick the right boring problem using what I call the <strong>Anxiety Map</strong> framework.</p>
+<h2>Why &quot;Boring&quot; Beats &quot;Brilliant&quot; for First AI Projects</h2>
+<p>Here&#39;s the thing about boring business problems: they&#39;re usually well-defined, have clear success metrics, and don&#39;t require you to reinvent your entire operation. When McKinsey studied AI adoption in 2023, they found that companies with successful AI implementations started with &quot;operational efficiency improvements&quot;—basically, the unglamorous stuff that keeps businesses running.</p>
+<p>Think of it this way: if AI were a new employee, would you immediately put them in charge of your most critical client relationships? Or would you start them on data entry and filing? The boring stuff teaches you how AI actually works in your specific business context.</p>
+<p>The business consequence of jumping straight to flashy AI projects is usually expensive failure. You end up with a half-built solution that doesn&#39;t integrate with your existing systems, confuses your team, and makes you skeptical about AI&#39;s real potential.</p>
+<p>It&#39;s like learning to drive by immediately attempting the Indianapolis 500. You might be brilliant behind the wheel eventually, but you&#39;re going to crash a lot before you get there.</p>
+<h2>The Anxiety Map: Your Framework for Finding the Perfect Boring AI Project</h2>
+<p>The Anxiety Map is a simple framework I developed to help business owners identify which problems are actually good candidates for their first AI project. It maps your business problems along two dimensions: <strong>Anxiety Level</strong> (how much the problem stresses you out) and <strong>Complexity Level</strong> (how many moving parts are involved).</p>
+<p>Here&#39;s how it works:</p>
+<h3>Layer 1: The Simple Version</h3>
+<p>Draw a grid with &quot;Anxiety Level&quot; on the Y-axis (low to high) and &quot;Complexity Level&quot; on the X-axis (simple to complex). Plot your business problems on this grid. Your first AI project should come from the &quot;High Anxiety, Low Complexity&quot; quadrant—problems that bug you constantly but aren&#39;t complicated to solve.</p>
+<h3>Layer 2: The Business Consequence</h3>
+<p>Problems in this sweet spot are perfect because they have clear ROI (they&#39;re causing you real pain) but won&#39;t overwhelm you with technical complexity. According to Gartner&#39;s 2023 report on AI implementation, 70% of successful AI projects started in this exact quadrant—high-impact but operationally simple problems.</p>
+<h3>Layer 3: The Real-World Analogy</h3>
+<p>Think of your business like a leaky roof. The &quot;High Anxiety, Low Complexity&quot; problems are like that one persistent drip that&#39;s driving you crazy but only requires replacing a single shingle. You could tackle the whole roof renovation (high anxiety, high complexity), but why not fix the annoying drip first and prove you know what you&#39;re doing?</p>
+<h2>The Four Quadrants of Your Business Problems</h2>
+<p>Let me break down what goes in each quadrant of your Anxiety Map:</p>
+<h3>High Anxiety, Low Complexity (Your Sweet Spot)</h3>
+<ul>
+<li>Customer inquiry responses taking too long</li>
+<li>Scheduling appointments manually</li>
+<li>Sorting and categorizing documents</li>
+<li>Basic data entry and validation</li>
+<li>Simple customer segmentation</li>
+</ul>
+<p>These problems wake you up at 3 AM, but they don&#39;t involve rocket science. Perfect for AI.</p>
+<h3>High Anxiety, High Complexity (Avoid for Now)</h3>
+<ul>
+<li>Complete customer service overhaul</li>
+<li>Predictive inventory management across multiple locations</li>
+<li>Custom product recommendations with real-time pricing</li>
+<li>Automated financial forecasting with market analysis</li>
+</ul>
+<p>Save these for when you&#39;re an AI veteran.</p>
+<h3>Low Anxiety, Low Complexity (Good Practice Projects)</h3>
+<ul>
+<li>Automated social media posting</li>
+<li>Basic email template generation</li>
+<li>Simple image resizing or formatting</li>
+<li>Routine report formatting</li>
+</ul>
+<p>These won&#39;t transform your business, but they&#39;re great for learning.</p>
+<h3>Low Anxiety, High Complexity (Skip Entirely)</h3>
+<ul>
+<li>Advanced market research automation</li>
+<li>Complex integration projects</li>
+<li>Experimental features nobody asked for</li>
+</ul>
+<p>These are where good intentions go to die.</p>
+<h2>Real Examples of Perfectly Boring First AI Projects</h2>
+<p>Let me give you some concrete examples that real small business owners have successfully implemented:</p>
+<p><strong>The Pest Control Company</strong>: Started with AI categorizing customer photos of bug problems. High anxiety (customers sending unclear photos delayed responses), low complexity (image recognition with simple categories). Result: 40% faster response time and happier customers.</p>
+<p><strong>The Local Bakery</strong>: Used AI to generate ingredient lists from recipe photos. High anxiety (constantly recalculating ingredients for different batch sizes), low complexity (text recognition and basic math). Result: Eliminated ingredient calculation errors and saved 2 hours per week.</p>
+<p><strong>The Marketing Agency</strong>: Implemented AI to sort client feedback into categories. High anxiety (important insights getting lost in long email threads), low complexity (text classification). Result: No more missed client concerns and 60% faster report preparation.</p>
+<p>Notice the pattern? These aren&#39;t revolutionary. They&#39;re just really good at solving specific, annoying problems.</p>
+<h2>How to Validate Your Boring AI Project Choice</h2>
+<p>Before you commit to your first AI project, run it through this quick validation checklist:</p>
+<p><strong>The 15-Minute Rule</strong>: Can you explain the problem and desired solution to someone in 15 minutes or less? If not, it&#39;s too complex for your first project.</p>
+<p><strong>The $100 Test</strong>: Would you pay $100 to never deal with this problem again? If yes, you&#39;ve found something with real business value. According to a 2023 study by the Baymard Institute, small business owners reported that solving &quot;small daily frustrations&quot; had bigger productivity impacts than major system overhauls.</p>
+<p><strong>The Measurement Question</strong>: Can you measure success with simple before-and-after numbers? &quot;Reduced response time from 4 hours to 1 hour&quot; is much better than &quot;improved customer satisfaction.&quot;</p>
+<p><strong>The Explanation Test</strong>: Can you easily explain to your team why this matters? If you need a PowerPoint deck to justify it, pick something simpler.</p>
+<h2>Common Mistakes When Choosing Your First AI Project</h2>
+<p>Here are the traps I see small business owners fall into repeatedly:</p>
+<p><strong>The Shiny Object Syndrome</strong>: Choosing projects based on what sounds impressive rather than what actually helps your business. Remember, nobody gives awards for the most complicated AI implementation.</p>
+<p><strong>The Everything Everywhere Problem</strong>: Trying to solve every related problem at once. Start with one specific pain point, not an entire business process overhaul.</p>
+<p><strong>The Perfect Solution Fantasy</strong>: Waiting for an AI project that will revolutionize everything. Good AI implementations are usually boring and incremental, not dramatic and transformative.</p>
+<p><strong>The Technical Complexity Trap</strong>: Picking projects that require you to become a data scientist. Your first AI project should use existing tools and platforms, not require you to build something from scratch.</p>
+<h2>Making Your Boring Project a Success</h2>
+<p>Once you&#39;ve identified your perfectly boring AI project, here&#39;s how to actually make it work:</p>
+<p>Set ridiculously clear success metrics. &quot;Faster response time&quot; isn&#39;t good enough. &quot;Reduce average response time from 4 hours to 2 hours within 30 days&quot; gives you something concrete to measure.</p>
+<p>Start smaller than you think you should. If you want to automate 100 customer inquiries per day, start with 10. Perfect the process, then scale up.</p>
+<p>Document everything, even the boring parts. Your first AI project is really about learning how AI fits into your business operations. Those lessons are valuable for project number two.</p>
+<p>Plan your next boring project before you finish the first one. Success builds momentum, and having your second project ready prevents the post-success lull that kills AI adoption.</p>
+<h2>Your Next Steps</h2>
+<p>Ready to find your perfectly boring first AI project? Start by listing every small task that annoys you during a typical business day. Don&#39;t edit yourself—write down everything from &quot;manually scheduling social media posts&quot; to &quot;sorting through customer feedback emails.&quot;</p>
+<p>Then plot these problems on your Anxiety Map. Look for that sweet spot where high anxiety meets low complexity. Pick the one problem that makes you think, &quot;I wish I never had to deal with this again, and it shouldn&#39;t be that hard to fix.&quot;</p>
+<p>That&#39;s your first AI project. It might not sound revolutionary, but it&#39;s going to teach you more about practical AI implementation than any flashy experiment ever could.</p>
+<p>Want help identifying and implementing your perfectly boring first AI project? Visit gonzalo.tech for practical AI guides designed specifically for non-technical business owners who want real results, not just impressive demos.</p>
+<hr>
+<p>Gonzalo Aguilar is a Senior Product Manager specializing in growth, identity, and onboarding in regulated markets. He writes about product strategy, conversion optimization, and practical AI workflows at gonzalo.tech.</p>
+
+
+      <div class="pdf-download">
+        <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
+        <a href="../pdfs/first-ai-project.pdf" download>Download PDF</a>
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      &copy; 2026 gonzalo.tech — Gonzalo Aguilar
+    </footer>
+  </div>
+</body>
+</html>

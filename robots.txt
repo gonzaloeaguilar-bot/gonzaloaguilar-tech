@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Disallow: /scripts/
+Disallow: /node_modules/
+Disallow: /posts/
+Disallow: /content/
+Disallow: /templates/
+Disallow: /output/latest.html
+
+Sitemap: https://gonzalo.tech/sitemap.xml

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to User Test Anything on a $0 Budget — gonzalo.tech</title>
+  <meta name="description" content="Learn guerrilla user testing methods that cost nothing but reveal everything. Small business owners can validate ideas using the Anxiety Map framework.">
+  <meta name="keywords" content="user testing, usability testing, guerrilla testing">
+  <meta name="author" content="Gonzalo Aguilar">
+  <meta property="og:title" content="How to User Test Anything on a $0 Budget — gonzalo.tech">
+  <meta property="og:description" content="Learn guerrilla user testing methods that cost nothing but reveal everything. Small business owners can validate ideas using the Anxiety Map framework.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://gonzalo.tech/output/user-testing-budget.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to User Test Anything on a $0 Budget">
+  <meta name="twitter:description" content="Learn guerrilla user testing methods that cost nothing but reveal everything. Small business owners can validate ideas using the Anxiety Map framework.">
+  <link rel="canonical" href="https://gonzalo.tech/output/user-testing-budget.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to User Test Anything on a $0 Budget",
+    "description": "Learn guerrilla user testing methods that cost nothing but reveal everything. Small business owners can validate ideas using the Anxiety Map framework.",
+    "author": {
+      "@type": "Person",
+      "name": "Gonzalo Aguilar",
+      "url": "https://gonzalo.tech"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "gonzalo.tech"
+    },
+    "url": "https://gonzalo.tech/output/user-testing-budget.html",
+    "inLanguage": "en"
+  }
+  </script>
+  <style>
+    /* Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Brand tokens */
+    :root {
+      --ink: #0F172A;
+      --slate: #334155;
+      --muted: #64748B;
+      --subtle: #94A3B8;
+      --border: #E2E8F0;
+      --surface: #F8FAFC;
+      --white: #FFFFFF;
+      --red: #DC2626;
+      --green: #16A34A;
+      --amber: #D97706;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: Calibri, 'Gill Sans', 'Segoe UI', sans-serif;
+      --font-code: Consolas, 'Courier New', monospace;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--slate);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* Header */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+      margin-bottom: 3rem;
+    }
+    .site-header a {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    /* Article */
+    article { text-align: left; }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--ink);
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--ink);
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+    }
+
+    ul, ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    li { margin-bottom: 0.4rem; }
+
+    blockquote {
+      border-left: 3px solid var(--ink);
+      padding: 0.75rem 1.25rem;
+      margin: 1.5rem 0;
+      background: var(--surface);
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    code {
+      font-family: var(--font-code);
+      background: var(--surface);
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+
+    pre {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.25rem;
+      overflow-x: auto;
+      margin-bottom: 1.25rem;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    strong { color: var(--ink); }
+
+    a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    a:hover { color: var(--muted); }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* PDF download banner */
+    .pdf-download {
+      margin-top: 2.5rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .pdf-download p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--slate);
+    }
+    .pdf-download a {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      background: var(--ink);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .pdf-download a:hover {
+      background: var(--slate);
+      color: var(--white);
+    }
+
+    /* Author bio */
+    .author-bio {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Footer */
+    .site-footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--subtle);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.3rem; }
+      .container { padding: 1rem; }
+    }
+
+    /* Print */
+    @media print {
+      body { font-size: 12pt; color: #000; }
+      .site-header, .site-footer { display: none; }
+      .container { max-width: 100%; padding: 0; }
+      a { text-decoration: none; color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="../index.html">gonzalo.tech</a>
+    </header>
+
+    <article>
+      <h1>How to User Test Anything on a $0 Budget</h1>
+<p>You know that sinking feeling when you launch something new and crickets chirp? Your website redesign, your app, your checkout process — they all seemed brilliant in your head. Then real customers interact with them and... nothing works like you expected.</p>
+<p>Here&#39;s the thing: you don&#39;t need a fancy research lab or thousands of dollars to understand how people really use your stuff. You just need to get scrappy and strategic about it.</p>
+<h2>What Is User Testing (And Why Your Business Depends On It)</h2>
+<p><strong>Simple version:</strong> User testing means watching real people try to use your product, website, or service while thinking out loud about what they&#39;re experiencing.</p>
+<p><strong>Business consequence of ignoring it:</strong> According to the Baymard Institute&#39;s 2023 research, poor usability causes 70% of online businesses to lose customers during checkout alone. You&#39;re basically flying blind, making expensive guesses about what works.</p>
+<p><strong>Real-world analogy:</strong> It&#39;s like trying to improve your restaurant by only asking your chef what they think about the menu, instead of watching actual diners struggle to cut their steak or figure out what&#39;s in the mystery sauce.</p>
+<p>The beautiful truth? Some of the most valuable insights come from the messiest, most informal testing sessions. You don&#39;t need perfection — you need clarity.</p>
+<h2>The Anxiety Map Framework: Your Secret Weapon</h2>
+<p>Before we dive into testing methods, let me introduce you to the Anxiety Map framework. This is your lens for understanding what&#39;s really happening in your users&#39; heads.</p>
+<p>Every person using your product experiences three types of anxiety:</p>
+<ol>
+<li><strong>Cognitive Anxiety:</strong> &quot;I don&#39;t understand how this works&quot;</li>
+<li><strong>Social Anxiety:</strong> &quot;What if I look stupid or make a mistake?&quot;</li>
+<li><strong>Economic Anxiety:</strong> &quot;Am I making the right financial decision?&quot;</li>
+</ol>
+<p>The Anxiety Map helps you spot these anxiety triggers during testing and fix them before they cost you customers. McKinsey&#39;s 2022 customer experience research shows that reducing customer effort increases satisfaction by 37% and purchase likelihood by 96%.</p>
+<p>Think of it this way: every confused click, every hesitant pause, every &quot;um, what does this mean?&quot; is your Anxiety Map lighting up like a Christmas tree. Those moments are gold.</p>
+<h2>Five Guerrilla Testing Methods That Cost Zero Dollars</h2>
+<h3>Method 1: The Coffee Shop Safari</h3>
+<p><strong>What it is:</strong> Set up shop in a busy cafe and approach strangers with your laptop or phone.</p>
+<p><strong>How to do it:</strong> </p>
+<ul>
+<li>Bring your device and a simple script: &quot;Hi, I&#39;m working on improving a website. Would you mind taking a quick look and telling me what you think? Takes 3 minutes, and I&#39;ll buy your coffee.&quot;</li>
+<li>Show them your homepage, product page, or checkout flow</li>
+<li>Ask them to complete one specific task while thinking out loud</li>
+<li>Use your Anxiety Map lens: watch for confusion (cognitive), hesitation (social), or price-checking behavior (economic)</li>
+</ul>
+<p><strong>Pro tip:</strong> Coffee shops are perfect because people are already in a relaxed, social mood. Plus, caffeine makes people chatty.</p>
+<h3>Method 2: The Family &amp; Friends Focus Group</h3>
+<p><strong>What it is:</strong> Your personal network becomes your testing lab.</p>
+<p><strong>How to do it:</strong></p>
+<ul>
+<li>Text 5-10 people: &quot;Can you spend 10 minutes helping me test something? I need fresh eyes.&quot;</li>
+<li>Use video calls so you can watch their screen and face</li>
+<li>Give them specific tasks: &quot;Try to find information about our return policy&quot; or &quot;See if you can figure out how much shipping costs&quot;</li>
+<li>Pay attention to their emotional reactions — that&#39;s your Anxiety Map in action</li>
+</ul>
+<p><strong>The catch:</strong> Your aunt might be too nice to tell you something sucks. Counter this by asking specific questions: &quot;What confused you most?&quot; instead of &quot;Did you like it?&quot;</p>
+<h3>Method 3: The Social Media Spy Mission</h3>
+<p><strong>What it is:</strong> Use social platforms to observe real conversations about your industry or product type.</p>
+<p><strong>How to do it:</strong></p>
+<ul>
+<li>Search Facebook groups, Reddit threads, or Twitter conversations about your product category</li>
+<li>Look for complaints, questions, and confusion patterns</li>
+<li>Pay special attention to the language people use — these are your real users talking naturally</li>
+<li>Map common frustrations to your Anxiety Map categories</li>
+</ul>
+<p><strong>Example:</strong> If you sell online courses, search &quot;online course frustrating&quot; or join groups where your target customers hang out. You&#39;ll see patterns like &quot;I never know if I&#39;m getting my money&#39;s worth&quot; (economic anxiety) or &quot;These platforms are so confusing&quot; (cognitive anxiety).</p>
+<h3>Method 4: The Screen Recording Deep Dive</h3>
+<p><strong>What it is:</strong> Free tools that record user sessions on your actual website.</p>
+<p><strong>How to do it:</strong></p>
+<ul>
+<li>Install free tools like Microsoft Clarity or Hotjar&#39;s free tier</li>
+<li>Watch recordings of real users navigating your site</li>
+<li>Look for rage clicks, abandoned forms, and areas where people scroll back and forth (classic cognitive anxiety signals)</li>
+<li>Create an Anxiety Map heatmap of problem areas</li>
+</ul>
+<p>Nielsen Norman Group&#39;s 2023 usability research found that watching just 5 user sessions reveals 85% of major usability problems. That&#39;s powerful stuff for free.</p>
+<h3>Method 5: The Email Feedback Loop</h3>
+<p><strong>What it is:</strong> Direct outreach to recent customers or email subscribers.</p>
+<p><strong>How to do it:</strong></p>
+<ul>
+<li>Email recent customers: &quot;You recently [bought X/signed up/downloaded]. Can you spare 5 minutes to help me improve the experience for others?&quot;</li>
+<li>Offer a small incentive — discount code, free resource, or entry into a drawing</li>
+<li>Use screen sharing tools like Google Meet or Zoom (free versions work fine)</li>
+<li>Structure the session around your Anxiety Map: &quot;What almost stopped you from completing your purchase?&quot;</li>
+</ul>
+<h2>How to Run a Guerrilla Testing Session Like a Pro</h2>
+<h3>Before the Session: Your 5-Minute Prep</h3>
+<ol>
+<li><strong>Pick ONE thing to test</strong> — your homepage, checkout flow, or product finder tool</li>
+<li><strong>Write down 3 specific tasks</strong> — &quot;Find the price for our basic plan,&quot; &quot;Sign up for our newsletter,&quot; &quot;Contact customer support&quot;</li>
+<li><strong>Prepare your Anxiety Map questions:</strong><ul>
+<li>Cognitive: &quot;What&#39;s confusing here?&quot;</li>
+<li>Social: &quot;What makes you hesitant?&quot;</li>
+<li>Economic: &quot;What would make you more confident in this decision?&quot;</li>
+</ul>
+</li>
+</ol>
+<h3>During the Session: Shut Up and Listen</h3>
+<p>The hardest part of user testing is keeping your mouth shut when someone struggles. Your job is to observe, not help.</p>
+<p><strong>Say this:</strong> &quot;Think out loud about what you&#39;re seeing and doing.&quot;
+<strong>Not this:</strong> &quot;Oh, that button is actually over here!&quot;</p>
+<p>Watch their face, listen to their tone, notice their hesitations. When someone says &quot;hmm&quot; and pauses, that&#39;s your Anxiety Map pinging. Ask: &quot;What are you thinking right now?&quot;</p>
+<h3>After the Session: The 10-Minute Debrief</h3>
+<p>Don&#39;t wait — capture insights immediately:</p>
+<ol>
+<li><strong>Anxiety Map analysis:</strong> What type of anxiety showed up most?</li>
+<li><strong>Quick wins:</strong> What could you fix in the next 24 hours?</li>
+<li><strong>Pattern tracking:</strong> Are you seeing the same issues across multiple testers?</li>
+</ol>
+<h2>Making Sense of Messy Data (Without Spreadsheets)</h2>
+<p>Here&#39;s where most people get stuck. You&#39;ve watched five people use your website, and everyone had different problems. Now what?</p>
+<p><strong>Simple version:</strong> Look for emotional patterns, not just technical issues.</p>
+<p><strong>Business consequence of ignoring it:</strong> Forrester&#39;s 2023 research shows companies that act on customer feedback grow revenue 2.3x faster than those who collect feedback but don&#39;t analyze it systematically.</p>
+<p><strong>Real-world analogy:</strong> It&#39;s like being a detective. Individual clues don&#39;t tell the whole story, but patterns reveal the truth.</p>
+<p>Create three simple lists:</p>
+<ul>
+<li><strong>Cognitive Issues:</strong> Things people didn&#39;t understand</li>
+<li><strong>Social Issues:</strong> Things that made people hesitant or embarrassed</li>
+<li><strong>Economic Issues:</strong> Things that made people question value or trust</li>
+</ul>
+<p>The magic happens when you see the same anxiety type appearing across multiple sessions. That&#39;s your priority fix list.</p>
+<h2>Your First User Test: The 1-Hour Challenge</h2>
+<p>Ready to try this? Here&#39;s your homework:</p>
+<ol>
+<li><strong>Pick your testing target</strong> (15 minutes): Choose one page or flow that&#39;s critical to your business</li>
+<li><strong>Find 3 testers</strong> (20 minutes): Coffee shop strangers, family members, or social media volunteers</li>
+<li><strong>Run quick sessions</strong> (15 minutes total): 5 minutes per person, one simple task each</li>
+<li><strong>Create your Anxiety Map</strong> (10 minutes): Sort findings into cognitive, social, and economic categories</li>
+</ol>
+<p>That&#39;s it. One hour, zero dollars, actionable insights.</p>
+<p>The best part? You&#39;ll probably discover something surprising in the first session. Maybe your &quot;obvious&quot; navigation isn&#39;t obvious. Maybe your pricing page creates more questions than it answers. Maybe people love something you almost removed.</p>
+<h2>What Expensive User Testing Gets Wrong (And You Get Right)</h2>
+<p>Professional usability labs are sterile environments where people behave differently than they do in real life. Your guerrilla approach captures something they miss: authentic behavior.</p>
+<p>When someone tests your website while their kid is asking for snacks and their coffee is getting cold, that&#39;s real-world multitasking. That context reveals usability issues that pristine lab conditions never would.</p>
+<p>Plus, your scrappy approach forces you to focus on the most important questions. You can&#39;t test everything, so you test what matters most to your business.</p>
+<h2>The Path Forward: From Zero Budget to Customer Clarity</h2>
+<p>User testing isn&#39;t about perfection — it&#39;s about progression. Every awkward conversation with a coffee shop stranger, every &quot;I&#39;m confused&quot; from your brother-in-law, every abandoned cart recording is moving you closer to clarity about what your customers actually need.</p>
+<p>The Anxiety Map framework ensures you&#39;re not just collecting random feedback, but building a systematic understanding of what stops people from succeeding with your product.</p>
+<p>Start small, test often, and remember: the goal isn&#39;t to eliminate all anxiety (impossible), but to remove unnecessary friction between your customers and their success.</p>
+<p>Ready to stop guessing and start knowing what your customers really think? Visit gonzalo.tech for more practical frameworks that help small business owners make smarter decisions with the tools they already have.</p>
+<hr>
+<p>Gonzalo Aguilar is a Senior Product Manager specializing in growth, identity, and onboarding in regulated markets. He writes about product strategy, conversion optimization, and practical AI workflows at gonzalo.tech.</p>
+
+
+      <div class="pdf-download">
+        <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
+        <a href="../pdfs/user-testing-budget.pdf" download>Download PDF</a>
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      &copy; 2026 gonzalo.tech — Gonzalo Aguilar
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You Don't Need a Design System — You Need Design Decisions — gonzalo.tech</title>
+  <meta name="description" content="Skip the complex design system. Small businesses need clear design decisions instead. Learn the Three Questions Framework for UI consistency.">
+  <meta name="keywords" content="design system, small team design, UI consistency">
+  <meta name="author" content="Gonzalo Aguilar">
+  <meta property="og:title" content="You Don't Need a Design System — You Need Design Decisions — gonzalo.tech">
+  <meta property="og:description" content="Skip the complex design system. Small businesses need clear design decisions instead. Learn the Three Questions Framework for UI consistency.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://gonzalo.tech/output/design-system-small-team.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="You Don't Need a Design System — You Need Design Decisions">
+  <meta name="twitter:description" content="Skip the complex design system. Small businesses need clear design decisions instead. Learn the Three Questions Framework for UI consistency.">
+  <link rel="canonical" href="https://gonzalo.tech/output/design-system-small-team.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "You Don't Need a Design System — You Need Design Decisions",
+    "description": "Skip the complex design system. Small businesses need clear design decisions instead. Learn the Three Questions Framework for UI consistency.",
+    "author": {
+      "@type": "Person",
+      "name": "Gonzalo Aguilar",
+      "url": "https://gonzalo.tech"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "gonzalo.tech"
+    },
+    "url": "https://gonzalo.tech/output/design-system-small-team.html",
+    "inLanguage": "en"
+  }
+  </script>
+  <style>
+    /* Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Brand tokens */
+    :root {
+      --ink: #0F172A;
+      --slate: #334155;
+      --muted: #64748B;
+      --subtle: #94A3B8;
+      --border: #E2E8F0;
+      --surface: #F8FAFC;
+      --white: #FFFFFF;
+      --red: #DC2626;
+      --green: #16A34A;
+      --amber: #D97706;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: Calibri, 'Gill Sans', 'Segoe UI', sans-serif;
+      --font-code: Consolas, 'Courier New', monospace;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--slate);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* Header */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+      margin-bottom: 3rem;
+    }
+    .site-header a {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    /* Article */
+    article { text-align: left; }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--ink);
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--ink);
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+    }
+
+    ul, ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    li { margin-bottom: 0.4rem; }
+
+    blockquote {
+      border-left: 3px solid var(--ink);
+      padding: 0.75rem 1.25rem;
+      margin: 1.5rem 0;
+      background: var(--surface);
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    code {
+      font-family: var(--font-code);
+      background: var(--surface);
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+
+    pre {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.25rem;
+      overflow-x: auto;
+      margin-bottom: 1.25rem;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    strong { color: var(--ink); }
+
+    a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    a:hover { color: var(--muted); }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* PDF download banner */
+    .pdf-download {
+      margin-top: 2.5rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .pdf-download p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--slate);
+    }
+    .pdf-download a {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      background: var(--ink);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .pdf-download a:hover {
+      background: var(--slate);
+      color: var(--white);
+    }
+
+    /* Author bio */
+    .author-bio {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Footer */
+    .site-footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--subtle);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.3rem; }
+      .container { padding: 1rem; }
+    }
+
+    /* Print */
+    @media print {
+      body { font-size: 12pt; color: #000; }
+      .site-header, .site-footer { display: none; }
+      .container { max-width: 100%; padding: 0; }
+      a { text-decoration: none; color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="../index.html">gonzalo.tech</a>
+    </header>
+
+    <article>
+      <h1>You Don&#39;t Need a Design System — You Need Design Decisions</h1>
+<p>Here&#39;s what happens to most small business owners when they start researching how to make their website or app look professional: They stumble across &quot;design systems&quot; and immediately feel overwhelmed. Suddenly they&#39;re reading about component libraries, design tokens, and atomic design principles. Their eyes glaze over, and they either hire expensive designers or give up entirely.</p>
+<p>But here&#39;s the truth: You don&#39;t need a design system. You need design decisions.</p>
+<p>The difference between these two approaches could save you months of work and thousands of dollars while actually giving you better results. Let me show you how.</p>
+<h2>What Most People Get Wrong About Design Systems</h2>
+<p><strong>Simple version:</strong> A design system is like a massive instruction manual that big companies use to keep hundreds of designers working consistently. It&#39;s overkill for most small businesses.</p>
+<p><strong>Business consequence:</strong> Small business owners waste time building complex systems they&#39;ll never fully use, delaying their actual product launch by months while their competitors capture market share.</p>
+<p><strong>Real-world analogy:</strong> It&#39;s like buying a commercial kitchen setup to make dinner for your family of four. Sure, it would work, but you&#39;d spend all your time managing equipment instead of cooking meals.</p>
+<p>Design systems became popular because companies like Google and Airbnb needed them. When you have 200+ designers working on dozens of products, you need extensive documentation and rules. But according to a 2023 Forrester study, 78% of design systems at large enterprises are underutilized, even with dedicated teams managing them.</p>
+<p>Now imagine trying to maintain one with a team of three people while also running your business.</p>
+<h2>The Three Questions Framework for Design Decisions</h2>
+<p>Instead of building a comprehensive design system, successful small business owners use what I call the <strong>Three Questions Framework</strong>. Before making any visual choice on your website or app, ask these three questions:</p>
+<ol>
+<li><strong>Does this help my customer complete their goal?</strong></li>
+<li><strong>Does this look like it belongs with everything else I&#39;ve already built?</strong>  </li>
+<li><strong>Can I implement this quickly and move on?</strong></li>
+</ol>
+<p>These questions filter out the noise and focus on what actually matters for your business growth.</p>
+<h3>Question 1: Does This Help My Customer Complete Their Goal?</h3>
+<p><strong>Simple version:</strong> Every design choice should make it easier for your customer to buy, sign up, or get the information they need.</p>
+<p><strong>Business consequence:</strong> Companies that ignore this question create beautiful websites that don&#39;t convert. According to Baymard Institute&#39;s 2023 research, 69.8% of online shopping carts are abandoned, often due to confusing checkout processes that prioritize aesthetics over functionality.</p>
+<p><strong>Real-world analogy:</strong> It&#39;s like designing a restaurant menu that looks stunning but makes it impossible to find the prices or figure out what dishes are available.</p>
+<p>When evaluating any design decision — from button colors to navigation layout — start here. If a choice doesn&#39;t actively help your customer succeed, it&#39;s probably unnecessary complexity.</p>
+<p>For example, that trendy hover animation might look cool, but if it confuses users about whether something is clickable, it fails this test. A simple, clear button that obviously leads to purchase passes with flying colors.</p>
+<h3>Question 2: Does This Look Like It Belongs?</h3>
+<p><strong>Simple version:</strong> Visual consistency builds trust. Your customers should never wonder if they accidentally clicked to a different website.</p>
+<p><strong>Business consequence:</strong> Inconsistent design destroys credibility. A 2022 Stanford study found that 75% of users admit to making judgments about a company&#39;s credibility based on visual design alone.</p>
+<p><strong>Real-world analogy:</strong> Imagine walking into a restaurant where the dining room is elegant and formal, but the bathroom looks like a gas station restroom. You&#39;d question everything about that business.</p>
+<p>This question prevents you from constantly second-guessing your choices. Once you&#39;ve decided on a button style, font, or color scheme, you stick with it throughout your site. No endless debates about whether this particular page needs something different.</p>
+<p>The key is making these baseline decisions once and then applying them consistently. Pick three fonts maximum. Choose a primary color and one accent color. Decide on button styles. Document these choices in a simple one-page sheet, and you&#39;re done.</p>
+<h3>Question 3: Can I Implement This Quickly?</h3>
+<p><strong>Simple version:</strong> The best design decision is the one that gets implemented. Perfect designs that take months to build lose to good-enough designs that ship next week.</p>
+<p><strong>Business consequence:</strong> While you&#39;re perfecting your design, your competitors are serving customers and learning from real user behavior. Speed beats perfection in small business.</p>
+<p><strong>Real-world analogy:</strong> It&#39;s like spending six months planning the perfect vacation while your friends take three good trips and make actual memories.</p>
+<p>This question forces you to choose simple, achievable solutions. Instead of custom illustrations that take weeks to create, you might use high-quality stock photos that work perfectly well. Instead of building a complex animation, you choose a clean transition that takes ten minutes to implement.</p>
+<p>McKinsey&#39;s 2023 research on digital transformation showed that companies prioritizing speed-to-market over design perfection achieved 25% faster growth in their first two years.</p>
+<h2>How to Apply the Three Questions Framework</h2>
+<p>Let&#39;s walk through a real example. Say you&#39;re building a landing page for your consulting business and trying to decide on the header design.</p>
+<p><strong>Option A:</strong> A complex header with custom logo animation, multiple navigation dropdowns, and a video background.</p>
+<p><strong>Option B:</strong> A simple header with your logo, three main navigation links, and a solid color background.</p>
+<p>Run both options through the framework:</p>
+<p><strong>Question 1 (Customer goal):</strong> Option A might impress visitors, but the animation could slow load times, and complex navigation might confuse them. Option B gets them to your services and contact information immediately. Option B wins.</p>
+<p><strong>Question 2 (Consistency):</strong> If your business is professional consulting, Option A&#39;s flashy elements might not match the serious tone your customers expect. Option B can easily match the rest of your professional site. Option B wins again.</p>
+<p><strong>Question 3 (Implementation speed):</strong> Option A requires custom development, video hosting, and extensive testing. Option B can be built in an afternoon using standard web tools. Option B wins decisively.</p>
+<p>The framework just saved you weeks of work while creating a better user experience.</p>
+<h2>Common Mistakes Small Business Owners Make</h2>
+<p>The biggest mistake I see is trying to solve tomorrow&#39;s problems today. You start researching design systems because you think you&#39;ll eventually need one, then spend months building infrastructure for a team size and complexity level you may never reach.</p>
+<p>Another common error is confusing activity with progress. Building a comprehensive design system feels productive, but it&#39;s often procrastination disguised as preparation. While you&#39;re organizing color palettes into detailed hierarchies, your customers are buying from competitors with simpler but functional websites.</p>
+<p>Finally, many business owners assume that if big tech companies use design systems, they must need them too. This is like assuming you need enterprise-level project management software because Fortune 500 companies use it. The right tool depends on your actual needs, not industry trends.</p>
+<h2>When You Actually Need a Design System</h2>
+<p>I&#39;m not saying design systems are always wrong. They become valuable when you have multiple people regularly creating new website content, when you&#39;re managing several related products, or when you&#39;re planning significant expansion.</p>
+<p>But for most small businesses — especially those just starting or with teams under ten people — the Three Questions Framework provides better results with far less overhead.</p>
+<p>You&#39;ll know it&#39;s time to upgrade when answering the three questions becomes difficult because you have too many existing design elements to coordinate. At that point, you&#39;ll have real data about what works for your customers, making any future design system much more effective.</p>
+<h2>Start Making Design Decisions Today</h2>
+<p>Stop researching design systems and start making design decisions. Pick one page of your website or one feature of your app. Apply the Three Questions Framework to every visual element on that page.</p>
+<p>Does it help customers reach their goal? Does it match your other pages? Can you implement it quickly? If yes to all three, you&#39;re done with that element. Move to the next one.</p>
+<p>You&#39;ll be surprised how quickly you can create a cohesive, professional look without any complex systems or extensive documentation.</p>
+<p>Ready to build a website that actually converts visitors into customers? Learn practical frameworks like this one at gonzalo.tech, where we translate business strategy into actionable steps for non-technical founders.</p>
+<hr>
+<p>Gonzalo Aguilar is a Senior Product Manager specializing in growth, identity, and onboarding in regulated markets. He writes about product strategy, conversion optimization, and practical AI workflows at gonzalo.tech.</p>
+
+
+      <div class="pdf-download">
+        <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
+        <a href="../pdfs/design-system-small-team.pdf" download>Download PDF</a>
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      &copy; 2026 gonzalo.tech — Gonzalo Aguilar
+    </footer>
+  </div>
+</body>
+</html>
