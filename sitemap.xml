@@ -271,7 +271,25 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-appointment-scheduling.html</loc>
+    <loc>https://gonzalo.tech/output/ai-cost-per-task-calculator.html</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gonzalo.tech/output/ai-brand-voice-guide.html</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gonzalo.tech/output/ai-refund-policy-writer.html</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gonzalo.tech/output/ai-newsletter-automation.html</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

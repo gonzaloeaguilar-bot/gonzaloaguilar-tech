@@ -552,8 +552,7 @@
       ],
       "framework": "Three Questions Framework",
       "language": "EN",
-      "status": "published",
-      "publishedAt": "2026-04-14T12:21:39.948Z"
+      "status": "generating"
     },
     {
       "slug": "ai-cost-per-task-calculator",
@@ -564,7 +563,8 @@
       ],
       "framework": "Three Questions Framework",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:21:44.333Z"
     },
     {
       "slug": "ai-brand-voice-guide",
@@ -575,7 +575,8 @@
       ],
       "framework": "Friction-to-Trust Pipeline",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:22:49.417Z"
     },
     {
       "slug": "ai-refund-policy-writer",
@@ -586,7 +587,8 @@
       ],
       "framework": "Anxiety Map",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:23:51.321Z"
     },
     {
       "slug": "ai-newsletter-automation",
@@ -597,7 +599,8 @@
       ],
       "framework": "Friction-to-Trust Pipeline",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:25:01.197Z"
     },
     {
       "slug": "ai-local-marketing",
