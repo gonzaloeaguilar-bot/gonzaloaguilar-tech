@@ -910,8 +910,7 @@
       ],
       "framework": "Anxiety Map",
       "language": "EN",
-      "status": "published",
-      "publishedAt": "2026-04-14T12:48:33.027Z"
+      "status": "generating"
     },
     {
       "slug": "mobile-checkout-optimization",
@@ -923,7 +922,7 @@
       "framework": "Friction-to-Trust Pipeline",
       "language": "EN",
       "status": "published",
-      "publishedAt": "2026-04-14T12:49:28.659Z"
+      "publishedAt": "2026-04-14T12:48:19.958Z"
     },
     {
       "slug": "referral-program-design",
@@ -935,7 +934,7 @@
       "framework": "Three Questions Framework",
       "language": "EN",
       "status": "published",
-      "publishedAt": "2026-04-14T12:50:29.459Z"
+      "publishedAt": "2026-04-14T12:49:14.474Z"
     },
     {
       "slug": "popup-exit-intent-strategy",
@@ -946,7 +945,8 @@
       ],
       "framework": "Anxiety Map",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:50:07.509Z"
     },
     {
       "slug": "product-page-conversion-checklist",
@@ -957,7 +957,8 @@
       ],
       "framework": "Friction-to-Trust Pipeline",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:51:11.937Z"
     },
     {
       "slug": "funnel-drop-off-diagnosis",
@@ -968,7 +969,8 @@
       ],
       "framework": "Three Questions Framework",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:52:09.198Z"
     },
     {
       "slug": "retention-vs-acquisition-cost",
@@ -979,7 +981,8 @@
       ],
       "framework": "Three Questions Framework",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:52:54.010Z"
     },
     {
       "slug": "pricing-anchor-effect",
@@ -990,7 +993,8 @@
       ],
       "framework": "Friction-to-Trust Pipeline",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:53:53.807Z"
     },
     {
       "slug": "welcome-email-sequence",

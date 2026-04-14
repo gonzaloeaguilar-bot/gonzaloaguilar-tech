@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Find Exactly Where Your Funnel Is Leaking — gonzalo.tech</title>
+  <meta name="description" content="Learn to pinpoint exactly where customers abandon your sales process using simple funnel analysis. No technical skills required - just smart detective work.">
+  <meta name="keywords" content="funnel drop off analysis, conversion funnel diagnosis">
+  <meta name="author" content="Gonzalo Aguilar">
+  <meta property="og:title" content="How to Find Exactly Where Your Funnel Is Leaking — gonzalo.tech">
+  <meta property="og:description" content="Learn to pinpoint exactly where customers abandon your sales process using simple funnel analysis. No technical skills required - just smart detective work.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://gonzalo.tech/output/funnel-drop-off-diagnosis.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Find Exactly Where Your Funnel Is Leaking">
+  <meta name="twitter:description" content="Learn to pinpoint exactly where customers abandon your sales process using simple funnel analysis. No technical skills required - just smart detective work.">
+  <link rel="canonical" href="https://gonzalo.tech/output/funnel-drop-off-diagnosis.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Find Exactly Where Your Funnel Is Leaking",
+    "description": "Learn to pinpoint exactly where customers abandon your sales process using simple funnel analysis. No technical skills required - just smart detective work.",
+    "author": {
+      "@type": "Person",
+      "name": "Gonzalo Aguilar",
+      "url": "https://gonzalo.tech"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "gonzalo.tech"
+    },
+    "url": "https://gonzalo.tech/output/funnel-drop-off-diagnosis.html",
+    "inLanguage": "en"
+  }
+  </script>
+  <style>
+    /* Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Brand tokens */
+    :root {
+      --ink: #0F172A;
+      --slate: #334155;
+      --muted: #64748B;
+      --subtle: #94A3B8;
+      --border: #E2E8F0;
+      --surface: #F8FAFC;
+      --white: #FFFFFF;
+      --red: #DC2626;
+      --green: #16A34A;
+      --amber: #D97706;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: Calibri, 'Gill Sans', 'Segoe UI', sans-serif;
+      --font-code: Consolas, 'Courier New', monospace;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--slate);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* Header */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+      margin-bottom: 3rem;
+    }
+    .site-header a {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    /* Article */
+    article { text-align: left; }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--ink);
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--ink);
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+    }
+
+    ul, ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    li { margin-bottom: 0.4rem; }
+
+    blockquote {
+      border-left: 3px solid var(--ink);
+      padding: 0.75rem 1.25rem;
+      margin: 1.5rem 0;
+      background: var(--surface);
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    code {
+      font-family: var(--font-code);
+      background: var(--surface);
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+
+    pre {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.25rem;
+      overflow-x: auto;
+      margin-bottom: 1.25rem;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    strong { color: var(--ink); }
+
+    a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    a:hover { color: var(--muted); }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* PDF download banner */
+    .pdf-download {
+      margin-top: 2.5rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .pdf-download p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--slate);
+    }
+    .pdf-download a {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      background: var(--ink);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .pdf-download a:hover {
+      background: var(--slate);
+      color: var(--white);
+    }
+
+    /* Author bio */
+    .author-bio {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Footer */
+    .site-footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--subtle);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.3rem; }
+      .container { padding: 1rem; }
+    }
+
+    /* Print */
+    @media print {
+      body { font-size: 12pt; color: #000; }
+      .site-header, .site-footer { display: none; }
+      .container { max-width: 100%; padding: 0; }
+      a { text-decoration: none; color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="../index.html">gonzalo.tech</a>
+    </header>
+
+    <article>
+      <h1>How to Find Exactly Where Your Funnel Is Leaking</h1>
+<p>You know that sinking feeling when you check your sales numbers and they&#39;re not where they should be. Traffic looks good, people are visiting your website, but somewhere between &quot;hello&quot; and &quot;here&#39;s my credit card,&quot; you&#39;re losing them. The frustrating part? You have no idea where.</p>
+<p>Welcome to the world of funnel leaks — those invisible gaps where potential customers slip through your fingers like water through a broken bucket. But here&#39;s the thing: every leak leaves clues, and with the right detective work, you can find them all.</p>
+<h2>Understanding Your Sales Funnel: The Foundation</h2>
+<p>Think of your sales funnel like a physical funnel in your kitchen. You pour liquid in the top, and ideally, most of it comes out the bottom into your container. But if there are cracks or holes anywhere along the sides, you lose liquid at each damaged point.</p>
+<p>Your business funnel works the same way. Customers enter at the top (maybe they see your ad or find your website), move through various steps (browse products, add to cart, enter payment info), and hopefully complete their purchase at the bottom. Every step where people can leave is a potential leak.</p>
+<p>According to the Baymard Institute&#39;s 2023 research, the average cart abandonment rate across all industries is 70.19%. That means seven out of ten people who start to buy something online never finish. The good news? Most of these losses happen at predictable points that you can identify and fix.</p>
+<h2>The Three Questions Framework for Funnel Diagnosis</h2>
+<p>When your funnel is leaking, you need a systematic way to find the problems. The Three Questions Framework gives you a simple roadmap to identify exactly where customers are dropping off and why.</p>
+<h3>Question 1: Where Are People Leaving?</h3>
+<p>This is your data detective phase. You need to map out every step of your customer journey and count how many people make it through each stage.</p>
+<p><strong>Simple version:</strong> Track the number of people at each step of your sales process, from first visit to final purchase.</p>
+<p><strong>Business consequence of ignoring it:</strong> You might spend months fixing the wrong problems. Maybe you&#39;re obsessing over your homepage design when the real issue is a confusing checkout process.</p>
+<p><strong>Real-world analogy:</strong> It&#39;s like trying to fix a leaky roof without knowing which room is getting wet. You could replace the entire roof when all you needed was one shingle repair.</p>
+<p>Start with these basic funnel stages:</p>
+<ul>
+<li>Website visitors</li>
+<li>Product page views  </li>
+<li>Add to cart</li>
+<li>Checkout started</li>
+<li>Payment information entered</li>
+<li>Purchase completed</li>
+</ul>
+<p>Calculate the conversion rate between each step. If 100 people visit your product page but only 15 add items to their cart, that&#39;s a 15% conversion rate from product page to cart. Industry benchmarks vary, but significant drops (below 10-20% between adjacent steps) usually signal problems.</p>
+<h3>Question 2: Why Are They Leaving at That Specific Point?</h3>
+<p>Once you know where the biggest drops happen, you need to understand why. This requires putting yourself in your customer&#39;s shoes and experiencing your funnel as they do.</p>
+<p><strong>Simple version:</strong> Walk through your own buying process and note everything that feels confusing, slow, or frustrating.</p>
+<p><strong>Business consequence of ignoring it:</strong> You might fix symptoms instead of root causes. Adding more payment options won&#39;t help if people can&#39;t figure out your shipping costs.</p>
+<p><strong>Real-world analogy:</strong> It&#39;s like being a restaurant owner who notices customers leaving after looking at the menu. You could assume the prices are too high, but maybe the menu is just impossible to read in dim lighting.</p>
+<p>Common reasons people abandon at each stage:</p>
+<ul>
+<li><strong>Product pages:</strong> Unclear descriptions, missing information, poor photos</li>
+<li><strong>Cart stage:</strong> Unexpected shipping costs, forced account creation</li>
+<li><strong>Checkout:</strong> Too many form fields, security concerns, payment failures</li>
+<li><strong>Payment:</strong> Limited payment options, unclear total costs</li>
+</ul>
+<p>McKinsey&#39;s 2023 research on digital customer experience found that 71% of consumers expect companies to deliver personalized interactions, and 76% get frustrated when this doesn&#39;t happen. Often, funnel leaks stem from generic experiences that don&#39;t address specific customer concerns at each stage.</p>
+<h3>Question 3: What&#39;s the Simplest Fix That Would Have the Biggest Impact?</h3>
+<p>This is where many business owners go wrong. They try to fix everything at once instead of focusing on the change that will save the most customers with the least effort.</p>
+<p><strong>Simple version:</strong> Prioritize fixes based on how many customers you&#39;ll save versus how hard the fix is to implement.</p>
+<p><strong>Business consequence of ignoring it:</strong> You waste time and money on complex solutions when simple changes could double your conversions.</p>
+<p><strong>Real-world analogy:</strong> It&#39;s like fixing a flat tire by buying a new car instead of just patching the hole.</p>
+<p>Use this simple prioritization matrix:</p>
+<ul>
+<li><strong>High impact, easy fix:</strong> Do these first (clear shipping costs, fix broken buttons)</li>
+<li><strong>High impact, hard fix:</strong> Plan these for later (complete checkout redesign)</li>
+<li><strong>Low impact, easy fix:</strong> Do these when you have time (color tweaks)</li>
+<li><strong>Low impact, hard fix:</strong> Skip these entirely</li>
+</ul>
+<h2>Identifying Your Biggest Leak Points</h2>
+<p>Most businesses have predictable leak patterns. Knowing where to look first saves you time and gives you quick wins.</p>
+<h3>The Shopping Cart Cliff</h3>
+<p>According to Forrester Research, 27% of online shoppers abandon their carts because of unexpected costs that appear at checkout. This is often your biggest, most fixable leak.</p>
+<p>Walk through your checkout process right now. Are shipping costs clearly displayed before checkout? Do taxes appear suddenly? Can customers easily edit their order without starting over? These friction points cost you customers every day.</p>
+<h3>The Information Overload Drop</h3>
+<p>Nielsen Norman Group&#39;s usability studies consistently show that users scan web pages rather than read them. If your product pages or checkout forms require too much reading or decision-making, people leave.</p>
+<p>Count the number of form fields in your checkout. Industry best practice suggests no more than 7-8 required fields for most purchases. Every additional field costs you customers.</p>
+<h3>The Trust Gap</h3>
+<p>Statista&#39;s 2023 data shows that 17% of cart abandonment happens due to concerns about payment security. Small businesses often underestimate how much trust signals matter to online shoppers.</p>
+<p>Look for missing trust elements: security badges, customer reviews, clear return policies, professional design, contact information. These might seem minor, but they&#39;re conversion killers for many businesses.</p>
+<h2>Tools You Actually Need (And Don&#39;t Need)</h2>
+<p>You don&#39;t need expensive analytics platforms to diagnose most funnel problems. Start with these free or low-cost tools:</p>
+<p><strong>Google Analytics 4:</strong> Shows you where people drop off in your funnel. Set up Enhanced Ecommerce tracking to see the exact steps where customers leave.</p>
+<p><strong>Hotjar or similar heat mapping tools:</strong> Watch recordings of real customers using your site. You&#39;ll spot problems you never noticed.</p>
+<p><strong>Your own eyes:</strong> Seriously. Buy something from your own business using different devices and browsers. You&#39;ll find issues immediately.</p>
+<p>What you probably don&#39;t need yet: Advanced attribution modeling, complex A/B testing platforms, or enterprise analytics tools. Get the basics right first.</p>
+<h2>Making Your First Fixes</h2>
+<p>Start with the highest-impact, lowest-effort improvements:</p>
+<ol>
+<li><strong>Add shipping costs to product pages</strong> — This single change often reduces cart abandonment by 20-30%</li>
+<li><strong>Simplify your checkout form</strong> — Remove optional fields, use auto-fill, show progress indicators</li>
+<li><strong>Add trust signals</strong> — Security badges, customer count, testimonials</li>
+<li><strong>Fix mobile experience</strong> — 54% of ecommerce traffic is mobile; make sure your funnel works on phones</li>
+</ol>
+<p>Test one change at a time so you can measure the impact. Many business owners make multiple changes simultaneously and never know which one actually helped.</p>
+<h2>Measuring Success and Ongoing Optimization</h2>
+<p>Set up simple tracking to monitor your improvements. Focus on these key metrics:</p>
+<ul>
+<li>Overall conversion rate (visitors to purchases)</li>
+<li>Step-by-step conversion rates through your funnel</li>
+<li>Revenue per visitor</li>
+<li>Cart abandonment rate</li>
+</ul>
+<p>Check these numbers monthly, not daily. Conversion optimization is a marathon, not a sprint. Small, consistent improvements compound over time.</p>
+<p>Remember, a 1% improvement in conversion rate might seem tiny, but for a business doing $100,000 in annual revenue, that&#39;s an extra $1,000 per year from a single small fix.</p>
+<p>Finding and fixing funnel leaks isn&#39;t about having perfect data or sophisticated tools — it&#39;s about systematically asking the right questions and making smart, customer-focused improvements. Start with the Three Questions Framework, focus on your biggest leaks first, and make one improvement at a time.</p>
+<p>Ready to dig deeper into conversion optimization strategies that actually work for small businesses? Visit gonzalo.tech for practical guides that skip the technical jargon and focus on results you can implement this week.</p>
+<hr>
+<p>Gonzalo Aguilar is a Senior Product Manager specializing in growth, identity, and onboarding in regulated markets. He writes about product strategy, conversion optimization, and practical AI workflows at gonzalo.tech.</p>
+
+
+      <div class="pdf-download">
+        <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
+        <a href="../pdfs/funnel-drop-off-diagnosis.pdf" download>Download PDF</a>
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      &copy; 2026 gonzalo.tech — Gonzalo Aguilar
+    </footer>
+  </div>
+</body>
+</html>
