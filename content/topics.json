@@ -731,7 +731,8 @@
       ],
       "framework": "Anxiety Map",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:36:01.114Z"
     },
     {
       "slug": "ai-voice-search-content",
@@ -742,7 +743,8 @@
       ],
       "framework": "Three Questions Framework",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:36:53.070Z"
     },
     {
       "slug": "ai-testimonial-requests",
@@ -753,7 +755,8 @@
       ],
       "framework": "Friction-to-Trust Pipeline",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:37:51.639Z"
     },
     {
       "slug": "ai-returns-management",
@@ -764,7 +767,8 @@
       ],
       "framework": "Three Questions Framework",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:38:47.656Z"
     },
     {
       "slug": "ai-multi-channel-inbox",
@@ -775,7 +779,8 @@
       ],
       "framework": "Friction-to-Trust Pipeline",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:39:50.629Z"
     },
     {
       "slug": "ai-website-copy-rewrite",
@@ -786,7 +791,7 @@
       ],
       "framework": "Anxiety Map",
       "language": "EN",
-      "status": "pending"
+      "status": "generating"
     },
     {
       "slug": "landing-page-above-fold",
@@ -797,7 +802,8 @@
       ],
       "framework": "Anxiety Map",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:40:39.627Z"
     },
     {
       "slug": "pricing-page-psychology",
