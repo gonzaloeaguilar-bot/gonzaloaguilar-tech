@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Small Business Playbook for AI-Powered Customer Support — gonzalo.tech</title>
+  <meta name="description" content="Transform your small business customer support with AI tools. Learn the Three Questions Framework to choose, implement, and optimize AI helpdesks.">
+  <meta name="keywords" content="AI customer support, small business helpdesk">
+  <meta name="author" content="Gonzalo Aguilar">
+  <meta property="og:title" content="The Small Business Playbook for AI-Powered Customer Support — gonzalo.tech">
+  <meta property="og:description" content="Transform your small business customer support with AI tools. Learn the Three Questions Framework to choose, implement, and optimize AI helpdesks.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://gonzalo.tech/output/ai-customer-support-playbook.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Small Business Playbook for AI-Powered Customer Support">
+  <meta name="twitter:description" content="Transform your small business customer support with AI tools. Learn the Three Questions Framework to choose, implement, and optimize AI helpdesks.">
+  <link rel="canonical" href="https://gonzalo.tech/output/ai-customer-support-playbook.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Small Business Playbook for AI-Powered Customer Support",
+    "description": "Transform your small business customer support with AI tools. Learn the Three Questions Framework to choose, implement, and optimize AI helpdesks.",
+    "author": {
+      "@type": "Person",
+      "name": "Gonzalo Aguilar",
+      "url": "https://gonzalo.tech"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "gonzalo.tech"
+    },
+    "url": "https://gonzalo.tech/output/ai-customer-support-playbook.html",
+    "inLanguage": "en"
+  }
+  </script>
+  <style>
+    /* Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Brand tokens */
+    :root {
+      --ink: #0F172A;
+      --slate: #334155;
+      --muted: #64748B;
+      --subtle: #94A3B8;
+      --border: #E2E8F0;
+      --surface: #F8FAFC;
+      --white: #FFFFFF;
+      --red: #DC2626;
+      --green: #16A34A;
+      --amber: #D97706;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: Calibri, 'Gill Sans', 'Segoe UI', sans-serif;
+      --font-code: Consolas, 'Courier New', monospace;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--slate);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* Header */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+      margin-bottom: 3rem;
+    }
+    .site-header a {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    /* Article */
+    article { text-align: left; }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--ink);
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--ink);
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+    }
+
+    ul, ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    li { margin-bottom: 0.4rem; }
+
+    blockquote {
+      border-left: 3px solid var(--ink);
+      padding: 0.75rem 1.25rem;
+      margin: 1.5rem 0;
+      background: var(--surface);
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    code {
+      font-family: var(--font-code);
+      background: var(--surface);
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+
+    pre {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.25rem;
+      overflow-x: auto;
+      margin-bottom: 1.25rem;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    strong { color: var(--ink); }
+
+    a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    a:hover { color: var(--muted); }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* PDF download banner */
+    .pdf-download {
+      margin-top: 2.5rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .pdf-download p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--slate);
+    }
+    .pdf-download a {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      background: var(--ink);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .pdf-download a:hover {
+      background: var(--slate);
+      color: var(--white);
+    }
+
+    /* Author bio */
+    .author-bio {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Footer */
+    .site-footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--subtle);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.3rem; }
+      .container { padding: 1rem; }
+    }
+
+    /* Print */
+    @media print {
+      body { font-size: 12pt; color: #000; }
+      .site-header, .site-footer { display: none; }
+      .container { max-width: 100%; padding: 0; }
+      a { text-decoration: none; color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="../index.html">gonzalo.tech</a>
+    </header>
+
+    <article>
+      <h1>The Small Business Playbook for AI-Powered Customer Support</h1>
+<p>Your phone rings at 11 PM. It&#39;s a customer with an urgent question about their order. Meanwhile, your inbox overflows with support tickets, and your team of two can barely keep up during business hours, let alone after midnight.</p>
+<p>Sound familiar? You&#39;re not alone. According to a 2023 Gartner study, 89% of small businesses struggle with customer support capacity, yet only 23% have explored AI solutions. The gap isn&#39;t about technology—it&#39;s about knowing where to start.</p>
+<p>Here&#39;s the truth: AI customer support isn&#39;t about replacing human connection. It&#39;s about amplifying your team&#39;s ability to help customers faster, more accurately, and around the clock. And yes, even your corner bakery can benefit from this technology.</p>
+<p>Let me walk you through the <strong>Three Questions Framework</strong>—a simple system I&#39;ve developed to help non-technical business owners navigate AI customer support without drowning in tech speak.</p>
+<h2>Understanding AI Customer Support: The Basics</h2>
+<p>Think of AI customer support like having a really smart intern who never sleeps, never gets frustrated, and remembers every conversation your business has ever had with customers.</p>
+<p><strong>Simple version</strong>: AI customer support uses computer programs to answer customer questions automatically. These systems can handle common inquiries, route complex issues to humans, and learn from every interaction.</p>
+<p><strong>Business consequence</strong>: Without some form of automated support, you&#39;re either drowning your staff in repetitive questions or leaving customers waiting too long for answers. A 2023 McKinsey report found that businesses lose 67% of potential repeat customers due to slow response times.</p>
+<p><strong>Real-world analogy</strong>: Imagine your support system as a restaurant. Traditional support is like having one waiter for the entire restaurant—they&#39;re great when they reach you, but the wait is brutal. AI support adds a smart host who can answer basic questions (&quot;Where&#39;s the bathroom?&quot;), take drink orders, and only call the waiter for complex requests.</p>
+<h2>The Three Questions Framework for AI Customer Support</h2>
+<p>Before diving into any AI tool, ask yourself these three questions. They&#39;ll save you time, money, and headaches.</p>
+<h3>Question 1: What Questions Do We Answer Most Often?</h3>
+<p>Start by tracking your support tickets for two weeks. You&#39;ll likely discover that 60-80% of inquiries fall into just 5-10 categories.</p>
+<p><strong>Common small business support categories include:</strong></p>
+<ul>
+<li>Business hours and location</li>
+<li>Order status and shipping</li>
+<li>Return and refund policies</li>
+<li>Pricing and product availability</li>
+<li>Account access issues</li>
+</ul>
+<p><strong>Why this matters</strong>: AI excels at handling repetitive questions with consistent answers. If you can&#39;t identify your most common inquiries, you can&#39;t build an effective AI system.</p>
+<p><strong>Action step</strong>: Create a simple spreadsheet tracking every customer question for two weeks. Don&#39;t overthink it—just note the question type and how long it took to resolve.</p>
+<h3>Question 2: Where Do Customers Currently Reach Out?</h3>
+<p>Map every touchpoint where customers contact you. This might include your website contact form, email, phone, social media, or even text messages.</p>
+<p><strong>Simple version</strong>: You need to know all the doors customers use to enter your support system before you can put AI guards at those doors.</p>
+<p><strong>Business consequence</strong>: Ignoring this step means creating an AI system that only covers some of your support channels, forcing customers to repeat themselves across platforms. Forrester Research found that 72% of customers expect consistent support across all channels.</p>
+<p><strong>Real-world analogy</strong>: It&#39;s like installing a smart doorbell on your front door but leaving your back door and windows completely unmonitored. Customers will still find ways in, but they&#39;ll be frustrated by the inconsistent experience.</p>
+<h3>Question 3: What Happens When AI Can&#39;t Help?</h3>
+<p>This is the most overlooked question, yet it&#39;s crucial. AI won&#39;t solve every customer issue—probably not even 50% initially.</p>
+<p><strong>Plan your escalation process:</strong></p>
+<ul>
+<li>How quickly can AI transfer to a human?</li>
+<li>Who gets notified when AI escalation happens?</li>
+<li>How do you track AI success rates?</li>
+<li>What information does AI pass to human agents?</li>
+</ul>
+<p><strong>Simple version</strong>: You need a clear handoff plan when your AI hits its limits.</p>
+<p><strong>Business consequence</strong>: Poor escalation creates customer frustration and makes your AI system feel like a barrier rather than a helper. Studies show that 84% of customers get more frustrated with bad AI than with no AI at all.</p>
+<h2>Choosing Your AI Customer Support Tool</h2>
+<p>The market offers everything from simple chatbots to complex AI platforms. Here&#39;s how to choose without getting overwhelmed.</p>
+<h3>Start Simple: Chatbot vs. Full AI Platform</h3>
+<p><strong>Chatbots</strong> work like interactive FAQ pages. They follow predetermined conversation trees and can handle basic questions reliably.</p>
+<p><strong>AI platforms</strong> use machine learning to understand context and provide more natural responses. They&#39;re more powerful but require more setup and monitoring.</p>
+<p><strong>My recommendation</strong>: Start with a chatbot if you have clear, consistent answers to common questions. Upgrade to an AI platform once you&#39;re comfortable with the basics.</p>
+<h3>Key Features to Prioritize</h3>
+<ol>
+<li><strong>Easy setup</strong>: You should be able to add basic responses without coding</li>
+<li><strong>Multi-channel support</strong>: Works on your website, email, and social media</li>
+<li><strong>Human handoff</strong>: Smooth transfer to your team when needed</li>
+<li><strong>Analytics</strong>: Shows you what&#39;s working and what isn&#39;t</li>
+<li><strong>Integration</strong>: Connects with your existing tools (email, CRM, etc.)</li>
+</ol>
+<h2>Implementation: Your 30-Day Roadmap</h2>
+<h3>Week 1: Foundation</h3>
+<ul>
+<li>Complete your Two Questions Framework analysis</li>
+<li>Choose your AI tool based on your findings</li>
+<li>Set up the basic system with 5-10 common questions</li>
+</ul>
+<h3>Week 2: Training and Testing</h3>
+<ul>
+<li>Add more questions and responses</li>
+<li>Test the system internally with your team</li>
+<li>Refine escalation procedures</li>
+</ul>
+<h3>Week 3: Soft Launch</h3>
+<ul>
+<li>Deploy to a small percentage of customers</li>
+<li>Monitor interactions closely</li>
+<li>Adjust based on real customer feedback</li>
+</ul>
+<h3>Week 4: Full Deployment</h3>
+<ul>
+<li>Roll out to all customers</li>
+<li>Train your team on the new escalation process</li>
+<li>Establish regular review procedures</li>
+</ul>
+<h2>Measuring Success: What Actually Matters</h2>
+<p>Don&#39;t get lost in vanity metrics. Focus on these key indicators:</p>
+<p><strong>Customer satisfaction</strong>: Are customers happier with response times?
+<strong>Team efficiency</strong>: Is your support team handling fewer routine questions?
+<strong>Response times</strong>: How quickly are customers getting help?
+<strong>Resolution rates</strong>: What percentage of issues get solved without human intervention?</p>
+<p>According to Baymard Institute&#39;s 2023 research, businesses that implement AI customer support see an average 35% reduction in support ticket volume and 42% improvement in first-response times.</p>
+<h2>Common Pitfalls and How to Avoid Them</h2>
+<p><strong>Pitfall 1: Over-promising AI capabilities</strong>
+Don&#39;t claim your AI can do everything. Be transparent about its limitations and always provide easy access to human support.</p>
+<p><strong>Pitfall 2: Set-and-forget mentality</strong>
+AI systems need regular updates as your business evolves. Schedule monthly reviews to add new questions and improve responses.</p>
+<p><strong>Pitfall 3: Ignoring the human element</strong>
+AI should enhance, not replace, human connection. Train your team to use AI as a tool that gives them more time for complex, meaningful customer interactions.</p>
+<h2>Making It Work for Your Business</h2>
+<p>Remember, AI customer support isn&#39;t about having the fanciest technology. It&#39;s about serving your customers better while giving your team breathing room to focus on growing your business.</p>
+<p>Start small, measure what matters, and improve incrementally. The Three Questions Framework will keep you focused on what actually moves the needle for your customers and your bottom line.</p>
+<p>Your customers don&#39;t care about your AI—they care about getting fast, accurate help when they need it. AI is simply the tool that makes that possible, even when you&#39;re not available to personally handle every question.</p>
+<p>Ready to transform your customer support without the tech overwhelm? Visit gonzalo.tech for practical AI guides designed specifically for small business owners who want results, not complexity.</p>
+<hr>
+<p>Gonzalo Aguilar is a Senior Product Manager specializing in growth, identity, and onboarding in regulated markets. He writes about product strategy, conversion optimization, and practical AI workflows at gonzalo.tech.</p>
+
+
+      <div class="pdf-download">
+        <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
+        <a href="../pdfs/ai-customer-support-playbook.pdf" download>Download PDF</a>
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      &copy; 2026 gonzalo.tech — Gonzalo Aguilar
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>How to Evaluate an AI Vendor Without Getting Burned — gonzalo.tech</title>
+  <style>
+    /* Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0F172A;
+      --slate: #334155;
+      --muted: #64748B;
+      --subtle: #94A3B8;
+      --border: #E2E8F0;
+      --surface: #F8FAFC;
+      --white: #FFFFFF;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: Calibri, 'Gill Sans', 'Segoe UI', sans-serif;
+      --font-code: Consolas, 'Courier New', monospace;
+    }
+
+    @page {
+      size: Letter;
+      margin: 1in;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 12pt;
+      line-height: 1.6;
+      color: var(--slate);
+      background: var(--white);
+    }
+
+    /* ========== COVER PAGE ========== */
+    .cover {
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 2in 0;
+    }
+
+    .cover-badge {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 9pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--muted);
+      border: 1.5px solid var(--border);
+      padding: 6px 14px;
+      margin-bottom: 2rem;
+    }
+
+    .cover h1 {
+      font-family: var(--font-heading);
+      font-size: 28pt;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+      max-width: 85%;
+    }
+
+    .cover-subtitle {
+      font-size: 13pt;
+      color: var(--muted);
+      line-height: 1.5;
+      max-width: 80%;
+      margin-bottom: 3rem;
+    }
+
+    .cover-divider {
+      width: 60px;
+      height: 2px;
+      background: var(--ink);
+      margin-bottom: 2rem;
+    }
+
+    .cover-author {
+      font-size: 11pt;
+      color: var(--slate);
+    }
+    .cover-author strong {
+      color: var(--ink);
+    }
+
+    .cover-url {
+      font-size: 10pt;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+
+    .cover-footer {
+      margin-top: auto;
+      font-size: 9pt;
+      color: var(--subtle);
+    }
+
+    /* ========== CONTENT PAGES ========== */
+    .content {
+      padding-top: 0;
+    }
+
+    /* Running header */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2rem;
+      font-size: 8pt;
+      color: var(--subtle);
+    }
+    .page-header-brand {
+      font-family: var(--font-heading);
+      font-size: 9pt;
+      color: var(--muted);
+    }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 22pt;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 15pt;
+      color: var(--ink);
+      margin-top: 2rem;
+      margin-bottom: 0.6rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 12pt;
+      color: var(--ink);
+      margin-top: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      margin-bottom: 0.9rem;
+      orphans: 3;
+      widows: 3;
+    }
+
+    ul, ol {
+      margin-bottom: 0.9rem;
+      padding-left: 1.25rem;
+    }
+    li { margin-bottom: 0.3rem; }
+
+    blockquote {
+      border-left: 3px solid var(--ink);
+      padding: 8px 16px;
+      margin: 1.2rem 0;
+      background: var(--surface);
+      color: var(--ink);
+      font-style: italic;
+      font-size: 11pt;
+    }
+
+    code {
+      font-family: var(--font-code);
+      background: var(--surface);
+      padding: 1px 4px;
+      border-radius: 2px;
+      font-size: 0.9em;
+    }
+
+    pre {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 12px;
+      overflow-x: auto;
+      margin-bottom: 0.9rem;
+      font-size: 9pt;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    strong { color: var(--ink); }
+
+    a {
+      color: var(--ink);
+      text-decoration: underline;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 1.5rem 0;
+    }
+
+    /* Key takeaway boxes */
+    .takeaway {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--ink);
+      padding: 12px 16px;
+      margin: 1.2rem 0;
+      font-size: 11pt;
+    }
+
+    /* ========== CTA PAGE ========== */
+    .cta-page {
+      page-break-before: always;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 60vh;
+      padding: 2in 0;
+    }
+
+    .cta-page h2 {
+      font-family: var(--font-heading);
+      font-size: 20pt;
+      color: var(--ink);
+      border: none;
+      padding: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-page p {
+      font-size: 12pt;
+      color: var(--slate);
+      max-width: 85%;
+      margin-bottom: 1rem;
+    }
+
+    .cta-links {
+      margin-top: 1.5rem;
+      font-size: 11pt;
+    }
+    .cta-links p {
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-divider {
+      width: 60px;
+      height: 2px;
+      background: var(--ink);
+      margin: 2rem 0;
+    }
+
+    .cta-bio {
+      font-size: 10pt;
+      color: var(--muted);
+      font-style: italic;
+      max-width: 90%;
+    }
+
+    .cta-free {
+      display: inline-block;
+      font-size: 9pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--muted);
+      border: 1.5px solid var(--border);
+      padding: 6px 14px;
+      margin-bottom: 1rem;
+    }
+
+    /* ========== FOOTER ========== */
+    .page-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 7pt;
+      color: var(--subtle);
+      padding: 8px 1in;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- COVER PAGE -->
+  <div class="cover">
+    <div class="cover-badge">Free Guide</div>
+    <h1>How to Evaluate an AI Vendor Without Getting Burned</h1>
+    <p class="cover-subtitle">Learn how to evaluate AI vendors using a simple 3-question framework. Avoid costly mistakes and choose the right AI software for your small business.</p>
+    <div class="cover-divider"></div>
+    <p class="cover-author"><strong>Gonzalo Aguilar</strong></p>
+    <p class="cover-url">gonzalo.tech</p>
+    <p class="cover-footer">April 2026 &mdash; Free to share. No sign-up required.</p>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+    <div class="page-header">
+      <span class="page-header-brand">gonzalo.tech</span>
+      <span>How to Evaluate an AI Vendor Without Getting Burned</span>
+    </div>
+    <h1>How to Evaluate an AI Vendor Without Getting Burned</h1>
+<p>You&#39;re scrolling through your inbox and there it is again — another AI vendor promising to revolutionize your business with their &quot;cutting-edge solution.&quot; The demo looks impressive, the salesperson is enthusiastic, and the case studies seem too good to be true. </p>
+<p>Sound familiar? You&#39;re not alone. According to a 2023 McKinsey study, 40% of organizations plan to increase AI investments, but many struggle with vendor selection. The problem isn&#39;t lack of options — it&#39;s having too many options without a clear way to separate the game-changers from the snake oil.</p>
+<p>Here&#39;s the thing: choosing the wrong AI vendor isn&#39;t just expensive. It can derail your digital transformation, frustrate your team, and leave you more skeptical about AI&#39;s potential than when you started. But with the right evaluation framework, you can confidently separate the wheat from the chaff.</p>
+<h2>The Real Cost of Getting It Wrong</h2>
+<p>Before we dive into solutions, let&#39;s talk about what&#39;s at stake. When small businesses choose the wrong AI vendor, three things typically happen:</p>
+<p><strong>Financial drain.</strong> You&#39;re not just paying for software that doesn&#39;t work — you&#39;re paying for implementation, training, and opportunity cost. Gartner research from 2023 found that failed AI implementations cost small businesses an average of $180,000 in the first year alone.</p>
+<p><strong>Team burnout.</strong> Nothing kills enthusiasm for innovation faster than a tool that promises to make work easier but actually makes it harder. Your team starts viewing AI as hype instead of help.</p>
+<p><strong>Strategic setback.</strong> Poor AI experiences create organizational antibodies against future technology adoption. You might miss out on genuinely transformative solutions because your first experience was terrible.</p>
+<p>Think of it like hiring the wrong contractor for a home renovation. Not only do you lose money, but you also have to fix the damage before you can start over.</p>
+<h2>The Three Questions Framework for AI Vendor Evaluation</h2>
+<p>Instead of getting lost in technical specifications and marketing promises, I want you to focus on three fundamental questions. This framework cuts through the noise and gets to what actually matters for your business success.</p>
+<h3>Question 1: &quot;Can You Show Me This Working Tomorrow?&quot;</h3>
+<p><strong>Simple version:</strong> You need to see the AI actually performing real work, not just theoretical possibilities.</p>
+<p><strong>Business consequence:</strong> Vendors who can&#39;t demonstrate immediate, concrete value are selling you potential, not performance. Potential doesn&#39;t pay the bills or solve your problems.</p>
+<p><strong>Real-world analogy:</strong> It&#39;s like buying a car. You wouldn&#39;t purchase based solely on the brochure — you&#39;d want to take it for a test drive, check under the hood, and see how it handles in real conditions.</p>
+<p>Here&#39;s what this looks like in practice. When you ask this question, credible vendors will offer:</p>
+<ul>
+<li><strong>Live demonstrations</strong> using your actual data (with proper privacy protections)</li>
+<li><strong>Pilot programs</strong> that let you test the solution in your real environment</li>
+<li><strong>Clear timelines</strong> for when you&#39;ll see results, usually measured in days or weeks, not months</li>
+</ul>
+<p>Red flags include vendors who insist on lengthy discovery phases before showing you anything, refuse to work with sample data that resembles yours, or keep deflecting to future capabilities instead of current functionality.</p>
+<p>The best AI vendors understand that seeing is believing. They&#39;ll roll up their sleeves and prove their solution works with your specific challenges before asking for a major commitment.</p>
+<h3>Question 2: &quot;What Happens When It Breaks?&quot;</h3>
+<p><strong>Simple version:</strong> All technology fails sometimes. Great vendors have a plan for when (not if) things go wrong.</p>
+<p><strong>Business consequence:</strong> AI systems that break without warning or support can halt your operations. You need partners, not just vendors — people who&#39;ll help you succeed, not disappear after the sale.</p>
+<p><strong>Real-world analogy:</strong> Think about your relationship with your mechanic. The best ones don&#39;t just fix your car — they help you prevent problems, explain what&#39;s happening in plain English, and make themselves available when you need them most.</p>
+<p>When evaluating support and reliability, dig into these areas:</p>
+<p><strong>Response times and escalation paths.</strong> What happens if the AI stops working at 3 PM on a Friday? Do you have a real person to call, or are you stuck with a chatbot telling you to submit a ticket?</p>
+<p><strong>Transparent communication about limitations.</strong> Honest vendors will tell you what their AI can&#39;t do and what scenarios might cause problems. Dishonest ones paint everything as sunshine and rainbows.</p>
+<p><strong>Training and knowledge transfer.</strong> Will your team know how to troubleshoot basic issues, or will you be completely dependent on the vendor for everything?</p>
+<p>A Forrester study from 2023 found that businesses with strong vendor support relationships were 60% more likely to achieve their AI implementation goals. This isn&#39;t just about technical help — it&#39;s about having a partner who&#39;s invested in your success.</p>
+<h3>Question 3: &quot;How Do I Get My Data Back?&quot;</h3>
+<p><strong>Simple version:</strong> You need a clear, simple way to export your data and move to a different solution if needed.</p>
+<p><strong>Business consequence:</strong> Vendor lock-in is real and expensive. Without data portability, you&#39;re trapped even if the solution stops meeting your needs or the company goes out of business.</p>
+<p><strong>Real-world analogy:</strong> It&#39;s like choosing a storage unit company. You want to know that if you need to move your stuff, you can do it easily without having to rebuy everything or jump through impossible hoops.</p>
+<p>Data portability isn&#39;t just about disaster scenarios — it&#39;s about maintaining control over your business. Here&#39;s what to look for:</p>
+<p><strong>Standard export formats.</strong> Can you get your data in common formats (CSV, JSON, API access) that work with other tools? Proprietary formats that only work with their system are a major red flag.</p>
+<p><strong>Regular backup options.</strong> Can you schedule automatic exports so you always have recent copies of your data? This protects you even if the vendor has technical problems.</p>
+<p><strong>Clear data ownership policies.</strong> Some vendors try to claim ownership or usage rights over data you put into their systems. Make sure your contracts explicitly state that your data belongs to you.</p>
+<p>The Nielsen Norman Group found in their 2023 research that data portability concerns were the top barrier preventing 34% of small businesses from adopting new software solutions. Smart vendors understand this and make data export a selling point, not an afterthought.</p>
+<h2>Beyond the Three Questions: Additional Evaluation Criteria</h2>
+<p>While the Three Questions Framework covers the fundamentals, a few additional factors deserve attention:</p>
+<p><strong>Integration capabilities.</strong> Does the AI solution play nicely with tools you already use? Forcing your team to switch between multiple disconnected systems kills productivity faster than using no AI at all.</p>
+<p><strong>Pricing transparency.</strong> Beware of vendors who can&#39;t give you clear pricing without extensive &quot;discovery&quot; calls. The best solutions have straightforward pricing that scales with your usage or business size.</p>
+<p><strong>Reference customers.</strong> Ask for contacts at businesses similar to yours who have used the solution for at least six months. A ten-minute conversation with a real customer is worth more than a hundred marketing case studies.</p>
+<p><strong>Security and compliance.</strong> If you handle sensitive data (customer information, financial records, health data), make sure the vendor meets your industry&#39;s security requirements. This isn&#39;t optional — it&#39;s existential.</p>
+<h2>Red Flags That Should Make You Run</h2>
+<p>Some warning signs are so serious that you should immediately disqualify a vendor:</p>
+<ul>
+<li>Refusing to provide references or insisting all their customers signed NDAs</li>
+<li>Pressure tactics about &quot;limited-time offers&quot; or artificial urgency</li>
+<li>Inability to explain their AI in simple terms (if they can&#39;t explain it simply, they probably don&#39;t understand it themselves)</li>
+<li>Requiring you to completely change your existing workflows to accommodate their solution</li>
+<li>No clear pricing or contract terms</li>
+<li>Claims that their AI will replace human judgment entirely in critical business decisions</li>
+</ul>
+<h2>Making Your Final Decision</h2>
+<p>After you&#39;ve applied the Three Questions Framework and checked for red flags, trust your instincts. The right AI vendor should feel like a partner who understands your business and wants to help you succeed. They&#39;ll be transparent about limitations, realistic about timelines, and focused on solving your actual problems rather than showing off their technology.</p>
+<p>Remember: you&#39;re not just buying software — you&#39;re entering a relationship that could last years and significantly impact your business operations. Choose accordingly.</p>
+<p>The AI landscape will continue evolving rapidly, but by focusing on these fundamentals, you&#39;ll make decisions that serve your business well regardless of how the technology changes. Don&#39;t let the fear of missing out push you into hasty decisions, and don&#39;t let technical complexity intimidate you into accepting bad deals.</p>
+<p>Ready to evaluate AI vendors with confidence? Start by downloading our complete AI vendor evaluation checklist and get access to more practical AI guidance for small business owners at gonzalo.tech.</p>
+<hr>
+<p>Gonzalo Aguilar is a Senior Product Manager specializing in growth, identity, and onboarding in regulated markets. He writes about product strategy, conversion optimization, and practical AI workflows at gonzalo.tech.</p>
+
+  </div>
+
+  <!-- CTA PAGE -->
+  <div class="cta-page">
+    <div class="cta-free">100% Free</div>
+    <h2>Want more guides like this?</h2>
+    <p>Every week I publish practical guides on AI, product strategy, and conversion optimization — written for business owners, not engineers.</p>
+    <p>All free. No paywall. No email gate.</p>
+    <div class="cta-links">
+      <p><strong>Read more:</strong> gonzalo.tech</p>
+      <p><strong>Download all guides:</strong> gonzalo.tech/resources</p>
+    </div>
+    <div class="cta-divider"></div>
+    <p class="cta-bio">Gonzalo Aguilar is a Senior Product Manager specializing in growth, identity, and onboarding in regulated markets. He writes about product strategy, conversion optimization, and practical AI workflows at gonzalo.tech.</p>
+  </div>
+
+</body>
+</html>

@@ -351,7 +351,8 @@
       ],
       "framework": "Friction-to-Trust Pipeline",
       "language": "EN",
-      "status": "generating"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:07:51.154Z"
     },
     {
       "slug": "when-not-to-use-ai",
@@ -362,7 +363,8 @@
       ],
       "framework": "Anxiety Map",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:09:07.241Z"
     },
     {
       "slug": "ai-invoicing-bookkeeping",
@@ -373,7 +375,8 @@
       ],
       "framework": "Three Questions Framework",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:10:01.116Z"
     },
     {
       "slug": "ai-hiring-job-descriptions",
@@ -384,7 +387,8 @@
       ],
       "framework": "Friction-to-Trust Pipeline",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:11:00.506Z"
     },
     {
       "slug": "ai-customer-support-playbook",
@@ -395,7 +399,8 @@
       ],
       "framework": "Three Questions Framework",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:11:49.017Z"
     },
     {
       "slug": "ai-product-description-ecommerce",
@@ -406,7 +411,7 @@
       ],
       "framework": "Friction-to-Trust Pipeline",
       "language": "EN",
-      "status": "pending"
+      "status": "generating"
     },
     {
       "slug": "ai-pricing-strategy",
@@ -417,7 +422,8 @@
       ],
       "framework": "Three Questions Framework",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:12:42.501Z"
     },
     {
       "slug": "ai-meeting-notes-summaries",
@@ -428,7 +434,8 @@
       ],
       "framework": "Anxiety Map",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:14:35.798Z"
     },
     {
       "slug": "ai-vendor-evaluation-framework",
@@ -439,7 +446,7 @@
       ],
       "framework": "Three Questions Framework",
       "language": "EN",
-      "status": "pending"
+      "status": "generated"
     },
     {
       "slug": "ai-content-calendar-builder",
