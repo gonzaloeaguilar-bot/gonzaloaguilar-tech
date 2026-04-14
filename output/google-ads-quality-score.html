@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Ads Quality Score Explained for Non-Technical Business Owners — gonzalo.tech</title>
+  <meta name="description" content="Master Google Ads Quality Score without the tech jargon. Learn how this hidden metric impacts your ad costs and what you can actually do about it.">
+  <meta name="keywords" content="Google Ads quality score, improve Google Ads performance">
+  <meta name="author" content="Gonzalo Aguilar">
+  <meta property="og:title" content="Google Ads Quality Score Explained for Non-Technical Business Owners — gonzalo.tech">
+  <meta property="og:description" content="Master Google Ads Quality Score without the tech jargon. Learn how this hidden metric impacts your ad costs and what you can actually do about it.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://gonzalo.tech/output/google-ads-quality-score.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Google Ads Quality Score Explained for Non-Technical Business Owners">
+  <meta name="twitter:description" content="Master Google Ads Quality Score without the tech jargon. Learn how this hidden metric impacts your ad costs and what you can actually do about it.">
+  <link rel="canonical" href="https://gonzalo.tech/output/google-ads-quality-score.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Google Ads Quality Score Explained for Non-Technical Business Owners",
+    "description": "Master Google Ads Quality Score without the tech jargon. Learn how this hidden metric impacts your ad costs and what you can actually do about it.",
+    "author": {
+      "@type": "Person",
+      "name": "Gonzalo Aguilar",
+      "url": "https://gonzalo.tech"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "gonzalo.tech"
+    },
+    "url": "https://gonzalo.tech/output/google-ads-quality-score.html",
+    "inLanguage": "en"
+  }
+  </script>
+  <style>
+    /* Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Brand tokens */
+    :root {
+      --ink: #0F172A;
+      --slate: #334155;
+      --muted: #64748B;
+      --subtle: #94A3B8;
+      --border: #E2E8F0;
+      --surface: #F8FAFC;
+      --white: #FFFFFF;
+      --red: #DC2626;
+      --green: #16A34A;
+      --amber: #D97706;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: Calibri, 'Gill Sans', 'Segoe UI', sans-serif;
+      --font-code: Consolas, 'Courier New', monospace;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--slate);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* Header */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+      margin-bottom: 3rem;
+    }
+    .site-header a {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    /* Article */
+    article { text-align: left; }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--ink);
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--ink);
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+    }
+
+    ul, ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    li { margin-bottom: 0.4rem; }
+
+    blockquote {
+      border-left: 3px solid var(--ink);
+      padding: 0.75rem 1.25rem;
+      margin: 1.5rem 0;
+      background: var(--surface);
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    code {
+      font-family: var(--font-code);
+      background: var(--surface);
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+
+    pre {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.25rem;
+      overflow-x: auto;
+      margin-bottom: 1.25rem;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    strong { color: var(--ink); }
+
+    a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    a:hover { color: var(--muted); }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* PDF download banner */
+    .pdf-download {
+      margin-top: 2.5rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .pdf-download p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--slate);
+    }
+    .pdf-download a {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      background: var(--ink);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .pdf-download a:hover {
+      background: var(--slate);
+      color: var(--white);
+    }
+
+    /* Author bio */
+    .author-bio {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Footer */
+    .site-footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--subtle);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.3rem; }
+      .container { padding: 1rem; }
+    }
+
+    /* Print */
+    @media print {
+      body { font-size: 12pt; color: #000; }
+      .site-header, .site-footer { display: none; }
+      .container { max-width: 100%; padding: 0; }
+      a { text-decoration: none; color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="../index.html">gonzalo.tech</a>
+    </header>
+
+    <article>
+      <h1>Google Ads Quality Score Explained for Non-Technical Business Owners</h1>
+<p>You&#39;re running Google Ads for your business, watching your budget disappear faster than free donuts at a morning meeting. Meanwhile, your competitor seems to be getting better ad positions for less money. What gives?</p>
+<p>The answer might be hiding in a metric you&#39;ve probably never heard of: Quality Score. Don&#39;t worry — you don&#39;t need a computer science degree to understand this. I&#39;m going to walk you through everything you need to know, using what I call the Anxiety Map framework to turn this confusing topic into actionable steps.</p>
+<h2>What Is Google Ads Quality Score (The Simple Version)</h2>
+<p>Think of Quality Score as Google&#39;s report card for your ads. Just like a teacher grades your kid&#39;s homework, Google grades every ad you create on a scale of 1 to 10. A score of 10 means Google thinks your ad is fantastic. A score of 1 means... well, let&#39;s just say Google isn&#39;t impressed.</p>
+<p>Here&#39;s the thing: this grade directly affects how much you pay every time someone clicks your ad. Better grades mean lower costs. Worse grades mean you&#39;re basically paying a premium for mediocre performance.</p>
+<p>Google calculates this score by looking at three main factors: how relevant your ad is to what people are searching for, how good your landing page is, and how often people actually click on your ads compared to how often they see them.</p>
+<h2>Why Quality Score Matters More Than You Think</h2>
+<p><strong>The Business Consequence:</strong> Ignoring Quality Score is like driving with the parking brake on — you&#39;ll get where you&#39;re going, but you&#39;ll burn through money and time unnecessarily.</p>
+<p>According to a 2023 WordStream study, advertisers with Quality Scores of 7 or higher pay up to 50% less per click than those with scores below 5. That&#39;s not pocket change — that&#39;s the difference between profitable ads and budget-draining disasters.</p>
+<p><strong>Real-World Analogy:</strong> Imagine you&#39;re trying to get into an exclusive restaurant. If you&#39;re dressed well, polite, and have a reservation (high Quality Score), you get the best table at regular prices. If you show up in flip-flops without a reservation (low Quality Score), you might still get in, but you&#39;ll pay more and get stuck at the table by the kitchen.</p>
+<h2>The Anxiety Map: From Confusion to Confidence</h2>
+<p>The Anxiety Map framework helps us break down complex problems into manageable steps. Here&#39;s how we&#39;ll tackle Quality Score anxiety:</p>
+<h3>Anxiety Level 1: &quot;I Have No Idea What This Means&quot;</h3>
+<p><strong>Feeling:</strong> Complete overwhelm when you see Quality Score mentioned in your Google Ads dashboard.</p>
+<p><strong>What&#39;s Actually Happening:</strong> You&#39;re seeing numbers (1-10) next to your keywords, but nobody explained what they mean or why they matter.</p>
+<p><strong>Your Next Step:</strong> Simply acknowledge that these numbers exist and represent Google&#39;s opinion of your ad quality. Don&#39;t try to fix everything at once — just start noticing the scores.</p>
+<h3>Anxiety Level 2: &quot;I Know It&#39;s Important But Don&#39;t Know How to Fix It&quot;</h3>
+<p><strong>Feeling:</strong> You understand Quality Score affects your costs, but the solutions feel overwhelming or too technical.</p>
+<p><strong>What&#39;s Actually Happening:</strong> You&#39;re trying to boil the ocean instead of focusing on the basics that drive 80% of your results.</p>
+<p><strong>Your Next Step:</strong> Focus on one component at a time. Start with ad relevance — make sure your ad text actually matches what people are searching for.</p>
+<h3>Anxiety Level 3: &quot;I&#39;m Making Changes But Not Seeing Results&quot;</h3>
+<p><strong>Feeling:</strong> Frustrated because you&#39;ve made adjustments but your Quality Scores aren&#39;t improving.</p>
+<p><strong>What&#39;s Actually Happening:</strong> Either you&#39;re making the wrong changes, or you haven&#39;t given Google enough time to update your scores (this can take days or weeks).</p>
+<p><strong>Your Next Step:</strong> Track one specific change for at least two weeks before making another adjustment. Quality Score changes slowly, not instantly.</p>
+<h2>The Three Components That Actually Matter</h2>
+<h3>Component 1: Ad Relevance</h3>
+<p><strong>Simple Version:</strong> Your ad text should match what people are searching for. If someone searches &quot;women&#39;s running shoes,&quot; your ad should mention women&#39;s running shoes, not just &quot;great deals on footwear.&quot;</p>
+<p><strong>Business Consequence:</strong> Poor ad relevance means you&#39;re paying for clicks from people who weren&#39;t actually looking for what you offer. According to Forrester Research (2022), irrelevant ads have 73% higher bounce rates and 45% lower conversion rates.</p>
+<p><strong>Real-World Analogy:</strong> It&#39;s like putting up a &quot;Fresh Pizza&quot; sign when you&#39;re actually selling hamburgers. You&#39;ll get people in the door, but they&#39;ll leave immediately — and you still have to pay for the sign.</p>
+<h3>Component 2: Landing Page Experience</h3>
+<p><strong>Simple Version:</strong> When someone clicks your ad, the page they land on should be fast, relevant, and easy to use on mobile devices.</p>
+<p><strong>Business Consequence:</strong> A slow or confusing landing page doesn&#39;t just hurt your Quality Score — it kills your conversions. The Baymard Institute found that 70% of users abandon purchases due to poor website performance.</p>
+<p><strong>Real-World Analogy:</strong> Your landing page is like the inside of your store. Your ad is the attractive window display that gets people to walk in. If the inside is messy, slow, or doesn&#39;t match what the window promised, people leave — and they don&#39;t come back.</p>
+<h3>Component 3: Expected Click-Through Rate</h3>
+<p><strong>Simple Version:</strong> This measures whether Google thinks people will click on your ad based on how it&#39;s performed historically.</p>
+<p><strong>Business Consequence:</strong> Low expected click-through rates mean Google thinks your ads are boring or irrelevant, so they&#39;ll charge you more and show your ads less often.</p>
+<p><strong>Real-World Analogy:</strong> It&#39;s like your track record at a networking event. If you consistently give engaging presentations that people want to hear, event organizers will give you better time slots. If your talks consistently empty the room, you&#39;ll get the 8 AM Friday slot.</p>
+<h2>Practical Steps to Improve Your Quality Score</h2>
+<h3>Week 1: Audit Your Current Situation</h3>
+<p>Log into your Google Ads account and look at your Quality Scores. Don&#39;t panic if they&#39;re low — this is your baseline. According to Gartner (2023), 68% of small businesses have never checked their Quality Scores.</p>
+<p>Write down your three worst-performing keywords and their scores. These are your priorities.</p>
+<h3>Week 2: Match Your Ads to Your Keywords</h3>
+<p>For each low-scoring keyword, rewrite your ad headline to include that exact keyword. If your keyword is &quot;organic dog food,&quot; your headline should say &quot;Organic Dog Food&quot; — not &quot;Premium Pet Nutrition.&quot;</p>
+<p>This single change can improve ad relevance scores within days.</p>
+<h3>Week 3: Fix Your Landing Pages</h3>
+<p>Make sure the page people land on after clicking your ad actually mentions the keyword they searched for. If they searched for &quot;blue widgets,&quot; the landing page better talk about blue widgets, not just widgets in general.</p>
+<p>Also check that your page loads in under 3 seconds on mobile. Google&#39;s own research shows that 53% of users abandon pages that take longer than 3 seconds to load.</p>
+<h3>Week 4: Write Better Ad Copy</h3>
+<p>Your ads need to stand out without being clickbait. Include specific benefits, use numbers when possible, and always include a clear call to action.</p>
+<p>Instead of &quot;Great Deals on Shoes,&quot; try &quot;20% Off Running Shoes | Free Shipping | Shop Now.&quot;</p>
+<h2>Common Mistakes That Tank Your Quality Score</h2>
+<p><strong>Mistake 1:</strong> Using the same ad for completely different keywords. If you&#39;re bidding on both &quot;wedding photographer&quot; and &quot;corporate headshots,&quot; you need different ads for each.</p>
+<p><strong>Mistake 2:</strong> Sending all traffic to your homepage. Create specific landing pages for your ads, or at least send people to the most relevant section of your existing site.</p>
+<p><strong>Mistake 3:</strong> Ignoring mobile users. Over 60% of Google searches happen on mobile devices, according to Statista (2023). If your landing page looks terrible on phones, your Quality Score will suffer.</p>
+<p><strong>Mistake 4:</strong> Expecting overnight results. Quality Score changes gradually as Google collects more data about your ads&#39; performance.</p>
+<h2>When to Stop Obsessing Over Quality Score</h2>
+<p>Here&#39;s the thing nobody tells you: perfect Quality Scores aren&#39;t always the goal. If your Quality Score is 6 or 7 and your ads are profitable, you might be better off focusing on other aspects of your business.</p>
+<p>Quality Score is a means to an end — the end being profitable advertising. Don&#39;t let perfect be the enemy of good.</p>
+<h2>Your Next Steps</h2>
+<p>Start with the Anxiety Map framework. Where are you right now? Complete overwhelm, or frustrated with slow progress?</p>
+<p>Based on your anxiety level, pick one action from this post and commit to it for the next two weeks. Track your progress, but don&#39;t expect miracles overnight.</p>
+<p>Remember: Google Ads Quality Score isn&#39;t about perfection — it&#39;s about improvement. Every point you gain saves you money and gets your ads seen by more potential customers.</p>
+<p>Ready to take control of your Google Ads performance without the technical overwhelm? Visit gonzalo.tech for more practical guides that turn complex marketing concepts into actionable steps for smart business owners.</p>
+<hr>
+<p>Gonzalo Aguilar is a Senior Product Manager specializing in growth, identity, and onboarding in regulated markets. He writes about product strategy, conversion optimization, and practical AI workflows at gonzalo.tech.</p>
+
+
+      <div class="pdf-download">
+        <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
+        <a href="../pdfs/google-ads-quality-score.pdf" download>Download PDF</a>
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      &copy; 2026 gonzalo.tech — Gonzalo Aguilar
+    </footer>
+  </div>
+</body>
+</html>

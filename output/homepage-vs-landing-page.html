@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage vs Landing Page: Which One Should Your Ads Send People To? — gonzalo.tech</title>
+  <meta name="description" content="Learn whether to send ad traffic to your homepage or landing page. Discover the Three Questions Framework to boost conversions and ROI.">
+  <meta name="keywords" content="homepage vs landing page, where to send ad traffic">
+  <meta name="author" content="Gonzalo Aguilar">
+  <meta property="og:title" content="Homepage vs Landing Page: Which One Should Your Ads Send People To? — gonzalo.tech">
+  <meta property="og:description" content="Learn whether to send ad traffic to your homepage or landing page. Discover the Three Questions Framework to boost conversions and ROI.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://gonzalo.tech/output/homepage-vs-landing-page.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Homepage vs Landing Page: Which One Should Your Ads Send People To?">
+  <meta name="twitter:description" content="Learn whether to send ad traffic to your homepage or landing page. Discover the Three Questions Framework to boost conversions and ROI.">
+  <link rel="canonical" href="https://gonzalo.tech/output/homepage-vs-landing-page.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Homepage vs Landing Page: Which One Should Your Ads Send People To?",
+    "description": "Learn whether to send ad traffic to your homepage or landing page. Discover the Three Questions Framework to boost conversions and ROI.",
+    "author": {
+      "@type": "Person",
+      "name": "Gonzalo Aguilar",
+      "url": "https://gonzalo.tech"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "gonzalo.tech"
+    },
+    "url": "https://gonzalo.tech/output/homepage-vs-landing-page.html",
+    "inLanguage": "en"
+  }
+  </script>
+  <style>
+    /* Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Brand tokens */
+    :root {
+      --ink: #0F172A;
+      --slate: #334155;
+      --muted: #64748B;
+      --subtle: #94A3B8;
+      --border: #E2E8F0;
+      --surface: #F8FAFC;
+      --white: #FFFFFF;
+      --red: #DC2626;
+      --green: #16A34A;
+      --amber: #D97706;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: Calibri, 'Gill Sans', 'Segoe UI', sans-serif;
+      --font-code: Consolas, 'Courier New', monospace;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--slate);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* Header */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+      margin-bottom: 3rem;
+    }
+    .site-header a {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    /* Article */
+    article { text-align: left; }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--ink);
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--ink);
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+    }
+
+    ul, ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    li { margin-bottom: 0.4rem; }
+
+    blockquote {
+      border-left: 3px solid var(--ink);
+      padding: 0.75rem 1.25rem;
+      margin: 1.5rem 0;
+      background: var(--surface);
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    code {
+      font-family: var(--font-code);
+      background: var(--surface);
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+
+    pre {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.25rem;
+      overflow-x: auto;
+      margin-bottom: 1.25rem;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    strong { color: var(--ink); }
+
+    a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    a:hover { color: var(--muted); }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* PDF download banner */
+    .pdf-download {
+      margin-top: 2.5rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .pdf-download p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--slate);
+    }
+    .pdf-download a {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      background: var(--ink);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .pdf-download a:hover {
+      background: var(--slate);
+      color: var(--white);
+    }
+
+    /* Author bio */
+    .author-bio {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Footer */
+    .site-footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--subtle);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.3rem; }
+      .container { padding: 1rem; }
+    }
+
+    /* Print */
+    @media print {
+      body { font-size: 12pt; color: #000; }
+      .site-header, .site-footer { display: none; }
+      .container { max-width: 100%; padding: 0; }
+      a { text-decoration: none; color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="../index.html">gonzalo.tech</a>
+    </header>
+
+    <article>
+      <h1>Homepage vs Landing Page: Which One Should Your Ads Send People To?</h1>
+<p>You&#39;ve crafted the perfect ad. The copy is crisp, the image grabs attention, and you&#39;re ready to watch those clicks roll in. But then you hit the moment that stumps most small business owners: where should this ad actually send people?</p>
+<p>Your homepage feels like the obvious choice—it&#39;s your digital front door, after all. But then you remember reading something about landing pages being better for conversions. Now you&#39;re second-guessing yourself, and meanwhile, your ad budget is burning while you deliberate.</p>
+<p>Here&#39;s the truth: this decision can make or break your advertising ROI. According to a 2023 study by Unbounce, dedicated landing pages convert at 9.7% on average, while homepage traffic typically converts at just 2.4%. That&#39;s a 300% difference in performance.</p>
+<p>Don&#39;t stress—I got you. By the end of this post, you&#39;ll know exactly where to send your ad traffic using a simple framework that takes the guesswork out of this critical decision.</p>
+<h2>Understanding the Basics: What&#39;s Actually Different?</h2>
+<h3>The Homepage Reality Check</h3>
+<p>Your homepage is like the lobby of a busy hotel. It serves everyone—new visitors trying to understand what you do, existing customers looking for support, potential employees checking you out, and yes, people who clicked your ad. It&#39;s designed to handle all these different needs, which means it can&#39;t optimize for any single one perfectly.</p>
+<p><strong>Simple version:</strong> Your homepage tries to be everything to everyone, so it&#39;s not specifically designed to convert ad clicks into sales.</p>
+<p><strong>Business consequence:</strong> When you send ad traffic to your homepage, you&#39;re asking people to navigate through generic content to find what your ad promised them. Most won&#39;t make that effort. They&#39;ll bounce, taking your ad spend with them.</p>
+<p><strong>Real-world analogy:</strong> It&#39;s like having a billboard that says &quot;Best Pizza in Town - Exit Now!&quot; but then directing people to a mall food court where they have to figure out which restaurant actually serves the pizza you advertised.</p>
+<h3>The Landing Page Advantage</h3>
+<p>A landing page is purpose-built for one thing: converting people who clicked a specific ad. It matches the promise your ad made, removes distractions, and guides visitors toward a single action.</p>
+<p>The numbers don&#39;t lie. HubSpot&#39;s 2023 marketing research found that businesses using dedicated landing pages see 55% more leads than those sending traffic to their homepage. When you consider that the average small business spends $10,000 annually on digital advertising, that difference in conversion rates represents thousands of dollars in potential revenue.</p>
+<h2>The Three Questions Framework: Your Decision-Making Tool</h2>
+<p>Rather than guessing where to send your ad traffic, use this simple three-question framework to make the right choice every time:</p>
+<p><strong>Question 1: What specific action do you want people to take?</strong>
+<strong>Question 2: How much does that action differ from your homepage&#39;s main purpose?</strong>
+<strong>Question 3: How much are you spending, and what&#39;s at stake?</strong></p>
+<p>Let&#39;s break down how to apply each question.</p>
+<h2>Question 1: What Specific Action Do You Want People to Take?</h2>
+<h3>Defining Your Conversion Goal</h3>
+<p>Before you can decide where to send traffic, you need crystal clarity on what you want that traffic to do. This isn&#39;t about general awareness—it&#39;s about the specific next step you want people to take after clicking your ad.</p>
+<p><strong>Simple version:</strong> Every ad should have one clear goal for what happens next.</p>
+<p><strong>Business consequence:</strong> Without a specific conversion goal, you can&#39;t optimize your traffic destination, measure success, or improve performance. You&#39;re essentially throwing money at hope.</p>
+<p><strong>Real-world analogy:</strong> It&#39;s like inviting someone to dinner without deciding what you&#39;re cooking. You can&#39;t shop for ingredients, prep the kitchen, or set expectations.</p>
+<h3>Common Conversion Goals and Their Implications</h3>
+<p><strong>Lead Generation:</strong> You want contact information in exchange for something valuable (quote, consultation, download). This almost always requires a landing page because you need to clearly communicate the value exchange and minimize distractions from form completion.</p>
+<p><strong>Direct Sales:</strong> You want immediate purchases of a specific product or service. Landing pages typically outperform here because they can focus entirely on that product&#39;s benefits without competing messages.</p>
+<p><strong>Appointment Booking:</strong> You want people to schedule consultations or service calls. This usually works better with landing pages that can address specific concerns and streamline the booking process.</p>
+<p><strong>General Brand Awareness:</strong> You want people to understand your overall business. Homepage traffic might work here, but only if your goal is truly education rather than conversion.</p>
+<h2>Question 2: How Much Does That Action Differ from Your Homepage&#39;s Main Purpose?</h2>
+<h3>The Alignment Test</h3>
+<p>Your homepage serves your entire business. If your ad&#39;s specific goal aligns closely with your homepage&#39;s primary message, sending traffic there might work. If there&#39;s a significant gap, you need a landing page.</p>
+<p><strong>Simple version:</strong> The bigger the difference between what your ad promises and what your homepage delivers, the more you need a dedicated landing page.</p>
+<p><strong>Business consequence:</strong> Misaligned expectations create what marketers call &quot;scent loss&quot;—people lose the trail between your ad and your site, leading to immediate bounces and wasted spend.</p>
+<p><strong>Real-world analogy:</strong> If your ad is selling winter coats but your homepage showcases your entire clothing store, people have to hunt for what brought them there. Most won&#39;t bother.</p>
+<h3>Measuring the Gap</h3>
+<p>Ask yourself these diagnostic questions:</p>
+<ul>
+<li>Does your homepage&#39;s headline match your ad&#39;s promise?</li>
+<li>Would someone landing on your homepage immediately understand why they&#39;re there based on your ad?</li>
+<li>Are there competing messages or offers that might distract from your ad&#39;s goal?</li>
+<li>Does your homepage&#39;s design guide people toward your ad&#39;s intended action?</li>
+</ul>
+<p>If you answered &quot;no&quot; to any of these, the gap is significant enough to warrant a landing page.</p>
+<h2>Question 3: How Much Are You Spending, and What&#39;s at Stake?</h2>
+<h3>The ROI Reality Check</h3>
+<p>Creating landing pages takes time and sometimes money. But so does wasted ad spend. According to Gartner&#39;s 2023 digital marketing research, businesses lose an average of 32% of their paid advertising budget to poor traffic direction decisions.</p>
+<p><strong>Simple version:</strong> The more you&#39;re spending on ads, the more a landing page&#39;s conversion boost matters to your bottom line.</p>
+<p><strong>Business consequence:</strong> Even small conversion rate improvements compound dramatically with higher ad spend. A 5% conversion rate increase on $1,000 monthly ad spend saves you $50. On $10,000 monthly spend, that same improvement saves $500.</p>
+<p><strong>Real-world analogy:</strong> It&#39;s like deciding whether to hire a guide for a hiking trip. For a casual walk, you might skip it. For an expensive expedition, the guide&#39;s expertise pays for itself by preventing costly mistakes.</p>
+<h3>The Break-Even Calculation</h3>
+<p>Here&#39;s a simple way to think about the math:</p>
+<p>If you&#39;re spending less than $500 monthly on ads for a specific campaign, start with homepage traffic and test. The landing page investment might not pay off immediately.</p>
+<p>If you&#39;re spending $500-2,000 monthly, landing pages become more critical. The conversion improvement usually justifies the effort within 30-60 days.</p>
+<p>If you&#39;re spending over $2,000 monthly, landing pages are almost always worth it. The ROI improvement covers the creation cost within weeks.</p>
+<h2>Making the Decision: A Practical Workflow</h2>
+<h3>The Quick Decision Tree</h3>
+<p>Start with Question 1: What&#39;s your specific conversion goal?</p>
+<ul>
+<li>If it&#39;s general awareness or multiple goals → Consider homepage</li>
+<li>If it&#39;s one specific action → Move to Question 2</li>
+</ul>
+<p>Apply Question 2: How aligned is this with your homepage?</p>
+<ul>
+<li>If very aligned → Homepage might work</li>
+<li>If somewhat aligned → Test both</li>
+<li>If not aligned → Landing page needed</li>
+</ul>
+<p>Factor in Question 3: What&#39;s your spend level?</p>
+<ul>
+<li>Under $500/month → Start with homepage, plan landing page</li>
+<li>$500-2,000/month → Lean toward landing page</li>
+<li>Over $2,000/month → Definitely use landing page</li>
+</ul>
+<h3>Common Scenarios Solved</h3>
+<p><strong>Scenario:</strong> Local service business advertising &quot;Free Estimates&quot;
+<strong>Three Questions Analysis:</strong> Specific goal (estimates), different from homepage (general services), moderate spend
+<strong>Decision:</strong> Landing page focused on estimate request form</p>
+<p><strong>Scenario:</strong> E-commerce store advertising 20% off everything
+<strong>Three Questions Analysis:</strong> Specific goal (sales with discount), might align with homepage, depends on spend
+<strong>Decision:</strong> If homepage prominently features sales/promotions, start there. Otherwise, landing page.</p>
+<p><strong>Scenario:</strong> Consultant advertising free strategy guide
+<strong>Three Questions Analysis:</strong> Specific goal (lead generation), very different from homepage services focus, any spend level
+<strong>Decision:</strong> Landing page required to explain guide value and capture leads</p>
+<h2>Implementation Tips That Actually Work</h2>
+<h3>If You Choose Homepage</h3>
+<p>Make these quick adjustments to improve conversion:</p>
+<ul>
+<li>Add a banner or popup that matches your ad&#39;s promise</li>
+<li>Temporarily feature your ad&#39;s offer prominently</li>
+<li>Remove or minimize competing calls-to-action during the campaign</li>
+<li>Track specific conversion paths from ad traffic vs. organic traffic</li>
+</ul>
+<h3>If You Choose Landing Page</h3>
+<p>Keep it simple but effective:</p>
+<ul>
+<li>Match your ad&#39;s headline and key message exactly</li>
+<li>Include one clear call-to-action above the fold</li>
+<li>Remove navigation to prevent distraction</li>
+<li>Use social proof relevant to your ad&#39;s promise</li>
+<li>Test mobile experience first (most ad traffic is mobile)</li>
+</ul>
+<h3>Testing and Optimization</h3>
+<p>Regardless of your choice, plan to test and optimize. Even the best initial decision can be improved. Set up conversion tracking, run ads for at least two weeks to gather meaningful data, then optimize based on actual performance rather than assumptions.</p>
+<h2>Your Next Steps</h2>
+<p>The homepage vs landing page decision doesn&#39;t have to be complicated. Use the Three Questions Framework to cut through the confusion:</p>
+<ol>
+<li><strong>What specific action do you want?</strong> (Be precise)</li>
+<li><strong>How different is this from your homepage&#39;s purpose?</strong> (Be honest)</li>
+<li><strong>What&#39;s your spend and what&#39;s at stake?</strong> (Be realistic)</li>
+</ol>
+<p>Your answers will point you toward the right choice for your business and budget.</p>
+<p>Ready to put this framework into action? Start by auditing your current ad campaigns using these three questions. You might discover some quick wins that can boost your conversion rates immediately.</p>
+<p>For more practical AI and digital marketing frameworks designed specifically for small business owners, visit gonzalo.tech where we translate complex strategies into actionable steps you can implement today.</p>
+<hr>
+<p>Gonzalo Aguilar is a Senior Product Manager specializing in growth, identity, and onboarding in regulated markets. He writes about product strategy, conversion optimization, and practical AI workflows at gonzalo.tech.</p>
+
+
+      <div class="pdf-download">
+        <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
+        <a href="../pdfs/homepage-vs-landing-page.pdf" download>Download PDF</a>
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      &copy; 2026 gonzalo.tech — Gonzalo Aguilar
+    </footer>
+  </div>
+</body>
+</html>
