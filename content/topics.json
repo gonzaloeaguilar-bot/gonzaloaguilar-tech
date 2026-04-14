@@ -411,7 +411,8 @@
       ],
       "framework": "Friction-to-Trust Pipeline",
       "language": "EN",
-      "status": "generating"
+      "status": "published",
+      "publishedAt": "2026-04-14T16:20:49.955Z"
     },
     {
       "slug": "ai-pricing-strategy",
@@ -458,7 +459,8 @@
       ],
       "framework": "Friction-to-Trust Pipeline",
       "language": "EN",
-      "status": "generating"
+      "status": "published",
+      "publishedAt": "2026-04-14T16:20:49.955Z"
     },
     {
       "slug": "ai-faq-page-generator",
@@ -505,7 +507,8 @@
       ],
       "framework": "Three Questions Framework",
       "language": "EN",
-      "status": "generated"
+      "status": "published",
+      "publishedAt": "2026-04-14T16:20:49.955Z"
     },
     {
       "slug": "ai-competitive-analysis",
@@ -552,7 +555,8 @@
       ],
       "framework": "Three Questions Framework",
       "language": "EN",
-      "status": "generating"
+      "status": "published",
+      "publishedAt": "2026-04-14T16:20:49.955Z"
     },
     {
       "slug": "ai-cost-per-task-calculator",
@@ -791,7 +795,8 @@
       ],
       "framework": "Anxiety Map",
       "language": "EN",
-      "status": "generating"
+      "status": "published",
+      "publishedAt": "2026-04-14T16:20:49.955Z"
     },
     {
       "slug": "landing-page-above-fold",
@@ -1006,7 +1011,8 @@
       ],
       "framework": "Friction-to-Trust Pipeline",
       "language": "EN",
-      "status": "generating"
+      "status": "published",
+      "publishedAt": "2026-04-14T16:20:49.955Z"
     },
     {
       "slug": "homepage-vs-landing-page",
