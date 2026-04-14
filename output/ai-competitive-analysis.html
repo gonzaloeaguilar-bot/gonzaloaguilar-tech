@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Run a Competitive Analysis Using Free AI Tools — gonzalo.tech</title>
+  <meta name="description" content="Learn how to analyze competitors using free AI tools with the Three Questions Framework. Step-by-step guide for small business owners.">
+  <meta name="keywords" content="AI competitive analysis, competitor research AI">
+  <meta name="author" content="Gonzalo Aguilar">
+  <meta property="og:title" content="How to Run a Competitive Analysis Using Free AI Tools — gonzalo.tech">
+  <meta property="og:description" content="Learn how to analyze competitors using free AI tools with the Three Questions Framework. Step-by-step guide for small business owners.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://gonzalo.tech/output/ai-competitive-analysis.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Run a Competitive Analysis Using Free AI Tools">
+  <meta name="twitter:description" content="Learn how to analyze competitors using free AI tools with the Three Questions Framework. Step-by-step guide for small business owners.">
+  <link rel="canonical" href="https://gonzalo.tech/output/ai-competitive-analysis.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Run a Competitive Analysis Using Free AI Tools",
+    "description": "Learn how to analyze competitors using free AI tools with the Three Questions Framework. Step-by-step guide for small business owners.",
+    "author": {
+      "@type": "Person",
+      "name": "Gonzalo Aguilar",
+      "url": "https://gonzalo.tech"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "gonzalo.tech"
+    },
+    "url": "https://gonzalo.tech/output/ai-competitive-analysis.html",
+    "inLanguage": "en"
+  }
+  </script>
+  <style>
+    /* Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Brand tokens */
+    :root {
+      --ink: #0F172A;
+      --slate: #334155;
+      --muted: #64748B;
+      --subtle: #94A3B8;
+      --border: #E2E8F0;
+      --surface: #F8FAFC;
+      --white: #FFFFFF;
+      --red: #DC2626;
+      --green: #16A34A;
+      --amber: #D97706;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: Calibri, 'Gill Sans', 'Segoe UI', sans-serif;
+      --font-code: Consolas, 'Courier New', monospace;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--slate);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* Header */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+      margin-bottom: 3rem;
+    }
+    .site-header a {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    /* Article */
+    article { text-align: left; }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--ink);
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--ink);
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+    }
+
+    ul, ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    li { margin-bottom: 0.4rem; }
+
+    blockquote {
+      border-left: 3px solid var(--ink);
+      padding: 0.75rem 1.25rem;
+      margin: 1.5rem 0;
+      background: var(--surface);
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    code {
+      font-family: var(--font-code);
+      background: var(--surface);
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+
+    pre {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.25rem;
+      overflow-x: auto;
+      margin-bottom: 1.25rem;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    strong { color: var(--ink); }
+
+    a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    a:hover { color: var(--muted); }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* PDF download banner */
+    .pdf-download {
+      margin-top: 2.5rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .pdf-download p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--slate);
+    }
+    .pdf-download a {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      background: var(--ink);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .pdf-download a:hover {
+      background: var(--slate);
+      color: var(--white);
+    }
+
+    /* Author bio */
+    .author-bio {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Footer */
+    .site-footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--subtle);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.3rem; }
+      .container { padding: 1rem; }
+    }
+
+    /* Print */
+    @media print {
+      body { font-size: 12pt; color: #000; }
+      .site-header, .site-footer { display: none; }
+      .container { max-width: 100%; padding: 0; }
+      a { text-decoration: none; color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="../index.html">gonzalo.tech</a>
+    </header>
+
+    <article>
+      <h1>How to Run a Competitive Analysis Using Free AI Tools</h1>
+<p>You know that sinking feeling when you discover a competitor doing something brilliant that you missed? Or worse — when you realize you&#39;ve been guessing about your competition instead of actually studying them?</p>
+<p>Here&#39;s the thing: competitive analysis used to require expensive tools, marketing agencies, or hours of manual research. Not anymore. AI has democratized competitive intelligence, and you can now uncover insights about your competitors that would have cost thousands of dollars just a few years ago.</p>
+<h2>Why Small Businesses Need AI-Powered Competitive Analysis</h2>
+<p><strong>Simple version:</strong> AI competitive analysis means using artificial intelligence tools to automatically gather, organize, and interpret information about your competitors&#39; strategies, pricing, content, and customer feedback.</p>
+<p><strong>Business consequence:</strong> Without systematic competitor research, you&#39;re flying blind. According to a 2023 McKinsey study, businesses that conduct regular competitive analysis are 2.5 times more likely to achieve above-average growth rates. Meanwhile, companies that ignore their competitive landscape often miss critical market shifts, price incorrectly, and waste resources on strategies their competitors already proved don&#39;t work.</p>
+<p><strong>Real-world analogy:</strong> Think of competitive analysis like checking traffic before you drive. You could just hop in your car and hope for the best, but smart drivers check Waze first. They see where the traffic jams are, which routes are moving fast, and where accidents happened. AI competitive analysis is your business GPS — it shows you the competitive landscape so you can navigate smarter.</p>
+<h2>The Three Questions Framework for Competitor Research</h2>
+<p>Before diving into tools and tactics, you need structure. The Three Questions Framework ensures you gather actionable intelligence instead of drowning in data:</p>
+<p><strong>Question 1: What are they doing that&#39;s working?</strong>
+This covers successful strategies, popular content, effective messaging, and customer engagement tactics you can adapt.</p>
+<p><strong>Question 2: What are they doing that&#39;s failing?</strong>
+Look for customer complaints, failed campaigns, pricing missteps, and gaps in their service that represent opportunities for you.</p>
+<p><strong>Question 3: What are they not doing at all?</strong>
+These are the white spaces — unaddressed customer needs, missing features, or untapped marketing channels where you can gain an advantage.</p>
+<p>Keep these three questions visible throughout your analysis. Every piece of data you collect should answer one of them.</p>
+<h2>Setting Up Your AI-Powered Research System</h2>
+<h3>Choose Your Competitors Wisely</h3>
+<p>Start with 3-5 direct competitors. More than that becomes overwhelming; fewer gives you incomplete data.</p>
+<p><strong>Direct competitors:</strong> Businesses offering similar solutions to similar customers (your biggest threat)
+<strong>Indirect competitors:</strong> Different solutions for the same customer problem (your growth opportunity)
+<strong>Aspirational competitors:</strong> Bigger players you want to compete with eventually (your learning laboratory)</p>
+<h3>Essential Free AI Tools for Competitive Analysis</h3>
+<p><strong>ChatGPT/Claude for Content Analysis</strong>
+These large language models excel at analyzing competitor content, identifying messaging patterns, and summarizing customer reviews. Upload competitor website text, social media posts, or customer feedback, then ask specific questions like &quot;What pain points does this messaging address?&quot; or &quot;What value propositions appear most frequently?&quot;</p>
+<p><strong>Google&#39;s Bard for Real-Time Research</strong>
+Since Bard connects to current web data, it&#39;s perfect for gathering fresh information about competitor announcements, recent reviews, or market trends. Ask it to &quot;summarize recent news about [competitor name]&quot; or &quot;find customer complaints about [competitor product].&quot;</p>
+<p><strong>Perplexity AI for Deep Research</strong>
+This tool combines search with AI analysis, making it ideal for comprehensive competitor research. It cites sources, so you can verify findings and dig deeper into specific claims.</p>
+<h2>Step-by-Step AI Competitive Analysis Process</h2>
+<h3>Step 1: Map Their Digital Presence (Question 1 Focus)</h3>
+<p>Use AI to audit where and how your competitors show up online.</p>
+<p><strong>Website Analysis:</strong> Copy key pages from competitor websites into ChatGPT. Ask: &quot;Analyze this homepage copy. What customer problems does it prioritize? What emotional triggers does it use? How does it position the product?&quot; </p>
+<p><strong>Social Media Reconnaissance:</strong> Feed competitor social posts into AI tools with prompts like: &quot;What content themes get the most engagement? What tone of voice do they use? What calls-to-action appear most frequently?&quot;</p>
+<p><strong>Content Strategy Review:</strong> Analyze their blog posts, videos, or podcasts. Ask AI: &quot;What topics do they cover most? What&#39;s their content publishing frequency? What expertise do they claim?&quot;</p>
+<h3>Step 2: Decode Their Customer Experience (Questions 2 &amp; 3 Focus)</h3>
+<p>This is where you find gold — real customer opinions about what&#39;s working and what isn&#39;t.</p>
+<p><strong>Review Analysis:</strong> Collect reviews from Google, Yelp, Trustpilot, or industry-specific platforms. Feed batches of 10-15 reviews into AI with prompts like: &quot;Identify the top 3 customer complaints and top 3 praised features. What problems do customers mention that this company doesn&#39;t address?&quot;</p>
+<p><strong>Support Channel Mining:</strong> Check their FAQ pages, help documentation, or community forums. AI can identify common problems: &quot;Based on these support docs, what issues do customers struggle with most?&quot;</p>
+<p>According to a 2023 Forrester study, 73% of customers read reviews before making purchase decisions, and businesses that systematically analyze competitor reviews are 40% more likely to identify market gaps.</p>
+<h3>Step 3: Pricing and Positioning Intelligence (All Questions)</h3>
+<p><strong>Pricing Strategy Analysis:</strong> If competitors publish pricing, feed it to AI: &quot;Compare these pricing strategies. What value proposition does each price point represent? What customer segments do these prices target?&quot;</p>
+<p><strong>Messaging Matrix:</strong> Collect competitor taglines, headlines, and key messaging. Ask AI: &quot;What positioning strategy does this messaging suggest? What customer benefits do they emphasize? What market position are they claiming?&quot;</p>
+<h2>Advanced AI Research Techniques</h2>
+<h3>Sentiment Analysis at Scale</h3>
+<p>Instead of reading hundreds of reviews manually, use AI to process sentiment patterns. Upload competitor reviews and ask: &quot;What percentage of reviews mention each feature positively vs negatively? What emotional language appears most frequently?&quot;</p>
+<h3>Content Gap Analysis</h3>
+<p>Feed your content alongside competitor content into AI: &quot;Compare these two content strategies. What topics does [competitor] cover that we don&#39;t? What audiences are they targeting that we&#39;re missing?&quot;</p>
+<h3>Trend Prediction</h3>
+<p>Use AI to spot patterns: &quot;Based on this competitor&#39;s content from the past 6 months, what trends are they following? What new topics are they exploring?&quot;</p>
+<h2>Organizing and Acting on Your Intelligence</h2>
+<h3>Create Your Competitive Intelligence Dashboard</h3>
+<p>Use a simple spreadsheet with tabs for:</p>
+<ul>
+<li>Competitor profiles (basic info, positioning, key strengths/weaknesses)</li>
+<li>Pricing comparison </li>
+<li>Content analysis</li>
+<li>Customer feedback themes</li>
+<li>Action items</li>
+</ul>
+<h3>Weekly AI Research Routine</h3>
+<p>Set up a 30-minute weekly process:</p>
+<ol>
+<li>Check for competitor news/announcements (5 minutes)</li>
+<li>Analyze their latest content with AI (10 minutes)</li>
+<li>Review new customer feedback (10 minutes)  </li>
+<li>Update your opportunity list (5 minutes)</li>
+</ol>
+<p>According to Gartner&#39;s 2023 research, companies that conduct weekly competitive monitoring outperform those who do quarterly reviews by 23% in market responsiveness.</p>
+<h2>Common AI Research Mistakes to Avoid</h2>
+<p><strong>Over-relying on AI interpretation:</strong> AI is excellent at pattern recognition but can miss context. Always verify important findings with human judgment.</p>
+<p><strong>Ignoring bias:</strong> AI tools reflect the data they&#39;re trained on. Cross-reference findings across multiple sources and tools.</p>
+<p><strong>Analysis paralysis:</strong> Don&#39;t research forever. Set a deadline for analysis and a deadline for taking action on findings.</p>
+<p><strong>Forgetting the Three Questions:</strong> Keep returning to what competitors do well, what they do poorly, and what they don&#39;t do at all.</p>
+<h2>Turning Research into Results</h2>
+<p>The best competitive analysis is worthless without action. For each insight, ask:</p>
+<ul>
+<li>Can we do this better than our competitor?</li>
+<li>Should we avoid this mistake they&#39;re making?</li>
+<li>Is there an opportunity they&#39;re missing that we can capture?</li>
+</ul>
+<p>Create a prioritized list of competitive moves: quick wins you can implement this month, medium-term strategies for next quarter, and long-term positioning changes for next year.</p>
+<h2>Your Next Steps</h2>
+<p>Competitive intelligence isn&#39;t a one-time project — it&#39;s an ongoing advantage. Start with the Three Questions Framework, pick 2-3 AI tools from this list, and commit to 30 minutes of weekly competitor research.</p>
+<p>The businesses winning in today&#39;s market aren&#39;t necessarily the ones with the best products — they&#39;re the ones with the best information about their competitive landscape.</p>
+<p>Ready to build your AI-powered competitive intelligence system? Visit gonzalo.tech for practical frameworks and tools that help small business owners leverage AI without the technical complexity.</p>
+<hr>
+<p>Gonzalo Aguilar is a Senior Product Manager specializing in growth, identity, and onboarding in regulated markets. He writes about product strategy, conversion optimization, and practical AI workflows at gonzalo.tech.</p>
+
+
+      <div class="pdf-download">
+        <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
+        <a href="../pdfs/ai-competitive-analysis.pdf" download>Download PDF</a>
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      &copy; 2026 gonzalo.tech — Gonzalo Aguilar
+    </footer>
+  </div>
+</body>
+</html>

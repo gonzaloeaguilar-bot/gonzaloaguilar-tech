@@ -446,7 +446,8 @@
       ],
       "framework": "Three Questions Framework",
       "language": "EN",
-      "status": "generated"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:14:36.153Z"
     },
     {
       "slug": "ai-content-calendar-builder",
@@ -457,7 +458,7 @@
       ],
       "framework": "Friction-to-Trust Pipeline",
       "language": "EN",
-      "status": "pending"
+      "status": "generating"
     },
     {
       "slug": "ai-faq-page-generator",
@@ -468,7 +469,8 @@
       ],
       "framework": "Three Questions Framework",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:15:33.302Z"
     },
     {
       "slug": "ai-legal-document-review",
@@ -479,7 +481,8 @@
       ],
       "framework": "Anxiety Map",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:16:25.339Z"
     },
     {
       "slug": "ai-translation-multilingual-business",
@@ -490,7 +493,8 @@
       ],
       "framework": "Friction-to-Trust Pipeline",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:17:22.539Z"
     },
     {
       "slug": "ai-onboarding-new-employees",
@@ -501,7 +505,7 @@
       ],
       "framework": "Three Questions Framework",
       "language": "EN",
-      "status": "pending"
+      "status": "generated"
     },
     {
       "slug": "ai-competitive-analysis",
@@ -512,7 +516,8 @@
       ],
       "framework": "Three Questions Framework",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:19:29.597Z"
     },
     {
       "slug": "ai-survey-analysis",
@@ -523,7 +528,8 @@
       ],
       "framework": "Anxiety Map",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:20:39.524Z"
     },
     {
       "slug": "ai-ad-copy-generator",
@@ -534,7 +540,8 @@
       ],
       "framework": "Friction-to-Trust Pipeline",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:20:38.454Z"
     },
     {
       "slug": "ai-appointment-scheduling",
@@ -545,7 +552,8 @@
       ],
       "framework": "Three Questions Framework",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:21:39.948Z"
     },
     {
       "slug": "ai-cost-per-task-calculator",

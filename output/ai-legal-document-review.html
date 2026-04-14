@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Can AI Review Your Contracts? What It Can and Can't Do — gonzalo.tech</title>
+  <meta name="description" content="Learn what AI can and can't do for contract review. Get the Anxiety Map framework to evaluate AI legal tools safely for your small business.">
+  <meta name="keywords" content="AI contract review, AI legal documents small business">
+  <meta name="author" content="Gonzalo Aguilar">
+  <meta property="og:title" content="Can AI Review Your Contracts? What It Can and Can't Do — gonzalo.tech">
+  <meta property="og:description" content="Learn what AI can and can't do for contract review. Get the Anxiety Map framework to evaluate AI legal tools safely for your small business.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://gonzalo.tech/output/ai-legal-document-review.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Can AI Review Your Contracts? What It Can and Can't Do">
+  <meta name="twitter:description" content="Learn what AI can and can't do for contract review. Get the Anxiety Map framework to evaluate AI legal tools safely for your small business.">
+  <link rel="canonical" href="https://gonzalo.tech/output/ai-legal-document-review.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Can AI Review Your Contracts? What It Can and Can't Do",
+    "description": "Learn what AI can and can't do for contract review. Get the Anxiety Map framework to evaluate AI legal tools safely for your small business.",
+    "author": {
+      "@type": "Person",
+      "name": "Gonzalo Aguilar",
+      "url": "https://gonzalo.tech"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "gonzalo.tech"
+    },
+    "url": "https://gonzalo.tech/output/ai-legal-document-review.html",
+    "inLanguage": "en"
+  }
+  </script>
+  <style>
+    /* Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Brand tokens */
+    :root {
+      --ink: #0F172A;
+      --slate: #334155;
+      --muted: #64748B;
+      --subtle: #94A3B8;
+      --border: #E2E8F0;
+      --surface: #F8FAFC;
+      --white: #FFFFFF;
+      --red: #DC2626;
+      --green: #16A34A;
+      --amber: #D97706;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: Calibri, 'Gill Sans', 'Segoe UI', sans-serif;
+      --font-code: Consolas, 'Courier New', monospace;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--slate);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* Header */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+      margin-bottom: 3rem;
+    }
+    .site-header a {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    /* Article */
+    article { text-align: left; }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--ink);
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--ink);
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+    }
+
+    ul, ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    li { margin-bottom: 0.4rem; }
+
+    blockquote {
+      border-left: 3px solid var(--ink);
+      padding: 0.75rem 1.25rem;
+      margin: 1.5rem 0;
+      background: var(--surface);
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    code {
+      font-family: var(--font-code);
+      background: var(--surface);
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+
+    pre {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.25rem;
+      overflow-x: auto;
+      margin-bottom: 1.25rem;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    strong { color: var(--ink); }
+
+    a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    a:hover { color: var(--muted); }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* PDF download banner */
+    .pdf-download {
+      margin-top: 2.5rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .pdf-download p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--slate);
+    }
+    .pdf-download a {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      background: var(--ink);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .pdf-download a:hover {
+      background: var(--slate);
+      color: var(--white);
+    }
+
+    /* Author bio */
+    .author-bio {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Footer */
+    .site-footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--subtle);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.3rem; }
+      .container { padding: 1rem; }
+    }
+
+    /* Print */
+    @media print {
+      body { font-size: 12pt; color: #000; }
+      .site-header, .site-footer { display: none; }
+      .container { max-width: 100%; padding: 0; }
+      a { text-decoration: none; color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="../index.html">gonzalo.tech</a>
+    </header>
+
+    <article>
+      <h1>Can AI Review Your Contracts? What It Can and Can&#39;t Do</h1>
+<p>You&#39;re staring at a 15-page vendor agreement at 9 PM, squinting at clauses that might as well be written in ancient Greek. Your lawyer charges $400 an hour. Your business can&#39;t afford to miss red flags, but you also can&#39;t afford to have every contract professionally reviewed.</p>
+<p>Enter AI contract review tools promising to scan your legal documents in seconds. But here&#39;s the million-dollar question: Can you actually trust AI to protect your business?</p>
+<p>Let&#39;s map out exactly what AI can and can&#39;t do for your contracts—and more importantly, how to use it without putting your business at risk.</p>
+<h2>The Current Reality of AI Contract Review</h2>
+<p>According to a 2023 McKinsey study, 44% of legal functions are already experimenting with generative AI, with contract analysis being the most popular use case. But here&#39;s what most small business owners don&#39;t realize: there&#39;s a massive difference between &quot;experimenting with&quot; and &quot;relying on.&quot;</p>
+<p><strong>Simple version</strong>: AI can read contracts faster than humans and spot certain patterns, but it can&#39;t replace legal judgment.</p>
+<p><strong>Business consequence</strong>: Using AI incorrectly for contracts could leave you exposed to liability, missed deadlines, or unfavorable terms that cost thousands later.</p>
+<p><strong>Real-world analogy</strong>: Think of AI like a really smart intern who never gets tired. They can highlight suspicious clauses and check basic terms, but you wouldn&#39;t let an intern make final decisions about your company&#39;s legal commitments.</p>
+<h2>Introducing the Anxiety Map Framework</h2>
+<p>Before diving into what AI can do, let&#39;s address the elephant in the room: your anxiety about getting this wrong. The Anxiety Map framework helps you navigate new technology decisions by mapping four key territories:</p>
+<ol>
+<li><strong>Known Safe Zone</strong>: What you&#39;re confident AI can handle</li>
+<li><strong>Calculated Risk Zone</strong>: Where AI helps but needs oversight  </li>
+<li><strong>Danger Zone</strong>: Where AI shouldn&#39;t be trusted alone</li>
+<li><strong>Unknown Territory</strong>: Emerging capabilities you&#39;re not sure about</li>
+</ol>
+<p>This framework prevents both paralyzing fear and reckless overconfidence. Let&#39;s apply it to AI contract review.</p>
+<h2>Known Safe Zone: What AI Actually Excels At</h2>
+<h3>Basic Information Extraction</h3>
+<p>AI shines at pulling standard information from contracts. Need to know the contract term length, payment schedules, or key dates? AI can extract these faster and more accurately than manual review.</p>
+<p><strong>Why this works</strong>: These are objective facts, not subjective interpretations. According to Baymard Institute&#39;s 2023 research, AI accuracy for data extraction from structured documents exceeds 95% when properly configured.</p>
+<h3>Pattern Recognition for Standard Clauses</h3>
+<p>AI can quickly identify common clause types—termination clauses, liability limitations, intellectual property sections. It&#39;s like having a legal highlighter that never misses obvious sections.</p>
+<h3>Consistency Checking</h3>
+<p>If you&#39;re reviewing multiple similar contracts, AI excels at flagging inconsistencies. Different payment terms across vendor agreements? AI catches these faster than human review.</p>
+<h2>Calculated Risk Zone: Where AI Helps But Needs Human Oversight</h2>
+<h3>Red Flag Detection</h3>
+<p>AI can flag potentially problematic language, but here&#39;s the crucial part: it identifies patterns that <em>might</em> be concerning, not definitive problems.</p>
+<p><strong>Example</strong>: AI might flag &quot;exclusive&quot; language, but whether exclusivity helps or hurts your business depends on context only you understand.</p>
+<h3>Initial Risk Assessment</h3>
+<p>Modern AI tools can provide preliminary risk scores for contracts. Think of this as a screening tool—helpful for prioritization, but not for final decisions.</p>
+<p>A 2023 Forrester study found that AI-assisted contract review reduced initial screening time by 60%, but the most successful implementations still required human validation for all flagged issues.</p>
+<h3>Compliance Cross-Checking</h3>
+<p>AI can check contracts against basic compliance requirements, but regulations change constantly and interpretation matters enormously. Use AI to catch obvious gaps, but don&#39;t rely on it for nuanced compliance decisions.</p>
+<h2>Danger Zone: Where AI Fails Dangerously</h2>
+<h3>Contextual Business Impact</h3>
+<p>Here&#39;s where AI falls apart completely: understanding what contract terms mean <em>for your specific business</em>.</p>
+<p><strong>Simple version</strong>: AI can&#39;t know your business strategy, risk tolerance, or industry dynamics.</p>
+<p><strong>Business consequence</strong>: AI might flag a &quot;risky&quot; clause that actually protects you, or miss a seemingly innocent term that conflicts with your business model.</p>
+<p><strong>Real-world analogy</strong>: It&#39;s like asking a translator to negotiate on your behalf. They understand the words, but not what you&#39;re trying to achieve.</p>
+<h3>Negotiation Strategy</h3>
+<p>AI cannot advise on which terms to push back on, what alternatives to propose, or how aggressively to negotiate. These decisions require business judgment and relationship awareness that AI simply cannot provide.</p>
+<h3>Industry-Specific Nuances</h3>
+<p>Every industry has unique legal considerations. AI trained on general legal language might miss sector-specific red flags that could devastate your business.</p>
+<h2>Unknown Territory: Emerging Capabilities and Limitations</h2>
+<h3>AI Legal Reasoning</h3>
+<p>New AI systems claim to &quot;reason&quot; about legal implications. While impressive, the legal field is littered with edge cases and precedent-dependent interpretations that current AI cannot reliably navigate.</p>
+<h3>Real-Time Legal Updates</h3>
+<p>Some AI tools promise to check contracts against current legal standards. However, legal interpretation evolves constantly through court decisions and regulatory guidance that AI may not capture accurately.</p>
+<h2>A Practical Framework for Small Business Owners</h2>
+<p>Here&#39;s how to actually use AI for contract review without endangering your business:</p>
+<h3>The Three-Pass System</h3>
+<p><strong>First Pass - AI Screening</strong>: Use AI to extract key terms, flag obvious issues, and create a summary. This takes minutes and costs almost nothing.</p>
+<p><strong>Second Pass - Human Review</strong>: You review the AI findings, focusing on flagged items and business-critical terms. This is where your industry knowledge matters most.</p>
+<p><strong>Third Pass - Professional Consultation</strong>: For high-stakes contracts or when AI flags serious concerns, bring in your lawyer for targeted review of specific issues rather than the entire document.</p>
+<p>This approach can reduce legal costs by 40-60% according to recent industry surveys while maintaining protection.</p>
+<h3>Risk-Based Decision Making</h3>
+<p>Not every contract needs the same level of scrutiny. Apply the Anxiety Map:</p>
+<ul>
+<li><strong>Low-risk routine agreements</strong>: AI + your review might suffice</li>
+<li><strong>Medium-risk vendor contracts</strong>: AI + careful human review + selective legal consultation</li>
+<li><strong>High-stakes partnerships or complex deals</strong>: Full professional legal review, with AI providing supporting analysis</li>
+</ul>
+<h2>Red Flags to Never Ignore</h2>
+<p>Regardless of what AI tells you, these contract elements always require human legal expertise:</p>
+<ul>
+<li>Indemnification clauses</li>
+<li>Intellectual property assignments</li>
+<li>Liability limitations or exclusions</li>
+<li>Termination triggers</li>
+<li>Dispute resolution mechanisms</li>
+<li>Regulatory compliance requirements</li>
+</ul>
+<p>Think of these as the &quot;circuit breakers&quot; of contract law—when AI flags these, stop and get professional help.</p>
+<h2>The Bottom Line: AI as a Tool, Not a Replacement</h2>
+<p>AI contract review is like having a really good research assistant—invaluable for preparation, dangerous for decision-making.</p>
+<p>Use it to organize information, spot obvious issues, and prepare targeted questions for your lawyer. Don&#39;t use it to decide whether terms are acceptable for your business or to replace legal counsel on important agreements.</p>
+<p>The goal isn&#39;t to eliminate legal costs entirely—it&#39;s to spend your legal budget more strategically. AI helps you use expensive legal expertise where it matters most while handling routine analysis yourself.</p>
+<h2>Getting Started Safely</h2>
+<p>Ready to explore AI contract review for your business? Start with low-stakes agreements and always maintain the three-pass system. Map your comfort zone using the Anxiety Map framework, and gradually expand as you gain confidence with the technology.</p>
+<p>Remember: the best AI tool is the one that makes you more informed, not more reckless.</p>
+<p>Want to learn more about implementing AI tools safely in your small business? Visit gonzalo.tech for practical AI workflows that actually work for non-technical business owners.</p>
+<hr>
+<p>Gonzalo Aguilar is a Senior Product Manager specializing in growth, identity, and onboarding in regulated markets. He writes about product strategy, conversion optimization, and practical AI workflows at gonzalo.tech.</p>
+
+
+      <div class="pdf-download">
+        <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
+        <a href="../pdfs/ai-legal-document-review.pdf" download>Download PDF</a>
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      &copy; 2026 gonzalo.tech — Gonzalo Aguilar
+    </footer>
+  </div>
+</body>
+</html>
