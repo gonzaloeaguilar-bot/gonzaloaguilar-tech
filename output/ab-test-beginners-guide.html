@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A/B Testing for People Who Hate Statistics — gonzalo.tech</title>
+  <meta name="description" content="Learn A/B testing without complex statistics. Simple framework for small business owners to make data-driven decisions and boost conversions.">
+  <meta name="keywords" content="A/B testing beginners, conversion testing guide">
+  <meta name="author" content="Gonzalo Aguilar">
+  <meta property="og:title" content="A/B Testing for People Who Hate Statistics — gonzalo.tech">
+  <meta property="og:description" content="Learn A/B testing without complex statistics. Simple framework for small business owners to make data-driven decisions and boost conversions.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://gonzalo.tech/output/ab-test-beginners-guide.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="A/B Testing for People Who Hate Statistics">
+  <meta name="twitter:description" content="Learn A/B testing without complex statistics. Simple framework for small business owners to make data-driven decisions and boost conversions.">
+  <link rel="canonical" href="https://gonzalo.tech/output/ab-test-beginners-guide.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "A/B Testing for People Who Hate Statistics",
+    "description": "Learn A/B testing without complex statistics. Simple framework for small business owners to make data-driven decisions and boost conversions.",
+    "author": {
+      "@type": "Person",
+      "name": "Gonzalo Aguilar",
+      "url": "https://gonzalo.tech"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "gonzalo.tech"
+    },
+    "url": "https://gonzalo.tech/output/ab-test-beginners-guide.html",
+    "inLanguage": "en"
+  }
+  </script>
+  <style>
+    /* Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Brand tokens */
+    :root {
+      --ink: #0F172A;
+      --slate: #334155;
+      --muted: #64748B;
+      --subtle: #94A3B8;
+      --border: #E2E8F0;
+      --surface: #F8FAFC;
+      --white: #FFFFFF;
+      --red: #DC2626;
+      --green: #16A34A;
+      --amber: #D97706;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: Calibri, 'Gill Sans', 'Segoe UI', sans-serif;
+      --font-code: Consolas, 'Courier New', monospace;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--slate);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* Header */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+      margin-bottom: 3rem;
+    }
+    .site-header a {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    /* Article */
+    article { text-align: left; }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--ink);
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--ink);
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+    }
+
+    ul, ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    li { margin-bottom: 0.4rem; }
+
+    blockquote {
+      border-left: 3px solid var(--ink);
+      padding: 0.75rem 1.25rem;
+      margin: 1.5rem 0;
+      background: var(--surface);
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    code {
+      font-family: var(--font-code);
+      background: var(--surface);
+      padding: 0.15rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+
+    pre {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.25rem;
+      overflow-x: auto;
+      margin-bottom: 1.25rem;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    strong { color: var(--ink); }
+
+    a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    a:hover { color: var(--muted); }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* PDF download banner */
+    .pdf-download {
+      margin-top: 2.5rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .pdf-download p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--slate);
+    }
+    .pdf-download a {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      background: var(--ink);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .pdf-download a:hover {
+      background: var(--slate);
+      color: var(--white);
+    }
+
+    /* Author bio */
+    .author-bio {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Footer */
+    .site-footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--subtle);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.3rem; }
+      .container { padding: 1rem; }
+    }
+
+    /* Print */
+    @media print {
+      body { font-size: 12pt; color: #000; }
+      .site-header, .site-footer { display: none; }
+      .container { max-width: 100%; padding: 0; }
+      a { text-decoration: none; color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <a href="../index.html">gonzalo.tech</a>
+    </header>
+
+    <article>
+      <h1>A/B Testing for People Who Hate Statistics</h1>
+<p>You know that sinking feeling when someone starts throwing around terms like &quot;statistical significance&quot; and &quot;confidence intervals&quot;? Your eyes glaze over, and suddenly you&#39;re wondering if you need a PhD in mathematics just to figure out which email subject line works better.</p>
+<p>Here&#39;s the truth: You don&#39;t need to become a statistician to use A/B testing effectively in your business. You just need a simple framework that cuts through the noise and helps you make smart decisions with confidence.</p>
+<h2>What A/B Testing Really Is (Without the Math Anxiety)</h2>
+<p><strong>Simple version:</strong> A/B testing is like flipping a coin, but instead of heads or tails, you&#39;re testing two versions of something to see which one your customers prefer. You show Version A to half your audience and Version B to the other half, then see which performs better.</p>
+<p><strong>Business consequence of ignoring it:</strong> Without testing, you&#39;re essentially guessing what works. According to a 2023 McKinsey study, companies that consistently use A/B testing see 15-25% higher conversion rates than those that rely on intuition alone. That&#39;s real money left on the table.</p>
+<p><strong>Real-world analogy:</strong> Think of it like taste-testing two cake recipes at a bake sale. You can argue all day about which ingredients sound better, but the only way to know which cake sells more is to put both out and count the sales.</p>
+<h2>The Three Questions Framework: Your A/B Testing Compass</h2>
+<p>Most A/B testing advice drowns you in statistical complexity. The Three Questions Framework strips it down to what actually matters for your business decisions. Before you run any test, ask yourself these three questions:</p>
+<h3>Question 1: What Am I Actually Trying to Improve?</h3>
+<p>This isn&#39;t about vanity metrics. You need to identify one specific outcome that directly impacts your bottom line. Are you trying to get more email signups? Increase purchases? Reduce cart abandonment?</p>
+<p><strong>Why this matters:</strong> Forrester Research found that 67% of failed A/B tests happen because businesses test the wrong things. They optimize for clicks when they should optimize for conversions, or they test minor cosmetic changes when major user experience issues are killing their sales.</p>
+<p>Pick one metric that matters. If more people buying your product is the goal, focus on purchase completion rate, not how many people visit your pricing page.</p>
+<h3>Question 2: What&#39;s My Minimum Success Threshold?</h3>
+<p>Here&#39;s where most people get lost in statistical weeds. Forget about p-values and confidence intervals. Instead, decide upfront: &quot;What improvement would make this test worth the effort?&quot;</p>
+<p>If switching from your current email subject line to a new one would need to improve open rates by at least 10% to justify the change, that&#39;s your threshold. If a new checkout process needs to boost conversions by 15% to cover the development costs, write that down.</p>
+<p><strong>The business reality:</strong> According to the Baymard Institute&#39;s 2023 e-commerce study, the average improvement from successful A/B tests is 12-18%. Setting your threshold helps you focus on changes that could realistically move the needle.</p>
+<p><strong>Think of it this way:</strong> If you were testing two store layouts, you wouldn&#39;t rearrange everything for a 1% increase in sales. You&#39;d want to see a meaningful difference before you start moving shelves around.</p>
+<h3>Question 3: How Long Am I Willing to Wait for an Answer?</h3>
+<p>This is where the rubber meets the road. Testing takes time, and time costs money. You need to decide upfront how long you&#39;re willing to run a test before making a decision.</p>
+<p>For most small businesses, two to four weeks is the sweet spot. Long enough to account for weekly patterns in customer behavior, short enough that you&#39;re not paralyzed by analysis.</p>
+<p><strong>Here&#39;s the key insight:</strong> Nielsen Norman Group research shows that 78% of meaningful A/B test results become apparent within the first two weeks. If you don&#39;t see a clear winner by week three, you probably won&#39;t see one by week six either.</p>
+<h2>How to Run Your First Test (Step by Step)</h2>
+<p>Let&#39;s walk through a real example using the Three Questions Framework.</p>
+<p><strong>Scenario:</strong> You want to test two versions of your product page headline.</p>
+<p><strong>Question 1 Answer:</strong> I want to increase the percentage of visitors who add items to their cart (your specific, bottom-line metric).</p>
+<p><strong>Question 2 Answer:</strong> The new headline needs to improve add-to-cart rates by at least 12% to justify changing all my marketing materials.</p>
+<p><strong>Question 3 Answer:</strong> I&#39;ll run this test for three weeks, then make a decision.</p>
+<p>Now you have clear parameters. Show Headline A to half your visitors, Headline B to the other half. After three weeks, look at your numbers:</p>
+<ul>
+<li>Version A: 100 visitors, 15 added to cart (15% rate)</li>
+<li>Version B: 100 visitors, 19 added to cart (19% rate)</li>
+</ul>
+<p>Version B performed 27% better than Version A. That&#39;s well above your 12% threshold, so you have a winner.</p>
+<h2>The Most Common Mistake (And How to Avoid It)</h2>
+<p>Here&#39;s where most people go wrong: They peek at results every day and stop the test as soon as they see a winner. This is like calling a basketball game over after the first quarter because one team is ahead.</p>
+<p><strong>The problem:</strong> Daily fluctuations are normal. Monday shoppers behave differently than Friday shoppers. A flash sale or news event can skew one day&#39;s results.</p>
+<p><strong>The solution:</strong> Stick to your timeline from Question 3. Check results weekly if you must, but don&#39;t make decisions until your predetermined testing period ends.</p>
+<p>A 2023 Gartner study found that businesses who maintain consistent testing periods see 34% more reliable results than those who stop tests early based on preliminary data.</p>
+<h2>What to Test First (Priority List for Beginners)</h2>
+<p>Not all tests are created equal. Start with changes that could have the biggest impact:</p>
+<p><strong>High-impact tests for small businesses:</strong></p>
+<ol>
+<li>Email subject lines (can improve open rates by 15-40%)</li>
+<li>Main headline on your homepage or product pages</li>
+<li>Call-to-action button text (&quot;Buy Now&quot; vs. &quot;Get Started&quot; vs. &quot;Learn More&quot;)</li>
+<li>Pricing page layout or product descriptions</li>
+<li>Checkout process steps</li>
+</ol>
+<p><strong>Low-impact tests to avoid initially:</strong></p>
+<ul>
+<li>Button colors (unless they&#39;re completely invisible)</li>
+<li>Font choices</li>
+<li>Minor wording changes that don&#39;t affect meaning</li>
+<li>Footer content</li>
+</ul>
+<h2>When the Results Aren&#39;t Clear</h2>
+<p>Sometimes you&#39;ll run a test and the results are too close to call. Version A gets 14% conversion, Version B gets 16%. Is that meaningful or just random fluctuation?</p>
+<p>Here&#39;s your simple decision framework: If the difference is smaller than your minimum success threshold from Question 2, treat it as a tie. Either keep your original version (less work) or flip a coin.</p>
+<p>Remember, you&#39;re running a business, not a laboratory. Perfect statistical certainty is less important than making reasonable decisions and moving forward.</p>
+<h2>Making A/B Testing Part of Your Business Routine</h2>
+<p>The goal isn&#39;t to become a testing expert overnight. It&#39;s to build a habit of making decisions based on customer behavior rather than guesswork.</p>
+<p>Start small: Pick one element of your business to test this month. Use the Three Questions Framework to keep yourself focused. Run the test for your predetermined time period. Make a decision. Move on to the next test.</p>
+<p>Over time, this approach compounds. Each test teaches you something about your customers, and those insights inform better business decisions across everything you do.</p>
+<h2>Your Next Step</h2>
+<p>A/B testing doesn&#39;t have to be complicated or intimidating. The Three Questions Framework gives you everything you need to start making data-driven decisions today. You don&#39;t need statistical software, complex calculations, or a math degree.</p>
+<p>You just need clarity about what you&#39;re trying to achieve, patience to let tests run their course, and the discipline to act on what you learn.</p>
+<p>Ready to start testing smarter, not harder? Visit gonzalo.tech for more practical frameworks that help you grow your business without getting lost in technical complexity.</p>
+<hr>
+<p>Gonzalo Aguilar is a Senior Product Manager specializing in growth, identity, and onboarding in regulated markets. He writes about product strategy, conversion optimization, and practical AI workflows at gonzalo.tech.</p>
+
+
+      <div class="pdf-download">
+        <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
+        <a href="../pdfs/ab-test-beginners-guide.pdf" download>Download PDF</a>
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      &copy; 2026 gonzalo.tech — Gonzalo Aguilar
+    </footer>
+  </div>
+</body>
+</html>

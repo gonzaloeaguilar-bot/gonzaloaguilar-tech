@@ -814,7 +814,8 @@
       ],
       "framework": "Friction-to-Trust Pipeline",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:41:40.179Z"
     },
     {
       "slug": "checkout-abandonment-fix",
@@ -825,7 +826,8 @@
       ],
       "framework": "Friction-to-Trust Pipeline",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:42:33.764Z"
     },
     {
       "slug": "ab-test-beginners-guide",
@@ -836,7 +838,8 @@
       ],
       "framework": "Three Questions Framework",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:43:21.848Z"
     },
     {
       "slug": "email-signup-form-cro",
@@ -847,7 +850,8 @@
       ],
       "framework": "Friction-to-Trust Pipeline",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:44:18.588Z"
     },
     {
       "slug": "cta-button-copy-guide",
