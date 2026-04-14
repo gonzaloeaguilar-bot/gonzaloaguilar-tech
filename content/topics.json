@@ -182,7 +182,7 @@
     },
     {
       "slug": "mapa-ansiedad-clientes",
-      "title": "Cómo Mapear la Ansiedad de Tus Clientes Antes de Construir",
+      "title": "Como Mapear la Ansiedad de Tus Clientes Antes de Construir",
       "keywords": [
         "mapa de ansiedad",
         "experiencia del cliente"
@@ -218,10 +218,10 @@
     },
     {
       "slug": "flujo-conversion-diy",
-      "title": "Auditoría de Conversión: Hazlo Tú Mismo Sin Consultores",
+      "title": "Auditoria de Conversion: Hazlo Tu Mismo Sin Consultores",
       "keywords": [
-        "auditoría conversión",
-        "optimización"
+        "auditoria conversion",
+        "optimizacion"
       ],
       "framework": "Friction-to-Trust Pipeline",
       "language": "ES",
@@ -311,12 +311,2544 @@
       "keywords": [
         "errores UX",
         "conversiones",
-        "diseño interfaz"
+        "diseno interfaz"
       ],
       "framework": "Anxiety Map",
       "language": "ES",
       "status": "published",
       "publishedAt": "2026-04-14T01:52:35.006Z"
+    },
+    {
+      "slug": "ai-email-responses-small-business",
+      "title": "How to Use AI to Write Customer Email Responses in Half the Time",
+      "keywords": [
+        "AI email writing",
+        "small business customer service"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "published",
+      "publishedAt": "2026-04-14T12:05:54.829Z"
+    },
+    {
+      "slug": "chatgpt-vs-gemini-small-business",
+      "title": "ChatGPT vs Gemini for Small Business: Which One Actually Wins",
+      "keywords": [
+        "ChatGPT vs Gemini",
+        "best AI tool for small business"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "published",
+      "publishedAt": "2026-04-14T12:06:48.586Z"
+    },
+    {
+      "slug": "ai-social-media-content",
+      "title": "How Small Business Owners Are Using AI to Post on Social Every Day",
+      "keywords": [
+        "AI social media",
+        "small business social content"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "generating"
+    },
+    {
+      "slug": "when-not-to-use-ai",
+      "title": "5 Situations Where AI Will Make Your Business Worse",
+      "keywords": [
+        "when not to use AI",
+        "AI limitations small business"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-invoicing-bookkeeping",
+      "title": "Can AI Handle Your Invoicing and Bookkeeping? An Honest Answer",
+      "keywords": [
+        "AI bookkeeping",
+        "AI invoicing small business"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-hiring-job-descriptions",
+      "title": "Use AI to Write Job Descriptions That Attract Better Candidates",
+      "keywords": [
+        "AI job descriptions",
+        "hiring with AI"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-customer-support-playbook",
+      "title": "The Small Business Playbook for AI-Powered Customer Support",
+      "keywords": [
+        "AI customer support",
+        "small business helpdesk"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-product-description-ecommerce",
+      "title": "How to Generate 100 Product Descriptions with AI in One Afternoon",
+      "keywords": [
+        "AI product descriptions",
+        "ecommerce AI writing"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-pricing-strategy",
+      "title": "Using AI to Research Competitors and Set Better Prices",
+      "keywords": [
+        "AI pricing research",
+        "competitive pricing small business"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-meeting-notes-summaries",
+      "title": "Never Take Meeting Notes Again: AI Tools That Actually Work",
+      "keywords": [
+        "AI meeting notes",
+        "AI transcription tool"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-vendor-evaluation-framework",
+      "title": "How to Evaluate an AI Vendor Without Getting Burned",
+      "keywords": [
+        "AI vendor evaluation",
+        "choosing AI software"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-content-calendar-builder",
+      "title": "Build a 3-Month Content Calendar with AI in Under an Hour",
+      "keywords": [
+        "AI content calendar",
+        "content planning small business"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-faq-page-generator",
+      "title": "How to Build a FAQ Page That Answers Real Questions Using AI",
+      "keywords": [
+        "AI FAQ page",
+        "website FAQ generator"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-legal-document-review",
+      "title": "Can AI Review Your Contracts? What It Can and Can't Do",
+      "keywords": [
+        "AI contract review",
+        "AI legal documents small business"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-translation-multilingual-business",
+      "title": "How to Serve Spanish-Speaking Customers Using AI Translation",
+      "keywords": [
+        "AI translation business",
+        "multilingual customer service"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-onboarding-new-employees",
+      "title": "Use AI to Build an Employee Onboarding Guide in One Day",
+      "keywords": [
+        "AI employee onboarding",
+        "small business HR automation"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-competitive-analysis",
+      "title": "How to Run a Competitive Analysis Using Free AI Tools",
+      "keywords": [
+        "AI competitive analysis",
+        "competitor research AI"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-survey-analysis",
+      "title": "Let AI Read Your Customer Surveys and Tell You What Actually Matters",
+      "keywords": [
+        "AI survey analysis",
+        "customer feedback AI"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-ad-copy-generator",
+      "title": "How to Write Google Ad Copy With AI (and What to Fix Before You Post)",
+      "keywords": [
+        "AI ad copy",
+        "Google ads small business"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-appointment-scheduling",
+      "title": "The Lazy Owner's Guide to AI-Powered Appointment Scheduling",
+      "keywords": [
+        "AI appointment scheduling",
+        "booking automation small business"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-cost-per-task-calculator",
+      "title": "How Much Does Each AI Task Actually Cost? A Real Breakdown",
+      "keywords": [
+        "AI cost per task",
+        "AI budget small business"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-brand-voice-guide",
+      "title": "How to Train AI to Write in Your Brand Voice",
+      "keywords": [
+        "AI brand voice",
+        "custom AI writing style"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-refund-policy-writer",
+      "title": "Use AI to Write a Refund Policy That Reduces Disputes",
+      "keywords": [
+        "AI refund policy",
+        "small business policy writing"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-newsletter-automation",
+      "title": "How to Automate Your Weekly Newsletter with AI",
+      "keywords": [
+        "AI newsletter automation",
+        "email marketing AI"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-local-marketing",
+      "title": "AI Tactics for Local Businesses That Big Brands Ignore",
+      "keywords": [
+        "AI local marketing",
+        "local business AI strategy"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-image-generation-products",
+      "title": "How to Create Product Photos with AI When You Have No Budget",
+      "keywords": [
+        "AI product photos",
+        "AI image generation small business"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-strategy-one-page",
+      "title": "Write Your One-Page AI Strategy in 30 Minutes",
+      "keywords": [
+        "AI strategy template",
+        "small business AI plan"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-churn-prediction",
+      "title": "Can a Small Business Use AI to Predict Customer Churn?",
+      "keywords": [
+        "AI churn prediction",
+        "customer retention AI"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-automation-zapier-make",
+      "title": "Zapier vs Make: Which AI Automation Platform Is Right for You",
+      "keywords": [
+        "Zapier vs Make",
+        "no-code AI automation"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-repeat-customer-campaigns",
+      "title": "How to Use AI to Bring Back Customers Who Stopped Buying",
+      "keywords": [
+        "AI win-back campaigns",
+        "repeat customer AI"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-proposal-writing",
+      "title": "How to Write a Client Proposal 5x Faster Using AI",
+      "keywords": [
+        "AI proposal writing",
+        "client proposal template AI"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-google-business-profile",
+      "title": "Use AI to Optimize Your Google Business Profile for More Calls",
+      "keywords": [
+        "AI Google Business Profile",
+        "local SEO AI"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-hallucination-risk",
+      "title": "AI Hallucinations Are Real -- Here's How to Catch Them Before They Hurt You",
+      "keywords": [
+        "AI hallucinations",
+        "AI accuracy risk"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-knowledge-base-builder",
+      "title": "How to Build a Customer Knowledge Base Using AI in a Weekend",
+      "keywords": [
+        "AI knowledge base",
+        "customer self-service AI"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-discount-offer-optimizer",
+      "title": "Stop Guessing on Discounts: Let AI Help You Find the Right Offer",
+      "keywords": [
+        "AI discount optimization",
+        "pricing offers small business"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-voice-search-content",
+      "title": "How AI Is Changing Voice Search (and What Your Business Should Do)",
+      "keywords": [
+        "AI voice search",
+        "voice search optimization"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-testimonial-requests",
+      "title": "Use AI to Write Testimonial Request Emails That Get Replies",
+      "keywords": [
+        "AI testimonial request",
+        "customer review email"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-returns-management",
+      "title": "How AI Can Cut Your Returns Rate Before Products Ship",
+      "keywords": [
+        "AI returns management",
+        "reduce product returns AI"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-multi-channel-inbox",
+      "title": "One AI Inbox to Rule Them All: Managing Email, Chat, and DMs Together",
+      "keywords": [
+        "AI unified inbox",
+        "multi-channel customer support AI"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-website-copy-rewrite",
+      "title": "Rewrite Your Homepage Copy With AI (Here's Exactly How)",
+      "keywords": [
+        "AI website copywriting",
+        "homepage copy AI"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "landing-page-above-fold",
+      "title": "What Your Landing Page Above the Fold Must Communicate in 5 Seconds",
+      "keywords": [
+        "landing page above fold",
+        "first impression conversion"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "pricing-page-psychology",
+      "title": "The Psychology Behind Pricing Pages That Actually Convert",
+      "keywords": [
+        "pricing page design",
+        "pricing psychology"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "checkout-abandonment-fix",
+      "title": "Why Customers Abandon Checkout and How to Fix It This Week",
+      "keywords": [
+        "checkout abandonment",
+        "cart abandonment fix"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ab-test-beginners-guide",
+      "title": "A/B Testing for People Who Hate Statistics",
+      "keywords": [
+        "A/B testing beginners",
+        "conversion testing guide"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "email-signup-form-cro",
+      "title": "The 3-Word Change That Doubled Email Signups",
+      "keywords": [
+        "email signup optimization",
+        "newsletter CRO"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "cta-button-copy-guide",
+      "title": "CTA Button Copy: Why Submit Is Killing Your Conversions",
+      "keywords": [
+        "CTA button copy",
+        "call to action optimization"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "free-trial-to-paid-conversion",
+      "title": "How to Convert Free Trial Users to Paying Customers",
+      "keywords": [
+        "free trial conversion",
+        "trial to paid strategy"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "upsell-timing-strategy",
+      "title": "When to Upsell: The Moment That Makes Customers Say Yes",
+      "keywords": [
+        "upsell timing",
+        "upsell strategy small business"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "social-proof-placement",
+      "title": "Where to Put Social Proof on Your Page for Maximum Conversions",
+      "keywords": [
+        "social proof placement",
+        "testimonials conversion"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "urgency-scarcity-tactics",
+      "title": "Urgency and Scarcity Tactics That Work (and Ones That Backfire)",
+      "keywords": [
+        "urgency scarcity marketing",
+        "FOMO conversion tactics"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "mobile-checkout-optimization",
+      "title": "Mobile Checkout Optimization: The 8-Step Fix for Leaky Funnels",
+      "keywords": [
+        "mobile checkout optimization",
+        "mobile conversion rate"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "referral-program-design",
+      "title": "How to Design a Referral Program That Customers Actually Use",
+      "keywords": [
+        "referral program design",
+        "word of mouth growth"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "popup-exit-intent-strategy",
+      "title": "Exit-Intent Popups: When They Help and When They Annoy",
+      "keywords": [
+        "exit intent popup",
+        "popup conversion strategy"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "product-page-conversion-checklist",
+      "title": "Product Page Conversion Checklist: 12 Things to Fix Before Running Ads",
+      "keywords": [
+        "product page optimization",
+        "ecommerce conversion checklist"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "funnel-drop-off-diagnosis",
+      "title": "How to Find Exactly Where Your Funnel Is Leaking",
+      "keywords": [
+        "funnel drop off analysis",
+        "conversion funnel diagnosis"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "retention-vs-acquisition-cost",
+      "title": "Why Keeping a Customer Is 5x Cheaper Than Getting a New One",
+      "keywords": [
+        "customer retention vs acquisition",
+        "retention cost business"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "pricing-anchor-effect",
+      "title": "The Anchor Effect: How One Fake Price Sells Your Real One",
+      "keywords": [
+        "pricing anchor effect",
+        "price anchoring psychology"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "welcome-email-sequence",
+      "title": "The 5-Email Welcome Sequence That Turns Signups Into Buyers",
+      "keywords": [
+        "welcome email sequence",
+        "email onboarding sequence"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "homepage-vs-landing-page",
+      "title": "Homepage vs Landing Page: Which One Should Your Ads Send People To",
+      "keywords": [
+        "homepage vs landing page",
+        "where to send ad traffic"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "google-ads-quality-score",
+      "title": "Google Ads Quality Score Explained for Non-Technical Business Owners",
+      "keywords": [
+        "Google Ads quality score",
+        "improve Google Ads performance"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "win-back-email-strategy",
+      "title": "Win-Back Emails: How to Recover Customers Who Ghosted You",
+      "keywords": [
+        "win-back email campaign",
+        "re-engagement email strategy"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "loyalty-program-small-business",
+      "title": "Build a Simple Loyalty Program Without Expensive Software",
+      "keywords": [
+        "loyalty program small business",
+        "customer loyalty strategy"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "form-length-conversion",
+      "title": "How Many Fields Is Too Many? The Science of Form Length",
+      "keywords": [
+        "form length conversion",
+        "signup form optimization"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "headline-formula-landing-page",
+      "title": "The Headline Formula That Works on Every Landing Page",
+      "keywords": [
+        "landing page headline formula",
+        "conversion headline writing"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "free-shipping-threshold",
+      "title": "How to Set a Free Shipping Threshold That Increases Average Order Value",
+      "keywords": [
+        "free shipping threshold",
+        "increase average order value"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "search-bar-conversion",
+      "title": "Your Site Search Is Hiding a Conversion Goldmine -- Here's How to Use It",
+      "keywords": [
+        "site search optimization",
+        "internal search conversion"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "post-purchase-upsell",
+      "title": "The Post-Purchase Page: The Most Underrated Page in Your Funnel",
+      "keywords": [
+        "post purchase upsell",
+        "thank you page optimization"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "guarantee-conversion-lift",
+      "title": "How a Money-Back Guarantee Changes Customer Psychology",
+      "keywords": [
+        "money back guarantee conversion",
+        "guarantee marketing"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "live-chat-conversion-impact",
+      "title": "Does Live Chat Actually Increase Conversions? The Data Says...",
+      "keywords": [
+        "live chat conversion",
+        "live chat for small business"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "seasonal-promotion-timing",
+      "title": "When to Run Your Seasonal Promotions for Maximum Revenue",
+      "keywords": [
+        "seasonal promotion timing",
+        "sales promotion strategy"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "bundle-pricing-strategy",
+      "title": "Bundle Pricing: How to Sell More by Grouping Products Together",
+      "keywords": [
+        "bundle pricing strategy",
+        "product bundle sales"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "waitlist-launch-strategy",
+      "title": "How to Use a Waitlist to Launch Your Product With Built-In Demand",
+      "keywords": [
+        "waitlist launch strategy",
+        "product launch waitlist"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "review-response-conversion",
+      "title": "How You Respond to Reviews Affects Whether People Buy From You",
+      "keywords": [
+        "responding to reviews",
+        "review response conversion"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "video-on-landing-page",
+      "title": "Does a Video on Your Landing Page Actually Help? Here's the Answer",
+      "keywords": [
+        "video landing page conversion",
+        "landing page video test"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "trust-badge-placement",
+      "title": "Where to Place Security Badges So Customers Stop Hesitating to Buy",
+      "keywords": [
+        "trust badge placement",
+        "security badge conversion"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "mobile-first-design-principles",
+      "title": "Mobile-First Design Isn't Optional Anymore -- Here's Where to Start",
+      "keywords": [
+        "mobile first design",
+        "mobile UX principles"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "accessibility-small-business-site",
+      "title": "Web Accessibility for Small Business: The Basics That Matter Most",
+      "keywords": [
+        "web accessibility small business",
+        "ADA website compliance"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "form-design-best-practices",
+      "title": "Form Design That Doesn't Make People Quit Halfway Through",
+      "keywords": [
+        "form design best practices",
+        "UX form optimization"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "navigation-design-small-site",
+      "title": "How to Design Navigation for a Small Business Website",
+      "keywords": [
+        "website navigation design",
+        "small business navigation UX"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "error-message-design",
+      "title": "Error Messages Are a UX Opportunity You're Completely Wasting",
+      "keywords": [
+        "error message UX",
+        "form error design"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "microinteractions-explained",
+      "title": "Microinteractions: The Tiny Design Details That Build Big Trust",
+      "keywords": [
+        "microinteractions UX",
+        "UI animation details"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "color-psychology-website",
+      "title": "Color Psychology for Websites: What Each Color Signals to Customers",
+      "keywords": [
+        "color psychology website",
+        "website color conversion"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "loading-speed-ux-impact",
+      "title": "How Slow Page Speed Is Silently Destroying Your Conversions",
+      "keywords": [
+        "page speed UX",
+        "slow website conversions"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "whitespace-design-impact",
+      "title": "Why More Whitespace Makes People Trust You More",
+      "keywords": [
+        "whitespace design",
+        "negative space UX"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "typography-readability-web",
+      "title": "Typography Mistakes That Make Your Website Hard to Read",
+      "keywords": [
+        "web typography readability",
+        "font choice website"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "sticky-header-navigation",
+      "title": "Should Your Website Have a Sticky Header? Here's How to Decide",
+      "keywords": [
+        "sticky header navigation",
+        "fixed nav UX"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "empty-state-design",
+      "title": "Empty States Are UX Gold -- Here's How to Design Them Right",
+      "keywords": [
+        "empty state design",
+        "UX empty state best practices"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "dark-mode-design-considerations",
+      "title": "Dark Mode Design: What Small Business Sites Need to Know",
+      "keywords": [
+        "dark mode website design",
+        "dark mode UX"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "button-design-hierarchy",
+      "title": "Primary vs Secondary Buttons: How Visual Hierarchy Guides Decisions",
+      "keywords": [
+        "button design hierarchy",
+        "CTA button visual hierarchy"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "card-layout-ui-patterns",
+      "title": "Card Layouts: The UI Pattern That Works in Almost Every Context",
+      "keywords": [
+        "card layout UI",
+        "card design pattern"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "search-ux-small-site",
+      "title": "When to Add Search to Your Website (and When to Skip It)",
+      "keywords": [
+        "website search UX",
+        "small site search functionality"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "modal-design-best-practices",
+      "title": "Modals: When They Work, When They Annoy, and How to Fix Yours",
+      "keywords": [
+        "modal design UX",
+        "popup modal best practices"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "design-debt-explained",
+      "title": "Design Debt: What It Is, Why It's Costing You, and How to Clear It",
+      "keywords": [
+        "design debt",
+        "UI technical debt"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "image-alt-text-ux-seo",
+      "title": "Alt Text Is Not Just for Accessibility -- It's a Conversion Signal Too",
+      "keywords": [
+        "alt text UX",
+        "image alt text SEO accessibility"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "breadcrumb-navigation-ux",
+      "title": "Breadcrumb Navigation: Does Your Site Need It?",
+      "keywords": [
+        "breadcrumb navigation UX",
+        "breadcrumb design"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "footer-design-conversion",
+      "title": "The Website Footer Is Prime Real Estate -- Stop Wasting It",
+      "keywords": [
+        "website footer design",
+        "footer conversion optimization"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "onboarding-ux-new-users",
+      "title": "How to Design Onboarding That Doesn't Overwhelm New Users",
+      "keywords": [
+        "user onboarding UX",
+        "new user onboarding design"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "progressive-disclosure-ux",
+      "title": "Progressive Disclosure: Show Less to Sell More",
+      "keywords": [
+        "progressive disclosure UX",
+        "information architecture"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "contact-page-ux",
+      "title": "Your Contact Page Is Losing You Business -- Here's the Fix",
+      "keywords": [
+        "contact page design",
+        "contact form UX"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "password-field-ux",
+      "title": "Password Field UX: The Small Detail That Kills Signups",
+      "keywords": [
+        "password field UX",
+        "signup form password design"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "scroll-depth-content-design",
+      "title": "How to Design Long Pages So People Actually Scroll to the Bottom",
+      "keywords": [
+        "scroll depth design",
+        "long page UX strategy"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "404-page-design",
+      "title": "Turn Your 404 Page Into a Conversion Opportunity",
+      "keywords": [
+        "404 page design",
+        "error page UX"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "icon-vs-label-navigation",
+      "title": "Icons Without Labels Are a UX Trap -- Here's the Data",
+      "keywords": [
+        "icon labels navigation",
+        "icon UX best practices"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "skeleton-loading-screens",
+      "title": "Skeleton Loading Screens: Why They Feel Faster Even When They're Not",
+      "keywords": [
+        "skeleton loading screen UX",
+        "loading state design"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "hover-state-design",
+      "title": "Hover States: The Invisible UI That Tells Users What to Do",
+      "keywords": [
+        "hover state design",
+        "interactive state UI"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "product-roadmap-for-non-pms",
+      "title": "Product Roadmaps Explained for People Who've Never Built One",
+      "keywords": [
+        "product roadmap beginner",
+        "how to make a product roadmap"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "prioritization-framework-rice",
+      "title": "RICE Scoring: The Prioritization Method That Removes Guesswork",
+      "keywords": [
+        "RICE prioritization framework",
+        "feature prioritization method"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "stakeholder-management-tips",
+      "title": "How to Manage Stakeholders Who Think They're the Product Manager",
+      "keywords": [
+        "stakeholder management",
+        "managing product stakeholders"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "prd-template-simple",
+      "title": "The Simplest PRD Template That Actually Gets Built",
+      "keywords": [
+        "PRD template",
+        "product requirements document simple"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "north-star-metric-guide",
+      "title": "How to Find Your North Star Metric (Without Overthinking It)",
+      "keywords": [
+        "north star metric",
+        "product north star metric guide"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "user-story-writing-guide",
+      "title": "How to Write User Stories That Developers Actually Understand",
+      "keywords": [
+        "user story writing",
+        "how to write user stories"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "sprint-planning-essentials",
+      "title": "Sprint Planning Without the Chaos: A Practical Guide",
+      "keywords": [
+        "sprint planning guide",
+        "agile sprint planning"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "minimum-viable-product-definition",
+      "title": "What an MVP Actually Is (It's Not What Most People Think)",
+      "keywords": [
+        "MVP definition",
+        "minimum viable product explained"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "product-metrics-beginners",
+      "title": "Product Metrics for Beginners: The 5 Numbers You Must Track",
+      "keywords": [
+        "product metrics beginners",
+        "what metrics to track product"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "feature-request-triage",
+      "title": "How to Say No to Feature Requests Without Killing Morale",
+      "keywords": [
+        "feature request triage",
+        "saying no to feature requests"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "okr-setting-product-team",
+      "title": "OKRs for Product Teams: Set Them in a Day, Not a Quarter",
+      "keywords": [
+        "OKR product team",
+        "setting OKRs product management"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "discovery-vs-delivery",
+      "title": "Product Discovery vs Delivery: Why You Need Both and How to Balance Them",
+      "keywords": [
+        "product discovery vs delivery",
+        "dual track agile"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "competitive-product-analysis",
+      "title": "How to Do a Competitive Product Analysis That Informs Your Roadmap",
+      "keywords": [
+        "competitive product analysis",
+        "product competitive research"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "product-launch-checklist",
+      "title": "The Product Launch Checklist That Prevents Last-Minute Fires",
+      "keywords": [
+        "product launch checklist",
+        "software launch preparation"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "customer-interview-guide",
+      "title": "How to Run Customer Interviews That Tell You What to Build Next",
+      "keywords": [
+        "customer interview guide",
+        "user research interviews"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "product-vision-statement",
+      "title": "How to Write a Product Vision Statement in 10 Minutes",
+      "keywords": [
+        "product vision statement",
+        "how to write product vision"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "backlog-grooming-tips",
+      "title": "Backlog Grooming Tips That Save You 3 Hours Per Sprint",
+      "keywords": [
+        "backlog grooming tips",
+        "backlog refinement best practices"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "jobs-to-be-done-explained",
+      "title": "Jobs-to-Be-Done: The Framework That Explains Why People Really Buy",
+      "keywords": [
+        "jobs to be done framework",
+        "JTBD product management"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "product-strategy-one-pager",
+      "title": "Write a Product Strategy One-Pager That Gets Leadership Aligned",
+      "keywords": [
+        "product strategy one pager",
+        "product strategy template"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "pm-without-authority",
+      "title": "How to Lead a Product Team When You Have No Real Authority",
+      "keywords": [
+        "product manager without authority",
+        "PM influence without power"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "feature-flag-strategy",
+      "title": "Feature Flags: The PM's Best Tool for Safe Releases",
+      "keywords": [
+        "feature flags product management",
+        "feature flag strategy"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "pm-data-driven-decisions",
+      "title": "How to Make Data-Driven Product Decisions Without a Data Team",
+      "keywords": [
+        "data-driven product decisions",
+        "PM analytics basics"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "product-retrospective-guide",
+      "title": "Run a Retrospective That Actually Changes How Your Team Works",
+      "keywords": [
+        "product retrospective guide",
+        "sprint retro best practices"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "build-vs-buy-framework",
+      "title": "Build vs Buy: How to Make the Call Without Regret",
+      "keywords": [
+        "build vs buy framework",
+        "software build or buy decision"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "product-brief-template",
+      "title": "The Product Brief That Replaces 3 Hours of Alignment Meetings",
+      "keywords": [
+        "product brief template",
+        "product brief vs PRD"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "non-technical-pm-guide",
+      "title": "How to Be a Great PM When You Don't Know How to Code",
+      "keywords": [
+        "non-technical product manager",
+        "PM without technical background"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "product-hypothesis-testing",
+      "title": "How to Write and Test a Product Hypothesis Before You Build",
+      "keywords": [
+        "product hypothesis testing",
+        "validate product idea"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "pm-career-transition",
+      "title": "How to Break Into Product Management From Any Background",
+      "keywords": [
+        "break into product management",
+        "PM career transition"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "product-kpis-vs-metrics",
+      "title": "KPIs vs Metrics: Why Confusing Them Kills Product Teams",
+      "keywords": [
+        "KPIs vs metrics product",
+        "product KPI definition"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "scope-creep-prevention",
+      "title": "How to Stop Scope Creep Before It Derails Your Release",
+      "keywords": [
+        "scope creep prevention",
+        "managing scope product management"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "design-handoff-developers",
+      "title": "The Design Handoff Process That Developers Actually Appreciate",
+      "keywords": [
+        "design handoff process",
+        "how to hand off design to developers"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "technical-debt-explained-pm",
+      "title": "Technical Debt Explained for Product Managers and Business Owners",
+      "keywords": [
+        "technical debt explained",
+        "what is technical debt PM"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "estimation-developer-accuracy",
+      "title": "Why Developer Estimates Are Always Wrong and How to Work With That",
+      "keywords": [
+        "developer estimation",
+        "software development estimates"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "api-design-non-technical",
+      "title": "APIs Explained for Non-Technical People Who Need to Talk About Them",
+      "keywords": [
+        "API explained non-technical",
+        "what is an API business owner"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "agile-ceremony-guide",
+      "title": "Agile Ceremonies Explained: What Each Meeting Is Actually For",
+      "keywords": [
+        "agile ceremonies explained",
+        "scrum ceremonies guide"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "code-review-pm-perspective",
+      "title": "What Happens in Code Review and Why PMs Should Care",
+      "keywords": [
+        "code review product manager",
+        "PM code review process"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "developer-onboarding-docs",
+      "title": "How to Write Developer Documentation That Doesn't Get Ignored",
+      "keywords": [
+        "developer documentation writing",
+        "technical documentation PM"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "staging-vs-production-explained",
+      "title": "Staging vs Production: What's the Difference and Why It Matters",
+      "keywords": [
+        "staging vs production",
+        "staging environment explained"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "bug-report-writing-guide",
+      "title": "How to Write a Bug Report That Developers Can Actually Fix",
+      "keywords": [
+        "bug report writing",
+        "how to write a good bug report"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "sprint-velocity-explained",
+      "title": "Sprint Velocity: What It Is and How to Stop Obsessing Over It",
+      "keywords": [
+        "sprint velocity",
+        "agile velocity metrics"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "developer-respect-tips",
+      "title": "How to Earn Developer Respect as a Non-Technical Product Manager",
+      "keywords": [
+        "earn developer respect PM",
+        "non-technical PM developers"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "git-basics-product-people",
+      "title": "Git Explained for Product People (Without the Terminal Nightmares)",
+      "keywords": [
+        "git explained non-technical",
+        "version control for PMs"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "release-notes-writing",
+      "title": "How to Write Release Notes Customers Actually Want to Read",
+      "keywords": [
+        "release notes writing",
+        "product release notes template"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "hotfix-process-product",
+      "title": "What Is a Hotfix and How Should Product Be Involved",
+      "keywords": [
+        "hotfix process product management",
+        "emergency bug fix PM"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "product-dev-alignment-rituals",
+      "title": "4 Weekly Rituals That Keep Product and Engineering Aligned",
+      "keywords": [
+        "product engineering alignment",
+        "PM dev team rituals"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "third-party-integration-risks",
+      "title": "What to Ask Before Adding Any Third-Party Integration to Your Product",
+      "keywords": [
+        "third party integration risks",
+        "software integration checklist"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "monitoring-alerts-product",
+      "title": "Monitoring and Alerts: What Product Managers Should Know",
+      "keywords": [
+        "product monitoring alerts",
+        "uptime monitoring PM"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "database-basics-pm",
+      "title": "Database Basics Every Product Manager Needs to Know",
+      "keywords": [
+        "database basics product manager",
+        "SQL for product managers"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ticket-writing-acceptance-criteria",
+      "title": "Acceptance Criteria: The Ticket Section That Prevents 80% of Rework",
+      "keywords": [
+        "acceptance criteria writing",
+        "Jira ticket acceptance criteria"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "developer-pm-conflict-resolution",
+      "title": "How to Resolve PM-Developer Conflicts Before They Blow Up",
+      "keywords": [
+        "PM developer conflict",
+        "product engineering relationship"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "test-plan-simple-template",
+      "title": "A Simple Test Plan Template That Any Team Can Use in an Hour",
+      "keywords": [
+        "test plan template",
+        "QA test plan simple"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "edge-cases-product-testing",
+      "title": "How to Find Edge Cases Before Your Users Do",
+      "keywords": [
+        "edge case testing",
+        "QA edge cases"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "regression-testing-guide",
+      "title": "Regression Testing: How to Make Sure New Code Doesn't Break Old Things",
+      "keywords": [
+        "regression testing guide",
+        "regression QA testing"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "uat-user-acceptance-testing",
+      "title": "User Acceptance Testing: How to Get Stakeholders to Test Properly",
+      "keywords": [
+        "user acceptance testing",
+        "UAT guide stakeholders"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "accessibility-testing-checklist",
+      "title": "Accessibility Testing Checklist: What to Check Before Every Launch",
+      "keywords": [
+        "accessibility testing checklist",
+        "WCAG testing guide"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "smoke-testing-explained",
+      "title": "Smoke Testing: The 15-Minute Check That Prevents Major Outages",
+      "keywords": [
+        "smoke testing explained",
+        "smoke test QA"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "mobile-qa-checklist",
+      "title": "Mobile QA Checklist: 20 Things to Test Before Your App Goes Live",
+      "keywords": [
+        "mobile QA checklist",
+        "mobile app testing checklist"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "cross-browser-testing-basics",
+      "title": "Cross-Browser Testing: Which Browsers Still Matter in 2025",
+      "keywords": [
+        "cross browser testing",
+        "browser compatibility testing"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "qa-automation-when-to-start",
+      "title": "When Should a Small Team Start Automating QA?",
+      "keywords": [
+        "QA automation small team",
+        "when to automate testing"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "load-testing-basics",
+      "title": "Load Testing for Non-Engineers: Will Your Site Survive a Traffic Spike?",
+      "keywords": [
+        "load testing basics",
+        "performance testing website"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "bug-severity-priority-matrix",
+      "title": "Bug Severity vs Priority: How to Decide What Gets Fixed First",
+      "keywords": [
+        "bug severity priority",
+        "bug triage matrix"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "qa-checklist-before-launch",
+      "title": "The QA Checklist to Run Before Every Single Release",
+      "keywords": [
+        "QA checklist before launch",
+        "pre-launch testing checklist"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "exploratory-testing-guide",
+      "title": "Exploratory Testing: How to Break Your Product Like a Real User",
+      "keywords": [
+        "exploratory testing guide",
+        "manual exploratory testing"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "qa-engineer-vs-developer",
+      "title": "QA Engineer vs Developer: Why You Need Both and What Each Does",
+      "keywords": [
+        "QA engineer vs developer",
+        "QA vs developer roles"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "form-validation-qa",
+      "title": "How to QA Form Validation So Nothing Slips Through",
+      "keywords": [
+        "form validation QA",
+        "testing form validation"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ga4-setup-small-business",
+      "title": "GA4 Setup for Small Business: The Only Guide You Actually Need",
+      "keywords": [
+        "GA4 setup small business",
+        "Google Analytics 4 beginners"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "event-tracking-basics",
+      "title": "Event Tracking: How to Know What Users Are Actually Doing",
+      "keywords": [
+        "event tracking analytics",
+        "GA4 event tracking setup"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "data-storytelling-non-analysts",
+      "title": "How to Tell a Story With Data (Even If You Hate Spreadsheets)",
+      "keywords": [
+        "data storytelling",
+        "presenting data non-technical"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "cohort-analysis-explained",
+      "title": "Cohort Analysis Explained: Are Your Customers Getting Better or Worse Over Time",
+      "keywords": [
+        "cohort analysis explained",
+        "user cohort analysis"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "attribution-modeling-simple",
+      "title": "Marketing Attribution: Which Channel Actually Gets the Credit",
+      "keywords": [
+        "marketing attribution model",
+        "attribution modeling explained"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "dashboard-design-for-teams",
+      "title": "How to Build a Dashboard Your Team Will Actually Look At",
+      "keywords": [
+        "analytics dashboard design",
+        "business dashboard best practices"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "bounce-rate-diagnosis",
+      "title": "High Bounce Rate? Here's How to Diagnose the Real Problem",
+      "keywords": [
+        "bounce rate diagnosis",
+        "how to fix high bounce rate"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "funnel-visualization-ga4",
+      "title": "How to Set Up Funnel Visualization in GA4 (Step by Step)",
+      "keywords": [
+        "GA4 funnel visualization",
+        "conversion funnel GA4"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "session-recording-tools",
+      "title": "Session Recording Tools Compared: What Heatmaps and Replays Actually Show",
+      "keywords": [
+        "session recording tools",
+        "heatmap tools comparison"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ltv-calculation-simple",
+      "title": "How to Calculate Customer Lifetime Value Without an Analyst",
+      "keywords": [
+        "customer lifetime value calculation",
+        "LTV small business"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "cac-payback-period",
+      "title": "Customer Acquisition Cost and Payback Period: The Two Numbers That Matter Most",
+      "keywords": [
+        "customer acquisition cost",
+        "CAC payback period"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "custom-dimensions-ga4",
+      "title": "Custom Dimensions in GA4: Track What Actually Matters to Your Business",
+      "keywords": [
+        "GA4 custom dimensions",
+        "custom dimensions analytics"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "utm-parameters-guide",
+      "title": "UTM Parameters: The Simple Tagging System That Fixes Your Attribution",
+      "keywords": [
+        "UTM parameters guide",
+        "UTM tracking links"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "data-sampling-problem",
+      "title": "Data Sampling in GA4: Why Your Numbers Might Be Lying to You",
+      "keywords": [
+        "GA4 data sampling",
+        "analytics sampling problem"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "weekly-metrics-review-ritual",
+      "title": "Build a Weekly Metrics Review Ritual That Actually Changes Decisions",
+      "keywords": [
+        "weekly metrics review",
+        "product metrics ritual"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "conversion-rate-benchmark",
+      "title": "What's a Good Conversion Rate? Industry Benchmarks That Actually Help",
+      "keywords": [
+        "conversion rate benchmark",
+        "average conversion rate industry"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "mixpanel-vs-ga4",
+      "title": "Mixpanel vs GA4: Which Analytics Tool Is Right for Your Stage",
+      "keywords": [
+        "Mixpanel vs GA4",
+        "product analytics tool comparison"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "nps-score-product",
+      "title": "NPS for Small Products: How to Use It Without Getting Fooled by It",
+      "keywords": [
+        "NPS score product",
+        "net promoter score guide"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "retention-curve-analysis",
+      "title": "Retention Curves: The Graph That Tells You If Your Product Actually Works",
+      "keywords": [
+        "retention curve analysis",
+        "user retention analytics"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ab-test-statistical-significance",
+      "title": "Statistical Significance in A/B Tests: Stop Calling Winners Too Early",
+      "keywords": [
+        "A/B test statistical significance",
+        "when to call an A/B test"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "keyword-research-free-tools",
+      "title": "Keyword Research With Free Tools: A Step-by-Step Guide",
+      "keywords": [
+        "keyword research free tools",
+        "SEO keyword research beginner"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "content-strategy-small-business",
+      "title": "Build a Content Strategy for Your Small Business in One Afternoon",
+      "keywords": [
+        "content strategy small business",
+        "small business blogging"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "link-building-beginner",
+      "title": "Link Building for Beginners: The Only Tactics Worth Your Time",
+      "keywords": [
+        "link building beginners",
+        "backlinks for small business"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "local-seo-quick-wins",
+      "title": "Local SEO Quick Wins You Can Do This Week",
+      "keywords": [
+        "local SEO quick wins",
+        "local search optimization"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "schema-markup-explained",
+      "title": "Schema Markup Explained for Non-Technical Site Owners",
+      "keywords": [
+        "schema markup explained",
+        "structured data SEO"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "ai-seo-content-risks",
+      "title": "AI-Generated SEO Content: What Google Actually Penalizes",
+      "keywords": [
+        "AI SEO content Google",
+        "AI content SEO risk"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "long-tail-keywords-strategy",
+      "title": "Long-Tail Keywords: The Fastest Path to First-Page Rankings",
+      "keywords": [
+        "long tail keywords strategy",
+        "long tail SEO"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "meta-description-writing",
+      "title": "How to Write Meta Descriptions That Get the Click",
+      "keywords": [
+        "meta description writing",
+        "meta description optimization"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "internal-linking-strategy",
+      "title": "Internal Linking: The SEO Tactic Most Small Sites Get Wrong",
+      "keywords": [
+        "internal linking strategy",
+        "internal links SEO"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "content-refresh-existing-posts",
+      "title": "How Refreshing Old Blog Posts Can Outperform Writing New Ones",
+      "keywords": [
+        "content refresh strategy",
+        "update old blog posts SEO"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "google-search-console-basics",
+      "title": "Google Search Console: The 5 Reports Every Business Owner Should Check",
+      "keywords": [
+        "Google Search Console basics",
+        "search console tutorial"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "pillar-page-cluster-strategy",
+      "title": "Pillar Pages and Topic Clusters: How to Organize Content That Ranks",
+      "keywords": [
+        "pillar page strategy",
+        "topic cluster SEO"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "core-web-vitals-fix",
+      "title": "Core Web Vitals Explained: What to Fix First for Better Rankings",
+      "keywords": [
+        "core web vitals",
+        "Google CWV optimization"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "blogging-frequency-seo",
+      "title": "How Often Should You Blog? The Honest Answer for Small Businesses",
+      "keywords": [
+        "how often to blog SEO",
+        "blog frequency small business"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "seo-audit-diy-checklist",
+      "title": "How to Run a Basic SEO Audit on Your Own Website",
+      "keywords": [
+        "DIY SEO audit",
+        "website SEO audit checklist"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "faq-schema-rich-snippets",
+      "title": "FAQ Schema: How to Show Up in Google Rich Snippets",
+      "keywords": [
+        "FAQ schema markup",
+        "Google rich snippets FAQ"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "google-business-reviews-seo",
+      "title": "How Google Reviews Affect Your Local Search Rankings",
+      "keywords": [
+        "Google reviews local SEO",
+        "reviews impact local rankings"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "content-repurposing-system",
+      "title": "How to Turn One Blog Post Into 10 Pieces of Content",
+      "keywords": [
+        "content repurposing strategy",
+        "repurpose blog content"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "seo-for-new-website",
+      "title": "SEO for a New Website: What to Do in the First 90 Days",
+      "keywords": [
+        "SEO new website",
+        "new site SEO checklist"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "competitor-keyword-gap",
+      "title": "How to Find Keywords Your Competitors Rank for That You Don't",
+      "keywords": [
+        "competitor keyword gap",
+        "keyword gap analysis SEO"
+      ],
+      "framework": "Anxiety Map",
+      "language": "EN",
+      "status": "pending"
+    },
+    {
+      "slug": "automatizacion-ia-negocio",
+      "title": "Como Automatizar Tu Negocio Con IA Sin Contratar un Tecnico",
+      "keywords": [
+        "automatizacion IA negocio",
+        "inteligencia artificial pequenos negocios"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "ES",
+      "status": "pending"
+    },
+    {
+      "slug": "chatgpt-para-emprendedores",
+      "title": "ChatGPT Para Emprendedores: 7 Casos de Uso Reales",
+      "keywords": [
+        "ChatGPT para emprendedores",
+        "como usar ChatGPT negocio"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "ES",
+      "status": "pending"
+    },
+    {
+      "slug": "optimizacion-pagina-producto",
+      "title": "Como Optimizar Tu Pagina de Producto para Vender Mas",
+      "keywords": [
+        "optimizar pagina producto",
+        "conversion ecommerce espanol"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "ES",
+      "status": "pending"
+    },
+    {
+      "slug": "seo-local-latinoamerica",
+      "title": "SEO Local para Latinoamerica: Guia Practica para Negocios Fisicos",
+      "keywords": [
+        "SEO local Latinoamerica",
+        "posicionamiento local negocios"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "ES",
+      "status": "pending"
+    },
+    {
+      "slug": "diseno-web-confianza",
+      "title": "Senales de Confianza en Tu Web Que Hacen Comprar a Tus Visitantes",
+      "keywords": [
+        "senales de confianza web",
+        "diseno web conversion"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "ES",
+      "status": "pending"
+    },
+    {
+      "slug": "precio-psicologia-clientes",
+      "title": "Psicologia del Precio: Por Que $99 Se Vende Mejor Que $100",
+      "keywords": [
+        "psicologia del precio",
+        "precios que venden"
+      ],
+      "framework": "Anxiety Map",
+      "language": "ES",
+      "status": "pending"
+    },
+    {
+      "slug": "metricas-negocio-digital",
+      "title": "Las 5 Metricas Que Todo Negocio Digital Debe Revisar Cada Semana",
+      "keywords": [
+        "metricas negocio digital",
+        "KPIs pequenas empresas"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "ES",
+      "status": "pending"
+    },
+    {
+      "slug": "estrategia-contenido-redes",
+      "title": "Estrategia de Contenido para Redes Sociales Sin Gastar en Agencias",
+      "keywords": [
+        "estrategia contenido redes sociales",
+        "marketing contenido PYMES"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "ES",
+      "status": "pending"
+    },
+    {
+      "slug": "flujo-incorporacion-usuarios",
+      "title": "Por Que Tu Proceso de Registro Espanta a Tus Usuarios",
+      "keywords": [
+        "flujo incorporacion usuarios",
+        "registro online conversion"
+      ],
+      "framework": "Anxiety Map",
+      "language": "ES",
+      "status": "pending"
+    },
+    {
+      "slug": "ia-atencion-cliente-espanol",
+      "title": "Como Usar IA para Atender Clientes en Espanol las 24 Horas",
+      "keywords": [
+        "IA atencion al cliente espanol",
+        "chatbot espanol negocio"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "ES",
+      "status": "pending"
+    },
+    {
+      "slug": "pruebas-usabilidad-gratis",
+      "title": "Como Hacer Pruebas de Usabilidad Gratis Con Tus Propios Clientes",
+      "keywords": [
+        "pruebas usabilidad gratuitas",
+        "test usuario sin presupuesto"
+      ],
+      "framework": "Anxiety Map",
+      "language": "ES",
+      "status": "pending"
+    },
+    {
+      "slug": "hoja-de-ruta-producto-simple",
+      "title": "Como Crear un Roadmap de Producto Sin Complicaciones",
+      "keywords": [
+        "roadmap producto sencillo",
+        "planificacion producto emprendedor"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "ES",
+      "status": "pending"
+    },
+    {
+      "slug": "historias-usuario-desarrolladores",
+      "title": "Como Escribir Historias de Usuario Que Los Desarrolladores Entiendan",
+      "keywords": [
+        "historias de usuario",
+        "escribir user stories espanol"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "ES",
+      "status": "pending"
+    },
+    {
+      "slug": "roi-herramientas-ia",
+      "title": "Como Calcular el ROI de las Herramientas de IA en Tu Negocio",
+      "keywords": [
+        "ROI herramientas IA",
+        "medir retorno inversion inteligencia artificial"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "ES",
+      "status": "pending"
+    },
+    {
+      "slug": "palabras-clave-negocio-local",
+      "title": "Investigacion de Palabras Clave para Tu Negocio Local en 3 Pasos",
+      "keywords": [
+        "palabras clave negocio local",
+        "keyword research espanol"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "ES",
+      "status": "pending"
+    },
+    {
+      "slug": "diseno-formulario-conversion",
+      "title": "Diseno de Formularios Que No Espantan a Tus Prospectos",
+      "keywords": [
+        "diseno formulario conversion",
+        "optimizar formularios web"
+      ],
+      "framework": "Friction-to-Trust Pipeline",
+      "language": "ES",
+      "status": "pending"
+    },
+    {
+      "slug": "embudo-ventas-digital",
+      "title": "Como Construir un Embudo de Ventas Digital Para Tu Negocio",
+      "keywords": [
+        "embudo de ventas digital",
+        "funnel ventas pequeno negocio"
+      ],
+      "framework": "Three Questions Framework",
+      "language": "ES",
+      "status": "pending"
+    },
+    {
+      "slug": "analisis-competencia-ia",
+      "title": "Como Usar IA para Analizar a Tu Competencia Sin Contratar Consultores",
+      "keywords": [
+        "analisis competencia IA",
+        "investigar competidores con inteligencia artificial"
+      ],
+      "framework": "Anxiety Map",
+      "language": "ES",
+      "status": "pending"
+    },
+    {
+      "slug": "gestion-reputacion-online",
+      "title": "Gestion de Reputacion Online: Como Responder Resenas Negativas",
+      "keywords": [
+        "gestion reputacion online",
+        "responder resenas negativas"
+      ],
+      "framework": "Anxiety Map",
+      "language": "ES",
+      "status": "pending"
+    },
+    {
+      "slug": "pagina-inicio-que-convierte",
+      "title": "Que Debe Decir Tu Pagina de Inicio en Los Primeros 5 Segundos",
+      "keywords": [
+        "pagina inicio que convierte",
+        "homepage conversion espanol"
+      ],
+      "framework": "Anxiety Map",
+      "language": "ES",
+      "status": "pending"
     }
   ]
 }

@@ -1,180 +1,724 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ELI5: AI Explained Simply — gonzalo.tech</title>
-<meta name="description" content="AI explained in plain language. Visual slide deck with exercises. Available in English and Spanish.">
-<meta property="og:title" content="ELI5: AI Explained Simply — gonzalo.tech">
-<meta property="og:description" content="AI explained in plain language. Visual slide deck with exercises. Available in English and Spanish.">
-<link rel="canonical" href="https://gonzalo.tech">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--ink:#0F172A;--slate:#334155;--muted:#64748B;--subtle:#94A3B8;--border:#E2E8F0;--surface:#F8FAFC;--white:#FFFFFF;--red:#DC2626;--red-light:#FEF2F2;--green:#16A34A;--green-light:#F0FDF4;--amber:#D97706;--amber-light:#FFFBEB;--font-h:Georgia,'Times New Roman',serif;--font-b:Calibri,'Segoe UI',system-ui,sans-serif;--font-c:Consolas,'Courier New',monospace;--max-w:1080px}
-body{font-family:var(--font-b);color:var(--slate);background:var(--white);line-height:1.5;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
-.container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
-nav.scrolled{box-shadow:0 1px 8px rgba(15,23,42,0.06)}
-.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px}
-.nav-brand{font-family:var(--font-h);font-size:20px;font-weight:bold;color:var(--ink);letter-spacing:-0.5px}
-.nav-links{display:flex;gap:28px;align-items:center}
-.nav-links a{font-size:14px;color:var(--muted);font-weight:500;transition:color .2s}
-.nav-links a:hover{color:var(--ink)}
-.nav-cta{font-size:13px!important;font-weight:600!important;color:var(--white)!important;background:var(--ink);padding:8px 18px;border-radius:6px;transition:opacity .2s}
-.nav-cta:hover{opacity:.88}
-.hamburger{display:none;background:none;border:none;cursor:pointer;width:28px;height:20px;position:relative}
-.hamburger span{display:block;width:100%;height:2px;background:var(--ink);position:absolute;left:0;transition:all .3s}
-.hamburger span:nth-child(1){top:0}.hamburger span:nth-child(2){top:9px}.hamburger span:nth-child(3){top:18px}
-footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 32px}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;margin-bottom:32px}
-.footer-brand{font-family:var(--font-h);font-size:18px;font-weight:bold;color:var(--ink);margin-bottom:8px}
-.footer-tagline{font-size:13px;color:var(--muted);max-width:280px;line-height:1.5}
-.footer-col h4{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
-.footer-col a{display:block;font-size:14px;color:var(--slate);padding:4px 0;transition:color .2s}
-.footer-col a:hover{color:var(--ink)}
-.footer-bottom{border-top:1px solid var(--border);padding-top:24px;font-size:12px;color:var(--subtle);display:flex;justify-content:space-between;align-items:center}
-.btn-primary{display:inline-block;padding:14px 28px;background:var(--ink);color:var(--white);font-weight:600;font-size:15px;border-radius:6px;transition:opacity .2s;border:none;cursor:pointer}
-.btn-primary:hover{opacity:.88}
-.btn-secondary{display:inline-block;padding:14px 28px;border:1px solid var(--border);color:var(--ink);font-weight:600;font-size:15px;border-radius:6px;transition:all .2s;background:transparent;cursor:pointer}
-.btn-secondary:hover{border-color:var(--ink)}
-.fade-in{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
-.fade-in.visible{opacity:1;transform:translateY(0)}
-@media(max-width:768px){
-  .nav-links{display:none}.hamburger{display:block}
-  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);padding:20px 24px;gap:16px}
-  .footer-grid{grid-template-columns:1fr;gap:32px}
-}
-/* Article styles */
-.article-header{padding:120px 0 48px}
-.article-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
-.article-title{font-family:var(--font-h);font-size:38px;font-weight:bold;color:var(--ink);line-height:1.2;margin-bottom:16px;max-width:720px}
-.article-meta{font-size:14px;color:var(--subtle);margin-bottom:32px}
-.article-body{max-width:720px;margin:0 auto;padding:0 24px 96px}
-.article-body h2{font-family:var(--font-h);font-size:24px;color:var(--ink);margin:40px 0 16px;line-height:1.3}
-.article-body h3{font-size:18px;font-weight:600;color:var(--ink);margin:32px 0 12px}
-.article-body p{font-size:16px;color:var(--slate);line-height:1.7;margin-bottom:16px;max-width:65ch}
-.article-body strong{color:var(--ink)}
-.article-body blockquote{border-left:3px solid var(--border);padding:12px 20px;margin:24px 0;background:var(--surface);border-radius:0 6px 6px 0}
-.article-body blockquote p{color:var(--muted);font-size:15px;margin-bottom:0}
-.article-cta{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;margin:48px 0;text-align:center}
-.article-cta h3{font-family:var(--font-h);font-size:20px;color:var(--ink);margin-bottom:8px}
-.article-cta p{font-size:14px;color:var(--muted);margin-bottom:16px}
-.article-bio{border-top:1px solid var(--border);padding-top:24px;margin-top:48px;font-size:14px;color:var(--muted);font-style:italic;font-family:var(--font-h)}
-/* Course/product page styles */
-.page-header{padding:120px 0 48px;border-bottom:1px solid var(--border)}
-.page-title{font-family:var(--font-h);font-size:38px;font-weight:bold;color:var(--ink);line-height:1.2;margin-bottom:12px;max-width:640px}
-.page-desc{font-size:17px;color:var(--slate);line-height:1.65;max-width:600px;margin-bottom:24px}
-.page-section{padding:64px 0}
-.page-section h2{font-family:var(--font-h);font-size:26px;color:var(--ink);margin-bottom:24px}
-.module-list{list-style:none;counter-reset:module}
-.module-list li{counter-increment:module;padding:20px 0;border-bottom:1px solid var(--border);display:flex;gap:16px;align-items:start}
-.module-list li::before{content:counter(module,decimal-leading-zero);font-family:var(--font-h);font-size:24px;color:var(--subtle);font-weight:bold;min-width:36px}
-.module-title{font-weight:600;color:var(--ink);font-size:16px;margin-bottom:4px}
-.module-desc{font-size:14px;color:var(--muted);line-height:1.55}
-.price-box{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;display:inline-block}
-.price-box .price{font-family:var(--font-h);font-size:48px;font-weight:bold;color:var(--ink)}
-.price-box .note{font-size:14px;color:var(--subtle);margin-top:4px}
-.product-features{list-style:none}
-.product-features li{padding:10px 0;border-bottom:1px solid var(--border);font-size:15px;color:var(--slate);padding-left:24px;position:relative}
-.product-features li::before{content:"\2713";position:absolute;left:0;color:var(--green);font-weight:bold}
-@media(max-width:768px){
-  .article-title,.page-title{font-size:28px}
-  .article-body p{font-size:15px}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ELI5: AI Explained Simply — gonzalo.tech</title>
+  <meta name="description" content="AI explained in plain English. No jargon, no hype. What it actually is, how it works, what it's good at, and a decision flowchart for your business. Free guide.">
+  <meta name="keywords" content="AI explained simply, what is AI, machine learning explained, generative AI guide, AI for beginners, AI business guide">
+  <meta name="author" content="Gonzalo Aguilar">
+  <meta property="og:title" content="ELI5: AI Explained Simply — gonzalo.tech">
+  <meta property="og:description" content="AI explained in plain English. No jargon, no hype. Free guide by Gonzalo Aguilar.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://gonzalo.tech/products/eli5-ai-explained.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://gonzalo.tech/products/eli5-ai-explained.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "ELI5: AI Explained Simply",
+    "description": "A plain-English guide to AI fundamentals — what it is, how it works, and how to decide if it's right for your business.",
+    "author": {
+      "@type": "Person",
+      "name": "Gonzalo Aguilar",
+      "url": "https://gonzalo.tech"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "gonzalo.tech"
+    },
+    "url": "https://gonzalo.tech/products/eli5-ai-explained.html",
+    "inLanguage": "en",
+    "isAccessibleForFree": true
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #0F172A;
+      --slate: #334155;
+      --muted: #64748B;
+      --subtle: #94A3B8;
+      --border: #E2E8F0;
+      --surface: #F8FAFC;
+      --white: #FFFFFF;
+      --red: #DC2626;
+      --red-light: #FEF2F2;
+      --green: #16A34A;
+      --green-light: #F0FDF4;
+      --amber: #D97706;
+      --amber-light: #FFFBEB;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: Calibri, 'Gill Sans', 'Segoe UI', sans-serif;
+      --font-code: Consolas, 'Courier New', monospace;
+    }
+    body {
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--slate);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 5rem; }
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 0;
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-header a { font-family: var(--font-heading); font-size: 1.2rem; color: var(--ink); text-decoration: none; }
+    .site-header a:hover { color: var(--muted); }
+    .badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: var(--green-light);
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+    }
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2.4rem;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      color: var(--ink);
+      margin-top: 3rem;
+      margin-bottom: 0.75rem;
+    }
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--ink);
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    p { margin-bottom: 1.25rem; }
+    ul, ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+    a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--muted); }
+    hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+
+    /* Table of Contents */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+      border-radius: 4px;
+    }
+    .toc h2 { font-size: 1rem; margin-top: 0; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+    .toc ol { margin: 0; padding-left: 1.25rem; }
+    .toc li { margin-bottom: 0.3rem; font-size: 0.95rem; }
+    .toc a { color: var(--slate); }
+
+    /* Callout boxes */
+    .callout {
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+      border-left: 4px solid var(--ink);
+      background: var(--surface);
+    }
+    .callout.green { border-color: var(--green); background: var(--green-light); }
+    .callout.amber { border-color: var(--amber); background: var(--amber-light); }
+    .callout.red { border-color: var(--red); background: var(--red-light); }
+    .callout p:last-child { margin-bottom: 0; }
+    .callout-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      color: var(--muted);
+    }
+
+    /* Three-layer cards */
+    .three-layer {
+      border: 1px solid var(--border);
+      margin: 1.5rem 0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .three-layer .layer {
+      padding: 0.9rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+    .three-layer .layer:last-child { border-bottom: none; }
+    .three-layer .layer-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+    th {
+      background: var(--ink);
+      color: var(--white);
+      padding: 0.65rem 1rem;
+      text-align: left;
+      font-family: var(--font-heading);
+      font-weight: normal;
+      font-size: 0.9rem;
+    }
+    td {
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: var(--surface); }
+
+    /* Checklist */
+    .checklist { list-style: none; padding-left: 0; }
+    .checklist li {
+      padding: 0.5rem 0.5rem 0.5rem 2rem;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 0;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li::before {
+      content: "☐";
+      position: absolute;
+      left: 0;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    /* Grid cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .card {
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+      border-radius: 4px;
+    }
+    .card h4 {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+    .card p { font-size: 0.9rem; margin-bottom: 0; color: var(--slate); }
+    .card.good { border-color: var(--green); }
+    .card.bad { border-color: var(--red); }
+    .card.good h4::before { content: "✓ "; color: var(--green); }
+    .card.bad h4::before { content: "✗ "; color: var(--red); }
+
+    /* Flowchart */
+    .flowchart {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      padding: 2rem;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+    .flow-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding: 0.75rem 1rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+    .flow-num {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--ink);
+      min-width: 2rem;
+    }
+    .flow-arrow { text-align: center; color: var(--muted); font-size: 1.2rem; margin: 0.25rem 0 0.25rem 1rem; }
+    .flow-yes { color: var(--green); font-weight: 700; }
+    .flow-no { color: var(--red); font-weight: 700; }
+
+    /* Glossary */
+    .glossary-item {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .glossary-item:last-child { border-bottom: none; }
+    .glossary-term { font-family: var(--font-heading); color: var(--ink); font-weight: bold; }
+
+    /* PDF download */
+    .pdf-download {
+      margin: 2.5rem 0;
+      padding: 1.25rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .pdf-download p { margin: 0; font-size: 0.95rem; }
+    .pdf-download a {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      background: var(--ink);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .pdf-download a:hover { background: var(--slate); color: var(--white); }
+
+    .author-bio {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+    .site-footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--subtle);
+    }
+
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      h1 { font-size: 1.75rem; }
+      h2 { font-size: 1.3rem; }
+      .container { padding: 1rem 1rem 3rem; }
+      .card-grid { grid-template-columns: 1fr; }
+      .pdf-download { flex-direction: column; align-items: flex-start; }
+    }
+    @media print {
+      body { font-size: 12pt; color: #000; }
+      .site-header, .site-footer, .pdf-download { display: none; }
+      .container { max-width: 100%; padding: 0; }
+      a { text-decoration: none; color: #000; }
+    }
+  </style>
 </head>
 <body>
-<nav id="navbar">
-  <div class="nav-inner">
-    <a href="../" class="nav-brand">gonzalo.tech</a>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-links" id="navLinks">
-      <a href="../#about">About</a>
-<a href="../courses/ai-augmented-pm.html">Courses</a>
-<a href="../#resources" style="color:#0F172A;font-weight:600;">Resources</a>
-<a href="../#blog">Blog</a>
-<a href="../#newsletter" class="nav-cta">Get the Toolkit</a>
-    </div>
-  </div>
-</nav>
-
 <div class="container">
-  <div class="page-header">
-    <span style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:4px;background:#F0FDF4;color:#16A34A;margin-bottom:12px;">AVAILABLE</span>
-    <h1 class="page-title">ELI5: AI Explained Simply</h1>
-    <p class="page-desc">A visual slide deck that explains AI fundamentals in plain language — no jargon, no prerequisites. Available in English and Spanish.</p>
-    <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
-      <div class="price-box">
-        <div class="price">$5</div>
-      </div>
-      <a href="#" class="btn-primary">Buy now &rarr;</a>
-    </div>
-  </div>
-  <div class="page-section">
-    <h2>What's included</h2>
-    <ul class="product-features">
-      <li>13 brand-designed slides with the Three-Layer Rule (simple version + why it matters + analogy)</li>
-<li>Covers: what AI is, how prompts work, what AI can and can't do, practical use cases</li>
-<li>Interactive exercises on every concept slide — you build something, not just read</li>
-<li>Available in English and Latin American Spanish</li>
-<li>Downloadable .PPTX — use as-is or customize for your team</li>
-    </ul>
-  </div>
-  <div class="page-section" style="border-top:1px solid var(--border);text-align:center;">
-    <h3 style="font-family:var(--font-h);font-size:22px;color:var(--ink);margin-bottom:8px;">Ready to start?</h3>
-    <p style="font-size:15px;color:var(--muted);margin-bottom:24px;">Every toolkit comes from real work, not theory. If it doesn't help, I want to know.</p>
-    <a href="#" class="btn-primary" style="font-size:17px;padding:16px 36px;">Buy now &rarr;</a>
-  </div>
-</div>
+  <header class="site-header">
+    <a href="../index.html">gonzalo.tech</a>
+    <span class="badge">Free Toolkit</span>
+  </header>
 
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand">gonzalo.tech</div>
-        <div class="footer-tagline">Courses, toolkits, and frameworks for builders who use AI. Built with rigor, explained with care.</div>
+  <article>
+    <h1>ELI5: AI Explained Simply</h1>
+    <div class="meta">
+      By <strong>Gonzalo Aguilar</strong> &nbsp;·&nbsp; Free guide &nbsp;·&nbsp; No email required &nbsp;·&nbsp; Updated April 2026
+    </div>
+
+    <p>Everyone's talking about AI. Half the people explaining it make it sound like magic. The other half make it sound terrifying. Neither is helpful if you're trying to figure out whether it's worth your time or money.</p>
+    <p>This guide cuts through the noise. By the end, you'll know what AI actually is, how the most popular tools work under the hood, where it genuinely helps, and where it'll let you down. You'll also have a decision flowchart you can use right now.</p>
+    <p><strong>Don't stress — I got you.</strong></p>
+
+    <nav class="toc">
+      <h2>Table of Contents</h2>
+      <ol>
+        <li><a href="#what-is-ai">What AI Actually Is (Not the Sci-Fi Version)</a></li>
+        <li><a href="#three-buckets">The 3 Buckets: AI vs. Machine Learning vs. Generative AI</a></li>
+        <li><a href="#how-chatgpt-works">How ChatGPT and Claude Actually Work</a></li>
+        <li><a href="#great-at">5 Things AI Is Great At</a></li>
+        <li><a href="#terrible-at">5 Things AI Is Terrible At</a></li>
+        <li><a href="#decision-flowchart">Decision Flowchart: Should I Use AI for This?</a></li>
+        <li><a href="#glossary">Glossary: 20 AI Terms in Plain English</a></li>
+      </ol>
+    </nav>
+
+    <div class="pdf-download">
+      <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
+      <a href="../pdfs/eli5-ai-explained.pdf" download>Download PDF</a>
+    </div>
+
+    <hr>
+
+    <h2 id="what-is-ai">1. What AI Actually Is (Not the Sci-Fi Version)</h2>
+
+    <p>When most people hear "AI" they picture a robot that thinks, feels, has opinions, and is one bad day away from taking over the world. That's not what we're dealing with. Not even close.</p>
+
+    <p>Here's the real definition:</p>
+
+    <div class="callout">
+      <div class="callout-label">Simple Version</div>
+      <p><strong>AI is software that gets better at a task by looking at examples instead of following rules someone wrote by hand.</strong></p>
+    </div>
+
+    <p>Traditional software is rule-based. A developer writes: "if the customer's order is over $50, apply free shipping." Every decision is hardcoded.</p>
+
+    <p>AI is pattern-based. You show it thousands of examples — emails that were spam and emails that weren't — and it figures out the rules itself. You didn't write "if the subject line contains 'WINNER' it's spam." The system learned that on its own.</p>
+
+    <div class="three-layer">
+      <div class="layer">
+        <div class="layer-label">Simple Version</div>
+        AI learns from examples instead of following hand-written rules.
       </div>
-      <div class="footer-col">
-        <h4>Learn</h4>
-        <a href="../courses/ai-augmented-pm.html">Courses</a>
-        <a href="../#resources">Digital products</a>
-        <a href="../#blog">Blog</a>
+      <div class="layer">
+        <div class="layer-label">Why It Matters for Your Business</div>
+        You can automate tasks that would be too complicated to program manually — like recognizing customer sentiment or categorizing support tickets — because the AI figures out the patterns from data you already have.
       </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <a href="https://linkedin.com/in/gonzaloeaguilar" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://medium.com/@gonzaloeaguilar" target="_blank" rel="noopener">Medium</a>
-        <a href="mailto:hello@gonzalo.tech">hello@gonzalo.tech</a>
+      <div class="layer">
+        <div class="layer-label">Real-World Analogy</div>
+        Teaching a new employee vs. writing them a 500-page manual. The manual covers every scenario you thought of. The employee, after seeing 1,000 real situations, handles scenarios you never anticipated.
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Gonzalo Aguilar. All rights reserved.</span>
-      <span>Built in Fort Lauderdale, FL</span>
+
+    <p>The key thing to understand: <strong>AI is not sentient. It has no goals, no desires, no plans.</strong> It's a very powerful pattern-matching machine. Incredibly useful. Not alive.</p>
+
+    <hr>
+
+    <h2 id="three-buckets">2. The 3 Buckets: AI vs. Machine Learning vs. Generative AI</h2>
+
+    <p>These three terms get used interchangeably on LinkedIn and that causes real confusion. Here's how they actually relate:</p>
+
+    <div class="callout">
+      <div class="callout-label">The Nesting Doll Rule</div>
+      <p>Think of Russian nesting dolls. <strong>AI</strong> is the biggest doll. Inside it is <strong>Machine Learning</strong>. Inside ML is <strong>Generative AI</strong>. Every generative AI tool is doing machine learning. Every machine learning system is a form of AI. But not every AI uses machine learning, and not every ML system is generative.</p>
     </div>
-  </div>
-</footer>
-<script>
-const nav = document.getElementById('navbar');
-window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
-hamburger.addEventListener('click', () => { navLinks.classList.toggle('open'); });
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
-    const href = link.getAttribute('href');
-    if (href.startsWith('/#')) { return; }
-    e.preventDefault();
-    const target = document.querySelector(href);
-    if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); navLinks.classList.remove('open'); }
-  });
-});
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-</script>
+
+    <h3>Bucket 1: AI (the big umbrella)</h3>
+    <p>Any software that does something that normally requires human intelligence. This includes chess engines, spam filters, Google Maps routing, facial recognition on your phone. Most of it has been around for decades.</p>
+
+    <h3>Bucket 2: Machine Learning</h3>
+    <p>A specific type of AI where the system learns from data. Instead of a programmer encoding rules, the system builds its own rules by processing examples. Netflix recommendations, credit card fraud detection, your email spam folder — all machine learning.</p>
+
+    <div class="three-layer">
+      <div class="layer">
+        <div class="layer-label">Simple Version</div>
+        ML is AI that improves itself by studying data.
+      </div>
+      <div class="layer">
+        <div class="layer-label">Why It Matters for Your Business</div>
+        ML powers most of the tools you already use — ad targeting, product recommendations, search rankings. Understanding it helps you ask better questions of vendors who claim to use "AI."
+      </div>
+      <div class="layer">
+        <div class="layer-label">Real-World Analogy</div>
+        A loan officer who's reviewed 10,000 applications learns to spot risky borrowers instinctively. ML is that, but at a million applications per second.
+      </div>
+    </div>
+
+    <h3>Bucket 3: Generative AI</h3>
+    <p>This is the new stuff. Instead of analyzing or classifying data, generative AI <em>creates</em> new data — text, images, audio, video, code. ChatGPT, Claude, Midjourney, Sora, GitHub Copilot. All generative AI.</p>
+
+    <p>It works by learning the statistical patterns in enormous amounts of existing content, then using those patterns to generate new content that "fits" the same patterns. It doesn't know what it's saying — it knows what tends to follow what.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>What It Does</th>
+          <th>Examples</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>AI (broad)</strong></td>
+          <td>Any system mimicking human intelligence</td>
+          <td>Chess engines, navigation apps, spam filters</td>
+        </tr>
+        <tr>
+          <td><strong>Machine Learning</strong></td>
+          <td>Learns rules from data automatically</td>
+          <td>Netflix recs, fraud detection, ad targeting</td>
+        </tr>
+        <tr>
+          <td><strong>Generative AI</strong></td>
+          <td>Creates new content (text, images, code)</td>
+          <td>ChatGPT, Claude, Midjourney, Copilot</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr>
+
+    <h2 id="how-chatgpt-works">3. How ChatGPT and Claude Actually Work</h2>
+
+    <p>These tools are called Large Language Models, or LLMs. "Large" = trained on an enormous amount of text. "Language" = they deal in text. "Model" = it's a mathematical model (a very large one — billions of numbers).</p>
+
+    <p>Here's what happens when you type a message:</p>
+
+    <div class="flowchart">
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <div><strong>Your text gets converted to numbers.</strong> Every word (actually, word fragments called "tokens") gets mapped to a number. "Hello" might be token 15496.</div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <div class="flow-num">2</div>
+        <div><strong>The model processes those numbers through billions of parameters.</strong> Think of it like a massive series of filters, each trained to recognize certain patterns in language.</div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <div><strong>It predicts the most likely next token.</strong> Then the token after that. Then the one after that. It's generating one word at a time, each choice influenced by everything that came before.</div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <div class="flow-num">4</div>
+        <div><strong>Those tokens get converted back to text</strong> and streamed to your screen word by word.</div>
+      </div>
+    </div>
+
+    <div class="callout amber">
+      <div class="callout-label">The Important Implication</div>
+      <p>The model is not "looking up" facts. It's not searching a database. It's generating plausible-sounding text based on patterns from its training data. <strong>This is why it sometimes sounds confident and is completely wrong.</strong> That phenomenon has a name: hallucination.</p>
+    </div>
+
+    <div class="three-layer">
+      <div class="layer">
+        <div class="layer-label">Simple Version</div>
+        An LLM predicts the next word, one at a time, using patterns learned from billions of text examples.
+      </div>
+      <div class="layer">
+        <div class="layer-label">Why It Matters for Your Business</div>
+        Always verify facts, numbers, and citations that come from AI tools. They're great at structure and language — not at being accurate encyclopedias.
+      </div>
+      <div class="layer">
+        <div class="layer-label">Real-World Analogy</div>
+        A really well-read person who writes fast. They have a strong feel for how language works and what sounds right. But if you ask them for last quarter's exact revenue figure from a company they've never researched, they might confidently guess wrong.
+      </div>
+    </div>
+
+    <hr>
+
+    <h2 id="great-at">4. 5 Things AI Is Great At</h2>
+
+    <div class="card-grid">
+      <div class="card good">
+        <h4>First drafts</h4>
+        <p>Starting from a blank page is the hardest part. AI excels at producing a rough draft — a blog post, email, job description, product description — that you then edit. It's a 70% solution you refine, not a 100% solution you ship.</p>
+      </div>
+      <div class="card good">
+        <h4>Summarizing long documents</h4>
+        <p>Paste in a 40-page contract, research paper, or meeting transcript and ask for a summary. This is probably the highest-value, lowest-risk AI use case. The output is easy to verify and the time savings are real.</p>
+      </div>
+      <div class="card good">
+        <h4>Explaining complex things simply</h4>
+        <p>Ask it to explain a legal clause, a tax concept, or a technical spec as if you're in 5th grade. It's remarkably good at this. Way better than Googling.</p>
+      </div>
+      <div class="card good">
+        <h4>Generating variations</h4>
+        <p>Give it one headline and ask for 10 alternatives. Give it one email and ask for a more formal version and a more casual version. Brainstorming at scale — AI doesn't get tired or embarrassed.</p>
+      </div>
+      <div class="card good">
+        <h4>Structuring messy information</h4>
+        <p>Dump in your scattered notes from a meeting, interview, or brainstorm and ask it to organize them into a coherent outline. The transformation from chaos to structure is consistently impressive.</p>
+      </div>
+    </div>
+
+    <div class="callout green">
+      <div class="callout-label">The Common Thread</div>
+      <p>AI works best on tasks where <strong>"pretty good and fast"</strong> beats <strong>"perfect but slow."</strong> If the stakes of being slightly wrong are low, and the time savings of being fast are high — that's your sweet spot.</p>
+    </div>
+
+    <hr>
+
+    <h2 id="terrible-at">5. 5 Things AI Is Terrible At</h2>
+
+    <div class="card-grid">
+      <div class="card bad">
+        <h4>Real-time information</h4>
+        <p>Most AI models have a training cutoff — they don't know what happened last week. Ask about current stock prices, recent news, or live sports scores and you'll get outdated or fabricated answers. Always check.</p>
+      </div>
+      <div class="card bad">
+        <h4>Precise math and calculations</h4>
+        <p>Counterintuitive but true: AI language models can make arithmetic errors. They weren't built as calculators. Use them to set up the logic of a problem, then verify the numbers yourself or with a real tool.</p>
+      </div>
+      <div class="card bad">
+        <h4>Knowing what it doesn't know</h4>
+        <p>A human expert will say "I'm not sure about that." AI often just generates a plausible-sounding answer instead. It has no reliable self-awareness about its own gaps. This is the hallucination problem.</p>
+      </div>
+      <div class="card bad">
+        <h4>Tasks requiring genuine relationships</h4>
+        <p>AI can write a follow-up email, but it can't build the relationship that makes the email land. Sales, negotiation, partnership development — these require human trust that AI can support but not replace.</p>
+      </div>
+      <div class="card bad">
+        <h4>Deep domain expertise in rare areas</h4>
+        <p>On well-covered topics (marketing, coding, general writing) it's excellent. In niche fields with limited training data — rare medical conditions, obscure regulations, very specialized technical domains — it's unreliable.</p>
+      </div>
+    </div>
+
+    <div class="callout amber">
+      <div class="callout-label">The Risk Pattern to Watch</div>
+      <p>AI is most dangerous when it's used for <strong>high-stakes decisions</strong> in <strong>low-coverage domains</strong> where the user <strong>can't easily verify the output</strong>. If all three are true, slow down and bring in a human expert.</p>
+    </div>
+
+    <hr>
+
+    <h2 id="decision-flowchart">6. Decision Flowchart: Should I Use AI for This?</h2>
+
+    <p>Use this before you decide to use (or not use) an AI tool for a task.</p>
+
+    <div class="flowchart">
+      <div class="flow-step">
+        <div class="flow-num">Q1</div>
+        <div><strong>Does this task involve real-time data, live prices, or recent events?</strong><br><span class="flow-yes">YES →</span> Don't use AI as your primary source. Use it to structure your analysis, then feed it the live data yourself.<br><span class="flow-no">NO →</span> Continue to Q2.</div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <div class="flow-num">Q2</div>
+        <div><strong>If the AI gets this wrong, what's the cost?</strong><br><span class="flow-yes">HIGH COST (legal, medical, financial, public) →</span> Use AI as a first draft or research assistant, not the final word. Add human review.<br><span class="flow-no">LOW COST (internal draft, brainstorm, formatting) →</span> Continue to Q3.</div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <div class="flow-num">Q3</div>
+        <div><strong>Can you clearly describe the task in 2–3 sentences?</strong><br><span class="flow-no">NO →</span> Spend 5 minutes getting clarity first. Vague input = vague output.<br><span class="flow-yes">YES →</span> Continue to Q4.</div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <div class="flow-num">Q4</div>
+        <div><strong>Would a good human intern be able to do this task with just a clear brief?</strong><br><span class="flow-yes">YES →</span> AI is likely a good fit. Go for it.<br><span class="flow-no">NO →</span> The task probably requires judgment, relationships, or specialized expertise. Use AI to assist, not lead.</div>
+      </div>
+    </div>
+
+    <div class="callout green">
+      <div class="callout-label">Quick Rule of Thumb</div>
+      <p>If you'd trust a smart, well-read generalist who's been on the job for 2 weeks to do it — AI can probably do it. If you'd need a 10-year expert with relationships and judgment — AI can assist but not replace.</p>
+    </div>
+
+    <hr>
+
+    <h2 id="glossary">7. Glossary: 20 AI Terms in Plain English</h2>
+
+    <p>Every industry has jargon that sounds complicated but isn't. Here's the AI cheat sheet.</p>
+
+    <div class="glossary-item">
+      <div class="glossary-term">Algorithm</div>
+      <p>A set of instructions for solving a problem. A recipe is an algorithm for cooking. An AI algorithm is a recipe for making predictions or decisions.</p>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Training</div>
+      <p>The process where a model learns from data. You show it millions of examples; it adjusts its internal settings until it gets good at the task. Training happens once (or occasionally). Using the model afterward is called "inference."</p>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Model</div>
+      <p>The trained AI system — the result of all that learning. When someone says "the model," they mean the actual software that makes predictions or generates outputs.</p>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Parameters / Weights</div>
+      <p>The billions of numbers inside the model that got tuned during training. "7 billion parameter model" means 7 billion numbers were adjusted. More parameters generally = more capable, but also more expensive to run.</p>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">LLM (Large Language Model)</div>
+      <p>An AI trained on enormous amounts of text to understand and generate language. ChatGPT, Claude, and Gemini are all LLMs. "Large" refers to the size of the model and the training data.</p>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Prompt</div>
+      <p>What you type to the AI. The quality of your output is heavily influenced by the quality of your prompt. "Write me a blog post" is a bad prompt. "Write a 500-word blog post for small business owners explaining why they need a Google My Business profile, in a conversational tone" is a good prompt.</p>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Context Window</div>
+      <p>How much text the model can "see" at once. If you paste in a very long document and the model only has a small context window, it can only read part of it. Bigger context window = better for long documents.</p>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Token</div>
+      <p>The basic unit the model reads and writes. Roughly 3/4 of a word. "Running" might be one token; "un-" and "believable" might each be a token. Pricing for AI APIs is usually per token.</p>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Hallucination</div>
+      <p>When an AI confidently states something that is false. It's not lying — it doesn't have intentions. It's generating plausible-sounding text that happens to be incorrect. Always verify facts, especially citations and numbers.</p>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Fine-tuning</div>
+      <p>Taking a pre-trained model and training it further on a smaller, specific dataset. You might fine-tune a general model to be especially good at customer service for your industry. Expensive and requires technical expertise.</p>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">RAG (Retrieval-Augmented Generation)</div>
+      <p>A technique where the AI looks up relevant documents before answering. Instead of relying only on training data, it retrieves fresh information from a database first. This reduces hallucinations and keeps answers current.</p>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Foundation Model</div>
+      <p>A large general-purpose model trained on broad data. GPT-4, Claude, Gemini are foundation models. You can use them directly or build specialized tools on top of them.</p>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Inference</div>
+      <p>Using a trained model to generate outputs. When you type a message to ChatGPT and get a response, that's inference. Training is the expensive one-time process; inference is the ongoing per-query cost.</p>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Neural Network</div>
+      <p>The mathematical architecture underlying most modern AI. Inspired loosely by how neurons connect in a brain, but it's math — not biology. Layers of numbers that transform inputs into outputs.</p>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Transformer</div>
+      <p>The specific architecture that powers most modern LLMs. Introduced by Google in 2017. The "T" in GPT stands for Transformer. It's very good at understanding relationships between words regardless of how far apart they are in a text.</p>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Multimodal</div>
+      <p>A model that can process multiple types of input — text, images, audio, video. GPT-4 Vision is multimodal because it understands both text and images. Increasingly common.</p>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Embeddings</div>
+      <p>A way of representing words, sentences, or images as numbers so similar things end up numerically close. "Dog" and "puppy" would have similar embeddings. Used for search, recommendations, and semantic matching.</p>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Agentic AI / AI Agents</div>
+      <p>AI systems that can take actions, not just generate text. An agent might browse the web, write and run code, send emails, and book a meeting — all in a single session without human intervention at each step.</p>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Prompt Engineering</div>
+      <p>The practice of writing better prompts to get better AI outputs. A whole discipline that includes techniques like chain-of-thought prompting, few-shot examples, and role assignment. More powerful than it sounds.</p>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">RLHF (Reinforcement Learning from Human Feedback)</div>
+      <p>A training technique where humans rate AI responses, and those ratings are used to make the model better at giving responses humans prefer. It's a big part of why modern chatbots are pleasant and helpful instead of weird and unhelpful.</p>
+    </div>
+
+    <hr>
+
+    <div class="callout green">
+      <div class="callout-label">You're Done</div>
+      <p><strong>You now know more about AI than 90% of the people who confidently talk about it in meetings.</strong> The fundamentals don't change much — even as the specific tools evolve, what you've learned here will hold up.</p>
+    </div>
+
+    <div class="pdf-download">
+      <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
+      <a href="../pdfs/eli5-ai-explained.pdf" download>Download PDF</a>
+    </div>
+
+    <div class="author-bio">
+      <p>Gonzalo Aguilar is a Senior Product Manager specializing in growth, identity, and onboarding in regulated markets. He writes about product strategy, conversion optimization, and practical AI workflows at <a href="../index.html">gonzalo.tech</a>.</p>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    &copy; 2026 gonzalo.tech — Gonzalo Aguilar &nbsp;·&nbsp; <a href="../index.html" style="color:inherit;">Home</a>
+  </footer>
+</div>
 </body>
 </html>

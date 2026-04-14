@@ -1,181 +1,585 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Funnel Audit Playbook — gonzalo.tech</title>
-<meta name="description" content="Diagnose why your website isn't converting. Step-by-step playbook with templates and checklists.">
-<meta property="og:title" content="Funnel Audit Playbook — gonzalo.tech">
-<meta property="og:description" content="Diagnose why your website isn't converting. Step-by-step playbook with templates and checklists.">
-<link rel="canonical" href="https://gonzalo.tech">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--ink:#0F172A;--slate:#334155;--muted:#64748B;--subtle:#94A3B8;--border:#E2E8F0;--surface:#F8FAFC;--white:#FFFFFF;--red:#DC2626;--red-light:#FEF2F2;--green:#16A34A;--green-light:#F0FDF4;--amber:#D97706;--amber-light:#FFFBEB;--font-h:Georgia,'Times New Roman',serif;--font-b:Calibri,'Segoe UI',system-ui,sans-serif;--font-c:Consolas,'Courier New',monospace;--max-w:1080px}
-body{font-family:var(--font-b);color:var(--slate);background:var(--white);line-height:1.5;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
-.container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
-nav.scrolled{box-shadow:0 1px 8px rgba(15,23,42,0.06)}
-.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px}
-.nav-brand{font-family:var(--font-h);font-size:20px;font-weight:bold;color:var(--ink);letter-spacing:-0.5px}
-.nav-links{display:flex;gap:28px;align-items:center}
-.nav-links a{font-size:14px;color:var(--muted);font-weight:500;transition:color .2s}
-.nav-links a:hover{color:var(--ink)}
-.nav-cta{font-size:13px!important;font-weight:600!important;color:var(--white)!important;background:var(--ink);padding:8px 18px;border-radius:6px;transition:opacity .2s}
-.nav-cta:hover{opacity:.88}
-.hamburger{display:none;background:none;border:none;cursor:pointer;width:28px;height:20px;position:relative}
-.hamburger span{display:block;width:100%;height:2px;background:var(--ink);position:absolute;left:0;transition:all .3s}
-.hamburger span:nth-child(1){top:0}.hamburger span:nth-child(2){top:9px}.hamburger span:nth-child(3){top:18px}
-footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 32px}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;margin-bottom:32px}
-.footer-brand{font-family:var(--font-h);font-size:18px;font-weight:bold;color:var(--ink);margin-bottom:8px}
-.footer-tagline{font-size:13px;color:var(--muted);max-width:280px;line-height:1.5}
-.footer-col h4{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
-.footer-col a{display:block;font-size:14px;color:var(--slate);padding:4px 0;transition:color .2s}
-.footer-col a:hover{color:var(--ink)}
-.footer-bottom{border-top:1px solid var(--border);padding-top:24px;font-size:12px;color:var(--subtle);display:flex;justify-content:space-between;align-items:center}
-.btn-primary{display:inline-block;padding:14px 28px;background:var(--ink);color:var(--white);font-weight:600;font-size:15px;border-radius:6px;transition:opacity .2s;border:none;cursor:pointer}
-.btn-primary:hover{opacity:.88}
-.btn-secondary{display:inline-block;padding:14px 28px;border:1px solid var(--border);color:var(--ink);font-weight:600;font-size:15px;border-radius:6px;transition:all .2s;background:transparent;cursor:pointer}
-.btn-secondary:hover{border-color:var(--ink)}
-.fade-in{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
-.fade-in.visible{opacity:1;transform:translateY(0)}
-@media(max-width:768px){
-  .nav-links{display:none}.hamburger{display:block}
-  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);padding:20px 24px;gap:16px}
-  .footer-grid{grid-template-columns:1fr;gap:32px}
-}
-/* Article styles */
-.article-header{padding:120px 0 48px}
-.article-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
-.article-title{font-family:var(--font-h);font-size:38px;font-weight:bold;color:var(--ink);line-height:1.2;margin-bottom:16px;max-width:720px}
-.article-meta{font-size:14px;color:var(--subtle);margin-bottom:32px}
-.article-body{max-width:720px;margin:0 auto;padding:0 24px 96px}
-.article-body h2{font-family:var(--font-h);font-size:24px;color:var(--ink);margin:40px 0 16px;line-height:1.3}
-.article-body h3{font-size:18px;font-weight:600;color:var(--ink);margin:32px 0 12px}
-.article-body p{font-size:16px;color:var(--slate);line-height:1.7;margin-bottom:16px;max-width:65ch}
-.article-body strong{color:var(--ink)}
-.article-body blockquote{border-left:3px solid var(--border);padding:12px 20px;margin:24px 0;background:var(--surface);border-radius:0 6px 6px 0}
-.article-body blockquote p{color:var(--muted);font-size:15px;margin-bottom:0}
-.article-cta{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;margin:48px 0;text-align:center}
-.article-cta h3{font-family:var(--font-h);font-size:20px;color:var(--ink);margin-bottom:8px}
-.article-cta p{font-size:14px;color:var(--muted);margin-bottom:16px}
-.article-bio{border-top:1px solid var(--border);padding-top:24px;margin-top:48px;font-size:14px;color:var(--muted);font-style:italic;font-family:var(--font-h)}
-/* Course/product page styles */
-.page-header{padding:120px 0 48px;border-bottom:1px solid var(--border)}
-.page-title{font-family:var(--font-h);font-size:38px;font-weight:bold;color:var(--ink);line-height:1.2;margin-bottom:12px;max-width:640px}
-.page-desc{font-size:17px;color:var(--slate);line-height:1.65;max-width:600px;margin-bottom:24px}
-.page-section{padding:64px 0}
-.page-section h2{font-family:var(--font-h);font-size:26px;color:var(--ink);margin-bottom:24px}
-.module-list{list-style:none;counter-reset:module}
-.module-list li{counter-increment:module;padding:20px 0;border-bottom:1px solid var(--border);display:flex;gap:16px;align-items:start}
-.module-list li::before{content:counter(module,decimal-leading-zero);font-family:var(--font-h);font-size:24px;color:var(--subtle);font-weight:bold;min-width:36px}
-.module-title{font-weight:600;color:var(--ink);font-size:16px;margin-bottom:4px}
-.module-desc{font-size:14px;color:var(--muted);line-height:1.55}
-.price-box{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;display:inline-block}
-.price-box .price{font-family:var(--font-h);font-size:48px;font-weight:bold;color:var(--ink)}
-.price-box .note{font-size:14px;color:var(--subtle);margin-top:4px}
-.product-features{list-style:none}
-.product-features li{padding:10px 0;border-bottom:1px solid var(--border);font-size:15px;color:var(--slate);padding-left:24px;position:relative}
-.product-features li::before{content:"\2713";position:absolute;left:0;color:var(--green);font-weight:bold}
-@media(max-width:768px){
-  .article-title,.page-title{font-size:28px}
-  .article-body p{font-size:15px}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funnel Audit Playbook — gonzalo.tech</title>
+  <meta name="description" content="A step-by-step conversion audit guide. Find where users are dropping off, score each step, and know exactly what to fix first. Free playbook by Gonzalo Aguilar.">
+  <meta name="keywords" content="funnel audit, conversion optimization, CRO playbook, user flow audit, GA4 funnel, drop-off analysis, conversion rate optimization">
+  <meta name="author" content="Gonzalo Aguilar">
+  <meta property="og:title" content="Funnel Audit Playbook — gonzalo.tech">
+  <meta property="og:description" content="Step-by-step conversion audit guide. Find friction, fix it, grow. Free playbook.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://gonzalo.tech/products/funnel-audit-playbook.html">
+  <link rel="canonical" href="https://gonzalo.tech/products/funnel-audit-playbook.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Funnel Audit Playbook",
+    "description": "A step-by-step guide to auditing your conversion funnel — find friction, score each step, and prioritize fixes.",
+    "author": { "@type": "Person", "name": "Gonzalo Aguilar", "url": "https://gonzalo.tech" },
+    "publisher": { "@type": "Organization", "name": "gonzalo.tech" },
+    "url": "https://gonzalo.tech/products/funnel-audit-playbook.html",
+    "inLanguage": "en",
+    "isAccessibleForFree": true
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #0F172A; --slate: #334155; --muted: #64748B; --subtle: #94A3B8;
+      --border: #E2E8F0; --surface: #F8FAFC; --white: #FFFFFF;
+      --red: #DC2626; --red-light: #FEF2F2;
+      --green: #16A34A; --green-light: #F0FDF4;
+      --amber: #D97706; --amber-light: #FFFBEB;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: Calibri, 'Gill Sans', 'Segoe UI', sans-serif;
+    }
+    body { font-family: var(--font-body); font-size: 18px; line-height: 1.7; color: var(--slate); background: var(--white); -webkit-font-smoothing: antialiased; }
+    .container { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 5rem; }
+    .site-header { border-bottom: 1px solid var(--border); padding: 1.25rem 0; margin-bottom: 2.5rem; display: flex; align-items: center; justify-content: space-between; }
+    .site-header a { font-family: var(--font-heading); font-size: 1.2rem; color: var(--ink); text-decoration: none; }
+    .site-header a:hover { color: var(--muted); }
+    .badge { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--green); background: var(--green-light); padding: 0.25rem 0.65rem; border-radius: 4px; }
+    h1 { font-family: var(--font-heading); font-size: 2.4rem; line-height: 1.2; color: var(--ink); margin-bottom: 1rem; }
+    .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+    h2 { font-family: var(--font-heading); font-size: 1.6rem; color: var(--ink); margin-top: 3rem; margin-bottom: 0.75rem; }
+    h3 { font-family: var(--font-heading); font-size: 1.2rem; color: var(--ink); margin-top: 2rem; margin-bottom: 0.5rem; }
+    p { margin-bottom: 1.25rem; }
+    ul, ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+    a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--muted); }
+    hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+    .toc { background: var(--surface); border: 1px solid var(--border); padding: 1.5rem 2rem; margin-bottom: 3rem; border-radius: 4px; }
+    .toc h2 { font-size: 1rem; margin-top: 0; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+    .toc ol { margin: 0; padding-left: 1.25rem; }
+    .toc li { margin-bottom: 0.3rem; font-size: 0.95rem; }
+    .toc a { color: var(--slate); }
+    .callout { padding: 1.25rem 1.5rem; margin: 1.75rem 0; border-left: 4px solid var(--ink); background: var(--surface); }
+    .callout.green { border-color: var(--green); background: var(--green-light); }
+    .callout.amber { border-color: var(--amber); background: var(--amber-light); }
+    .callout p:last-child { margin-bottom: 0; }
+    .callout-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem; color: var(--muted); }
+    .three-layer { border: 1px solid var(--border); margin: 1.5rem 0; border-radius: 4px; overflow: hidden; }
+    .three-layer .layer { padding: 0.9rem 1.25rem; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+    .three-layer .layer:last-child { border-bottom: none; }
+    .three-layer .layer-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.25rem; }
+    table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; }
+    th { background: var(--ink); color: var(--white); padding: 0.65rem 1rem; text-align: left; font-family: var(--font-heading); font-weight: normal; font-size: 0.9rem; }
+    td { padding: 0.65rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: var(--surface); }
+    .checklist { list-style: none; padding-left: 0; }
+    .checklist li { padding: 0.5rem 0.5rem 0.5rem 2rem; position: relative; border-bottom: 1px solid var(--border); margin-bottom: 0; font-size: 0.95rem; }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li::before { content: "☐"; position: absolute; left: 0; color: var(--muted); font-size: 1.1rem; }
+    .step-block { border: 1px solid var(--border); margin: 1.5rem 0; }
+    .step-header { background: var(--ink); color: var(--white); padding: 0.75rem 1.25rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.75rem; font-size: 1.05rem; }
+    .step-num { font-size: 0.85rem; opacity: 0.7; font-family: var(--font-body); }
+    .step-body { padding: 1.25rem; }
+    .step-body p:last-child { margin-bottom: 0; }
+    .matrix { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); margin: 1.5rem 0; }
+    .matrix-cell { padding: 1.25rem; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .matrix-cell:nth-child(2n) { border-right: none; }
+    .matrix-cell:nth-last-child(-n+2) { border-bottom: none; }
+    .matrix-cell h4 { font-family: var(--font-heading); font-size: 0.95rem; color: var(--ink); margin-bottom: 0.5rem; }
+    .matrix-cell p { font-size: 0.88rem; margin-bottom: 0; }
+    .matrix-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.35rem; }
+    .priority-1 { background: #FEF2F2; }
+    .priority-2 { background: #FFFBEB; }
+    .priority-3 { background: var(--surface); }
+    .priority-4 { background: var(--white); }
+    .score-up { color: var(--green); font-weight: 700; }
+    .pdf-download { margin: 2.5rem 0; padding: 1.25rem 1.5rem; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .pdf-download p { margin: 0; font-size: 0.95rem; }
+    .pdf-download a { display: inline-block; padding: 0.5rem 1.25rem; background: var(--ink); color: var(--white); text-decoration: none; font-size: 0.9rem; font-weight: 600; white-space: nowrap; }
+    .pdf-download a:hover { background: var(--slate); color: var(--white); }
+    .author-bio { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.95rem; color: var(--muted); font-style: italic; }
+    .site-footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); text-align: center; font-size: 0.85rem; color: var(--subtle); }
+    .report-template { border: 2px dashed var(--border); padding: 2rem; margin: 1.5rem 0; background: var(--surface); }
+    .field-line { border-bottom: 1px solid var(--border); margin: 0.75rem 0; min-height: 1.5rem; }
+    @media (max-width: 600px) {
+      body { font-size: 16px; } h1 { font-size: 1.75rem; } h2 { font-size: 1.3rem; }
+      .container { padding: 1rem 1rem 3rem; }
+      .matrix { grid-template-columns: 1fr; }
+      .matrix-cell { border-right: none; }
+      .matrix-cell:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+      .matrix-cell:last-child { border-bottom: none; }
+      .pdf-download { flex-direction: column; align-items: flex-start; }
+    }
+    @media print {
+      body { font-size: 12pt; color: #000; }
+      .site-header, .site-footer, .pdf-download { display: none; }
+      .container { max-width: 100%; padding: 0; }
+      a { text-decoration: none; color: #000; }
+    }
+  </style>
 </head>
 <body>
-<nav id="navbar">
-  <div class="nav-inner">
-    <a href="../" class="nav-brand">gonzalo.tech</a>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-links" id="navLinks">
-      <a href="../#about">About</a>
-<a href="../courses/ai-augmented-pm.html">Courses</a>
-<a href="../#resources" style="color:#0F172A;font-weight:600;">Resources</a>
-<a href="../#blog">Blog</a>
-<a href="../#newsletter" class="nav-cta">Get the Toolkit</a>
-    </div>
-  </div>
-</nav>
-
 <div class="container">
-  <div class="page-header">
-    <span style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:4px;background:#FFFBEB;color:#D97706;margin-bottom:12px;">COMING SOON</span>
-    <h1 class="page-title">Funnel Audit Playbook</h1>
-    <p class="page-desc">Step-by-step guide to diagnose why your website or app isn't converting. Includes templates, checklists, and real frameworks from regulated markets.</p>
-    <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
-      <div class="price-box">
-        <div class="price">$19</div>
-      </div>
-      <a href="../#newsletter" class="btn-primary">Join waitlist &rarr;</a>
-    </div>
-  </div>
-  <div class="page-section">
-    <h2>What's included</h2>
-    <ul class="product-features">
-      <li>Complete drop-off mapping framework (the same one behind the 24% conversion lift)</li>
-<li>Field-level analytics setup guide — know exactly which input causes users to leave</li>
-<li>Error message audit template with before/after examples</li>
-<li>Friction-to-Trust Pipeline worksheet</li>
-<li>Post-completion screen checklist</li>
-<li>Works for any website, app, or digital product</li>
-    </ul>
-  </div>
-  <div class="page-section" style="border-top:1px solid var(--border);text-align:center;">
-    <h3 style="font-family:var(--font-h);font-size:22px;color:var(--ink);margin-bottom:8px;">Ready to start?</h3>
-    <p style="font-size:15px;color:var(--muted);margin-bottom:24px;">Every toolkit comes from real work, not theory. If it doesn't help, I want to know.</p>
-    <a href="../#newsletter" class="btn-primary" style="font-size:17px;padding:16px 36px;">Join waitlist &rarr;</a>
-  </div>
-</div>
+  <header class="site-header">
+    <a href="../index.html">gonzalo.tech</a>
+    <span class="badge">Free Toolkit</span>
+  </header>
 
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand">gonzalo.tech</div>
-        <div class="footer-tagline">Courses, toolkits, and frameworks for builders who use AI. Built with rigor, explained with care.</div>
+  <article>
+    <h1>Funnel Audit Playbook</h1>
+    <div class="meta">
+      By <strong>Gonzalo Aguilar</strong> &nbsp;·&nbsp; Free guide &nbsp;·&nbsp; No email required &nbsp;·&nbsp; Updated April 2026
+    </div>
+
+    <p>Most conversion problems aren't mysterious. The leak is usually in one of three places: users don't understand the value, they don't trust you enough yet, or you made something too hard.</p>
+    <p>This playbook gives you a systematic way to find which it is — and a scoring rubric so you know what to fix first. No guessing. No running on vibes. Just a clear process that works whether you're running an e-commerce store, a SaaS product, or a local service business.</p>
+    <p><strong>Estimated time to complete your first audit: 3–4 hours.</strong></p>
+
+    <nav class="toc">
+      <h2>Table of Contents</h2>
+      <ol>
+        <li><a href="#framework">The Friction-to-Trust Pipeline Framework</a></li>
+        <li><a href="#five-step">The 5-Step Audit Process</a></li>
+        <li><a href="#data-sources">Where to Find Your Data (GA4, Hotjar, FullStory)</a></li>
+        <li><a href="#friction-points">Common Friction Points with Real Examples</a></li>
+        <li><a href="#scoring">Scoring Rubric: Rate Each Step 1–5</a></li>
+        <li><a href="#priority-matrix">Priority Matrix: What to Fix First</a></li>
+        <li><a href="#report-template">One-Page Audit Report Template</a></li>
+        <li><a href="#case-study">Before/After Case Study</a></li>
+      </ol>
+    </nav>
+
+    <div class="pdf-download">
+      <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
+      <a href="../pdfs/funnel-audit-playbook.pdf" download>Download PDF</a>
+    </div>
+
+    <hr>
+
+    <h2 id="framework">1. The Friction-to-Trust Pipeline Framework</h2>
+
+    <p>Before you can audit a funnel, you need a mental model for how funnels work. Here's the one I use.</p>
+    <p>Every user who lands on your site is asking two questions simultaneously:</p>
+    <ol>
+      <li><strong>"Do I want this?"</strong> — the value question</li>
+      <li><strong>"Is this safe?"</strong> — the trust question</li>
+    </ol>
+    <p>Conversion happens when both questions get answered with a "yes" before the user loses patience or gets distracted. Friction is anything that slows down either answer.</p>
+
+    <div class="three-layer">
+      <div class="layer">
+        <div class="layer-label">Simple Version</div>
+        Users convert when they understand the value AND trust you enough — before they give up.
       </div>
-      <div class="footer-col">
-        <h4>Learn</h4>
-        <a href="../courses/ai-augmented-pm.html">Courses</a>
-        <a href="../#resources">Digital products</a>
-        <a href="../#blog">Blog</a>
+      <div class="layer">
+        <div class="layer-label">Why It Matters</div>
+        This framework tells you what kind of problem you're dealing with. Low conversion on a pricing page is usually a trust problem (not enough social proof, unclear refund policy). Low conversion on a features page is usually a value problem (benefits aren't clear, not speaking the user's language). Fix the right type of problem, not just the symptom.
       </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <a href="https://linkedin.com/in/gonzaloeaguilar" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://medium.com/@gonzaloeaguilar" target="_blank" rel="noopener">Medium</a>
-        <a href="mailto:hello@gonzalo.tech">hello@gonzalo.tech</a>
+      <div class="layer">
+        <div class="layer-label">Real-World Analogy</div>
+        A first date. You need to convince the other person that spending time with you would be enjoyable (value) AND that you're not going to be weird (trust). Get one right and fail the other — no second date.
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Gonzalo Aguilar. All rights reserved.</span>
-      <span>Built in Fort Lauderdale, FL</span>
+
+    <p>The Friction-to-Trust Pipeline maps your funnel into five stages:</p>
+
+    <table>
+      <thead>
+        <tr><th>Stage</th><th>User Question</th><th>Your Job</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Awareness</strong></td><td>"What is this?"</td><td>Clear value prop in 5 seconds</td></tr>
+        <tr><td><strong>Interest</strong></td><td>"Is this for me?"</td><td>Relevant messaging, right audience signal</td></tr>
+        <tr><td><strong>Consideration</strong></td><td>"Is it worth it?"</td><td>Proof, comparisons, testimonials</td></tr>
+        <tr><td><strong>Intent</strong></td><td>"Do I trust them?"</td><td>Security signals, guarantees, easy out</td></tr>
+        <tr><td><strong>Action</strong></td><td>"How do I do this?"</td><td>Frictionless form, clear CTA, no surprises</td></tr>
+      </tbody>
+    </table>
+
+    <hr>
+
+    <h2 id="five-step">2. The 5-Step Audit Process</h2>
+
+    <div class="step-block">
+      <div class="step-header">
+        <span class="step-num">STEP 01</span>
+        <span>Map Your Funnel</span>
+      </div>
+      <div class="step-body">
+        <p>Write down every step a user takes from first touch to conversion. Be specific — not just "the checkout page" but "product page → add to cart → cart → email entry → shipping → payment → confirmation."</p>
+        <p><strong>Checklist for this step:</strong></p>
+        <ul class="checklist">
+          <li>List every page or screen in the flow</li>
+          <li>Identify every form or input field</li>
+          <li>Note every decision point (button, link, option)</li>
+          <li>Mark any steps that require account creation</li>
+          <li>Identify where users could exit to something else</li>
+          <li>Walk through the flow yourself as a new user — write down any friction you feel</li>
+        </ul>
+        <p>Don't do this from memory. Go through it live. You'll notice things you've stopped seeing.</p>
+      </div>
     </div>
-  </div>
-</footer>
-<script>
-const nav = document.getElementById('navbar');
-window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
-hamburger.addEventListener('click', () => { navLinks.classList.toggle('open'); });
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
-    const href = link.getAttribute('href');
-    if (href.startsWith('/#')) { return; }
-    e.preventDefault();
-    const target = document.querySelector(href);
-    if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); navLinks.classList.remove('open'); }
-  });
-});
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-</script>
+
+    <div class="step-block">
+      <div class="step-header">
+        <span class="step-num">STEP 02</span>
+        <span>Pull Quantitative Data</span>
+      </div>
+      <div class="step-body">
+        <p>For each step in your funnel, find the drop-off rate: what percentage of people who reached this step did NOT complete it. You're looking for the steps with the highest drop-off. That's where you focus.</p>
+        <p><strong>Metrics to collect at each step:</strong></p>
+        <ul>
+          <li>Entry count (how many users arrived)</li>
+          <li>Exit count (how many left without continuing)</li>
+          <li>Drop-off rate (exits ÷ entries × 100)</li>
+          <li>Average time on step (longer than expected = confusion)</li>
+          <li>Error rate (for forms: how often do users hit an error?)</li>
+          <li>Return visits to this step (indicates users getting stuck and trying again)</li>
+        </ul>
+        <div class="callout amber">
+          <div class="callout-label">Benchmark to Know</div>
+          <p>For a typical sign-up or checkout flow, drop-off of more than 40% at any single step is a red flag worth immediate investigation. Under 20% is healthy. Between 20–40% is worth watching.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-block">
+      <div class="step-header">
+        <span class="step-num">STEP 03</span>
+        <span>Pull Qualitative Data</span>
+      </div>
+      <div class="step-body">
+        <p>Numbers tell you where the problem is. Qualitative data tells you why. You need both.</p>
+        <ul>
+          <li><strong>Session recordings:</strong> Watch 20–30 real user sessions at your biggest drop-off points. What are people clicking? Where do they pause? What are they scrolling past?</li>
+          <li><strong>Heatmaps:</strong> Where are people clicking vs. where your buttons are. Rage-clicks (clicking the same spot repeatedly) signal broken expectations.</li>
+          <li><strong>Exit surveys:</strong> A one-question pop-up — "what stopped you from completing this today?" — on your highest drop-off pages. Even 30 responses will tell you a lot.</li>
+          <li><strong>Support tickets:</strong> What questions are people asking? Confusion in tickets mirrors confusion in the funnel.</li>
+          <li><strong>User interviews:</strong> If you can, spend 30 minutes watching 3–5 target users go through your funnel. Nothing is more valuable than watching real people get confused in real time.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step-block">
+      <div class="step-header">
+        <span class="step-num">STEP 04</span>
+        <span>Score Each Step</span>
+      </div>
+      <div class="step-body">
+        <p>Use the scoring rubric in Section 5 to rate each step of your funnel on a 1–5 scale. This converts your observations into a structured view you can share with your team and act on systematically.</p>
+        <p>Score each step on five dimensions: Clarity, Speed, Trust, Relevance, and Recovery. Average the five scores to get a single step score. Steps below 3.0 need attention.</p>
+      </div>
+    </div>
+
+    <div class="step-block">
+      <div class="step-header">
+        <span class="step-num">STEP 05</span>
+        <span>Build Your Fix List</span>
+      </div>
+      <div class="step-body">
+        <p>Use the priority matrix in Section 6 to sort your findings by impact vs. effort. Start with high-impact, low-effort changes. Fill your next 2 sprints with work that actually moves the needle.</p>
+        <p><strong>The most common mistake:</strong> fixing the easiest things first instead of the highest-impact things first. The priority matrix keeps you honest.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2 id="data-sources">3. Where to Find Your Data</h2>
+
+    <h3>GA4 — Google Analytics 4 (Free)</h3>
+    <p>The foundation. Here's where to look for funnel data:</p>
+    <ul>
+      <li><strong>Funnel exploration:</strong> Reports → Explore → Funnel Exploration. Build your funnel step by step. Shows exact drop-off at each stage with abandonment rates.</li>
+      <li><strong>Path exploration:</strong> Shows what users actually did after each page — you'll often discover exits to unexpected places you weren't measuring.</li>
+      <li><strong>Engagement rate by page:</strong> Reports → Engagement → Pages and screens. Low engagement time + high exit rate = a clarity problem on that page.</li>
+      <li><strong>Form interaction events:</strong> If you've set up form events, you can see which specific fields cause users to abandon mid-form.</li>
+      <li><strong>Segments:</strong> Compare converting users vs. non-converting users — what pages did converters visit that non-converters skipped?</li>
+    </ul>
+
+    <h3>Hotjar (Freemium — free tier is enough to start)</h3>
+    <ul>
+      <li><strong>Heatmaps:</strong> Scroll maps show how far people read. Click maps show where they're trying to interact vs. where interactive elements actually are.</li>
+      <li><strong>Session recordings:</strong> Watch real users navigate. Filter by pages with high drop-off or high exit rate. Look for hesitation, back-and-forth scrolling, or repeated failed clicks.</li>
+      <li><strong>Surveys:</strong> Set exit-intent surveys on your biggest drop-off pages. One question max for best response rates.</li>
+    </ul>
+
+    <h3>FullStory / LogRocket (Paid, Worth It for Products)</h3>
+    <ul>
+      <li>More powerful session replay with better filtering and error tracking than Hotjar</li>
+      <li><strong>Frustration signals:</strong> Automatically tracks rage clicks, dead clicks, thrash (back-and-forth mouse movement indicating confusion)</li>
+      <li><strong>Error tracking:</strong> Logs JavaScript errors that users encounter — often explains mysterious drop-off</li>
+      <li>Better suited for complex app flows with many user paths and states</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout-label">Start Simple</div>
+      <p>GA4 funnel explorations + Hotjar recordings on your top 3 drop-off pages will get you 80% of what you need. You don't need enterprise tools to run a good first audit. Add more sophisticated tools once you've established a baseline.</p>
+    </div>
+
+    <hr>
+
+    <h2 id="friction-points">4. Common Friction Points with Real Examples</h2>
+
+    <table>
+      <thead>
+        <tr><th>Friction Type</th><th>What It Looks Like in Data</th><th>Real Example</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Value confusion</strong></td>
+          <td>High traffic, very low engagement, fast exits</td>
+          <td>A landing page headline that says "Next-generation customer solutions" instead of "Software that handles your invoices automatically." Users can't tell if it's for them.</td>
+        </tr>
+        <tr>
+          <td><strong>Premature commitment</strong></td>
+          <td>Big drop-off at account creation before users have seen the product</td>
+          <td>Requiring signup before showing any content or functionality. Users don't know yet if it's worth their email address. Let them explore first.</td>
+        </tr>
+        <tr>
+          <td><strong>Form friction</strong></td>
+          <td>Users start a form but don't finish — especially on mobile</td>
+          <td>Asking for phone number, company size, and annual revenue before a free trial. Each unnecessary field costs 3–5% completion rate.</td>
+        </tr>
+        <tr>
+          <td><strong>Trust gaps</strong></td>
+          <td>Users reach checkout or payment and abandon</td>
+          <td>No security badges, no clear refund policy, unfamiliar payment processor. Users at this stage are primed to get cold feet. One missing trust signal can kill the conversion.</td>
+        </tr>
+        <tr>
+          <td><strong>Unclear error messages</strong></td>
+          <td>Users submit forms but don't complete; high error event rate</td>
+          <td>"Invalid input" with no explanation of what was wrong or how to fix it. 25% of form abandonments are caused by unclear error messages.</td>
+        </tr>
+        <tr>
+          <td><strong>Mobile experience failure</strong></td>
+          <td>Desktop converts well, mobile converts poorly</td>
+          <td>A checkout form designed for desktop where tap targets are too small, the keyboard covers the submit button, or credit card entry is awkward.</td>
+        </tr>
+        <tr>
+          <td><strong>Ad-to-page mismatch</strong></td>
+          <td>High bounce rate from paid traffic specifically</td>
+          <td>Ad says "Get started free" but landing page immediately asks for a credit card. The promise didn't match the reality. Message match is critical.</td>
+        </tr>
+        <tr>
+          <td><strong>Decision paralysis</strong></td>
+          <td>Users stall on a page with many options; long time-on-page but no action</td>
+          <td>A pricing page with 5 plans described in similar terms. Users can't figure out which one is for them, so they leave to "think about it" — and never come back.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr>
+
+    <h2 id="scoring">5. Scoring Rubric: Rate Each Step 1–5</h2>
+
+    <p>Score each step of your funnel on five dimensions. Average the scores to get a single step score. Steps below 3.0 need attention; below 2.0 need immediate action.</p>
+
+    <table>
+      <thead>
+        <tr><th>Dimension</th><th>Score 5 — Excellent</th><th>Score 3 — Needs Work</th><th>Score 1 — Critical</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Clarity</strong></td>
+          <td>User immediately understands what to do and why</td>
+          <td>Some confusion; user has to read carefully</td>
+          <td>User has to guess what this page is for or what action to take</td>
+        </tr>
+        <tr>
+          <td><strong>Speed</strong></td>
+          <td>Step completed in under 60 seconds</td>
+          <td>Requires 2–5 minutes of effort</td>
+          <td>Requires significant time, thought, or data gathering outside the flow</td>
+        </tr>
+        <tr>
+          <td><strong>Trust</strong></td>
+          <td>Strong trust signals throughout; risk feels low</td>
+          <td>Some trust signals but gaps remain</td>
+          <td>No trust signals; user asked to commit without any reassurance</td>
+        </tr>
+        <tr>
+          <td><strong>Relevance</strong></td>
+          <td>Content matches exactly why the user came here</td>
+          <td>Mostly relevant with some generic content</td>
+          <td>Content feels generic; disconnected from user's actual intent</td>
+        </tr>
+        <tr>
+          <td><strong>Recovery</strong></td>
+          <td>Errors are clear, helpful, and easy to fix</td>
+          <td>Errors are visible but not always helpful</td>
+          <td>Errors are confusing, generic, or block progress entirely</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Score Sheet Template</h3>
+    <table>
+      <thead>
+        <tr><th>Funnel Step</th><th>Clarity</th><th>Speed</th><th>Trust</th><th>Relevance</th><th>Recovery</th><th>Avg Score</th><th>Drop-off %</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Landing page</td><td>_</td><td>_</td><td>_</td><td>_</td><td>_</td><td>_</td><td>_</td></tr>
+        <tr><td>Sign-up form</td><td>_</td><td>_</td><td>_</td><td>_</td><td>_</td><td>_</td><td>_</td></tr>
+        <tr><td>Email verification</td><td>_</td><td>_</td><td>_</td><td>_</td><td>_</td><td>_</td><td>_</td></tr>
+        <tr><td>Onboarding step 1</td><td>_</td><td>_</td><td>_</td><td>_</td><td>_</td><td>_</td><td>_</td></tr>
+        <tr><td>Onboarding step 2</td><td>_</td><td>_</td><td>_</td><td>_</td><td>_</td><td>_</td><td>_</td></tr>
+        <tr><td>First key action</td><td>_</td><td>_</td><td>_</td><td>_</td><td>_</td><td>_</td><td>_</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <div class="callout-label">How to Prioritize</div>
+      <p>Sort by average score ascending. Combine with your drop-off data. A step that scores 2.0 AND has 55% drop-off is your top priority, no contest. A step that scores 2.0 but only has 5% drop-off (because few people reach it) is less urgent.</p>
+    </div>
+
+    <hr>
+
+    <h2 id="priority-matrix">6. Priority Matrix: What to Fix First</h2>
+
+    <p>Not everything that's broken is equally worth fixing. Use this 2x2 to decide where to spend your time.</p>
+    <p><strong>Y axis: Impact</strong> — How much could fixing this move the overall conversion rate?<br>
+    <strong>X axis: Effort</strong> — How much engineering and design time would this take?</p>
+
+    <div class="matrix">
+      <div class="matrix-cell priority-1">
+        <div class="matrix-label" style="color: var(--red);">High Impact + Low Effort</div>
+        <h4>DO THESE FIRST</h4>
+        <p>Copy changes, button text, adding a trust badge, removing an unnecessary required field, fixing a confusing error message. These are quick wins. Ship them this week without waiting for a big sprint.</p>
+      </div>
+      <div class="matrix-cell priority-2">
+        <div class="matrix-label" style="color: var(--amber);">High Impact + High Effort</div>
+        <h4>PLAN AND PRIORITIZE</h4>
+        <p>Redesigning a confusing checkout flow, rebuilding a form, implementing social proof sections, reworking the onboarding empty state. Worth doing — put them in the next sprint with proper scoping.</p>
+      </div>
+      <div class="matrix-cell priority-3">
+        <div class="matrix-label" style="color: #2563EB;">Low Impact + Low Effort</div>
+        <h4>DO IF THERE'S BANDWIDTH</h4>
+        <p>Minor UI polish, small copy tweaks that probably won't move the needle much. Fine to include when the team has spare capacity. Don't let them crowd out higher-impact work.</p>
+      </div>
+      <div class="matrix-cell priority-4">
+        <div class="matrix-label" style="color: var(--muted);">Low Impact + High Effort</div>
+        <h4>SKIP FOR NOW</h4>
+        <p>A complete visual overhaul of a page that already converts fine. Technically interesting, not the best use of resources. Revisit after higher-priority work ships.</p>
+      </div>
+    </div>
+
+    <div class="callout green">
+      <div class="callout-label">The 80/20 of Funnel Optimization</div>
+      <p>In most funnels, 20% of the steps cause 80% of the drop-off. Find those steps, fix those steps. You'll likely see significant conversion gains before you've even touched the rest of the funnel.</p>
+    </div>
+
+    <hr>
+
+    <h2 id="report-template">7. One-Page Audit Report Template</h2>
+
+    <p>Use this to share findings with your team or stakeholders. It converts your audit into a decision-ready document.</p>
+
+    <div class="report-template">
+      <h3 style="font-family: Georgia, serif; margin-top:0; margin-bottom:1.5rem;">Funnel Audit Report</h3>
+
+      <p><strong>Date:</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Funnel Audited:</strong></p>
+      <div class="field-line"></div>
+
+      <p style="margin-top:1.25rem;"><strong>Audit Period (date range):</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Overall Conversion Rate (current):</strong></p>
+      <div class="field-line"></div>
+
+      <p style="margin-top:1.25rem;"><strong>Top 3 Drop-Off Points (by drop-off volume):</strong></p>
+      <ol style="margin-left:1.5rem; margin-top: 0.5rem;">
+        <li style="margin-bottom:0.5rem;">Step: _________________________ Drop-off rate: _______ Score: _______</li>
+        <li style="margin-bottom:0.5rem;">Step: _________________________ Drop-off rate: _______ Score: _______</li>
+        <li style="margin-bottom:0.5rem;">Step: _________________________ Drop-off rate: _______ Score: _______</li>
+      </ol>
+
+      <p style="margin-top:1.25rem;"><strong>Key Qualitative Finding (what users said or did in recordings/surveys):</strong></p>
+      <div class="field-line"></div>
+      <div class="field-line"></div>
+
+      <p style="margin-top:1.25rem;"><strong>Is this primarily a Value problem or a Trust problem? (circle one)</strong></p>
+      <p style="font-size: 0.95rem; color: var(--muted);">Value = users don't understand or want what you're offering &nbsp;|&nbsp; Trust = users want it but don't trust you enough to act</p>
+
+      <p style="margin-top:1.25rem;"><strong>Quick Wins — Ship This Sprint (high impact, low effort):</strong></p>
+      <ul style="margin-left:1.5rem; margin-top: 0.5rem;">
+        <li style="margin-bottom:0.5rem;">1. _______________________________________________</li>
+        <li style="margin-bottom:0.5rem;">2. _______________________________________________</li>
+        <li style="margin-bottom:0.5rem;">3. _______________________________________________</li>
+      </ul>
+
+      <p style="margin-top:1.25rem;"><strong>Bigger Bets — Next Quarter (high impact, higher effort):</strong></p>
+      <ul style="margin-left:1.5rem; margin-top: 0.5rem;">
+        <li style="margin-bottom:0.5rem;">1. _______________________________________________</li>
+        <li style="margin-bottom:0.5rem;">2. _______________________________________________</li>
+      </ul>
+
+      <p style="margin-top:1.25rem;"><strong>Estimated conversion lift if top 3 quick wins ship:</strong></p>
+      <div class="field-line"></div>
+    </div>
+
+    <hr>
+
+    <h2 id="case-study">8. Before/After Case Study</h2>
+
+    <p>Here's what a real audit-and-fix cycle looks like. Details are anonymized.</p>
+
+    <h3>The Situation</h3>
+    <p><strong>Company:</strong> B2B SaaS for freelancers (project management + invoicing). Self-serve sign-up, free trial, no credit card required.</p>
+    <p><strong>Problem:</strong> The team was spending heavily on paid acquisition but conversion from landing page to activated trial user was 4.2%. They suspected a retention problem. The audit told a different story.</p>
+
+    <h3>The Audit Findings</h3>
+
+    <table>
+      <thead>
+        <tr><th>Step</th><th>Drop-Off Rate</th><th>Avg. Score</th><th>Key Issue Found</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Landing page → CTA click</td><td>71%</td><td>2.4</td><td>Headline was generic; value unclear in first 5 seconds</td></tr>
+        <tr><td>CTA → Sign-up form</td><td>18%</td><td>4.1</td><td>Fine — no action needed</td></tr>
+        <tr><td>Sign-up form → Submission</td><td>34%</td><td>3.1</td><td>Form asked for company name + team size before showing any product value</td></tr>
+        <tr><td>Email confirmation → First login</td><td>52%</td><td>2.2</td><td>Confirmation email arrived 9 min late; no product preview; felt cold</td></tr>
+        <tr><td>First login → First project created</td><td>61%</td><td>2.0</td><td>Blank empty state with no guidance; intimidating to new users</td></tr>
+      </tbody>
+    </table>
+
+    <h3>The Fixes (Shipped Over 6 Weeks)</h3>
+    <ol>
+      <li><strong>Landing page headline rewrite:</strong> "Get paid faster. Manage projects without the spreadsheet chaos." Replaced generic tagline. <em>Effort: 2 hours.</em></li>
+      <li><strong>Form simplification:</strong> Removed company name and team size from sign-up. Only email + password. Extra fields moved to post-activation onboarding. <em>Effort: 1 day.</em></li>
+      <li><strong>Confirmation email fix:</strong> Switched to a transactional email service delivering in under 30 seconds. Added a product preview image and a single CTA. <em>Effort: 3 days.</em></li>
+      <li><strong>Onboarding empty state redesign:</strong> Added a sample project pre-populated with demo data, plus a 3-step "Get started" checklist visible on first login. <em>Effort: 2 weeks.</em></li>
+    </ol>
+
+    <h3>The Results — 30 Days Post-Launch</h3>
+
+    <table>
+      <thead>
+        <tr><th>Step</th><th>Before</th><th>After</th><th>Change</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Landing page → CTA click</td><td>29%</td><td>41%</td><td class="score-up">+41%</td></tr>
+        <tr><td>Sign-up form completion rate</td><td>66%</td><td>79%</td><td class="score-up">+20%</td></tr>
+        <tr><td>Email confirmation → Login</td><td>48%</td><td>67%</td><td class="score-up">+40%</td></tr>
+        <tr><td>First login → Project created</td><td>39%</td><td>58%</td><td class="score-up">+49%</td></tr>
+        <tr><td><strong>Overall trial activation rate</strong></td><td><strong>4.2%</strong></td><td><strong>8.1%</strong></td><td class="score-up"><strong>+93%</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout green">
+      <div class="callout-label">The Lesson</div>
+      <p>The product wasn't broken. The funnel was. Six weeks of focused, audit-driven work — not gut feeling — nearly doubled activation. <strong>Audit first. Build second.</strong></p>
+    </div>
+
+    <div class="pdf-download">
+      <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
+      <a href="../pdfs/funnel-audit-playbook.pdf" download>Download PDF</a>
+    </div>
+
+    <div class="author-bio">
+      <p>Gonzalo Aguilar is a Senior Product Manager specializing in growth, identity, and onboarding in regulated markets. He writes about product strategy, conversion optimization, and practical AI workflows at <a href="../index.html">gonzalo.tech</a>.</p>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    &copy; 2026 gonzalo.tech — Gonzalo Aguilar &nbsp;·&nbsp; <a href="../index.html" style="color:inherit;">Home</a>
+  </footer>
+</div>
 </body>
 </html>

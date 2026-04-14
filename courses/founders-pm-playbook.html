@@ -1,204 +1,871 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Founder's PM Playbook — gonzalo.tech</title>
-<meta name="description" content="Product thinking for small business owners. Learn to understand your users, measure outcomes, and use AI strategically.">
-<meta property="og:title" content="Founder's PM Playbook — gonzalo.tech">
-<meta property="og:description" content="Product thinking for small business owners. Learn to understand your users, measure outcomes, and use AI strategically.">
-<link rel="canonical" href="https://gonzalo.tech">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--ink:#0F172A;--slate:#334155;--muted:#64748B;--subtle:#94A3B8;--border:#E2E8F0;--surface:#F8FAFC;--white:#FFFFFF;--red:#DC2626;--red-light:#FEF2F2;--green:#16A34A;--green-light:#F0FDF4;--amber:#D97706;--amber-light:#FFFBEB;--font-h:Georgia,'Times New Roman',serif;--font-b:Calibri,'Segoe UI',system-ui,sans-serif;--font-c:Consolas,'Courier New',monospace;--max-w:1080px}
-body{font-family:var(--font-b);color:var(--slate);background:var(--white);line-height:1.5;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
-.container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
-nav.scrolled{box-shadow:0 1px 8px rgba(15,23,42,0.06)}
-.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px}
-.nav-brand{font-family:var(--font-h);font-size:20px;font-weight:bold;color:var(--ink);letter-spacing:-0.5px}
-.nav-links{display:flex;gap:28px;align-items:center}
-.nav-links a{font-size:14px;color:var(--muted);font-weight:500;transition:color .2s}
-.nav-links a:hover{color:var(--ink)}
-.nav-cta{font-size:13px!important;font-weight:600!important;color:var(--white)!important;background:var(--ink);padding:8px 18px;border-radius:6px;transition:opacity .2s}
-.nav-cta:hover{opacity:.88}
-.hamburger{display:none;background:none;border:none;cursor:pointer;width:28px;height:20px;position:relative}
-.hamburger span{display:block;width:100%;height:2px;background:var(--ink);position:absolute;left:0;transition:all .3s}
-.hamburger span:nth-child(1){top:0}.hamburger span:nth-child(2){top:9px}.hamburger span:nth-child(3){top:18px}
-footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 32px}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;margin-bottom:32px}
-.footer-brand{font-family:var(--font-h);font-size:18px;font-weight:bold;color:var(--ink);margin-bottom:8px}
-.footer-tagline{font-size:13px;color:var(--muted);max-width:280px;line-height:1.5}
-.footer-col h4{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
-.footer-col a{display:block;font-size:14px;color:var(--slate);padding:4px 0;transition:color .2s}
-.footer-col a:hover{color:var(--ink)}
-.footer-bottom{border-top:1px solid var(--border);padding-top:24px;font-size:12px;color:var(--subtle);display:flex;justify-content:space-between;align-items:center}
-.btn-primary{display:inline-block;padding:14px 28px;background:var(--ink);color:var(--white);font-weight:600;font-size:15px;border-radius:6px;transition:opacity .2s;border:none;cursor:pointer}
-.btn-primary:hover{opacity:.88}
-.btn-secondary{display:inline-block;padding:14px 28px;border:1px solid var(--border);color:var(--ink);font-weight:600;font-size:15px;border-radius:6px;transition:all .2s;background:transparent;cursor:pointer}
-.btn-secondary:hover{border-color:var(--ink)}
-.fade-in{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
-.fade-in.visible{opacity:1;transform:translateY(0)}
-@media(max-width:768px){
-  .nav-links{display:none}.hamburger{display:block}
-  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);padding:20px 24px;gap:16px}
-  .footer-grid{grid-template-columns:1fr;gap:32px}
-}
-/* Article styles */
-.article-header{padding:120px 0 48px}
-.article-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
-.article-title{font-family:var(--font-h);font-size:38px;font-weight:bold;color:var(--ink);line-height:1.2;margin-bottom:16px;max-width:720px}
-.article-meta{font-size:14px;color:var(--subtle);margin-bottom:32px}
-.article-body{max-width:720px;margin:0 auto;padding:0 24px 96px}
-.article-body h2{font-family:var(--font-h);font-size:24px;color:var(--ink);margin:40px 0 16px;line-height:1.3}
-.article-body h3{font-size:18px;font-weight:600;color:var(--ink);margin:32px 0 12px}
-.article-body p{font-size:16px;color:var(--slate);line-height:1.7;margin-bottom:16px;max-width:65ch}
-.article-body strong{color:var(--ink)}
-.article-body blockquote{border-left:3px solid var(--border);padding:12px 20px;margin:24px 0;background:var(--surface);border-radius:0 6px 6px 0}
-.article-body blockquote p{color:var(--muted);font-size:15px;margin-bottom:0}
-.article-cta{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;margin:48px 0;text-align:center}
-.article-cta h3{font-family:var(--font-h);font-size:20px;color:var(--ink);margin-bottom:8px}
-.article-cta p{font-size:14px;color:var(--muted);margin-bottom:16px}
-.article-bio{border-top:1px solid var(--border);padding-top:24px;margin-top:48px;font-size:14px;color:var(--muted);font-style:italic;font-family:var(--font-h)}
-/* Course/product page styles */
-.page-header{padding:120px 0 48px;border-bottom:1px solid var(--border)}
-.page-title{font-family:var(--font-h);font-size:38px;font-weight:bold;color:var(--ink);line-height:1.2;margin-bottom:12px;max-width:640px}
-.page-desc{font-size:17px;color:var(--slate);line-height:1.65;max-width:600px;margin-bottom:24px}
-.page-section{padding:64px 0}
-.page-section h2{font-family:var(--font-h);font-size:26px;color:var(--ink);margin-bottom:24px}
-.module-list{list-style:none;counter-reset:module}
-.module-list li{counter-increment:module;padding:20px 0;border-bottom:1px solid var(--border);display:flex;gap:16px;align-items:start}
-.module-list li::before{content:counter(module,decimal-leading-zero);font-family:var(--font-h);font-size:24px;color:var(--subtle);font-weight:bold;min-width:36px}
-.module-title{font-weight:600;color:var(--ink);font-size:16px;margin-bottom:4px}
-.module-desc{font-size:14px;color:var(--muted);line-height:1.55}
-.price-box{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;display:inline-block}
-.price-box .price{font-family:var(--font-h);font-size:48px;font-weight:bold;color:var(--ink)}
-.price-box .note{font-size:14px;color:var(--subtle);margin-top:4px}
-.product-features{list-style:none}
-.product-features li{padding:10px 0;border-bottom:1px solid var(--border);font-size:15px;color:var(--slate);padding-left:24px;position:relative}
-.product-features li::before{content:"\2713";position:absolute;left:0;color:var(--green);font-weight:bold}
-@media(max-width:768px){
-  .article-title,.page-title{font-size:28px}
-  .article-body p{font-size:15px}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Founder's PM Playbook — Free Course — gonzalo.tech</title>
+  <meta name="description" content="A free product thinking course for non-technical founders and small business owners. Customer journey mapping, metrics that matter, AI research workflows, and how to run your first experiment.">
+  <meta name="keywords" content="product thinking for founders, small business product management, customer journey mapping, metrics for founders, vanity metrics, build first experiment, founder product playbook, AI for small business">
+  <meta name="author" content="Gonzalo Aguilar">
+  <meta property="og:title" content="Founder's PM Playbook — Free Course — gonzalo.tech">
+  <meta property="og:description" content="Product thinking for non-technical founders. Customer journeys, real metrics, AI research workflows, and your first experiment — free course.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gonzalo.tech/courses/founders-pm-playbook.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Founder's PM Playbook — Free Course">
+  <meta name="twitter:description" content="Product thinking for founders and small business owners. Free, no paywall.">
+  <link rel="canonical" href="https://gonzalo.tech/courses/founders-pm-playbook.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Founder's PM Playbook",
+    "description": "A free, comprehensive course in product thinking for non-technical founders and small business owners. Covers customer journey mapping, friction point identification, metrics that matter, AI research workflows, experiment design, and scaling without a tech team.",
+    "provider": {
+      "@type": "Person",
+      "name": "Gonzalo Aguilar",
+      "url": "https://gonzalo.tech"
+    },
+    "url": "https://gonzalo.tech/courses/founders-pm-playbook.html",
+    "isAccessibleForFree": true,
+    "educationalLevel": "Beginner",
+    "inLanguage": "en",
+    "teaches": ["Customer journey mapping", "Friction point analysis", "Business metrics", "Vanity metrics vs real metrics", "AI research workflows", "Experiment design", "Scaling small business"]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0F172A;
+      --slate: #334155;
+      --muted: #64748B;
+      --subtle: #94A3B8;
+      --border: #E2E8F0;
+      --surface: #F8FAFC;
+      --white: #FFFFFF;
+      --red: #DC2626;
+      --green: #16A34A;
+      --amber: #D97706;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: Calibri, 'Gill Sans', 'Segoe UI', sans-serif;
+      --font-code: Consolas, 'Courier New', monospace;
+    }
+
+    body { font-family: var(--font-body); font-size: 17px; line-height: 1.7; color: var(--slate); background: var(--white); -webkit-font-smoothing: antialiased; }
+    a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--muted); }
+    strong { color: var(--ink); }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); transition: box-shadow .3s; }
+    nav.scrolled { box-shadow: 0 1px 8px rgba(15,23,42,0.06); }
+    .nav-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-brand { font-family: var(--font-heading); font-size: 20px; font-weight: bold; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: 14px; color: var(--muted); font-weight: 500; text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta { font-size: 13px !important; font-weight: 600 !important; color: var(--white) !important; background: var(--ink); padding: 8px 18px; border-radius: 6px; }
+
+    .page-wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+    .course-hero { padding: 100px 0 48px; border-bottom: 1px solid var(--border); }
+    .course-badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; background: #F0FDF4; color: var(--green); margin-bottom: 12px; }
+    .course-hero h1 { font-family: var(--font-heading); font-size: 40px; font-weight: bold; color: var(--ink); line-height: 1.2; margin-bottom: 16px; max-width: 700px; }
+    .course-hero .subtitle { font-size: 18px; color: var(--slate); line-height: 1.65; max-width: 600px; margin-bottom: 24px; }
+    .course-meta { display: flex; gap: 24px; flex-wrap: wrap; font-size: 14px; color: var(--muted); margin-bottom: 32px; }
+
+    .course-body { display: grid; grid-template-columns: 1fr 280px; gap: 48px; padding: 48px 0 96px; align-items: start; }
+
+    .toc { position: sticky; top: 80px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 24px; }
+    .toc h3 { font-family: var(--font-heading); font-size: 14px; font-weight: bold; color: var(--ink); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
+    .toc ol { list-style: none; padding: 0; counter-reset: toc; }
+    .toc li { counter-increment: toc; margin-bottom: 10px; }
+    .toc a { font-size: 13px; color: var(--muted); text-decoration: none; display: flex; gap: 8px; line-height: 1.4; transition: color .2s; }
+    .toc a::before { content: counter(toc); font-weight: 700; color: var(--subtle); min-width: 16px; flex-shrink: 0; }
+    .toc a:hover { color: var(--ink); }
+    .toc .toc-free { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); font-size: 12px; color: var(--green); font-weight: 600; text-align: center; }
+
+    .course-content h2 { font-family: var(--font-heading); font-size: 26px; color: var(--ink); margin-top: 56px; margin-bottom: 16px; line-height: 1.3; padding-top: 24px; border-top: 2px solid var(--ink); }
+    .course-content h2:first-child { margin-top: 0; border-top: none; padding-top: 0; }
+    .course-content h3 { font-family: var(--font-heading); font-size: 19px; color: var(--ink); margin-top: 32px; margin-bottom: 12px; }
+    .course-content p { margin-bottom: 16px; max-width: 65ch; }
+    .course-content ul, .course-content ol { margin-bottom: 16px; padding-left: 24px; }
+    .course-content li { margin-bottom: 6px; }
+
+    .module-header { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 24px 28px; margin-bottom: 24px; }
+    .module-number { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .module-header h2 { font-family: var(--font-heading); font-size: 22px; color: var(--ink); margin: 0 0 8px; border: none; padding: 0; }
+    .module-objectives { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+    .module-objectives p { font-size: 13px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+    .module-objectives ul { font-size: 14px; color: var(--slate); margin: 0; padding-left: 20px; }
+    .module-objectives li { margin-bottom: 4px; }
+
+    .callout { border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
+    .callout-key { background: #F0FDF4; border-left: 4px solid var(--green); }
+    .callout-exercise { background: #FFFBEB; border-left: 4px solid var(--amber); }
+    .callout-warning { background: #FEF2F2; border-left: 4px solid var(--red); }
+    .callout-insight { background: var(--surface); border-left: 4px solid var(--ink); }
+    .callout strong.callout-label { display: block; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; color: var(--muted); }
+    .callout p { margin-bottom: 8px; }
+    .callout p:last-child { margin-bottom: 0; }
+    .callout ul { margin-bottom: 0; }
+
+    .template-block { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 20px 24px; margin: 20px 0; font-family: var(--font-code); font-size: 14px; line-height: 1.6; color: var(--slate); white-space: pre-wrap; overflow-x: auto; }
+    .template-label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; font-family: var(--font-body); }
+
+    /* Journey map */
+    .journey-map { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin: 24px 0; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+    .journey-stage { padding: 16px; border-right: 1px solid var(--border); }
+    .journey-stage:last-child { border-right: none; }
+    .journey-stage-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    .journey-stage h4 { font-family: var(--font-heading); font-size: 14px; color: var(--ink); margin-bottom: 8px; }
+    .journey-stage ul { list-style: none; padding: 0; margin: 0; font-size: 12px; color: var(--slate); }
+    .journey-stage li { padding: 3px 0; border-bottom: 1px solid var(--border); }
+    .journey-stage li:last-child { border-bottom: none; }
+
+    /* Metrics comparison */
+    .metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+    .metrics-card { border-radius: 8px; padding: 20px; }
+    .metrics-vanity { background: #FEF2F2; border: 1px solid #FCA5A5; }
+    .metrics-real { background: #F0FDF4; border: 1px solid #86EFAC; }
+    .metrics-card h4 { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+    .metrics-vanity h4 { color: var(--red); }
+    .metrics-real h4 { color: var(--green); }
+    .metrics-card ul { list-style: none; padding: 0; margin: 0; font-size: 14px; }
+    .metrics-card li { padding: 4px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .metrics-card li:last-child { border-bottom: none; }
+
+    /* Experiment canvas */
+    .experiment-canvas { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin: 20px 0; }
+    .canvas-row { display: grid; grid-template-columns: 160px 1fr; border-bottom: 1px solid var(--border); }
+    .canvas-row:last-child { border-bottom: none; }
+    .canvas-label { background: var(--surface); padding: 14px 16px; font-size: 13px; font-weight: 700; color: var(--ink); display: flex; align-items: center; }
+    .canvas-content { padding: 14px 16px; font-size: 14px; color: var(--slate); }
+
+    .checklist { list-style: none; padding: 0; margin: 16px 0; }
+    .checklist li { padding: 8px 0 8px 28px; border-bottom: 1px solid var(--border); position: relative; font-size: 15px; }
+    .checklist li::before { content: "☐"; position: absolute; left: 0; color: var(--muted); font-size: 16px; }
+    .checklist li:last-child { border-bottom: none; }
+
+    blockquote { border-left: 3px solid var(--border); padding: 12px 20px; margin: 24px 0; background: var(--surface); border-radius: 0 6px 6px 0; font-style: italic; color: var(--muted); }
+    blockquote cite { display: block; font-size: 13px; margin-top: 8px; font-style: normal; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 48px 0 32px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; margin-bottom: 32px; max-width: 1080px; margin-left: auto; margin-right: auto; padding: 0 24px; }
+    .footer-brand { font-family: var(--font-heading); font-size: 18px; font-weight: bold; color: var(--ink); margin-bottom: 8px; }
+    .footer-tagline { font-size: 13px; color: var(--muted); max-width: 280px; line-height: 1.5; }
+    .footer-col h4 { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+    .footer-col a { display: block; font-size: 14px; color: var(--slate); padding: 4px 0; text-decoration: none; transition: color .2s; }
+    .footer-col a:hover { color: var(--ink); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; font-size: 12px; color: var(--subtle); display: flex; justify-content: space-between; align-items: center; max-width: 1080px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+
+    @media (max-width: 768px) {
+      .course-hero h1 { font-size: 28px; }
+      .course-body { grid-template-columns: 1fr; }
+      .toc { display: none; }
+      .journey-map { grid-template-columns: 1fr; }
+      .journey-stage { border-right: none; border-bottom: 1px solid var(--border); }
+      .journey-stage:last-child { border-bottom: none; }
+      .metrics-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
 </head>
 <body>
+
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="../" class="nav-brand">gonzalo.tech</a>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-links" id="navLinks">
-      <a href="../#about">About</a>
-<a href="./ai-augmented-pm.html" style="color:#0F172A;font-weight:600;">Courses</a>
-<a href="../#resources">Resources</a>
-<a href="../#blog">Blog</a>
-<a href="../#newsletter" class="nav-cta">Get the Toolkit</a>
+    <a href="../index.html" class="nav-brand">gonzalo.tech</a>
+    <div class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="./founders-pm-playbook.html" style="color:var(--ink);font-weight:600;">Courses</a>
+      <a href="../index.html#resources">Resources</a>
+      <a href="../index.html#blog">Blog</a>
+      <a href="../index.html#newsletter" class="nav-cta">Get the Toolkit</a>
     </div>
   </div>
 </nav>
 
-<div class="container">
-  <div class="page-header">
-    <span style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:4px;background:#FFFBEB;color:#D97706;margin-bottom:12px;">COMING SOON</span>
-    <h1 class="page-title">Founder's PM Playbook</h1>
-    <p class="page-desc">Product thinking for non-technical founders and small business owners. Understand users, measure what matters, build for outcomes.</p>
-    <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
-      <div class="price-box">
-        <div class="price">$29</div>
-        <div class="note">Pre-order pricing</div>
-      </div>
-      <a href="../#newsletter" class="btn-primary">Join waitlist</a>
+<div class="page-wrap">
+  <div class="course-hero">
+    <span class="course-badge">FREE COURSE</span>
+    <h1>Founder's PM Playbook</h1>
+    <p class="subtitle">Product thinking for non-technical founders and small business owners. Map your customer's actual journey, find the friction eating your revenue, and build your first real experiment — no tech team required.</p>
+    <div class="course-meta">
+      <span>6 modules</span>
+      <span>·</span>
+      <span>~4 hours of reading</span>
+      <span>·</span>
+      <span>Frameworks + templates</span>
+      <span>·</span>
+      <span>No sign-up required</span>
     </div>
   </div>
-  <div class="page-section">
-    <h2>What you'll learn</h2>
-    <ul class="module-list">
-      <li>
-  <div><div class="module-title">Your Customer's Journey — Mapped, Not Guessed</div>
-  <div class="module-desc">Walk through every step from discovery to purchase to retention. Find the friction points where people give up.</div></div>
-</li>
-<li>
-  <div><div class="module-title">The Three Questions Framework</div>
-  <div class="module-desc">What problem am I solving? Who is this for? How will I know if it worked? Answer these before touching any AI tool.</div></div>
-</li>
-<li>
-  <div><div class="module-title">Metrics That Matter vs. Vanity Metrics</div>
-  <div class="module-desc">Followers don't pay rent. Learn which numbers actually predict business growth — and how to track them for free.</div></div>
-</li>
-<li>
-  <div><div class="module-title">AI as Your Research Assistant</div>
-  <div class="module-desc">Use AI to analyze customer feedback, identify patterns, and generate hypotheses — without a data team.</div></div>
-</li>
-<li>
-  <div><div class="module-title">Building Your First Experiment</div>
-  <div class="module-desc">Design a simple test, run it for two weeks, and know whether your change worked. No statistics degree required.</div></div>
-</li>
 
-    </ul>
-  </div>
-  <div class="page-section" style="border-top:1px solid var(--border);">
-    <h2>Who this is for</h2>
-    <ul class="product-features">
-      <li>You want practical workflows, not theory or "50 AI use cases" listicles</li>
-      <li>You learn by doing — every module has exercises that produce something tangible</li>
-      <li>You want frameworks from someone who uses them daily in a real product role</li>
-      <li>You're comfortable with ambiguity and want tools to navigate it faster</li>
-    </ul>
-  </div>
-  <div style="padding:64px 0;text-align:center;">
-    <a href="../#newsletter" class="btn-primary" style="font-size:17px;padding:16px 36px;">Join waitlist &rarr;</a>
+  <div class="course-body">
+    <main class="course-content" id="course-main">
+
+      <p><strong>Most business owners build what they think customers want.</strong> Product managers build what they know customers need — because they've done the work to find out. That difference in mindset explains a lot of why some businesses grow and others plateau.</p>
+
+      <p>This course teaches you to think like a PM without requiring you to become one. You don't need a development team, a data warehouse, or an MBA. You need a framework for finding out what's actually happening in your business, a way to test ideas before you bet money on them, and a method for measuring the things that actually predict growth.</p>
+
+      <p>Don't stress — I got you. Let's start with your customers.</p>
+
+      <hr>
+
+      <!-- MODULE 1 -->
+      <div class="module-header" id="module-1">
+        <div class="module-number">Module 1</div>
+        <h2>Your Customer's Journey — Mapped, Not Guessed</h2>
+        <div class="module-objectives">
+          <p>Concept</p>
+          <ul>
+            <li>Understand what a customer journey map is and why it matters more than a website audit</li>
+            <li>Build a simple 5-stage journey map for your business</li>
+            <li>Identify the two stages where most businesses leak the most value</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Why guessing doesn't work</h3>
+
+      <p>Most business owners assume they know their customer's experience because they built it. This is the product creator's blind spot. You know how your product is supposed to work. Your customers know how it actually works — which is a different thing.</p>
+
+      <p>A customer journey map forces you to document what a real customer actually experiences from the first moment they hear about you to the moment they become loyal (or churn). It surfaces the gaps between your intent and their reality. And it almost always shows you something you didn't expect.</p>
+
+      <h3>The five stages of every customer journey</h3>
+
+      <div class="journey-map">
+        <div class="journey-stage">
+          <div class="journey-stage-label">Stage 1</div>
+          <h4>Awareness</h4>
+          <ul>
+            <li>How do they find you?</li>
+            <li>What do they see first?</li>
+            <li>What do they believe at this stage?</li>
+          </ul>
+        </div>
+        <div class="journey-stage">
+          <div class="journey-stage-label">Stage 2</div>
+          <h4>Consideration</h4>
+          <ul>
+            <li>How do they evaluate you?</li>
+            <li>What questions do they have?</li>
+            <li>Who else are they comparing?</li>
+          </ul>
+        </div>
+        <div class="journey-stage">
+          <div class="journey-stage-label">Stage 3</div>
+          <h4>Decision</h4>
+          <ul>
+            <li>What triggers the purchase?</li>
+            <li>What causes them to leave?</li>
+            <li>What friction exists here?</li>
+          </ul>
+        </div>
+        <div class="journey-stage">
+          <div class="journey-stage-label">Stage 4</div>
+          <h4>Onboarding</h4>
+          <ul>
+            <li>What is their first experience?</li>
+            <li>Do they get value quickly?</li>
+            <li>Where do they get confused?</li>
+          </ul>
+        </div>
+        <div class="journey-stage">
+          <div class="journey-stage-label">Stage 5</div>
+          <h4>Loyalty</h4>
+          <ul>
+            <li>Why do they come back?</li>
+            <li>Why do they leave?</li>
+            <li>Who do they tell?</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>How to build your map</h3>
+
+      <p><strong>Step 1 — Pick one customer type.</strong> If you serve multiple distinct customer segments, pick the one that represents the most revenue or the one you most want to grow. Don't try to map all of them at once.</p>
+
+      <p><strong>Step 2 — For each stage, write three things:</strong> What is the customer trying to do? What are they feeling? What could go wrong? Write from their perspective, not yours.</p>
+
+      <p><strong>Step 3 — Validate it.</strong> This is the step most people skip. Talk to three real customers and ask them to describe their experience from the moment they heard of you. Their description will diverge from yours in at least two places. Those divergences are where your work is.</p>
+
+      <h3>Where most businesses leak value</h3>
+
+      <p>Based on McKinsey research on customer experience, the two highest-leverage stages for most small businesses are <strong>Decision</strong> and <strong>Onboarding</strong>.</p>
+
+      <p>At the Decision stage: most customers who leave do so because of something unresolved — a question that wasn't answered, a trust signal that wasn't present, a comparison that you lost on price because your value wasn't clear enough. These are fixable without spending money.</p>
+
+      <p>At the Onboarding stage: most churn begins in the first interaction, not months later. A customer who doesn't get value quickly doesn't give you a second chance to make a first impression. If your onboarding experience is a PDF, a generic welcome email, or a waiting period without communication — those are your highest-leverage friction points.</p>
+
+      <div class="callout callout-insight">
+        <strong class="callout-label">The Three-Layer Model</strong>
+        <p><strong>Simple version:</strong> Your customer's experience isn't what you designed. It's what they experienced.</p>
+        <p><strong>Business consequence:</strong> The gap between those two things is where revenue disappears.</p>
+        <p><strong>Real-world analogy:</strong> A restaurant owner who has never eaten at their own restaurant during a Friday dinner rush does not know what their customers know. Map the journey. Then walk it.</p>
+      </div>
+
+      <div class="callout callout-key">
+        <strong class="callout-label">Key Takeaway — Module 1</strong>
+        <p>A customer journey map built from customer interviews beats any amount of internal assumptions. The map isn't the territory — but it's the closest thing to a map of where your revenue is going.</p>
+      </div>
+
+      <div class="callout callout-exercise">
+        <strong class="callout-label">Exercise 1</strong>
+        <p>Build a one-page journey map for your business using the 5-stage framework above. For each stage, write: what is the customer trying to do, what are they feeling, and what could go wrong. Then call one customer you haven't spoken to in 30 days and ask them to describe how they became a customer. Compare their answer to your map. Note every divergence.</p>
+      </div>
+
+      <hr>
+
+      <!-- MODULE 2 -->
+      <div class="module-header" id="module-2">
+        <div class="module-number">Module 2</div>
+        <h2>Finding Friction Points in Your Business</h2>
+        <div class="module-objectives">
+          <p>Audit framework</p>
+          <ul>
+            <li>Apply the Friction Audit to find the 3 highest-cost problems in your business</li>
+            <li>Distinguish between friction you own and friction caused by external factors</li>
+            <li>Prioritize friction points by business impact, not annoyance level</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>What friction actually costs</h3>
+
+      <p>Friction is anything that adds effort, confusion, or hesitation between your customer and the outcome they came to you for. It doesn't have to be obvious. A checkout form with too many fields is friction. A pricing page that doesn't answer the three questions most people have is friction. An email confirmation that doesn't include the next step is friction.</p>
+
+      <p>Friction compounds. A customer who encounters 3 small friction points in your buying process may complete the purchase — but they're less likely to come back, more likely to complain to someone, and less likely to refer you. Friction doesn't just reduce conversion. It reduces lifetime value.</p>
+
+      <h3>The Friction Audit framework</h3>
+
+      <p>Go through every touchpoint in your customer journey (you built the map in Module 1) and ask these four questions at each step:</p>
+
+      <ol>
+        <li><strong>Is this step necessary?</strong> If the customer could skip it and still get what they came for, it's a candidate for removal.</li>
+        <li><strong>Is the expected outcome of this step obvious?</strong> If a customer would reasonably ask "what do I do now?" — you have a clarity problem.</li>
+        <li><strong>Is there anything here that could cause hesitation or anxiety?</strong> Price reveals, data requests, form complexity, missing trust signals — all create hesitation.</li>
+        <li><strong>What does your support inbox or your reviews say about this step?</strong> Repeated questions about the same thing are a friction signal. Repeated complaints are a friction fire alarm.</li>
+      </ol>
+
+      <h3>How to categorize what you find</h3>
+
+      <p>Not all friction is equally worth fixing. Prioritize by the product of two variables:</p>
+
+      <ul>
+        <li><strong>Frequency:</strong> How many customers experience this friction point? (High = lots of people)</li>
+        <li><strong>Severity:</strong> What does it cost when this friction occurs? (High = abandoned purchase, churn, negative review)</li>
+      </ul>
+
+      <p>High frequency + high severity = fix this week. High frequency + low severity = fix this quarter. Low frequency + high severity = monitor and have a plan. Low frequency + low severity = don't touch it yet.</p>
+
+      <div class="callout callout-insight">
+        <strong class="callout-label">The support ticket test</strong>
+        <p>Pull the last 30 questions or complaints your business received — email, DMs, reviews, anything. Group them by topic. The topic with the most entries is almost certainly a high-frequency friction point. Fixing it reduces support volume AND increases conversion. That's a two-for-one return on the same effort.</p>
+      </div>
+
+      <h3>Friction you own vs. friction you inherit</h3>
+
+      <p>Some friction is in your control (your checkout flow, your onboarding email, your website copy). Some friction is outside your control (a payment processor that adds authentication steps, a shipping partner that causes delays, a marketplace platform with its own UX). Know the difference before you prioritize — you can only fix what you own.</p>
+
+      <p>That said: when you can't fix external friction, you can often mitigate it. Set expectations before the friction occurs ("your bank may send a verification code — here's what to do"). Offer alternatives when the friction is predictably high ("if you'd prefer to pay over the phone, here's our number"). You can't remove all friction, but you can reduce its cost.</p>
+
+      <div class="callout callout-key">
+        <strong class="callout-label">Key Takeaway — Module 2</strong>
+        <p>The friction audit is not a one-time exercise. Do it every quarter. Your business changes, your tools change, and new friction appears constantly. The businesses that grow fastest are the ones that remove friction faster than their competitors create it.</p>
+      </div>
+
+      <div class="callout callout-exercise">
+        <strong class="callout-label">Exercise 2</strong>
+        <p>Run a friction audit on your three most revenue-critical customer touchpoints. Apply the 4 questions to each one. Then score each friction point you find on a 1-3 scale for frequency and severity. Your highest-priority fix is the one with the highest combined score. Fix that one first — before anything else on your roadmap.</p>
+      </div>
+
+      <hr>
+
+      <!-- MODULE 3 -->
+      <div class="module-header" id="module-3">
+        <div class="module-number">Module 3</div>
+        <h2>Metrics That Matter vs. Vanity Metrics</h2>
+        <div class="module-objectives">
+          <p>Why it matters</p>
+          <ul>
+            <li>Distinguish vanity metrics from actionable metrics for your specific business</li>
+            <li>Define the 3-5 metrics that actually predict whether your business is healthy</li>
+            <li>Set up a simple metrics tracker you'll actually use</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>What vanity metrics are (and why they feel so good)</h3>
+
+      <p>A vanity metric is any number that goes up in ways that don't correlate with actual business health. Social media followers. Website pageviews. App downloads. Total registered users. Email subscribers (without engagement data).</p>
+
+      <p>These numbers feel good because they go up. They're easy to measure. They're shareable. And they're almost completely disconnected from whether your business is growing in a way that will still be true in 12 months.</p>
+
+      <blockquote>
+        "Vanity metrics make you feel good. Actionable metrics make you money."
+        <cite>— Eric Ries, The Lean Startup</cite>
+      </blockquote>
+
+      <h3>Vanity vs. real metrics — examples for small businesses</h3>
+
+      <div class="metrics-grid">
+        <div class="metrics-card metrics-vanity">
+          <h4>Vanity metrics</h4>
+          <ul>
+            <li>Instagram followers</li>
+            <li>Total website visits</li>
+            <li>Email list size</li>
+            <li>App downloads</li>
+            <li>Press mentions</li>
+            <li>Total registered users</li>
+            <li>Likes and shares</li>
+          </ul>
+        </div>
+        <div class="metrics-card metrics-real">
+          <h4>Metrics that matter</h4>
+          <ul>
+            <li>Revenue per customer (monthly)</li>
+            <li>Customer acquisition cost</li>
+            <li>Customer lifetime value</li>
+            <li>Conversion rate (visit to purchase)</li>
+            <li>Repeat purchase rate</li>
+            <li>Net Promoter Score</li>
+            <li>Time to first value</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>The three questions that identify your real metrics</h3>
+
+      <p>For your specific business, your real metrics come from answering three questions:</p>
+
+      <p><strong>1. What behavior most directly predicts revenue?</strong> For a service business, it might be consultation calls booked. For an e-commerce store, it's repeat purchase rate. For a SaaS product, it's weekly active users. Find the behavior that, when it goes up, revenue reliably follows. That's your leading indicator.</p>
+
+      <p><strong>2. What is the single most important sign that a customer will stay?</strong> In product management, this is called the "activation event" — the moment a new customer does the thing that most strongly predicts they'll still be a customer in 90 days. For a gym, it might be attending in the first 7 days. For a software tool, it might be connecting a third-party integration. Find yours.</p>
+
+      <p><strong>3. What does churn look like before it happens?</strong> Most customers don't churn suddenly. They go quiet. They stop doing the thing that engaged them before. Identify the behavior change that reliably precedes churn — and that becomes a metric worth watching.</p>
+
+      <h3>Building a simple metrics dashboard</h3>
+
+      <p>You don't need analytics software to start. A Google Sheet updated weekly with five numbers is infinitely better than a Mixpanel dashboard you never look at.</p>
+
+      <div class="template-label">Weekly Metrics Tracker — Starting Point</div>
+      <div class="template-block">WEEKLY BUSINESS METRICS — [Business Name]
+
+Week of: [Date]
+
+REVENUE
+  Total revenue this week: $
+  vs. last week: + / - %
+  vs. same week last year: + / - %
+
+CUSTOMERS
+  New customers this week: #
+  Repeat customers this week: #
+  Repeat rate (repeat / total): %
+
+ACQUISITION
+  How did new customers find you? (top 3 sources)
+  Cost to acquire one new customer this week: $
+
+RETENTION
+  Customers who bought last month and bought again: #
+  Customers who bought last month and did NOT return: #
+  Churn rate: %
+
+TOP FRICTION THIS WEEK
+  What complaints, questions, or drop-offs did you notice?
+  [Free text]
+
+ONE THING TO FIX NEXT WEEK:
+  [Single most important action based on these numbers]</div>
+
+      <div class="callout callout-key">
+        <strong class="callout-label">Key Takeaway — Module 3</strong>
+        <p>Metrics you look at weekly change behavior. Metrics you look at quarterly inform retrospectives. Pick 5 numbers that matter, look at them every week, and tie at least one decision per week to what they say. That discipline is worth more than any dashboard you could buy.</p>
+      </div>
+
+      <div class="callout callout-exercise">
+        <strong class="callout-label">Exercise 3</strong>
+        <p>Set up the weekly metrics tracker above for your business. Fill it in for the last 4 weeks using data you already have. Look at the trend lines. What's improving? What's declining? Now ask: if you'd been looking at this data weekly for the past year, what decision would you have made differently? That's your answer to whether this tracker is worth keeping.</p>
+      </div>
+
+      <hr>
+
+      <!-- MODULE 4 -->
+      <div class="module-header" id="module-4">
+        <div class="module-number">Module 4</div>
+        <h2>AI as Your Research Assistant</h2>
+        <div class="module-objectives">
+          <p>How to do it</p>
+          <ul>
+            <li>Use AI to analyze customer feedback at scale — even without a data team</li>
+            <li>Build an AI-powered competitive research workflow</li>
+            <li>Generate actionable hypotheses from raw qualitative data</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>What AI can actually do for a small business owner</h3>
+
+      <p>AI doesn't replace the judgment calls you make as a founder. It processes large volumes of text so you can make those calls faster and with more confidence. Specifically:</p>
+
+      <ul>
+        <li><strong>Pattern finding in customer feedback:</strong> Paste 50 reviews and ask AI to identify the top 5 complaint themes. It takes 2 minutes instead of 2 hours.</li>
+        <li><strong>Competitive intelligence synthesis:</strong> Ask AI to summarize what customers say they love and hate about your competitors based on publicly available reviews. Gets you their friction map without the fieldwork.</li>
+        <li><strong>Hypothesis generation:</strong> Describe a trend you're noticing and ask AI to generate 5 possible explanations and 5 ways to test them. You decide which explanation is most plausible — the AI just makes sure you've considered options you might have skipped.</li>
+      </ul>
+
+      <h3>The customer feedback analysis workflow</h3>
+
+      <div class="template-label">Customer Feedback Analysis Prompt</div>
+      <div class="template-block">I run a [type of business]. Here is a collection of customer feedback —
+reviews, survey responses, and support messages. Read through all of it.
+
+[PASTE FEEDBACK HERE]
+
+Please:
+1. Identify the top 5 themes in positive feedback — what are customers
+   most consistently happy about?
+2. Identify the top 5 themes in negative feedback or complaints —
+   what are customers most consistently frustrated by?
+3. Identify any specific language or phrases customers use repeatedly
+   that I should be using in my own marketing
+4. Identify any customer desire that currently goes unmet
+5. Generate 3 hypotheses I should test to improve customer satisfaction
+   based on this feedback
+
+Do not add generic business advice. Base your analysis only on the
+feedback I've provided.</div>
+
+      <h3>The competitive intelligence workflow</h3>
+
+      <div class="template-label">Competitor Review Analysis Prompt</div>
+      <div class="template-block">I'm analyzing reviews of [Competitor Name], a business in the same
+industry as mine ([describe your business]).
+
+Here are their recent reviews:
+[PASTE COMPETITOR REVIEWS FROM GOOGLE / YELP / APP STORE]
+
+Please:
+1. What do customers love most about this competitor?
+2. What frustrates customers most about this competitor?
+3. What unmet needs are customers expressing that this competitor
+   doesn't address?
+4. What specific language do customers use to describe the problem
+   this competitor solves?
+5. Based on these reviews, what 3 things could I do to win customers
+   who are dissatisfied with this competitor?</div>
+
+      <h3>The hypothesis generation workflow</h3>
+
+      <p>After you've analyzed feedback, you'll have observations. The next step is turning observations into testable hypotheses. Here's how to use AI to accelerate that step:</p>
+
+      <div class="template-label">Hypothesis Generation Prompt</div>
+      <div class="template-block">I've noticed the following pattern in my business:
+[Describe what you're seeing — a drop in something, an increase in
+something, a repeated complaint, an unexpected behavior]
+
+Possible explanations I've already considered:
+[List 1-2 things you've already thought of]
+
+Please generate:
+1. 5 additional possible explanations for this pattern that I might
+   not have considered
+2. For each explanation, describe one low-cost way to test whether
+   it's true
+3. Which explanation would have the biggest business impact if true
+   and if fixed?
+4. What data would definitively prove or disprove each explanation?</div>
+
+      <div class="callout callout-warning">
+        <strong class="callout-label">The limitation you must know</strong>
+        <p>AI analysis of customer feedback is only as good as the feedback you provide. It cannot tell you things your customers didn't say. It cannot verify whether customers' stated reasons match their actual behavior. And it will occasionally hallucinate patterns that aren't there. Always verify AI insights against your own direct customer observations before acting on them.</p>
+      </div>
+
+      <div class="callout callout-key">
+        <strong class="callout-label">Key Takeaway — Module 4</strong>
+        <p>AI is a research accelerator, not a research replacement. The founder who talks to customers AND uses AI to synthesize that feedback at scale is operating at a higher level than the founder who does either one alone.</p>
+      </div>
+
+      <div class="callout callout-exercise">
+        <strong class="callout-label">Exercise 4</strong>
+        <p>Collect at least 20 pieces of customer feedback — reviews, emails, survey responses, whatever you have. Run them through the Customer Feedback Analysis prompt above. Then take the top complaint theme and run the Hypothesis Generation prompt on it. You should end the exercise with at least one specific, testable hypothesis about what's causing that complaint and one low-cost way to test it.</p>
+      </div>
+
+      <hr>
+
+      <!-- MODULE 5 -->
+      <div class="module-header" id="module-5">
+        <div class="module-number">Module 5</div>
+        <h2>Building Your First Experiment</h2>
+        <div class="module-objectives">
+          <p>How to do it</p>
+          <ul>
+            <li>Apply the Hypothesis → Test → Learn framework to any business decision</li>
+            <li>Design a two-week experiment that will give you a clear answer</li>
+            <li>Know when your result is meaningful and when it's noise</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Why experiments beat opinions</h3>
+
+      <p>Every business decision is a bet. The question is whether it's an informed bet or a blind one. An experiment is just a structured way to make a small, informed bet before you make the big, consequential one.</p>
+
+      <p>Most small business owners skip experiments not because they don't believe in them but because they seem complicated. They're not. An experiment has four parts: a hypothesis, a test, a measurement, and a decision. That's it.</p>
+
+      <h3>The Experiment Canvas</h3>
+
+      <div class="experiment-canvas">
+        <div class="canvas-row">
+          <div class="canvas-label">Hypothesis</div>
+          <div class="canvas-content">We believe that [changing X] will cause [Y to happen] for [this type of customer]. We believe this because [evidence or reasoning].</div>
+        </div>
+        <div class="canvas-row">
+          <div class="canvas-label">Test</div>
+          <div class="canvas-content">We will test this by [specific action with a specific scope] for [time period]. We will only change [this one thing] — nothing else.</div>
+        </div>
+        <div class="canvas-row">
+          <div class="canvas-label">Measure</div>
+          <div class="canvas-content">We will measure success by [specific metric]. We will call it a win if [metric] moves by [threshold] or more within [time period].</div>
+        </div>
+        <div class="canvas-row">
+          <div class="canvas-label">Learn</div>
+          <div class="canvas-content">If it works: we will [next action]. If it doesn't work: we will [alternative hypothesis to test next].</div>
+        </div>
+      </div>
+
+      <h3>A real example</h3>
+
+      <p>A bakery owner noticed that their online pre-orders were low despite strong foot traffic. Instead of rebuilding the website, they ran an experiment:</p>
+
+      <div class="experiment-canvas">
+        <div class="canvas-row">
+          <div class="canvas-label">Hypothesis</div>
+          <div class="canvas-content">We believe that adding a "pre-order guarantee" message ("pre-order now and your items are guaranteed to be ready when you arrive") on our pre-order page will increase pre-order conversion. We believe this because customers have told us they worry about items selling out.</div>
+        </div>
+        <div class="canvas-row">
+          <div class="canvas-label">Test</div>
+          <div class="canvas-content">We will add the guarantee message to the pre-order page for 2 weeks, starting Monday. We will not change anything else about the page or our marketing.</div>
+        </div>
+        <div class="canvas-row">
+          <div class="canvas-label">Measure</div>
+          <div class="canvas-content">We will measure the number of pre-orders per week. We will call it a win if pre-orders increase by 20% or more compared to the prior 2-week average.</div>
+        </div>
+        <div class="canvas-row">
+          <div class="canvas-label">Learn</div>
+          <div class="canvas-content">If it works: we'll make this message permanent and consider testing additional guarantee language. If it doesn't work: we'll interview 3 customers who visited the pre-order page but didn't convert.</div>
+        </div>
+      </div>
+
+      <p><strong>The result:</strong> Pre-orders increased 34% in the first two weeks. The owner made the message permanent and now runs one experiment per month — each one building on the last.</p>
+
+      <h3>How to know if your result is real</h3>
+
+      <p>For small businesses, you often can't run formal A/B tests with statistical significance. That's okay. Instead, use these practical rules:</p>
+
+      <ul>
+        <li><strong>Run the test for at least 2 full weeks.</strong> Shorter than that and you're measuring noise, not signal.</li>
+        <li><strong>Your threshold should be big enough to matter.</strong> A 3% improvement in conversion might be meaningful at massive scale. For most small businesses, look for improvements of 15-30% before acting with confidence.</li>
+        <li><strong>Consider external factors.</strong> Did anything else change during your test? A holiday weekend, a local event, a mention in the press? If yes, your result is compromised. Run again under cleaner conditions.</li>
+        <li><strong>If you're unsure, run a second round.</strong> Replicate the test. If you see a similar result, it's probably real. If you see a very different result, the first one was noise.</li>
+      </ul>
+
+      <div class="callout callout-insight">
+        <strong class="callout-label">The failed experiment is not a failure</strong>
+        <p>If you run an experiment and the metric doesn't move, you've just learned something valuable: that specific change didn't work for that specific reason. That's not failure — that's a cheaper version of learning the same lesson after three months of building the wrong thing. Celebrate the fast negative. It's more valuable than a slow positive.</p>
+      </div>
+
+      <div class="callout callout-key">
+        <strong class="callout-label">Key Takeaway — Module 5</strong>
+        <p>One experiment per month is the discipline that separates growing businesses from stagnating ones. You don't need statistical significance. You need a hypothesis, a clean test, a clear metric, and the discipline to learn from the result regardless of whether it went your way.</p>
+      </div>
+
+      <div class="callout callout-exercise">
+        <strong class="callout-label">Exercise 5</strong>
+        <p>Fill in the Experiment Canvas above for one change you've been thinking about making in your business. Be specific: what is the one thing you'll change, for how long, and what number will you measure? Write it down before you start. Then run it. Then come back in two weeks and fill in what you learned.</p>
+      </div>
+
+      <hr>
+
+      <!-- MODULE 6 -->
+      <div class="module-header" id="module-6">
+        <div class="module-number">Module 6</div>
+        <h2>Scaling What Works Without a Tech Team</h2>
+        <div class="module-objectives">
+          <p>Real example</p>
+          <ul>
+            <li>Apply the Scale Without Scaling checklist before building anything new</li>
+            <li>Distinguish between operational leverage and product leverage</li>
+            <li>Build a 90-day experiment roadmap from your current findings</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>The most expensive mistake in growth</h3>
+
+      <p>The most expensive mistake founders make is scaling something before they know it works. They find a channel that seems to be bringing customers, they invest heavily in it, and three months later they discover the customers from that channel have terrible retention. The metric they were watching (acquisition) was a vanity metric for their specific business.</p>
+
+      <p>Before you scale anything, ask: does this actually work, and do I have evidence of that? "Works" means: do the customers acquired through this method have good retention, good lifetime value, and good word-of-mouth behavior? If yes, scale. If not, don't — even if the top-line number looks good.</p>
+
+      <h3>Scale without scaling</h3>
+
+      <p>Before building anything new or hiring anyone, ask whether you can get more out of what's already working:</p>
+
+      <ul class="checklist">
+        <li>Can I reduce friction in the current process before I add a new one?</li>
+        <li>Can I serve the same customers better before I find new ones?</li>
+        <li>Can I document what's working so it runs without my daily involvement?</li>
+        <li>Can I automate the repetitive parts before I hire someone to do them?</li>
+        <li>Can I measure whether my best customers are having the best experience?</li>
+        <li>Can I identify what my top 20% of customers have in common and do more of that?</li>
+        <li>Have I fixed the highest-impact friction points from my Module 2 audit?</li>
+      </ul>
+
+      <h3>Operational leverage vs. product leverage</h3>
+
+      <p><strong>Operational leverage:</strong> Getting more output from the same input through process. Better systems, better documentation, better automation. This scales linearly — you're doing less per unit of output.</p>
+
+      <p><strong>Product leverage:</strong> Building something that delivers value without your direct involvement. A guide that answers the 10 most common questions. An onboarding sequence that walks new customers through their first week. A referral mechanism that turns satisfied customers into salespeople.</p>
+
+      <p>Most small business owners focus almost entirely on operational leverage — working harder, working smarter, but still trading time for money. Product leverage is where businesses break out of that loop. And you don't need a developer to build it. You need the customer journey map from Module 1, the friction audit from Module 2, and the AI tools from Module 4 to produce assets that do work for you.</p>
+
+      <h3>Building a 90-day experiment roadmap</h3>
+
+      <p>Based on the work you've done in this course, you now have:</p>
+
+      <ul>
+        <li>A customer journey map with identified friction points (Module 1)</li>
+        <li>A prioritized list of friction points by frequency and severity (Module 2)</li>
+        <li>A weekly metrics tracker showing your current baseline (Module 3)</li>
+        <li>AI-generated hypotheses based on real customer feedback (Module 4)</li>
+        <li>An experiment framework ready to use (Module 5)</li>
+      </ul>
+
+      <p>Turn that into a 90-day plan:</p>
+
+      <div class="template-label">90-Day Experiment Roadmap Template</div>
+      <div class="template-block">90-DAY EXPERIMENT ROADMAP — [Business Name]
+
+MONTH 1: Friction reduction
+  Experiment 1: [Highest-priority friction point from Module 2]
+  Hypothesis: [from Module 5 canvas]
+  Metric: [from Module 3 tracker]
+  Duration: 2 weeks
+
+MONTH 2: Activation improvement
+  Experiment 2: [How to get customers to value faster — Module 1 stage 4]
+  Hypothesis: [from Module 5 canvas]
+  Metric: [from Module 3 tracker]
+  Duration: 2 weeks
+
+MONTH 3: Retention experiment
+  Experiment 3: [What brings customers back — Module 1 stage 5]
+  Hypothesis: [from Module 5 canvas]
+  Metric: repeat purchase rate or equivalent]
+  Duration: 2 weeks
+
+ONGOING:
+  - Weekly metrics review (15 minutes, every Monday)
+  - Monthly customer conversation (1 call or interview per month)
+  - Quarterly journey map review (is the map still accurate?)</div>
+
+      <div class="callout callout-insight">
+        <strong class="callout-label">The compounding effect</strong>
+        <p>One experiment per month that produces a 10% improvement in a key metric is compounding. After 12 months of that, you're not 120% better — you're 214% better. This is the math of systematic improvement vs. one-off changes. The businesses that build this rhythm early are the ones that look "overnight successful" to people watching from the outside.</p>
+      </div>
+
+      <div class="callout callout-key">
+        <strong class="callout-label">Key Takeaway — Module 6</strong>
+        <p>Scale what works. Experiment on everything else. The companies that grow fastest aren't the ones with the biggest budgets — they're the ones with the shortest feedback loops. You now have the framework for that loop.</p>
+      </div>
+
+      <div class="callout callout-exercise">
+        <strong class="callout-label">Exercise 6 — Capstone</strong>
+        <p>Fill in the 90-day experiment roadmap template above using everything you've built in this course. You should have enough inputs from Modules 1-5 to fill in all three experiments with real hypotheses based on real customer data. When you're done, you have a plan — not just a list of ideas. Execute it. One experiment at a time.</p>
+      </div>
+
+      <hr>
+
+      <h2>What's Next</h2>
+
+      <p>You've built a customer journey map, run a friction audit, identified your real metrics, used AI to synthesize customer research, designed your first experiment, and planned 90 days of structured learning. That's more product thinking than most businesses apply in a year.</p>
+
+      <p>The next step is running the first experiment. Not planning it — running it. Pick the one friction point with the highest frequency and severity score. Build the simplest possible version of the fix. Run the experiment for two weeks. Measure. Learn. Repeat.</p>
+
+      <p>If you want to go deeper on the AI tools covered in Module 4, the <a href="./ai-augmented-pm.html">AI-Augmented PM course</a> has detailed prompts and workflows. And if you're thinking about hiring your first PM or growing your product team, the <a href="./break-into-pm.html">Break Into PM course</a> will tell you exactly what to look for.</p>
+
+      <blockquote>
+        "You don't need to know everything before you start. You need to know enough to make the next decision — and a way to learn from it."
+        <cite>— Gonzalo Aguilar</cite>
+      </blockquote>
+
+    </main>
+
+    <aside>
+      <div class="toc">
+        <h3>Course Modules</h3>
+        <ol>
+          <li><a href="#module-1">Customer Journey — Mapped</a></li>
+          <li><a href="#module-2">Finding Friction Points</a></li>
+          <li><a href="#module-3">Metrics That Matter</a></li>
+          <li><a href="#module-4">AI as Research Assistant</a></li>
+          <li><a href="#module-5">Building Your First Experiment</a></li>
+          <li><a href="#module-6">Scaling What Works</a></li>
+        </ol>
+        <div class="toc-free">100% free — no paywall</div>
+      </div>
+    </aside>
   </div>
 </div>
 
 <footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand">gonzalo.tech</div>
-        <div class="footer-tagline">Courses, toolkits, and frameworks for builders who use AI. Built with rigor, explained with care.</div>
-      </div>
-      <div class="footer-col">
-        <h4>Learn</h4>
-        <a href="./ai-augmented-pm.html">Courses</a>
-        <a href="../#resources">Digital products</a>
-        <a href="../#blog">Blog</a>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <a href="https://linkedin.com/in/gonzaloeaguilar" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://medium.com/@gonzaloeaguilar" target="_blank" rel="noopener">Medium</a>
-        <a href="mailto:hello@gonzalo.tech">hello@gonzalo.tech</a>
-      </div>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">gonzalo.tech</div>
+      <div class="footer-tagline">Courses, toolkits, and frameworks for builders who use AI. Built with rigor, explained with care.</div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Gonzalo Aguilar. All rights reserved.</span>
-      <span>Built in Fort Lauderdale, FL</span>
+    <div class="footer-col">
+      <h4>Courses</h4>
+      <a href="./ai-augmented-pm.html">AI-Augmented PM</a>
+      <a href="./break-into-pm.html">Break Into PM</a>
+      <a href="./founders-pm-playbook.html">Founder's PM Playbook</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="https://linkedin.com/in/gonzaloeaguilar" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://medium.com/@gonzaloeaguilar" target="_blank" rel="noopener">Medium</a>
+      <a href="mailto:hello@gonzalo.tech">hello@gonzalo.tech</a>
     </div>
   </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Gonzalo Aguilar. All rights reserved.</span>
+    <span>Built in Fort Lauderdale, FL</span>
+  </div>
 </footer>
+
 <script>
-const nav = document.getElementById('navbar');
-window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
-hamburger.addEventListener('click', () => { navLinks.classList.toggle('open'); });
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
-    const href = link.getAttribute('href');
-    if (href.startsWith('/#')) { return; }
-    e.preventDefault();
-    const target = document.querySelector(href);
-    if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); navLinks.classList.remove('open'); }
-  });
-});
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
+  const sections = document.querySelectorAll('[id^="module-"]');
+  const tocLinks = document.querySelectorAll('.toc a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(l => l.style.fontWeight = '400');
+        const id = entry.target.id;
+        const active = document.querySelector('.toc a[href="#' + id + '"]');
+        if (active) active.style.fontWeight = '700';
+      }
+    });
+  }, { rootMargin: '-80px 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
 </script>
 </body>
 </html>

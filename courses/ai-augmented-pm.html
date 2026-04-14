@@ -1,216 +1,940 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI-Augmented Product Management — gonzalo.tech</title>
-<meta name="description" content="Learn to use AI as a PM multiplier. Spec writing, copy iteration, rapid prototyping, experiment analysis — the real workflows.">
-<meta property="og:title" content="AI-Augmented Product Management — gonzalo.tech">
-<meta property="og:description" content="Learn to use AI as a PM multiplier. Spec writing, copy iteration, rapid prototyping, experiment analysis — the real workflows.">
-<link rel="canonical" href="https://gonzalo.tech">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--ink:#0F172A;--slate:#334155;--muted:#64748B;--subtle:#94A3B8;--border:#E2E8F0;--surface:#F8FAFC;--white:#FFFFFF;--red:#DC2626;--red-light:#FEF2F2;--green:#16A34A;--green-light:#F0FDF4;--amber:#D97706;--amber-light:#FFFBEB;--font-h:Georgia,'Times New Roman',serif;--font-b:Calibri,'Segoe UI',system-ui,sans-serif;--font-c:Consolas,'Courier New',monospace;--max-w:1080px}
-body{font-family:var(--font-b);color:var(--slate);background:var(--white);line-height:1.5;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
-.container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
-nav.scrolled{box-shadow:0 1px 8px rgba(15,23,42,0.06)}
-.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px}
-.nav-brand{font-family:var(--font-h);font-size:20px;font-weight:bold;color:var(--ink);letter-spacing:-0.5px}
-.nav-links{display:flex;gap:28px;align-items:center}
-.nav-links a{font-size:14px;color:var(--muted);font-weight:500;transition:color .2s}
-.nav-links a:hover{color:var(--ink)}
-.nav-cta{font-size:13px!important;font-weight:600!important;color:var(--white)!important;background:var(--ink);padding:8px 18px;border-radius:6px;transition:opacity .2s}
-.nav-cta:hover{opacity:.88}
-.hamburger{display:none;background:none;border:none;cursor:pointer;width:28px;height:20px;position:relative}
-.hamburger span{display:block;width:100%;height:2px;background:var(--ink);position:absolute;left:0;transition:all .3s}
-.hamburger span:nth-child(1){top:0}.hamburger span:nth-child(2){top:9px}.hamburger span:nth-child(3){top:18px}
-footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 32px}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;margin-bottom:32px}
-.footer-brand{font-family:var(--font-h);font-size:18px;font-weight:bold;color:var(--ink);margin-bottom:8px}
-.footer-tagline{font-size:13px;color:var(--muted);max-width:280px;line-height:1.5}
-.footer-col h4{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
-.footer-col a{display:block;font-size:14px;color:var(--slate);padding:4px 0;transition:color .2s}
-.footer-col a:hover{color:var(--ink)}
-.footer-bottom{border-top:1px solid var(--border);padding-top:24px;font-size:12px;color:var(--subtle);display:flex;justify-content:space-between;align-items:center}
-.btn-primary{display:inline-block;padding:14px 28px;background:var(--ink);color:var(--white);font-weight:600;font-size:15px;border-radius:6px;transition:opacity .2s;border:none;cursor:pointer}
-.btn-primary:hover{opacity:.88}
-.btn-secondary{display:inline-block;padding:14px 28px;border:1px solid var(--border);color:var(--ink);font-weight:600;font-size:15px;border-radius:6px;transition:all .2s;background:transparent;cursor:pointer}
-.btn-secondary:hover{border-color:var(--ink)}
-.fade-in{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
-.fade-in.visible{opacity:1;transform:translateY(0)}
-@media(max-width:768px){
-  .nav-links{display:none}.hamburger{display:block}
-  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);padding:20px 24px;gap:16px}
-  .footer-grid{grid-template-columns:1fr;gap:32px}
-}
-/* Article styles */
-.article-header{padding:120px 0 48px}
-.article-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
-.article-title{font-family:var(--font-h);font-size:38px;font-weight:bold;color:var(--ink);line-height:1.2;margin-bottom:16px;max-width:720px}
-.article-meta{font-size:14px;color:var(--subtle);margin-bottom:32px}
-.article-body{max-width:720px;margin:0 auto;padding:0 24px 96px}
-.article-body h2{font-family:var(--font-h);font-size:24px;color:var(--ink);margin:40px 0 16px;line-height:1.3}
-.article-body h3{font-size:18px;font-weight:600;color:var(--ink);margin:32px 0 12px}
-.article-body p{font-size:16px;color:var(--slate);line-height:1.7;margin-bottom:16px;max-width:65ch}
-.article-body strong{color:var(--ink)}
-.article-body blockquote{border-left:3px solid var(--border);padding:12px 20px;margin:24px 0;background:var(--surface);border-radius:0 6px 6px 0}
-.article-body blockquote p{color:var(--muted);font-size:15px;margin-bottom:0}
-.article-cta{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;margin:48px 0;text-align:center}
-.article-cta h3{font-family:var(--font-h);font-size:20px;color:var(--ink);margin-bottom:8px}
-.article-cta p{font-size:14px;color:var(--muted);margin-bottom:16px}
-.article-bio{border-top:1px solid var(--border);padding-top:24px;margin-top:48px;font-size:14px;color:var(--muted);font-style:italic;font-family:var(--font-h)}
-/* Course/product page styles */
-.page-header{padding:120px 0 48px;border-bottom:1px solid var(--border)}
-.page-title{font-family:var(--font-h);font-size:38px;font-weight:bold;color:var(--ink);line-height:1.2;margin-bottom:12px;max-width:640px}
-.page-desc{font-size:17px;color:var(--slate);line-height:1.65;max-width:600px;margin-bottom:24px}
-.page-section{padding:64px 0}
-.page-section h2{font-family:var(--font-h);font-size:26px;color:var(--ink);margin-bottom:24px}
-.module-list{list-style:none;counter-reset:module}
-.module-list li{counter-increment:module;padding:20px 0;border-bottom:1px solid var(--border);display:flex;gap:16px;align-items:start}
-.module-list li::before{content:counter(module,decimal-leading-zero);font-family:var(--font-h);font-size:24px;color:var(--subtle);font-weight:bold;min-width:36px}
-.module-title{font-weight:600;color:var(--ink);font-size:16px;margin-bottom:4px}
-.module-desc{font-size:14px;color:var(--muted);line-height:1.55}
-.price-box{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;display:inline-block}
-.price-box .price{font-family:var(--font-h);font-size:48px;font-weight:bold;color:var(--ink)}
-.price-box .note{font-size:14px;color:var(--subtle);margin-top:4px}
-.product-features{list-style:none}
-.product-features li{padding:10px 0;border-bottom:1px solid var(--border);font-size:15px;color:var(--slate);padding-left:24px;position:relative}
-.product-features li::before{content:"\2713";position:absolute;left:0;color:var(--green);font-weight:bold}
-@media(max-width:768px){
-  .article-title,.page-title{font-size:28px}
-  .article-body p{font-size:15px}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Augmented Product Management — Free Course — gonzalo.tech</title>
+  <meta name="description" content="A free, full-length course on using AI as a PM multiplier. Spec writing, copy iteration, rapid prototyping, experiment analysis — real workflows from a working PM.">
+  <meta name="keywords" content="AI product management, AI for PMs, product manager AI tools, AI spec writing, AI prototyping, product management course free">
+  <meta name="author" content="Gonzalo Aguilar">
+  <meta property="og:title" content="AI-Augmented Product Management — Free Course — gonzalo.tech">
+  <meta property="og:description" content="A free, full-length course on using AI as a PM multiplier. Real workflows from a working PM.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gonzalo.tech/courses/ai-augmented-pm.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI-Augmented Product Management — Free Course">
+  <meta name="twitter:description" content="Real AI workflows for PMs. Free, no paywall, no email required.">
+  <link rel="canonical" href="https://gonzalo.tech/courses/ai-augmented-pm.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "AI-Augmented Product Management",
+    "description": "A free, comprehensive course teaching product managers how to use AI as a professional multiplier — not a replacement. Covers spec writing, UX copy, rapid prototyping, experiment analysis, and stakeholder communication.",
+    "provider": {
+      "@type": "Person",
+      "name": "Gonzalo Aguilar",
+      "url": "https://gonzalo.tech"
+    },
+    "url": "https://gonzalo.tech/courses/ai-augmented-pm.html",
+    "isAccessibleForFree": true,
+    "educationalLevel": "Intermediate",
+    "inLanguage": "en",
+    "numberOfCredits": "6 modules",
+    "teaches": ["AI for product managers", "Spec writing with AI", "UX copy iteration", "Rapid prototyping", "Experiment analysis", "Stakeholder communication"]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0F172A;
+      --slate: #334155;
+      --muted: #64748B;
+      --subtle: #94A3B8;
+      --border: #E2E8F0;
+      --surface: #F8FAFC;
+      --white: #FFFFFF;
+      --red: #DC2626;
+      --green: #16A34A;
+      --amber: #D97706;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: Calibri, 'Gill Sans', 'Segoe UI', sans-serif;
+      --font-code: Consolas, 'Courier New', monospace;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--slate);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--muted); }
+    strong { color: var(--ink); }
+
+    /* Nav */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border); transition: box-shadow .3s;
+    }
+    nav.scrolled { box-shadow: 0 1px 8px rgba(15,23,42,0.06); }
+    .nav-inner {
+      max-width: 1080px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; height: 60px;
+    }
+    .nav-brand { font-family: var(--font-heading); font-size: 20px; font-weight: bold; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: 14px; color: var(--muted); font-weight: 500; text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta {
+      font-size: 13px !important; font-weight: 600 !important;
+      color: var(--white) !important; background: var(--ink);
+      padding: 8px 18px; border-radius: 6px;
+    }
+
+    /* Layout */
+    .page-wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+    /* Course hero */
+    .course-hero {
+      padding: 100px 0 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .course-badge {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 4px;
+      background: #F0FDF4; color: var(--green); margin-bottom: 12px;
+    }
+    .course-hero h1 {
+      font-family: var(--font-heading); font-size: 40px; font-weight: bold;
+      color: var(--ink); line-height: 1.2; margin-bottom: 16px; max-width: 700px;
+    }
+    .course-hero .subtitle {
+      font-size: 18px; color: var(--slate); line-height: 1.65;
+      max-width: 600px; margin-bottom: 24px;
+    }
+    .course-meta {
+      display: flex; gap: 24px; flex-wrap: wrap;
+      font-size: 14px; color: var(--muted); margin-bottom: 32px;
+    }
+    .course-meta span { display: flex; align-items: center; gap: 6px; }
+
+    /* Two-column layout */
+    .course-body {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 48px;
+      padding: 48px 0 96px;
+      align-items: start;
+    }
+
+    /* TOC sidebar */
+    .toc {
+      position: sticky; top: 80px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; padding: 24px;
+    }
+    .toc h3 {
+      font-family: var(--font-heading); font-size: 14px; font-weight: bold;
+      color: var(--ink); margin-bottom: 16px; text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .toc ol { list-style: none; padding: 0; counter-reset: toc; }
+    .toc li { counter-increment: toc; margin-bottom: 10px; }
+    .toc a {
+      font-size: 13px; color: var(--muted); text-decoration: none;
+      display: flex; gap: 8px; line-height: 1.4; transition: color .2s;
+    }
+    .toc a::before {
+      content: counter(toc); font-weight: 700; color: var(--subtle);
+      min-width: 16px; flex-shrink: 0;
+    }
+    .toc a:hover { color: var(--ink); }
+    .toc .toc-free {
+      margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border);
+      font-size: 12px; color: var(--green); font-weight: 600;
+      text-align: center;
+    }
+
+    /* Main content */
+    .course-content h2 {
+      font-family: var(--font-heading); font-size: 26px; color: var(--ink);
+      margin-top: 56px; margin-bottom: 16px; line-height: 1.3;
+      padding-top: 24px; border-top: 2px solid var(--ink);
+    }
+    .course-content h2:first-child { margin-top: 0; border-top: none; padding-top: 0; }
+    .course-content h3 {
+      font-family: var(--font-heading); font-size: 19px; color: var(--ink);
+      margin-top: 32px; margin-bottom: 12px;
+    }
+    .course-content p { margin-bottom: 16px; max-width: 65ch; }
+    .course-content ul, .course-content ol {
+      margin-bottom: 16px; padding-left: 24px;
+    }
+    .course-content li { margin-bottom: 6px; }
+
+    /* Module header */
+    .module-header {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; padding: 24px 28px; margin-bottom: 24px;
+    }
+    .module-number {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 6px;
+    }
+    .module-header h2 {
+      font-family: var(--font-heading); font-size: 22px; color: var(--ink);
+      margin: 0 0 8px; border: none; padding: 0;
+    }
+    .module-objectives {
+      margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border);
+    }
+    .module-objectives p {
+      font-size: 13px; color: var(--muted); font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;
+    }
+    .module-objectives ul {
+      font-size: 14px; color: var(--slate); margin: 0; padding-left: 20px;
+    }
+    .module-objectives li { margin-bottom: 4px; }
+
+    /* Callout boxes */
+    .callout {
+      border-radius: 8px; padding: 20px 24px; margin: 24px 0;
+    }
+    .callout-key {
+      background: #F0FDF4; border-left: 4px solid var(--green);
+    }
+    .callout-exercise {
+      background: #FFFBEB; border-left: 4px solid var(--amber);
+    }
+    .callout-warning {
+      background: #FEF2F2; border-left: 4px solid var(--red);
+    }
+    .callout-insight {
+      background: var(--surface); border-left: 4px solid var(--ink);
+    }
+    .callout strong.callout-label {
+      display: block; font-size: 11px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      margin-bottom: 8px; color: var(--muted);
+    }
+    .callout p { margin-bottom: 8px; }
+    .callout p:last-child { margin-bottom: 0; }
+    .callout ul { margin-bottom: 0; }
+
+    /* Code / template blocks */
+    .template-block {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 6px; padding: 20px 24px; margin: 20px 0;
+      font-family: var(--font-code); font-size: 14px; line-height: 1.6;
+      color: var(--slate); white-space: pre-wrap; overflow-x: auto;
+    }
+    .template-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+      font-family: var(--font-body);
+    }
+
+    /* Before/After */
+    .ba-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0;
+    }
+    .ba-box {
+      border-radius: 6px; padding: 16px 20px;
+    }
+    .ba-before { background: #FEF2F2; border: 1px solid #FCA5A5; }
+    .ba-after { background: #F0FDF4; border: 1px solid #86EFAC; }
+    .ba-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; margin-bottom: 8px;
+    }
+    .ba-before .ba-label { color: var(--red); }
+    .ba-after .ba-label { color: var(--green); }
+    .ba-box p { font-size: 14px; margin: 0; }
+
+    /* Checklist */
+    .checklist { list-style: none; padding: 0; margin: 16px 0; }
+    .checklist li {
+      padding: 8px 0 8px 28px; border-bottom: 1px solid var(--border);
+      position: relative; font-size: 15px;
+    }
+    .checklist li::before {
+      content: "☐"; position: absolute; left: 0;
+      color: var(--muted); font-size: 16px;
+    }
+    .checklist li:last-child { border-bottom: none; }
+
+    blockquote {
+      border-left: 3px solid var(--border); padding: 12px 20px;
+      margin: 24px 0; background: var(--surface); border-radius: 0 6px 6px 0;
+      font-style: italic; color: var(--muted);
+    }
+    blockquote cite { display: block; font-size: 13px; margin-top: 8px; font-style: normal; }
+
+    hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+    /* Footer */
+    footer {
+      background: var(--surface); border-top: 1px solid var(--border);
+      padding: 48px 0 32px;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 48px; margin-bottom: 32px; max-width: 1080px;
+      margin-left: auto; margin-right: auto; padding: 0 24px;
+    }
+    .footer-brand { font-family: var(--font-heading); font-size: 18px; font-weight: bold; color: var(--ink); margin-bottom: 8px; }
+    .footer-tagline { font-size: 13px; color: var(--muted); max-width: 280px; line-height: 1.5; }
+    .footer-col h4 { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+    .footer-col a { display: block; font-size: 14px; color: var(--slate); padding: 4px 0; text-decoration: none; transition: color .2s; }
+    .footer-col a:hover { color: var(--ink); }
+    .footer-bottom {
+      border-top: 1px solid var(--border); padding-top: 24px;
+      font-size: 12px; color: var(--subtle);
+      display: flex; justify-content: space-between; align-items: center;
+      max-width: 1080px; margin: 0 auto; padding-left: 24px; padding-right: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .course-hero h1 { font-size: 28px; }
+      .course-body { grid-template-columns: 1fr; }
+      .toc { display: none; }
+      .ba-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
 </head>
 <body>
+
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="../" class="nav-brand">gonzalo.tech</a>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-links" id="navLinks">
-      <a href="../#about">About</a>
-<a href="./ai-augmented-pm.html" style="color:#0F172A;font-weight:600;">Courses</a>
-<a href="../#resources">Resources</a>
-<a href="../#blog">Blog</a>
-<a href="../#newsletter" class="nav-cta">Get the Toolkit</a>
+    <a href="../index.html" class="nav-brand">gonzalo.tech</a>
+    <div class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="./ai-augmented-pm.html" style="color:var(--ink);font-weight:600;">Courses</a>
+      <a href="../index.html#resources">Resources</a>
+      <a href="../index.html#blog">Blog</a>
+      <a href="../index.html#newsletter" class="nav-cta">Get the Toolkit</a>
     </div>
   </div>
 </nav>
 
-<div class="container">
-  <div class="page-header">
-    <span style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:4px;background:#F0FDF4;color:#16A34A;margin-bottom:12px;">AVAILABLE</span>
-    <h1 class="page-title">AI-Augmented Product Management</h1>
-    <p class="page-desc">How to use AI as a professional multiplier — not a replacement. From a PM who uses it daily in a high-stakes, regulated environment.</p>
-    <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
-      <div class="price-box">
-        <div class="price">$49</div>
-        <div class="note">Early bird pricing</div>
-      </div>
-      <a href="#" class="btn-primary">Enroll now</a>
+<div class="page-wrap">
+  <div class="course-hero">
+    <span class="course-badge">FREE COURSE</span>
+    <h1>AI-Augmented Product Management</h1>
+    <p class="subtitle">Six modules on using AI as a professional multiplier — not a replacement. Real workflows from a PM who uses this daily in high-stakes product work.</p>
+    <div class="course-meta">
+      <span>6 modules</span>
+      <span>·</span>
+      <span>~4 hours of reading</span>
+      <span>·</span>
+      <span>6 exercises + templates</span>
+      <span>·</span>
+      <span>No sign-up required</span>
     </div>
   </div>
-  <div class="page-section">
-    <h2>What you'll learn</h2>
-    <ul class="module-list">
-      <li>
-  <div><div class="module-title">Why AI Changes the PM Role</div>
-  <div class="module-desc">What AI actually does well, where it falls short, and why judgment is the skill that matters more than ever.</div></div>
-</li>
-<li>
-  <div><div class="module-title">The Augment, Don't Automate Framework</div>
-  <div class="module-desc">How to classify every task in your workflow as judgment or generation — and route accordingly.</div></div>
-</li>
-<li>
-  <div><div class="module-title">Spec and PRD Writing with AI</div>
-  <div class="module-desc">Turn a blank page into a structured first draft in minutes. Then add the context only you know.</div></div>
-</li>
-<li>
-  <div><div class="module-title">UX Copy Iteration Workflows</div>
-  <div class="module-desc">Generate 10 variants of any error message, CTA, or notification. Evaluate against copy principles that actually work.</div></div>
-</li>
-<li>
-  <div><div class="module-title">Rapid Prototyping with Claude Code</div>
-  <div class="module-desc">Build clickable HTML prototypes in hours instead of weeks. Test ideas before committing engineering time.</div></div>
-</li>
-<li>
-  <div><div class="module-title">Experiment Evaluation and Analysis</div>
-  <div class="module-desc">Use AI to pre-process A/B test results, identify confounding factors, and arrive at data reviews with sharper questions.</div></div>
-</li>
-<li>
-  <div><div class="module-title">AI for Stakeholder Communication</div>
-  <div class="module-desc">Draft updates, pitch decks, and executive summaries that land — without spending a full day on formatting.</div></div>
-</li>
-<li>
-  <div><div class="module-title">Building Your AI Workflow System</div>
-  <div class="module-desc">Put it all together: your personal prompt library, workflow templates, and quality checkpoints.</div></div>
-</li>
 
-    </ul>
-  </div>
-  <div class="page-section" style="border-top:1px solid var(--border);">
-    <h2>Who this is for</h2>
-    <ul class="product-features">
-      <li>You want practical workflows, not theory or "50 AI use cases" listicles</li>
-      <li>You learn by doing — every module has exercises that produce something tangible</li>
-      <li>You want frameworks from someone who uses them daily in a real product role</li>
-      <li>You're comfortable with ambiguity and want tools to navigate it faster</li>
-    </ul>
-  </div>
-  <div style="padding:64px 0;text-align:center;">
-    <a href="#" class="btn-primary" style="font-size:17px;padding:16px 36px;">Enroll now &rarr;</a>
+  <div class="course-body">
+    <!-- Main content -->
+    <main class="course-content" id="course-main">
+
+      <!-- Intro -->
+      <p><strong>Here's what no one tells you:</strong> AI doesn't make bad product thinking good. It makes good product thinking fast. If you don't have the judgment, the AI will just help you produce wrong things more quickly.</p>
+
+      <p>This course is about developing that judgment — and then building workflows that let the AI handle the generation so you can focus on what only you can do: talking to users, reading the room in a stakeholder meeting, making the call when the data points in two directions.</p>
+
+      <p>Every module ends with a practical exercise that produces something real. By the end, you'll have a system, not just a list of AI tricks.</p>
+
+      <hr>
+
+      <!-- MODULE 1 -->
+      <div class="module-header" id="module-1">
+        <div class="module-number">Module 1</div>
+        <h2>Why AI Changes the PM Role (and What It Doesn't)</h2>
+        <div class="module-objectives">
+          <p>Learning objectives</p>
+          <ul>
+            <li>Understand what AI is actually good at versus where it fails</li>
+            <li>Apply the Augment/Automate/Avoid framework to your own work</li>
+            <li>Identify the skills that become MORE valuable in an AI-assisted world</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>The honest picture</h3>
+
+      <p>McKinsey's 2024 research found that AI can automate up to 60–70% of work activities in knowledge-heavy roles. That sounds alarming. But read it carefully: activities, not jobs. A PM's job is a bundle of activities — and the ones AI can't touch are the ones that actually determine outcomes.</p>
+
+      <p>Here's a simple model. Think of your PM work as two buckets:</p>
+
+      <ul>
+        <li><strong>Generation tasks:</strong> Writing first drafts, producing variants, summarizing, formatting, researching — anything where you're converting information into a document or artifact.</li>
+        <li><strong>Judgment tasks:</strong> Deciding what to build, negotiating scope, reading user intent, sensing what's actually true in a data set, making the call in an ambiguous situation.</li>
+      </ul>
+
+      <p>AI is exceptional at generation tasks and terrible at judgment tasks. The mistake most PMs make is using AI for generation and then skipping the judgment step. The output looks done. It reads well. And it's wrong in ways that are hard to see until it's expensive.</p>
+
+      <div class="callout callout-insight">
+        <strong class="callout-label">The Three-Layer Model</strong>
+        <p><strong>Simple version:</strong> AI writes, you decide.</p>
+        <p><strong>Business consequence:</strong> If you outsource the deciding, you own the failure.</p>
+        <p><strong>Real-world analogy:</strong> A good sous chef can prep every ingredient. The head chef still decides what goes on the plate.</p>
+      </div>
+
+      <h3>What changes — and what doesn't</h3>
+
+      <p><strong>What changes:</strong> The cost of a first draft drops to near zero. A spec that used to take half a day takes 20 minutes. This means you can explore more options, stress-test more assumptions, and bring more structured thinking to every conversation — without working longer hours.</p>
+
+      <p><strong>What doesn't change:</strong> You still have to know what you want before you can evaluate what the AI gives you. You still have to understand your users better than anyone else in the room. You still have to make decisions that can't be delegated.</p>
+
+      <p>A 2023 study in <em>Harvard Business Review</em> found that BCG consultants using AI performed significantly better on tasks like creative ideation — but the benefit disappeared on tasks requiring deep integration of unstructured, human context. PMs live in that gap.</p>
+
+      <h3>The Augment / Automate / Avoid Framework</h3>
+
+      <p>When you're looking at any task in your workflow, put it in one of three buckets:</p>
+
+      <ul>
+        <li><strong>Augment:</strong> Use AI to do it faster or better, but keep your judgment in the loop. (Most PM writing tasks.)</li>
+        <li><strong>Automate:</strong> Let AI handle it end-to-end with minimal review. (Meeting summaries, status update drafts, changelog entries.)</li>
+        <li><strong>Avoid:</strong> Don't use AI for this — you need unmediated thinking. (User interviews. Final prioritization calls. Conflict resolution with stakeholders.)</li>
+      </ul>
+
+      <div class="callout callout-key">
+        <strong class="callout-label">Key Takeaway — Module 1</strong>
+        <p>The PM's job doesn't go away. The leverage point moves. You get paid to decide, not to draft. AI handles the draft. Protect your judgment like the scarce resource it is.</p>
+      </div>
+
+      <div class="callout callout-exercise">
+        <strong class="callout-label">Exercise 1</strong>
+        <p>List the last 10 tasks you did as a PM. Assign each one to Augment, Automate, or Avoid. Count how many were genuinely in the Avoid bucket. If fewer than 3, you may be underusing your judgment — and probably not spending enough time with users.</p>
+      </div>
+
+      <hr>
+
+      <!-- MODULE 2 -->
+      <div class="module-header" id="module-2">
+        <div class="module-number">Module 2</div>
+        <h2>Spec and PRD Writing with AI Scaffolding</h2>
+        <div class="module-objectives">
+          <p>Learning objectives</p>
+          <ul>
+            <li>Write a complete PRD first draft in under 30 minutes using a structured prompt</li>
+            <li>Identify the five sections where your judgment matters most</li>
+            <li>Build a reusable prompt template for your specific context</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>The blank page problem</h3>
+
+      <p>The hardest part of writing a spec is starting. Not because PMs don't know what they want to build, but because the act of translating product thinking into structured prose is its own skill — and it's one where AI can take a significant load.</p>
+
+      <p>The key insight: AI can generate the structure and the questions. You provide the answers. That division of labor is the entire workflow.</p>
+
+      <h3>The two-pass method</h3>
+
+      <p><strong>Pass 1 — Scaffold:</strong> Give the AI your raw thinking in any format. Bullet points, stream of consciousness, a Slack message you sent. Ask it to produce a PRD structure with every section clearly labeled and placeholders for the parts that need your input.</p>
+
+      <p><strong>Pass 2 — Fill and challenge:</strong> Go through the scaffold and fill in the placeholders. Then ask the AI to challenge each assumption: "What's missing? What are the edge cases? What would a skeptical stakeholder push back on?"</p>
+
+      <p>This is faster than writing from scratch AND produces better specs, because the AI forces you to be explicit about things you might have left vague.</p>
+
+      <div class="template-label">PRD Scaffold Prompt — Copy and adapt</div>
+      <div class="template-block">You are a senior product manager helping me write a PRD.
+
+Context:
+- Product: [your product]
+- User problem: [describe in 2-3 sentences]
+- Proposed solution: [describe in 2-3 sentences]
+- Key constraint: [timeline, engineering capacity, regulatory requirement, etc.]
+
+Please produce a PRD scaffold with these sections:
+1. Problem statement (what pain exists, for whom, with what frequency/severity)
+2. Goals and non-goals (3-5 each)
+3. User stories (3-5, format: "As a [user type], I want [action] so that [benefit]")
+4. Functional requirements (numbered list)
+5. Open questions (things I need to resolve before engineering starts)
+6. Success metrics (what does "it worked" look like, and how will we measure it)
+
+For any section where you don't have enough information, insert a placeholder: [PM TO FILL: what's needed here]
+
+Do not fabricate business context. Ask me if you need it.</div>
+
+      <h3>The five sections you must own</h3>
+
+      <p>AI can scaffold all six sections, but five of them require your judgment before the spec is real:</p>
+
+      <ol>
+        <li><strong>Goals and non-goals:</strong> Especially non-goals. These are your commitments. The AI will suggest generic ones. Replace them with specific decisions you've already made.</li>
+        <li><strong>Open questions:</strong> The AI generates plausible questions. You need to add the ones specific to your company's context — dependencies, past decisions, political landmines.</li>
+        <li><strong>Success metrics:</strong> Never let AI define your metrics. It will pick the obvious ones. You need to pick the ones that are hard to game and genuinely indicate user value.</li>
+        <li><strong>Edge cases in requirements:</strong> The AI lists the happy path. Add the failure modes, the accessibility requirements, the regulatory guardrails.</li>
+        <li><strong>The "why now" framing:</strong> AI doesn't know your company's current bets, the competitive moment, or what's politically relevant right now. Add that.</li>
+      </ol>
+
+      <div class="callout callout-warning">
+        <strong class="callout-label">Common mistake</strong>
+        <p>Using AI-generated acceptance criteria verbatim. The AC looks complete and professional. Engineers start building. Three sprints in, a critical edge case surfaces that should have been in the spec. The AI didn't know about it because you didn't tell it. This is a judgment failure, not an AI failure.</p>
+      </div>
+
+      <h3>PRD review prompt</h3>
+
+      <p>After you've filled in the scaffold, run this:</p>
+
+      <div class="template-label">PRD Challenge Prompt</div>
+      <div class="template-block">Review this PRD and identify:
+1. Sections that are vague enough to cause engineering misinterpretation
+2. Missing edge cases that a QA engineer would catch in testing
+3. Success metrics that could be gamed without actually delivering user value
+4. Stakeholder concerns a skeptical VP of Engineering would raise
+5. Any dependency or integration point not explicitly addressed
+
+Be direct. I'd rather hear it now than after sprint planning.</div>
+
+      <div class="callout callout-key">
+        <strong class="callout-label">Key Takeaway — Module 2</strong>
+        <p>A spec written with AI scaffolding, then filled with your judgment, is better than one you write solo. The AI forces structure. You provide truth. Neither works without the other.</p>
+      </div>
+
+      <div class="callout callout-exercise">
+        <strong class="callout-label">Exercise 2</strong>
+        <p>Take a feature you're working on right now (or have worked on recently). Run the PRD Scaffold Prompt above. Spend 20 minutes filling in the placeholders. Then run the PRD Challenge Prompt. How many challenges surfaced something you hadn't thought about? That's your signal for where to invest your judgment time next time.</p>
+      </div>
+
+      <hr>
+
+      <!-- MODULE 3 -->
+      <div class="module-header" id="module-3">
+        <div class="module-number">Module 3</div>
+        <h2>UX Copy Iteration Workflows</h2>
+        <div class="module-objectives">
+          <p>Learning objectives</p>
+          <ul>
+            <li>Generate 10 variants of any UX copy element in minutes</li>
+            <li>Apply the 5-dimension evaluation framework to choose between variants</li>
+            <li>Build a "copy review" workflow that includes design and engineering</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Why copy iteration matters</h3>
+
+      <p>According to Nielsen Norman Group, UX copy is one of the highest-leverage areas for product improvement — yet it gets the least systematic attention. Most teams write copy once, ship it, and rarely revisit it unless something breaks. AI changes the economics of iteration.</p>
+
+      <p>When it costs 30 seconds to generate 10 variants of an error message, you lose the excuse to ship the first thing someone typed into a Jira ticket. You can always run your copy through a quick generation pass before it goes to design.</p>
+
+      <h3>The before/after reality</h3>
+
+      <div class="ba-grid">
+        <div class="ba-box ba-before">
+          <div class="ba-label">Before (generic)</div>
+          <p>"An error occurred. Please try again."</p>
+        </div>
+        <div class="ba-box ba-after">
+          <div class="ba-label">After (specific)</div>
+          <p>"We couldn't verify your identity. Check that your name and date of birth match your government ID, then try again."</p>
+        </div>
+      </div>
+
+      <div class="ba-grid">
+        <div class="ba-box ba-before">
+          <div class="ba-label">Before (friction)</div>
+          <p>"Please complete all required fields before submitting."</p>
+        </div>
+        <div class="ba-box ba-after">
+          <div class="ba-label">After (helpful)</div>
+          <p>"Almost there — we still need your phone number to secure your account."</p>
+        </div>
+      </div>
+
+      <div class="ba-grid">
+        <div class="ba-box ba-before">
+          <div class="ba-label">Before (cold)</div>
+          <p>"Your application is under review."</p>
+        </div>
+        <div class="ba-box ba-after">
+          <div class="ba-label">After (warm)</div>
+          <p>"You're in line — we'll send you an email within 24 hours. Most people hear back in under an hour."</p>
+        </div>
+      </div>
+
+      <h3>The copy generation workflow</h3>
+
+      <div class="template-label">UX Copy Generation Prompt</div>
+      <div class="template-block">I'm writing [type of copy: error message / CTA / empty state / onboarding tooltip / confirmation message].
+
+Context:
+- What just happened: [describe the trigger state]
+- User's likely emotional state: [frustrated / uncertain / excited / confused]
+- What we want the user to do next: [specific next action]
+- Brand voice: [direct / warm / playful / professional]
+- Character limit (if any): [X characters]
+
+Please generate 10 variants. For each one, note:
+- Which emotional register it uses (reassuring / urgent / informational / motivating)
+- Approximate reading level
+
+Label them V1–V10.</div>
+
+      <h3>The 5-dimension evaluation framework</h3>
+
+      <p>Once you have your variants, score each one on these dimensions (1–3 scale, 3 = best):</p>
+
+      <ol>
+        <li><strong>Clarity:</strong> Could a first-time user understand this immediately?</li>
+        <li><strong>Specificity:</strong> Does it tell the user exactly what to do or what happened?</li>
+        <li><strong>Tone match:</strong> Does it fit the emotional moment and the brand?</li>
+        <li><strong>Length:</strong> Is every word necessary?</li>
+        <li><strong>Action orientation:</strong> Does it guide the user toward the next step?</li>
+      </ol>
+
+      <p>Any variant scoring 12+ out of 15 is worth testing. Any variant under 8 is not.</p>
+
+      <div class="callout callout-insight">
+        <strong class="callout-label">The Copy Review Workflow</strong>
+        <p>Before any new copy ships: (1) Generate 10 variants. (2) Score the top 3 on the 5-dimension framework. (3) Share with design and get a gut-check on tone. (4) Pick one, document why. This takes 20 minutes and prevents months of bad UX.</p>
+      </div>
+
+      <div class="callout callout-key">
+        <strong class="callout-label">Key Takeaway — Module 3</strong>
+        <p>Copy is never done — it's just shipped. AI makes iteration cheap enough that "we'll fix it in v2" is no longer an acceptable reason to ship mediocre copy.</p>
+      </div>
+
+      <div class="callout callout-exercise">
+        <strong class="callout-label">Exercise 3</strong>
+        <p>Pick three pieces of UX copy in your current product that you've always thought were weak — an error message, a CTA, an empty state. Run each through the generation prompt. Score the variants. See if you can produce something measurably better than what's currently in production. Note: you don't need A/B test data to know that "An error occurred" is worse than a specific, actionable message.</p>
+      </div>
+
+      <hr>
+
+      <!-- MODULE 4 -->
+      <div class="module-header" id="module-4">
+        <div class="module-number">Module 4</div>
+        <h2>Rapid Prototyping with AI Tools</h2>
+        <div class="module-objectives">
+          <p>Learning objectives</p>
+          <ul>
+            <li>Build a clickable HTML prototype in under 2 hours without engineering support</li>
+            <li>Apply the Prototype Decision Matrix to know what to build and what to sketch</li>
+            <li>Structure an AI prototyping session that produces a usable artifact</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Why prototyping with AI is different</h3>
+
+      <p>Traditional prototyping required either Figma fluency (fast but not interactive) or engineering time (interactive but expensive). AI tools — specifically Claude Code, ChatGPT with code execution, or similar — can produce a working HTML/CSS prototype from a natural language description in minutes.</p>
+
+      <p>This doesn't replace design. It replaces the gap between an idea and something you can click on. That gap is where assumptions go to hide.</p>
+
+      <h3>The Prototype Decision Matrix</h3>
+
+      <p>Not every idea needs an HTML prototype. Use this to decide:</p>
+
+      <ul>
+        <li><strong>Low complexity + low uncertainty → sketch or Figma frame.</strong> You know what it should look like. Build it correctly the first time.</li>
+        <li><strong>High complexity + low uncertainty → engineering sprint.</strong> You know what it should do. The prototype phase adds no value.</li>
+        <li><strong>Low complexity + high uncertainty → AI prototype.</strong> You don't know if this approach resonates. A 2-hour HTML prototype + user test saves 2 weeks.</li>
+        <li><strong>High complexity + high uncertainty → paper prototype first, AI prototype second.</strong> Sketch the concept to validate the logic, then build the HTML to validate the UX.</li>
+      </ul>
+
+      <h3>Step-by-step: building an AI prototype</h3>
+
+      <p><strong>Step 1 — Define the scope.</strong> Pick one user journey, not the whole product. Prototype the specific flow you're uncertain about. 3–5 screens maximum.</p>
+
+      <p><strong>Step 2 — Write the design brief.</strong> Before you prompt anything, write out: the user goal, the screens in the flow (in order), what the user can do on each screen, and any visual constraints. This brief IS the prompt.</p>
+
+      <div class="template-label">Prototype Brief / Prompt Template</div>
+      <div class="template-block">Build a clickable HTML prototype for this user flow.
+
+User goal: [what they're trying to accomplish]
+
+Screens (in order):
+1. [Screen name] — [what the user sees and can do]
+2. [Screen name] — [what the user sees and can do]
+3. [Screen name] — [what the user sees and can do]
+
+Design constraints:
+- Color palette: [hex values or descriptive]
+- Font: [specify or say "system font is fine"]
+- Mobile or desktop: [specify]
+- The prototype should use only HTML, CSS, and vanilla JavaScript — no frameworks
+
+Navigation: clicking [primary action] on each screen should advance to the next screen.
+Add a "reset" button on the final screen.
+
+Keep it realistic enough to feel real but don't spend time on imagery.
+Placeholder boxes for images are fine.</div>
+
+      <p><strong>Step 3 — Review the output critically.</strong> The first prototype will be 80% right. Ask AI to fix the specific things that are wrong. "The button on screen 2 should be full-width on mobile. The form fields need placeholder text. The error state for the email field is missing."</p>
+
+      <p><strong>Step 4 — Test it before showing anyone.</strong> Click through every path yourself. Find the broken states. Fix them. A prototype with dead-end states teaches you nothing about users — it just teaches you that the AI made an incomplete prototype.</p>
+
+      <p><strong>Step 5 — User test with at least 3 people.</strong> Even informal tests. Show the prototype to 3 people who fit your user profile. Watch where they hesitate. Ask "what did you expect to happen there?" That data is more valuable than any sprint review.</p>
+
+      <div class="callout callout-warning">
+        <strong class="callout-label">The prototype ≠ the spec</strong>
+        <p>This is the most common mistake. You build a prototype, it tests well, and engineering uses it as the spec. Don't let this happen. The prototype answers "does this concept resonate?" The spec answers "how exactly should this work?" They are different documents for different audiences.</p>
+      </div>
+
+      <div class="callout callout-key">
+        <strong class="callout-label">Key Takeaway — Module 4</strong>
+        <p>The value of a prototype is the questions it surfaces before you've spent engineering budget. AI makes the cost of prototyping low enough that skipping it is now harder to justify than building it.</p>
+      </div>
+
+      <div class="callout callout-exercise">
+        <strong class="callout-label">Exercise 4</strong>
+        <p>Pick an idea you've been sitting on — something you've been waiting to "get time" to spec properly. Use the prototype brief template above to build a 3-screen HTML prototype in a single 90-minute session. Then show it to two people who aren't on your team and ask: "What do you think this does?" Their answer will tell you more than two weeks of internal alignment meetings.</p>
+      </div>
+
+      <hr>
+
+      <!-- MODULE 5 -->
+      <div class="module-header" id="module-5">
+        <div class="module-number">Module 5</div>
+        <h2>Experiment Evaluation and Analysis</h2>
+        <div class="module-objectives">
+          <p>Learning objectives</p>
+          <ul>
+            <li>Use AI to pre-process experiment results before your data review</li>
+            <li>Apply the Confound Checklist to avoid common A/B test interpretation errors</li>
+            <li>Build sharper questions before you enter the data discussion</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>The real problem with experiment reviews</h3>
+
+      <p>Most experiment post-mortems fail not because the data was bad but because the questions were bad. Teams show up to data reviews with a metric in hand and no framework for interpreting it. The result: endless debate, inconclusive readouts, and decisions that end up being made on gut instinct despite the presence of data.</p>
+
+      <p>AI can't replace your statistical rigor. But it can help you arrive at the data review with a sharper set of questions — and a pre-scan for the most common errors.</p>
+
+      <h3>The pre-analysis workflow</h3>
+
+      <p><strong>Before you look at results:</strong> Write down, in plain language, what you expected to happen and why. This is your hypothesis in retrospect. If you didn't write it down before the experiment, write it now from memory. This prevents unconscious post-hoc rationalization.</p>
+
+      <p><strong>Pre-process with AI:</strong> Paste your experiment summary (metric deltas, sample sizes, test duration, any notes from your analytics team) into an AI conversation and ask it to flag issues before you draw conclusions.</p>
+
+      <div class="template-label">Experiment Pre-Analysis Prompt</div>
+      <div class="template-block">I ran an A/B test. Here are the results:
+
+Experiment name: [name]
+Test duration: [X days]
+Control group: [N users], [metric A], [metric B]
+Treatment group: [N users], [metric A], [metric B]
+Statistical significance: [p-value or CI if available]
+Any anomalies noted: [e.g., traffic spike on day 3, holiday weekend, etc.]
+
+My hypothesis was: [what I expected]
+
+Please:
+1. Flag any statistical or methodological concerns I should address before drawing conclusions
+2. List the top 5 confounding factors most likely to affect this test
+3. Identify any segment-level analysis I should run (e.g., new vs. returning users, device type, geography)
+4. Ask me 5 clarifying questions that would change your interpretation of these results
+5. Draft 3 possible interpretations of these results (bullish, neutral, bearish) so I can pressure-test my default conclusion</div>
+
+      <h3>The Confound Checklist</h3>
+
+      <p>Before you ship any experiment conclusion, check these:</p>
+
+      <ul class="checklist">
+        <li>Was the test long enough to cover at least one full business cycle (week, month)?</li>
+        <li>Were there any external events during the test (news, competitor moves, marketing campaigns)?</li>
+        <li>Was the sample size calculated before the test, or did you stop when it looked good?</li>
+        <li>Did any segment behave significantly differently from the overall trend?</li>
+        <li>Was the metric you measured actually the metric that matters for users?</li>
+        <li>Did the control and treatment groups have equivalent baseline behavior before the test?</li>
+        <li>Was the winner on the primary metric neutral or positive on guardrail metrics?</li>
+      </ul>
+
+      <p>Any "no" on this checklist is a flag, not a blocker — but it needs to be stated in your readout.</p>
+
+      <div class="callout callout-insight">
+        <strong class="callout-label">On Statistical Significance</strong>
+        <p>A p-value of 0.05 means there's a 1-in-20 chance your result is noise. If you run 20 experiments, statistically one of them will look significant just by chance. AI can't fix this — but it can remind you of it when you forget. Always ask: "If this result is a false positive, what's the cost?" That question calibrates how much confidence you actually need.</p>
+      </div>
+
+      <div class="callout callout-key">
+        <strong class="callout-label">Key Takeaway — Module 5</strong>
+        <p>AI-assisted experiment analysis isn't about getting the AI to tell you what the data means. It's about using AI to stress-test your own interpretation before you commit to it in a readout.</p>
+      </div>
+
+      <div class="callout callout-exercise">
+        <strong class="callout-label">Exercise 5</strong>
+        <p>Take the most recent A/B test you ran or participated in. Run the pre-analysis prompt above. How many of the 5 clarifying questions did you actually have answers to? The ones you couldn't answer are the things you should have locked down before the experiment started. That's your lesson for the next test design.</p>
+      </div>
+
+      <hr>
+
+      <!-- MODULE 6 -->
+      <div class="module-header" id="module-6">
+        <div class="module-number">Module 6</div>
+        <h2>AI for Stakeholder Communication</h2>
+        <div class="module-objectives">
+          <p>Learning objectives</p>
+          <ul>
+            <li>Draft executive-ready updates in a consistent, efficient workflow</li>
+            <li>Build a stakeholder communication template library for your role</li>
+            <li>Use AI to anticipate pushback before you walk into the room</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Why stakeholder communication eats PM time</h3>
+
+      <p>A typical senior PM spends 30–40% of their time on communication: status updates, deck preparation, email threads, escalation summaries. Much of this is high-stakes (the wrong framing in an exec update can derail a roadmap) but low-skill (formatting, routine narrative structure, coverage of the standard sections).</p>
+
+      <p>AI handles the low-skill parts extremely well. The high-stakes judgment — knowing what to surface, what to downplay, how to read your audience — stays with you.</p>
+
+      <h3>The status update workflow</h3>
+
+      <div class="template-label">Status Update Draft Prompt</div>
+      <div class="template-block">Draft a [weekly status / executive update / escalation summary] for [audience: engineering leadership / product leadership / cross-functional stakeholders].
+
+What happened this week:
+- [bullet point]
+- [bullet point]
+- [bullet point]
+
+What's at risk or blocked:
+- [issue] — [what I need to unblock it]
+
+Decisions needed:
+- [decision] by [date]
+
+Next week's focus:
+- [priority 1]
+- [priority 2]
+
+Format guidelines:
+- Maximum 200 words
+- No jargon
+- Lead with impact, not activity
+- If there are decisions needed, make them explicit — not buried in a paragraph
+- Tone: direct and confident, not defensive</div>
+
+      <h3>Anticipating pushback</h3>
+
+      <p>One of the most valuable pre-meeting uses of AI: generating likely pushback so you can prepare.</p>
+
+      <div class="template-label">Pushback Anticipation Prompt</div>
+      <div class="template-block">I'm presenting [proposal / roadmap / decision] to [audience].
+
+Here's the summary: [2-3 sentence summary]
+
+Please generate:
+1. The 5 most likely objections from a skeptical [VP / CFO / Engineering lead / Legal]
+2. For each objection: what data or argument would address it
+3. One question I should be able to answer but might not have thought to prepare for
+4. The version of this proposal that would make it easier to say yes to</div>
+
+      <h3>Executive summary structure</h3>
+
+      <p>For any document that goes to a director level or above, use this structure:</p>
+
+      <ol>
+        <li><strong>The decision or recommendation</strong> (one sentence, first line)</li>
+        <li><strong>Why now</strong> (one to two sentences — the forcing function)</li>
+        <li><strong>Key supporting data</strong> (2–3 bullet points, numbers only, no fluff)</li>
+        <li><strong>Risks and mitigations</strong> (show you've thought about it)</li>
+        <li><strong>What you need from them</strong> (explicit ask — approval, budget, decision by date)</li>
+      </ol>
+
+      <p>Executives will read the first sentence and skim the rest looking for reasons to object. Structure your summary to remove those objections preemptively.</p>
+
+      <div class="callout callout-insight">
+        <strong class="callout-label">The tone calibration trick</strong>
+        <p>After generating a draft, ask AI: "What tone does this strike? How would a skeptical reader characterize this message?" Then ask it to rewrite it with a more [confident / measured / urgent / collaborative] tone. Comparing the two versions teaches you more about your own communication instincts than any feedback cycle.</p>
+      </div>
+
+      <div class="callout callout-key">
+        <strong class="callout-label">Key Takeaway — Module 6</strong>
+        <p>Stakeholder communication is a product. Your stakeholders are the users. AI helps you ship the first draft fast. Your judgment ensures the right message lands with the right person at the right moment.</p>
+      </div>
+
+      <div class="callout callout-exercise">
+        <strong class="callout-label">Exercise 6 — Capstone</strong>
+        <p>Build your personal prompt library. Take the six prompt templates from this course and adapt each one to your specific product, audience, and context. Save them somewhere you'll actually use (Notion, a text file, a custom GPT). A prompt template you've personalized and tested is worth 10 generic ones. That library IS your AI workflow system.</p>
+      </div>
+
+      <hr>
+
+      <h2>What's Next</h2>
+
+      <p>You've now got a complete AI workflow system for the core PM activities: specs, copy, prototyping, experiments, and stakeholder communication. The next step is resistance.</p>
+
+      <p>Use one of these workflows this week. Notice where it breaks. Fix the prompt. The best PM AI workflows are built through iteration, not documentation.</p>
+
+      <p>If you want to go deeper, the <a href="./break-into-pm.html">Break Into PM course</a> covers the foundational skills that make all of this land — and the <a href="./founders-pm-playbook.html">Founder's PM Playbook</a> applies product thinking to the problem of building a business.</p>
+
+      <blockquote>
+        "The goal is not to use AI. The goal is to ship better products, faster, with less waste. AI is one of the tools. Judgment is the discipline."
+        <cite>— Gonzalo Aguilar</cite>
+      </blockquote>
+
+    </main>
+
+    <!-- Sidebar TOC -->
+    <aside>
+      <div class="toc">
+        <h3>Course Modules</h3>
+        <ol>
+          <li><a href="#module-1">Why AI Changes the PM Role</a></li>
+          <li><a href="#module-2">Spec and PRD Writing with AI</a></li>
+          <li><a href="#module-3">UX Copy Iteration Workflows</a></li>
+          <li><a href="#module-4">Rapid Prototyping with AI Tools</a></li>
+          <li><a href="#module-5">Experiment Evaluation and Analysis</a></li>
+          <li><a href="#module-6">AI for Stakeholder Communication</a></li>
+        </ol>
+        <div class="toc-free">100% free — no paywall</div>
+      </div>
+    </aside>
   </div>
 </div>
 
 <footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand">gonzalo.tech</div>
-        <div class="footer-tagline">Courses, toolkits, and frameworks for builders who use AI. Built with rigor, explained with care.</div>
-      </div>
-      <div class="footer-col">
-        <h4>Learn</h4>
-        <a href="./ai-augmented-pm.html">Courses</a>
-        <a href="../#resources">Digital products</a>
-        <a href="../#blog">Blog</a>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <a href="https://linkedin.com/in/gonzaloeaguilar" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://medium.com/@gonzaloeaguilar" target="_blank" rel="noopener">Medium</a>
-        <a href="mailto:hello@gonzalo.tech">hello@gonzalo.tech</a>
-      </div>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">gonzalo.tech</div>
+      <div class="footer-tagline">Courses, toolkits, and frameworks for builders who use AI. Built with rigor, explained with care.</div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Gonzalo Aguilar. All rights reserved.</span>
-      <span>Built in Fort Lauderdale, FL</span>
+    <div class="footer-col">
+      <h4>Courses</h4>
+      <a href="./ai-augmented-pm.html">AI-Augmented PM</a>
+      <a href="./break-into-pm.html">Break Into PM</a>
+      <a href="./founders-pm-playbook.html">Founder's PM Playbook</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="https://linkedin.com/in/gonzaloeaguilar" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://medium.com/@gonzaloeaguilar" target="_blank" rel="noopener">Medium</a>
+      <a href="mailto:hello@gonzalo.tech">hello@gonzalo.tech</a>
     </div>
   </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Gonzalo Aguilar. All rights reserved.</span>
+    <span>Built in Fort Lauderdale, FL</span>
+  </div>
 </footer>
+
 <script>
-const nav = document.getElementById('navbar');
-window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
-hamburger.addEventListener('click', () => { navLinks.classList.toggle('open'); });
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
-    const href = link.getAttribute('href');
-    if (href.startsWith('/#')) { return; }
-    e.preventDefault();
-    const target = document.querySelector(href);
-    if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); navLinks.classList.remove('open'); }
-  });
-});
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
+
+  // Highlight active TOC item
+  const sections = document.querySelectorAll('[id^="module-"]');
+  const tocLinks = document.querySelectorAll('.toc a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(l => l.style.fontWeight = '400');
+        const active = document.querySelector(`.toc a[href="#${entry.target.id}"]`);
+        if (active) active.style.fontWeight = '700';
+      }
+    });
+  }, { rootMargin: '-80px 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
 </script>
 </body>
 </html>

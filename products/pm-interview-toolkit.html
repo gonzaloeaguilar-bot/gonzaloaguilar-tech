@@ -1,180 +1,604 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PM Interview Toolkit — gonzalo.tech</title>
-<meta name="description" content="PM interview prep toolkit. Resume templates, STAR framework, 50+ practice questions, case walkthrough.">
-<meta property="og:title" content="PM Interview Toolkit — gonzalo.tech">
-<meta property="og:description" content="PM interview prep toolkit. Resume templates, STAR framework, 50+ practice questions, case walkthrough.">
-<link rel="canonical" href="https://gonzalo.tech">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--ink:#0F172A;--slate:#334155;--muted:#64748B;--subtle:#94A3B8;--border:#E2E8F0;--surface:#F8FAFC;--white:#FFFFFF;--red:#DC2626;--red-light:#FEF2F2;--green:#16A34A;--green-light:#F0FDF4;--amber:#D97706;--amber-light:#FFFBEB;--font-h:Georgia,'Times New Roman',serif;--font-b:Calibri,'Segoe UI',system-ui,sans-serif;--font-c:Consolas,'Courier New',monospace;--max-w:1080px}
-body{font-family:var(--font-b);color:var(--slate);background:var(--white);line-height:1.5;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
-.container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
-nav.scrolled{box-shadow:0 1px 8px rgba(15,23,42,0.06)}
-.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px}
-.nav-brand{font-family:var(--font-h);font-size:20px;font-weight:bold;color:var(--ink);letter-spacing:-0.5px}
-.nav-links{display:flex;gap:28px;align-items:center}
-.nav-links a{font-size:14px;color:var(--muted);font-weight:500;transition:color .2s}
-.nav-links a:hover{color:var(--ink)}
-.nav-cta{font-size:13px!important;font-weight:600!important;color:var(--white)!important;background:var(--ink);padding:8px 18px;border-radius:6px;transition:opacity .2s}
-.nav-cta:hover{opacity:.88}
-.hamburger{display:none;background:none;border:none;cursor:pointer;width:28px;height:20px;position:relative}
-.hamburger span{display:block;width:100%;height:2px;background:var(--ink);position:absolute;left:0;transition:all .3s}
-.hamburger span:nth-child(1){top:0}.hamburger span:nth-child(2){top:9px}.hamburger span:nth-child(3){top:18px}
-footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 32px}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;margin-bottom:32px}
-.footer-brand{font-family:var(--font-h);font-size:18px;font-weight:bold;color:var(--ink);margin-bottom:8px}
-.footer-tagline{font-size:13px;color:var(--muted);max-width:280px;line-height:1.5}
-.footer-col h4{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
-.footer-col a{display:block;font-size:14px;color:var(--slate);padding:4px 0;transition:color .2s}
-.footer-col a:hover{color:var(--ink)}
-.footer-bottom{border-top:1px solid var(--border);padding-top:24px;font-size:12px;color:var(--subtle);display:flex;justify-content:space-between;align-items:center}
-.btn-primary{display:inline-block;padding:14px 28px;background:var(--ink);color:var(--white);font-weight:600;font-size:15px;border-radius:6px;transition:opacity .2s;border:none;cursor:pointer}
-.btn-primary:hover{opacity:.88}
-.btn-secondary{display:inline-block;padding:14px 28px;border:1px solid var(--border);color:var(--ink);font-weight:600;font-size:15px;border-radius:6px;transition:all .2s;background:transparent;cursor:pointer}
-.btn-secondary:hover{border-color:var(--ink)}
-.fade-in{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
-.fade-in.visible{opacity:1;transform:translateY(0)}
-@media(max-width:768px){
-  .nav-links{display:none}.hamburger{display:block}
-  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);padding:20px 24px;gap:16px}
-  .footer-grid{grid-template-columns:1fr;gap:32px}
-}
-/* Article styles */
-.article-header{padding:120px 0 48px}
-.article-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
-.article-title{font-family:var(--font-h);font-size:38px;font-weight:bold;color:var(--ink);line-height:1.2;margin-bottom:16px;max-width:720px}
-.article-meta{font-size:14px;color:var(--subtle);margin-bottom:32px}
-.article-body{max-width:720px;margin:0 auto;padding:0 24px 96px}
-.article-body h2{font-family:var(--font-h);font-size:24px;color:var(--ink);margin:40px 0 16px;line-height:1.3}
-.article-body h3{font-size:18px;font-weight:600;color:var(--ink);margin:32px 0 12px}
-.article-body p{font-size:16px;color:var(--slate);line-height:1.7;margin-bottom:16px;max-width:65ch}
-.article-body strong{color:var(--ink)}
-.article-body blockquote{border-left:3px solid var(--border);padding:12px 20px;margin:24px 0;background:var(--surface);border-radius:0 6px 6px 0}
-.article-body blockquote p{color:var(--muted);font-size:15px;margin-bottom:0}
-.article-cta{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;margin:48px 0;text-align:center}
-.article-cta h3{font-family:var(--font-h);font-size:20px;color:var(--ink);margin-bottom:8px}
-.article-cta p{font-size:14px;color:var(--muted);margin-bottom:16px}
-.article-bio{border-top:1px solid var(--border);padding-top:24px;margin-top:48px;font-size:14px;color:var(--muted);font-style:italic;font-family:var(--font-h)}
-/* Course/product page styles */
-.page-header{padding:120px 0 48px;border-bottom:1px solid var(--border)}
-.page-title{font-family:var(--font-h);font-size:38px;font-weight:bold;color:var(--ink);line-height:1.2;margin-bottom:12px;max-width:640px}
-.page-desc{font-size:17px;color:var(--slate);line-height:1.65;max-width:600px;margin-bottom:24px}
-.page-section{padding:64px 0}
-.page-section h2{font-family:var(--font-h);font-size:26px;color:var(--ink);margin-bottom:24px}
-.module-list{list-style:none;counter-reset:module}
-.module-list li{counter-increment:module;padding:20px 0;border-bottom:1px solid var(--border);display:flex;gap:16px;align-items:start}
-.module-list li::before{content:counter(module,decimal-leading-zero);font-family:var(--font-h);font-size:24px;color:var(--subtle);font-weight:bold;min-width:36px}
-.module-title{font-weight:600;color:var(--ink);font-size:16px;margin-bottom:4px}
-.module-desc{font-size:14px;color:var(--muted);line-height:1.55}
-.price-box{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;display:inline-block}
-.price-box .price{font-family:var(--font-h);font-size:48px;font-weight:bold;color:var(--ink)}
-.price-box .note{font-size:14px;color:var(--subtle);margin-top:4px}
-.product-features{list-style:none}
-.product-features li{padding:10px 0;border-bottom:1px solid var(--border);font-size:15px;color:var(--slate);padding-left:24px;position:relative}
-.product-features li::before{content:"\2713";position:absolute;left:0;color:var(--green);font-weight:bold}
-@media(max-width:768px){
-  .article-title,.page-title{font-size:28px}
-  .article-body p{font-size:15px}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PM Interview Toolkit — gonzalo.tech</title>
+  <meta name="description" content="Everything you need to land a PM job. Resume template, STAR method framework, 30 interview questions, case study walkthrough, portfolio checklist, and negotiation scripts. Free toolkit.">
+  <meta name="keywords" content="PM interview, product manager interview, PM resume template, STAR method, PM case study, product manager portfolio, PM job interview prep">
+  <meta name="author" content="Gonzalo Aguilar">
+  <meta property="og:title" content="PM Interview Toolkit — gonzalo.tech">
+  <meta property="og:description" content="Everything you need to land a PM job. Resume, STAR, case studies, negotiation. Free toolkit.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://gonzalo.tech/products/pm-interview-toolkit.html">
+  <link rel="canonical" href="https://gonzalo.tech/products/pm-interview-toolkit.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "PM Interview Toolkit",
+    "description": "A comprehensive guide for product manager job seekers covering resume, behavioral interviews, case studies, portfolio, and negotiation.",
+    "author": { "@type": "Person", "name": "Gonzalo Aguilar", "url": "https://gonzalo.tech" },
+    "publisher": { "@type": "Organization", "name": "gonzalo.tech" },
+    "url": "https://gonzalo.tech/products/pm-interview-toolkit.html",
+    "inLanguage": "en",
+    "isAccessibleForFree": true
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #0F172A; --slate: #334155; --muted: #64748B; --subtle: #94A3B8;
+      --border: #E2E8F0; --surface: #F8FAFC; --white: #FFFFFF;
+      --red: #DC2626; --red-light: #FEF2F2;
+      --green: #16A34A; --green-light: #F0FDF4;
+      --amber: #D97706; --amber-light: #FFFBEB;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: Calibri, 'Gill Sans', 'Segoe UI', sans-serif;
+    }
+    body { font-family: var(--font-body); font-size: 18px; line-height: 1.7; color: var(--slate); background: var(--white); -webkit-font-smoothing: antialiased; }
+    .container { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 5rem; }
+    .site-header { border-bottom: 1px solid var(--border); padding: 1.25rem 0; margin-bottom: 2.5rem; display: flex; align-items: center; justify-content: space-between; }
+    .site-header a { font-family: var(--font-heading); font-size: 1.2rem; color: var(--ink); text-decoration: none; }
+    .site-header a:hover { color: var(--muted); }
+    .badge { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--green); background: var(--green-light); padding: 0.25rem 0.65rem; border-radius: 4px; }
+    h1 { font-family: var(--font-heading); font-size: 2.4rem; line-height: 1.2; color: var(--ink); margin-bottom: 1rem; }
+    .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+    h2 { font-family: var(--font-heading); font-size: 1.6rem; color: var(--ink); margin-top: 3rem; margin-bottom: 0.75rem; }
+    h3 { font-family: var(--font-heading); font-size: 1.2rem; color: var(--ink); margin-top: 2rem; margin-bottom: 0.5rem; }
+    p { margin-bottom: 1.25rem; }
+    ul, ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+    a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--muted); }
+    hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+    .toc { background: var(--surface); border: 1px solid var(--border); padding: 1.5rem 2rem; margin-bottom: 3rem; border-radius: 4px; }
+    .toc h2 { font-size: 1rem; margin-top: 0; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+    .toc ol { margin: 0; padding-left: 1.25rem; }
+    .toc li { margin-bottom: 0.3rem; font-size: 0.95rem; }
+    .toc a { color: var(--slate); }
+    .callout { padding: 1.25rem 1.5rem; margin: 1.75rem 0; border-left: 4px solid var(--ink); background: var(--surface); }
+    .callout.green { border-color: var(--green); background: var(--green-light); }
+    .callout.amber { border-color: var(--amber); background: var(--amber-light); }
+    .callout.red { border-color: var(--red); background: var(--red-light); }
+    .callout p:last-child { margin-bottom: 0; }
+    .callout-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem; color: var(--muted); }
+    table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; }
+    th { background: var(--ink); color: var(--white); padding: 0.65rem 1rem; text-align: left; font-family: var(--font-heading); font-weight: normal; font-size: 0.9rem; }
+    td { padding: 0.65rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: var(--surface); }
+    .checklist { list-style: none; padding-left: 0; }
+    .checklist li { padding: 0.5rem 0.5rem 0.5rem 2rem; position: relative; border-bottom: 1px solid var(--border); margin-bottom: 0; font-size: 0.95rem; }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li::before { content: "☐"; position: absolute; left: 0; color: var(--muted); font-size: 1.1rem; }
+    /* Resume template */
+    .resume-template { border: 2px dashed var(--border); padding: 2rem; margin: 1.5rem 0; background: var(--surface); font-size: 0.9rem; }
+    .resume-section { margin-bottom: 1.25rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+    .resume-section:last-child { border-bottom: none; margin-bottom: 0; }
+    .resume-section-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.35rem; }
+    .resume-annotation { font-size: 0.8rem; color: var(--amber); font-style: italic; margin-top: 0.25rem; }
+    /* STAR cards */
+    .star-card { border: 1px solid var(--border); margin: 1.5rem 0; border-radius: 4px; overflow: hidden; }
+    .star-header { background: var(--surface); padding: 0.65rem 1.25rem; border-bottom: 1px solid var(--border); }
+    .star-q { font-family: var(--font-heading); color: var(--ink); font-size: 1rem; }
+    .star-body { padding: 0.75rem 1.25rem; }
+    .star-section { margin-bottom: 0.65rem; }
+    .star-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.2rem; }
+    .star-body p { margin-bottom: 0; font-size: 0.92rem; }
+    /* Question categories */
+    .q-category { margin: 2rem 0 0.5rem; }
+    .q-list { list-style: none; padding-left: 0; }
+    .q-list li { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+    .q-list li:last-child { border-bottom: none; }
+    .q-list li::before { content: "Q: "; color: var(--muted); font-weight: 700; font-size: 0.8rem; }
+    /* Case study walkthrough */
+    .case-step { border-left: 3px solid var(--ink); padding: 0.75rem 0 0.75rem 1.25rem; margin-bottom: 1.25rem; }
+    .case-step-num { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+    .case-step-title { font-family: var(--font-heading); color: var(--ink); font-size: 1.05rem; margin-bottom: 0.35rem; }
+    /* Script blocks */
+    .script-block { background: var(--surface); border: 1px solid var(--border); padding: 1rem 1.25rem; margin: 0.75rem 0; font-style: italic; border-radius: 3px; font-size: 0.95rem; }
+    .script-block::before { content: '"'; font-size: 1.5rem; color: var(--muted); line-height: 0; vertical-align: -0.4rem; margin-right: 0.2rem; }
+    .script-block::after { content: '"'; font-size: 1.5rem; color: var(--muted); line-height: 0; vertical-align: -0.4rem; margin-left: 0.2rem; }
+    .pdf-download { margin: 2.5rem 0; padding: 1.25rem 1.5rem; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .pdf-download p { margin: 0; font-size: 0.95rem; }
+    .pdf-download a { display: inline-block; padding: 0.5rem 1.25rem; background: var(--ink); color: var(--white); text-decoration: none; font-size: 0.9rem; font-weight: 600; white-space: nowrap; }
+    .pdf-download a:hover { background: var(--slate); color: var(--white); }
+    .author-bio { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.95rem; color: var(--muted); font-style: italic; }
+    .site-footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); text-align: center; font-size: 0.85rem; color: var(--subtle); }
+    @media (max-width: 600px) {
+      body { font-size: 16px; } h1 { font-size: 1.75rem; } h2 { font-size: 1.3rem; }
+      .container { padding: 1rem 1rem 3rem; }
+      .pdf-download { flex-direction: column; align-items: flex-start; }
+    }
+    @media print {
+      body { font-size: 12pt; color: #000; }
+      .site-header, .site-footer, .pdf-download { display: none; }
+      .container { max-width: 100%; padding: 0; }
+      a { text-decoration: none; color: #000; }
+    }
+  </style>
 </head>
 <body>
-<nav id="navbar">
-  <div class="nav-inner">
-    <a href="../" class="nav-brand">gonzalo.tech</a>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-links" id="navLinks">
-      <a href="../#about">About</a>
-<a href="../courses/ai-augmented-pm.html">Courses</a>
-<a href="../#resources" style="color:#0F172A;font-weight:600;">Resources</a>
-<a href="../#blog">Blog</a>
-<a href="../#newsletter" class="nav-cta">Get the Toolkit</a>
-    </div>
-  </div>
-</nav>
-
 <div class="container">
-  <div class="page-header">
-    <span style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:4px;background:#FFFBEB;color:#D97706;margin-bottom:12px;">COMING SOON</span>
-    <h1 class="page-title">PM Interview Toolkit</h1>
-    <p class="page-desc">Resume templates, STAR method framework, 50+ practice questions, and a real case walkthrough. Everything in one place.</p>
-    <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
-      <div class="price-box">
-        <div class="price">$12</div>
-      </div>
-      <a href="../#newsletter" class="btn-primary">Join waitlist &rarr;</a>
-    </div>
-  </div>
-  <div class="page-section">
-    <h2>What's included</h2>
-    <ul class="product-features">
-      <li>ATS-optimized resume template with PM-specific keywords</li>
-<li>STAR method framework with 10 worked examples</li>
-<li>50+ practice questions organized by category (behavioral, product, technical, estimation)</li>
-<li>Full product case study walkthrough with scoring rubric</li>
-<li>Non-traditional background positioning guide</li>
-    </ul>
-  </div>
-  <div class="page-section" style="border-top:1px solid var(--border);text-align:center;">
-    <h3 style="font-family:var(--font-h);font-size:22px;color:var(--ink);margin-bottom:8px;">Ready to start?</h3>
-    <p style="font-size:15px;color:var(--muted);margin-bottom:24px;">Every toolkit comes from real work, not theory. If it doesn't help, I want to know.</p>
-    <a href="../#newsletter" class="btn-primary" style="font-size:17px;padding:16px 36px;">Join waitlist &rarr;</a>
-  </div>
-</div>
+  <header class="site-header">
+    <a href="../index.html">gonzalo.tech</a>
+    <span class="badge">Free Toolkit</span>
+  </header>
 
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand">gonzalo.tech</div>
-        <div class="footer-tagline">Courses, toolkits, and frameworks for builders who use AI. Built with rigor, explained with care.</div>
+  <article>
+    <h1>PM Interview Toolkit</h1>
+    <div class="meta">
+      By <strong>Gonzalo Aguilar</strong> &nbsp;·&nbsp; Free guide &nbsp;·&nbsp; No email required &nbsp;·&nbsp; Updated April 2026
+    </div>
+
+    <p>The PM interview is one of the most inconsistent hiring processes in tech. Different companies ask different things. What gets you a FAANG offer might not work at a startup. And if you're coming from a non-traditional background, you're doing extra work just to get in the door.</p>
+    <p>This toolkit covers everything: your resume, how to answer behavioral questions, how to crush a case study, what to put in a portfolio, and how to negotiate your offer. No fluff. Just the things that actually matter.</p>
+
+    <nav class="toc">
+      <h2>Table of Contents</h2>
+      <ol>
+        <li><a href="#resume">Resume Template with Annotations</a></li>
+        <li><a href="#star">STAR Method Framework + 10 Example Answers</a></li>
+        <li><a href="#questions">30 Common PM Interview Questions by Category</a></li>
+        <li><a href="#case-study">Case Study Walkthrough: Step-by-Step</a></li>
+        <li><a href="#portfolio">Portfolio Checklist</a></li>
+        <li><a href="#negotiation">Negotiation Script Templates</a></li>
+        <li><a href="#non-traditional">Non-Traditional Background Positioning Guide</a></li>
+      </ol>
+    </nav>
+
+    <div class="pdf-download">
+      <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
+      <a href="../pdfs/pm-interview-toolkit.pdf" download>Download PDF</a>
+    </div>
+
+    <hr>
+
+    <h2 id="resume">1. Resume Template with Annotations</h2>
+
+    <p>A PM resume is not a job description. It's a persuasion document. Every line should answer: "why does this make me the right person for this specific role?"</p>
+
+    <div class="callout amber">
+      <div class="callout-label">The #1 PM Resume Mistake</div>
+      <p>Describing what you were responsible for instead of what you actually changed. "Responsible for product roadmap" tells me nothing. "Shipped a redesigned onboarding flow that reduced time-to-first-value from 4 days to 18 hours, increasing 30-day retention by 22%" tells me everything.</p>
+    </div>
+
+    <div class="resume-template">
+      <div class="resume-section">
+        <div class="resume-section-label">Header</div>
+        <strong>[Your Name]</strong><br>
+        [City, State] &nbsp;·&nbsp; [email] &nbsp;·&nbsp; [LinkedIn URL] &nbsp;·&nbsp; [portfolio URL if applicable]<br>
+        <div class="resume-annotation">No photo, no address, no objective statement. LinkedIn and portfolio URLs only if they add evidence — a sparse LinkedIn hurts more than it helps.</div>
       </div>
-      <div class="footer-col">
-        <h4>Learn</h4>
-        <a href="../courses/ai-augmented-pm.html">Courses</a>
-        <a href="../#resources">Digital products</a>
-        <a href="../#blog">Blog</a>
+
+      <div class="resume-section">
+        <div class="resume-section-label">Summary (2-3 sentences max — or skip it)</div>
+        Product manager with [X] years of experience in [domain/product area], focused on [your specific strength — e.g., "growth and onboarding in B2B SaaS"]. Known for [one distinctive quality or result].
+        <div class="resume-annotation">Only include a summary if it adds something the rest of the resume doesn't. Skip the generic "results-oriented PM with a passion for technology" filler — it says nothing.</div>
       </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <a href="https://linkedin.com/in/gonzaloeaguilar" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://medium.com/@gonzaloeaguilar" target="_blank" rel="noopener">Medium</a>
-        <a href="mailto:hello@gonzalo.tech">hello@gonzalo.tech</a>
+
+      <div class="resume-section">
+        <div class="resume-section-label">Experience (reverse chronological — most important section)</div>
+
+        <strong>[Job Title]</strong> — [Company Name] &nbsp;&nbsp; [Start Month/Year] – [End Month/Year]<br>
+        <em>One sentence on what the company does and your scope (team size, product, revenue line if relevant)</em>
+
+        <ul style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
+          <li><strong>Led [WHAT]</strong> that resulted in [METRIC IMPROVEMENT] — e.g., "Led redesign of the payment flow that reduced checkout abandonment by 18%"</li>
+          <li><strong>Launched [PRODUCT/FEATURE]</strong> for [AUDIENCE] in [TIMEFRAME], achieving [OUTCOME]</li>
+          <li><strong>Partnered with [TEAM/STAKEHOLDER]</strong> to [JOINT OUTCOME], resulting in [MEASURABLE RESULT]</li>
+          <li><strong>Defined and shipped [THING]</strong> from [START STATE] to [END STATE] in [TIMELINE]</li>
+        </ul>
+        <div class="resume-annotation">3-5 bullets per role. Lead with a strong action verb. End with a metric. If you don't have a metric, describe the scope or impact qualitatively — but push hard for numbers first.</div>
+      </div>
+
+      <div class="resume-section">
+        <div class="resume-section-label">Skills</div>
+        <strong>Product:</strong> Product strategy, roadmap planning, user research, A/B testing, go-to-market<br>
+        <strong>Data:</strong> SQL, GA4, Amplitude, Mixpanel, [whatever you actually use]<br>
+        <strong>Tools:</strong> Jira, Confluence, Figma, Linear, Notion<br>
+        <div class="resume-annotation">Only list tools you can actually discuss in an interview. No one should catch you bluffing on a skill you listed. Skip the "Microsoft Office" era stuff — it's assumed.</div>
+      </div>
+
+      <div class="resume-section">
+        <div class="resume-section-label">Education</div>
+        [Degree] in [Field] — [University] &nbsp;&nbsp; [Year]<br>
+        <div class="resume-annotation">Goes at the bottom unless you're a recent grad (under 2 years experience). No GPA unless it's 3.8+ and you're early-career. No high school.</div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Gonzalo Aguilar. All rights reserved.</span>
-      <span>Built in Fort Lauderdale, FL</span>
+
+    <h3>Resume Quick Rules</h3>
+    <ul class="checklist">
+      <li>One page if under 8 years experience; two pages is fine for 10+ years</li>
+      <li>Every impact statement has a metric (%, $, time saved, users impacted)</li>
+      <li>No passive voice ("was responsible for" → "led", "shipped", "defined")</li>
+      <li>No buzzwords without evidence: "strategic," "innovative," "thought leader"</li>
+      <li>Tailored for each role — swap in relevant bullets based on the job description</li>
+      <li>ATS-friendly format: no tables, columns, or text boxes in the main document</li>
+      <li>No spelling or grammar errors — have two people proof it</li>
+    </ul>
+
+    <hr>
+
+    <h2 id="star">2. STAR Method Framework + 10 Example Answers</h2>
+
+    <p>STAR = Situation, Task, Action, Result. It's the most reliable structure for behavioral interview answers. Most interviewers are implicitly scoring you on these four dimensions.</p>
+
+    <table>
+      <thead>
+        <tr><th>Letter</th><th>What to Cover</th><th>How Long</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>S — Situation</strong></td><td>The context. What was happening? What was the stakes? Keep it brief.</td><td>10–15% of your answer</td></tr>
+        <tr><td><strong>T — Task</strong></td><td>Your specific role. What were you responsible for? What was the challenge?</td><td>10–15% of your answer</td></tr>
+        <tr><td><strong>A — Action</strong></td><td>What YOU did. Specific steps. Use "I" not "we." This is the most important part.</td><td>50–60% of your answer</td></tr>
+        <tr><td><strong>R — Result</strong></td><td>What happened? Metrics if you have them. What did you learn?</td><td>15–20% of your answer</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout amber">
+      <div class="callout-label">The Most Common STAR Failure</div>
+      <p>Spending too much time on S and T and not enough on A. Interviewers want to know what <em>you</em> did — your judgment, your actions, your decisions. The context is just setup.</p>
     </div>
-  </div>
-</footer>
-<script>
-const nav = document.getElementById('navbar');
-window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
-hamburger.addEventListener('click', () => { navLinks.classList.toggle('open'); });
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
-    const href = link.getAttribute('href');
-    if (href.startsWith('/#')) { return; }
-    e.preventDefault();
-    const target = document.querySelector(href);
-    if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); navLinks.classList.remove('open'); }
-  });
-});
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-</script>
+
+    <h3>5 Example STAR Answers</h3>
+
+    <div class="star-card">
+      <div class="star-header">
+        <div class="star-q">"Tell me about a time you had to make a decision with incomplete data."</div>
+      </div>
+      <div class="star-body">
+        <div class="star-section">
+          <div class="star-label">Situation</div>
+          <p>We were 3 weeks from a major product launch. Our analytics showed lower-than-expected engagement in beta, but we had limited qualitative data on why.</p>
+        </div>
+        <div class="star-section">
+          <div class="star-label">Task</div>
+          <p>I needed to decide: delay the launch by 6 weeks to gather more data, or proceed and risk a poor reception — all with the CEO expecting us to ship on schedule.</p>
+        </div>
+        <div class="star-section">
+          <div class="star-label">Action</div>
+          <p>I ran a quick decision matrix. I identified the top 3 hypotheses for low engagement, then set up 5 rapid user interviews over 72 hours — not to get statistical significance, but to learn enough to de-risk the biggest hypothesis. The interviews revealed users were confused by one specific step in the setup flow, not the core value proposition. I made a judgment call: we'd fix that one step, ship on schedule, and instrument 3 new events to monitor post-launch. I documented my reasoning so the team understood why we were proceeding.</p>
+        </div>
+        <div class="star-section">
+          <div class="star-label">Result</div>
+          <p>We launched on time. The setup step fix reduced the drop-off at that step by 34% vs. beta. The new instrumentation caught a second issue within a week that we addressed quickly. I learned that structured rapid research often beats more data — 5 interviews done well beat waiting for 3 more weeks of quantitative noise.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="star-card">
+      <div class="star-header">
+        <div class="star-q">"Tell me about a time you pushed back on a stakeholder."</div>
+      </div>
+      <div class="star-body">
+        <div class="star-section">
+          <div class="star-label">Situation</div>
+          <p>Our sales team came to me with a request to build a highly customizable feature that two enterprise clients had explicitly asked for. The estimate was 8 weeks of engineering work.</p>
+        </div>
+        <div class="star-section">
+          <div class="star-label">Task</div>
+          <p>I was under pressure to prioritize this — one of the clients was a high-value account and sales made it clear they were watching. But it conflicted with our Q3 roadmap focus on improving core retention.</p>
+        </div>
+        <div class="star-section">
+          <div class="star-label">Action</div>
+          <p>I didn't just say no. I went back to the two enterprise clients directly and interviewed them about the underlying need. In both cases, what they actually wanted was better reporting visibility, not configurability. I built a case: I showed that a lightweight reporting improvement (2 weeks of work) would address the actual need, while the customizable feature they'd specified would take 4x as long and still might not solve the root problem. I presented this to the VP of Sales with data and got alignment to try the reporting approach first.</p>
+        </div>
+        <div class="star-section">
+          <div class="star-label">Result</div>
+          <p>We built the reporting improvement in 2 weeks. Both enterprise clients were satisfied — one specifically said it was exactly what they needed. I learned that stakeholder requests are often the symptom, not the diagnosis. Going directly to the end customer changed the conversation entirely.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="star-card">
+      <div class="star-header">
+        <div class="star-q">"Describe a product that failed. What did you learn?"</div>
+      </div>
+      <div class="star-body">
+        <div class="star-section">
+          <div class="star-label">Situation</div>
+          <p>I led a social sharing feature for a consumer app. We had strong internal conviction that users would want to share their in-app milestones with friends.</p>
+        </div>
+        <div class="star-section">
+          <div class="star-label">Task</div>
+          <p>My job was to define, build, and measure the feature's impact on growth and engagement. We had 10 weeks of engineering time invested.</p>
+        </div>
+        <div class="star-section">
+          <div class="star-label">Action</div>
+          <p>We launched to a 50% rollout. I tracked share rates, referral conversions, and sentiment. Share rate was 0.3% — far below the 5%+ we needed for the feature to be meaningful. I ran a small exit survey on users who saw the share prompt and declined. The top answer: "I don't want my friends to know I use this app." We had solved a social sharing problem our users didn't have, because they felt some privacy around the app itself. I called a team review, documented the findings honestly, and recommended we kill the feature and reallocate the roadmap time.</p>
+        </div>
+        <div class="star-section">
+          <div class="star-label">Result</div>
+          <p>The feature was pulled. I turned it into an internal post on assumption validation — specifically about the importance of testing the premise before building the solution. The team adopted a new practice of explicit assumption logging on all features before kickoff. Failing fast on this probably saved us from two or three similar mistakes in the next cycle.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="star-card">
+      <div class="star-header">
+        <div class="star-q">"Tell me about a time you had to work across teams that had conflicting priorities."</div>
+      </div>
+      <div class="star-body">
+        <div class="star-section">
+          <div class="star-label">Situation</div>
+          <p>Engineering wanted to spend a full quarter on technical debt. Marketing needed a new campaign feature by a hard external deadline. Both had legitimate needs and the same shared engineering resources.</p>
+        </div>
+        <div class="star-section">
+          <div class="star-label">Task</div>
+          <p>As the PM, I needed to broker an agreement and make a recommendation that didn't just split the difference — that actually served the business well.</p>
+        </div>
+        <div class="star-section">
+          <div class="star-label">Action</div>
+          <p>I facilitated a structured session where each team had 20 minutes to lay out their case using a simple impact-risk framework. Engineering documented the actual incidents and slowdowns caused by the tech debt (more concrete than I expected). Marketing showed the revenue opportunity tied to their deadline. I then proposed a hybrid: a 6-week sprint with 60% of capacity on the marketing feature (enough to hit the deadline) and 40% allocated to the highest-risk tech debt items Engineering had identified. I also proposed a post-launch tech debt quarter to address the rest.</p>
+        </div>
+        <div class="star-section">
+          <div class="star-label">Result</div>
+          <p>Both teams agreed. We hit the marketing deadline, and Engineering cleared their top 3 tech debt risks. It wasn't perfect for anyone but was acceptable to everyone — and it held up because I'd made the tradeoffs explicit and documented rather than kicking them down the road.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="star-card">
+      <div class="star-header">
+        <div class="star-q">"Tell me about a time you changed your mind based on data."</div>
+      </div>
+      <div class="star-body">
+        <div class="star-section">
+          <div class="star-label">Situation</div>
+          <p>I was convinced we needed to simplify our pricing page — fewer tiers, less copy, more focus. I pushed this for two months before we had data.</p>
+        </div>
+        <div class="star-section">
+          <div class="star-label">Task</div>
+          <p>We ran an A/B test: my simplified version vs. the existing more detailed pricing page.</p>
+        </div>
+        <div class="star-section">
+          <div class="star-label">Action</div>
+          <p>After 4 weeks the test was statistically significant. My simplified version had 12% lower conversion. I dug into session recordings to understand why. It turned out that for our product — which was mid-market B2B with a longer buying cycle — buyers needed detail to build internal business cases. My "simpler" page removed the information procurement teams needed. I had optimized for aesthetic simplicity at the cost of decision-making information. I documented this finding, killed my variant, and revised my mental model about what "simple" means for different buyer types.</p>
+        </div>
+        <div class="star-section">
+          <div class="star-label">Result</div>
+          <p>The original pricing page stayed, with some improvements based on what the recordings revealed. The real win was the team saw me use data to contradict my own strong opinion — which made it easier for others to change their minds in future debates without feeling like they'd "lost."</p>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2 id="questions">3. 30 Common PM Interview Questions by Category</h2>
+
+    <h3 class="q-category">Behavioral Questions</h3>
+    <ul class="q-list">
+      <li>Tell me about a product you're proud of and what you learned from it.</li>
+      <li>Describe a time you had to say no to a feature request.</li>
+      <li>Tell me about a time you failed as a PM. What happened?</li>
+      <li>How do you prioritize when everything is high priority?</li>
+      <li>Tell me about a time you influenced without authority.</li>
+      <li>Describe a time you had to change your roadmap mid-execution.</li>
+      <li>How do you handle disagreement with your engineering lead?</li>
+      <li>Tell me about a time you used data to change a decision.</li>
+    </ul>
+
+    <h3 class="q-category">Strategy &amp; Metrics Questions</h3>
+    <ul class="q-list">
+      <li>What metrics would you use to measure the success of [X feature]?</li>
+      <li>Our DAU dropped 15% last week. Walk me through how you'd diagnose it.</li>
+      <li>How do you decide what to build next?</li>
+      <li>How would you define the north star metric for [X product]?</li>
+      <li>What does good product strategy look like? Give me an example.</li>
+      <li>How would you evaluate whether to build, buy, or partner?</li>
+    </ul>
+
+    <h3 class="q-category">Product Design / Case Questions</h3>
+    <ul class="q-list">
+      <li>How would you improve [well-known product — e.g., Google Maps, Spotify, Airbnb]?</li>
+      <li>Design a product for [specific user — e.g., elderly people to manage medications].</li>
+      <li>We want to enter [new market]. How would you approach it?</li>
+      <li>Walk me through how you'd launch a new feature from idea to release.</li>
+      <li>How would you reduce churn for a subscription product?</li>
+      <li>What would you change about our product and why?</li>
+    </ul>
+
+    <h3 class="q-category">Estimation / Analytical Questions</h3>
+    <ul class="q-list">
+      <li>How many Uber rides are taken in New York City on a typical day?</li>
+      <li>Estimate the market size for [X product/service].</li>
+      <li>We're seeing higher cart abandonment on mobile vs. desktop. What do you do?</li>
+      <li>How would you set up an A/B test for [specific change]?</li>
+    </ul>
+
+    <h3 class="q-category">Cross-Functional / Leadership Questions</h3>
+    <ul class="q-list">
+      <li>How do you work with engineers? How do you earn their trust?</li>
+      <li>How do you handle a designer who disagrees with your direction?</li>
+      <li>What does your relationship with your data team look like?</li>
+      <li>How do you communicate roadmap changes to customers?</li>
+    </ul>
+
+    <h3 class="q-category">Questions to Ask the Interviewer</h3>
+    <ul class="q-list">
+      <li>What's the biggest product challenge this team is facing right now?</li>
+      <li>How does this company make product decisions? Who has final say?</li>
+      <li>What does success look like for someone in this role in the first 90 days?</li>
+      <li>What's one thing about the team culture you'd want me to know before I start?</li>
+    </ul>
+
+    <hr>
+
+    <h2 id="case-study">4. Case Study Walkthrough: Step-by-Step</h2>
+
+    <p>Product case interviews test your thinking process, not your knowledge of the product. Interviewers want to see: can this person structure ambiguous problems, make reasonable assumptions, and communicate clearly under pressure?</p>
+
+    <p><strong>Sample prompt:</strong> "How would you improve Spotify?"</p>
+
+    <div class="case-step">
+      <div class="case-step-num">Step 1 of 6</div>
+      <div class="case-step-title">Clarify the goal (30 seconds)</div>
+      <p>Before saying a single thing about features, ask: "Before I dive in, can I clarify the goal? Are we trying to grow the user base, improve retention, increase revenue, or something specific about engagement?" The answer changes everything. An interviewer who says "retention" wants a different answer than one who says "international expansion."</p>
+    </div>
+
+    <div class="case-step">
+      <div class="case-step-num">Step 2 of 6</div>
+      <div class="case-step-title">Define the user segment (1 minute)</div>
+      <p>Don't try to improve the product for everyone. Pick a segment and say why. "I'm going to focus on casual listeners — people who use Spotify 2-3 times a week but haven't converted to Premium. This is likely the largest addressable improvement opportunity and aligns with a retention/conversion goal." Name your assumption and commit to it.</p>
+    </div>
+
+    <div class="case-step">
+      <div class="case-step-num">Step 3 of 6</div>
+      <div class="case-step-title">Identify user needs and pain points (2 minutes)</div>
+      <p>Walk through the user's experience. What job are they trying to do? What's frustrating? For casual listeners: "They open Spotify when they want music but don't have a specific thing in mind. The friction is the blank-slate decision — what do I feel like listening to? They want curation that matches their current context or mood, not just their listening history." Use specifics, not generic "users want a better experience."</p>
+    </div>
+
+    <div class="case-step">
+      <div class="case-step-num">Step 4 of 6</div>
+      <div class="case-step-title">Generate solutions (2-3 minutes)</div>
+      <p>Generate 3-5 ideas at different levels of ambition. Don't just pick the first thing that comes to mind — show range. "I could see three directions: (1) a contextual listening mode that asks 'what are you doing right now' to curate a playlist, (2) a social layer showing what close friends are listening to right now, (3) improving Discover Weekly by making it daily and mood-parameterized." Then say which one you'd prioritize and why.</p>
+    </div>
+
+    <div class="case-step">
+      <div class="case-step-num">Step 5 of 6</div>
+      <div class="case-step-title">Prioritize and justify (1-2 minutes)</div>
+      <p>Pick one and argue for it. Use your evaluation criteria explicitly: "I'd go with the contextual listening mode first because it addresses the core job-to-be-done for casual listeners without requiring social graph investment, it can be tested quickly with a simple survey-to-playlist flow, and success is clearly measurable through session initiation rate and weekly active listen rate."</p>
+    </div>
+
+    <div class="case-step">
+      <div class="case-step-num">Step 6 of 6</div>
+      <div class="case-step-title">Define success (1 minute)</div>
+      <p>Close by saying how you'd measure it. "I'd measure success with three metrics: (1) 7-day activation rate among users who try the contextual flow, (2) whether casual listener session frequency increases week-over-week, and (3) free-to-Premium conversion rate among that cohort at 30 and 90 days."</p>
+    </div>
+
+    <div class="callout green">
+      <div class="callout-label">The Thing That Separates Good Answers from Great Ones</div>
+      <p>Tradeoffs. At every decision point, name what you're giving up. "I chose to focus on retention over acquisition because..." "I'm deprioritizing the social feature because..." Interviewers trust PMs who see the full picture, not just the upside of their recommendation.</p>
+    </div>
+
+    <hr>
+
+    <h2 id="portfolio">5. Portfolio Checklist</h2>
+
+    <p>A PM portfolio is not required everywhere — but it's increasingly asked for at growth-stage and product-led companies. Here's what to include (and what to skip).</p>
+
+    <h3>Include This</h3>
+    <ul class="checklist">
+      <li>2-3 case studies max. Quality over quantity. One mediocre case study hurts more than zero.</li>
+      <li>Each case study: the problem you were solving, your process, the key decision you made, the outcome (with metrics)</li>
+      <li>Evidence of user research: actual quotes, methodology, how it influenced your decisions</li>
+      <li>Metrics that show outcomes, not just activity. "Shipped 12 features" is not a portfolio piece.</li>
+      <li>A clear explanation of your specific role — what you owned vs. what was collaborative</li>
+      <li>One example of something that didn't work and what you learned from it</li>
+    </ul>
+
+    <h3>Skip This</h3>
+    <ul class="checklist">
+      <li>Confidential information. Blur or omit proprietary data, unreleased features, or internal metrics you don't have permission to share</li>
+      <li>Wireframes and mockups without context. A screen without the "why" is just a screen.</li>
+      <li>Everything you've ever worked on. 3 focused examples beat 10 scattered ones every time</li>
+      <li>Generic "PM skills" essays. Show your thinking through real work, not abstractions</li>
+      <li>Anything older than 5 years unless it's directly relevant to the role</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout-label">Format Options</div>
+      <p><strong>Notion or personal site:</strong> Easy to update, easy to share a link. Best for most roles.<br>
+      <strong>PDF:</strong> Good backup for emailing. Keep it under 5MB.<br>
+      <strong>Slides (Figma or Canva):</strong> Useful if you're interviewing somewhere visual-forward or design-collaborative.<br>
+      Never send an unlinked Google Doc — it looks unfinished.</p>
+    </div>
+
+    <hr>
+
+    <h2 id="negotiation">6. Negotiation Script Templates</h2>
+
+    <p>Most PMs leave money on the table because they don't negotiate. The first number a company gives you is almost never their best number. Here are the scripts.</p>
+
+    <h3>When You Receive the Offer</h3>
+    <div class="script-block">Thank you so much — I'm genuinely excited about this role. I'd like a couple of days to review everything properly. Can I get back to you by [day]?</div>
+    <p>Always ask for time. Never negotiate in the moment when you're surprised by an offer.</p>
+
+    <h3>When You Counter on Salary</h3>
+    <div class="script-block">I'm really excited about this opportunity and want to make it work. Based on my research and experience level, I was expecting something closer to [number]. Is there flexibility there?</div>
+    <p>State a specific number — not a range. Giving a range tells them to anchor on the low end. Then be quiet. Let them respond. The silence is not your problem to fill.</p>
+
+    <h3>When You Counter on Equity</h3>
+    <div class="script-block">The base makes sense. Could we look at the equity package? I'd like to increase my stake given the stage and what I'd be bringing to the role.</div>
+    <p>At a startup, equity is often more negotiable than salary. At a large company, RSU grants sometimes have more flexibility than the recruiter implies.</p>
+
+    <h3>When There's a Competing Offer</h3>
+    <div class="script-block">I want to be transparent — I have another offer I'm evaluating. This role is actually my first choice, and I'd love to find a way to make it work. Is there any room to move on [specific item] to help me make the decision easier?</div>
+    <p>Only use this if it's true. A bluff on a competing offer can backfire if they call it.</p>
+
+    <h3>When They Say "This Is Our Best Offer"</h3>
+    <div class="script-block">I understand. Before I decide, are there other forms of compensation we haven't discussed — signing bonus, accelerated vesting, additional PTO, or remote flexibility?</div>
+    <p>When cash is fixed, get creative on total comp. A $15K signing bonus is often easier to approve than a $15K salary increase because it's a one-time cost.</p>
+
+    <hr>
+
+    <h2 id="non-traditional">7. Non-Traditional Background Positioning Guide</h2>
+
+    <p>If you're transitioning into PM from engineering, design, customer success, operations, teaching, law, or anywhere else — this section is for you.</p>
+
+    <p>The challenge isn't that you're unqualified. It's that the story isn't obvious. Your job is to make the connection so clear that the interviewer doesn't have to do any work.</p>
+
+    <h3>The Core Reframe</h3>
+    <p>Stop describing your previous work as "background." Start describing it as <em>unfair advantage</em>. A lawyer who becomes a PM brings negotiation and risk-analysis skills that most PMs lack. An engineer-turned-PM has a technical intuition that accelerates engineering collaboration. A teacher brings user empathy and communication skills that are rare.</p>
+
+    <p><strong>The sentence you want to say in every interview:</strong></p>
+    <div class="script-block">My background in [previous field] gave me [specific skill/perspective] that I don't think most PMs have, and it directly applies to this role because [specific connection to their problem].</div>
+
+    <h3>Positioning by Background</h3>
+    <table>
+      <thead>
+        <tr><th>Your Background</th><th>Your Angle</th><th>Evidence to Develop</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Engineering</strong></td>
+          <td>"I can have honest conversations about technical tradeoffs that most PMs can't. Engineers trust me because I understand the cost of what I'm asking for."</td>
+          <td>Story of a time you caught a technical risk or made a scope call based on engineering insight</td>
+        </tr>
+        <tr>
+          <td><strong>Design / UX</strong></td>
+          <td>"I lead with the user. I can write a brief, give meaningful design feedback, and know when we're shipping something that will confuse users."</td>
+          <td>Story of a time your design eye caught a UX problem before it shipped</td>
+        </tr>
+        <tr>
+          <td><strong>Customer Success / Sales</strong></td>
+          <td>"I've had more real customer conversations than most PMs who have been in the role for years. I know what they actually say vs. what we think they say."</td>
+          <td>A specific customer insight that shaped a product decision</td>
+        </tr>
+        <tr>
+          <td><strong>Operations / Consulting</strong></td>
+          <td>"I know how to structure ambiguous problems and get cross-functional teams aligned without formal authority."</td>
+          <td>A project where you drove alignment across teams with competing interests</td>
+        </tr>
+        <tr>
+          <td><strong>Finance / Analytics</strong></td>
+          <td>"I'm comfortable with data and make decisions based on evidence, not instinct. I can build the business case for anything I'm proposing."</td>
+          <td>A decision you made or changed based on data analysis</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout green">
+      <div class="callout-label">The Bottom Line</div>
+      <p>Non-traditional backgrounds are increasingly valued in PM roles — especially at companies that have realized that "trained as a PM" doesn't guarantee good product thinking. Your job is to translate your experience into PM language: problems, users, tradeoffs, outcomes. The skills transfer. The vocabulary just needs to change.</p>
+    </div>
+
+    <div class="pdf-download">
+      <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
+      <a href="../pdfs/pm-interview-toolkit.pdf" download>Download PDF</a>
+    </div>
+
+    <div class="author-bio">
+      <p>Gonzalo Aguilar is a Senior Product Manager specializing in growth, identity, and onboarding in regulated markets. He writes about product strategy, conversion optimization, and practical AI workflows at <a href="../index.html">gonzalo.tech</a>.</p>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    &copy; 2026 gonzalo.tech — Gonzalo Aguilar &nbsp;·&nbsp; <a href="../index.html" style="color:inherit;">Home</a>
+  </footer>
+</div>
 </body>
 </html>

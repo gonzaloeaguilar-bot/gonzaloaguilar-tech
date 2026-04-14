@@ -1,181 +1,666 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Small Biz Digital Toolkit — gonzalo.tech</title>
-<meta name="description" content="Digital toolkit for small business owners. Landing page, analytics, SEO, and conversion — no tech team required.">
-<meta property="og:title" content="Small Biz Digital Toolkit — gonzalo.tech">
-<meta property="og:description" content="Digital toolkit for small business owners. Landing page, analytics, SEO, and conversion — no tech team required.">
-<link rel="canonical" href="https://gonzalo.tech">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--ink:#0F172A;--slate:#334155;--muted:#64748B;--subtle:#94A3B8;--border:#E2E8F0;--surface:#F8FAFC;--white:#FFFFFF;--red:#DC2626;--red-light:#FEF2F2;--green:#16A34A;--green-light:#F0FDF4;--amber:#D97706;--amber-light:#FFFBEB;--font-h:Georgia,'Times New Roman',serif;--font-b:Calibri,'Segoe UI',system-ui,sans-serif;--font-c:Consolas,'Courier New',monospace;--max-w:1080px}
-body{font-family:var(--font-b);color:var(--slate);background:var(--white);line-height:1.5;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
-.container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
-nav.scrolled{box-shadow:0 1px 8px rgba(15,23,42,0.06)}
-.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px}
-.nav-brand{font-family:var(--font-h);font-size:20px;font-weight:bold;color:var(--ink);letter-spacing:-0.5px}
-.nav-links{display:flex;gap:28px;align-items:center}
-.nav-links a{font-size:14px;color:var(--muted);font-weight:500;transition:color .2s}
-.nav-links a:hover{color:var(--ink)}
-.nav-cta{font-size:13px!important;font-weight:600!important;color:var(--white)!important;background:var(--ink);padding:8px 18px;border-radius:6px;transition:opacity .2s}
-.nav-cta:hover{opacity:.88}
-.hamburger{display:none;background:none;border:none;cursor:pointer;width:28px;height:20px;position:relative}
-.hamburger span{display:block;width:100%;height:2px;background:var(--ink);position:absolute;left:0;transition:all .3s}
-.hamburger span:nth-child(1){top:0}.hamburger span:nth-child(2){top:9px}.hamburger span:nth-child(3){top:18px}
-footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 32px}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;margin-bottom:32px}
-.footer-brand{font-family:var(--font-h);font-size:18px;font-weight:bold;color:var(--ink);margin-bottom:8px}
-.footer-tagline{font-size:13px;color:var(--muted);max-width:280px;line-height:1.5}
-.footer-col h4{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
-.footer-col a{display:block;font-size:14px;color:var(--slate);padding:4px 0;transition:color .2s}
-.footer-col a:hover{color:var(--ink)}
-.footer-bottom{border-top:1px solid var(--border);padding-top:24px;font-size:12px;color:var(--subtle);display:flex;justify-content:space-between;align-items:center}
-.btn-primary{display:inline-block;padding:14px 28px;background:var(--ink);color:var(--white);font-weight:600;font-size:15px;border-radius:6px;transition:opacity .2s;border:none;cursor:pointer}
-.btn-primary:hover{opacity:.88}
-.btn-secondary{display:inline-block;padding:14px 28px;border:1px solid var(--border);color:var(--ink);font-weight:600;font-size:15px;border-radius:6px;transition:all .2s;background:transparent;cursor:pointer}
-.btn-secondary:hover{border-color:var(--ink)}
-.fade-in{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
-.fade-in.visible{opacity:1;transform:translateY(0)}
-@media(max-width:768px){
-  .nav-links{display:none}.hamburger{display:block}
-  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);padding:20px 24px;gap:16px}
-  .footer-grid{grid-template-columns:1fr;gap:32px}
-}
-/* Article styles */
-.article-header{padding:120px 0 48px}
-.article-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
-.article-title{font-family:var(--font-h);font-size:38px;font-weight:bold;color:var(--ink);line-height:1.2;margin-bottom:16px;max-width:720px}
-.article-meta{font-size:14px;color:var(--subtle);margin-bottom:32px}
-.article-body{max-width:720px;margin:0 auto;padding:0 24px 96px}
-.article-body h2{font-family:var(--font-h);font-size:24px;color:var(--ink);margin:40px 0 16px;line-height:1.3}
-.article-body h3{font-size:18px;font-weight:600;color:var(--ink);margin:32px 0 12px}
-.article-body p{font-size:16px;color:var(--slate);line-height:1.7;margin-bottom:16px;max-width:65ch}
-.article-body strong{color:var(--ink)}
-.article-body blockquote{border-left:3px solid var(--border);padding:12px 20px;margin:24px 0;background:var(--surface);border-radius:0 6px 6px 0}
-.article-body blockquote p{color:var(--muted);font-size:15px;margin-bottom:0}
-.article-cta{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;margin:48px 0;text-align:center}
-.article-cta h3{font-family:var(--font-h);font-size:20px;color:var(--ink);margin-bottom:8px}
-.article-cta p{font-size:14px;color:var(--muted);margin-bottom:16px}
-.article-bio{border-top:1px solid var(--border);padding-top:24px;margin-top:48px;font-size:14px;color:var(--muted);font-style:italic;font-family:var(--font-h)}
-/* Course/product page styles */
-.page-header{padding:120px 0 48px;border-bottom:1px solid var(--border)}
-.page-title{font-family:var(--font-h);font-size:38px;font-weight:bold;color:var(--ink);line-height:1.2;margin-bottom:12px;max-width:640px}
-.page-desc{font-size:17px;color:var(--slate);line-height:1.65;max-width:600px;margin-bottom:24px}
-.page-section{padding:64px 0}
-.page-section h2{font-family:var(--font-h);font-size:26px;color:var(--ink);margin-bottom:24px}
-.module-list{list-style:none;counter-reset:module}
-.module-list li{counter-increment:module;padding:20px 0;border-bottom:1px solid var(--border);display:flex;gap:16px;align-items:start}
-.module-list li::before{content:counter(module,decimal-leading-zero);font-family:var(--font-h);font-size:24px;color:var(--subtle);font-weight:bold;min-width:36px}
-.module-title{font-weight:600;color:var(--ink);font-size:16px;margin-bottom:4px}
-.module-desc{font-size:14px;color:var(--muted);line-height:1.55}
-.price-box{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;display:inline-block}
-.price-box .price{font-family:var(--font-h);font-size:48px;font-weight:bold;color:var(--ink)}
-.price-box .note{font-size:14px;color:var(--subtle);margin-top:4px}
-.product-features{list-style:none}
-.product-features li{padding:10px 0;border-bottom:1px solid var(--border);font-size:15px;color:var(--slate);padding-left:24px;position:relative}
-.product-features li::before{content:"\2713";position:absolute;left:0;color:var(--green);font-weight:bold}
-@media(max-width:768px){
-  .article-title,.page-title{font-size:28px}
-  .article-body p{font-size:15px}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Small Biz Digital Toolkit — gonzalo.tech</title>
+  <meta name="description" content="A complete digital marketing toolkit for small businesses. Landing page checklist, GA4 setup guide, SEO basics, email capture, content calendar, free tools list, and monthly review template. Free.">
+  <meta name="keywords" content="small business digital marketing, landing page checklist, GA4 setup guide, small business SEO, email capture strategy, free marketing tools, small business website">
+  <meta name="author" content="Gonzalo Aguilar">
+  <meta property="og:title" content="Small Biz Digital Toolkit — gonzalo.tech">
+  <meta property="og:description" content="Everything a small business needs to get their digital presence working. Landing pages, analytics, SEO, email, and free tools. No fluff.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://gonzalo.tech/products/small-biz-digital-toolkit.html">
+  <link rel="canonical" href="https://gonzalo.tech/products/small-biz-digital-toolkit.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Small Biz Digital Toolkit",
+    "description": "A complete guide covering landing pages, analytics setup, SEO, email capture, content strategy, free tools, and monthly review habits for small business owners.",
+    "author": { "@type": "Person", "name": "Gonzalo Aguilar", "url": "https://gonzalo.tech" },
+    "publisher": { "@type": "Organization", "name": "gonzalo.tech" },
+    "url": "https://gonzalo.tech/products/small-biz-digital-toolkit.html",
+    "inLanguage": "en",
+    "isAccessibleForFree": true
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #0F172A; --slate: #334155; --muted: #64748B; --subtle: #94A3B8;
+      --border: #E2E8F0; --surface: #F8FAFC; --white: #FFFFFF;
+      --red: #DC2626; --red-light: #FEF2F2;
+      --green: #16A34A; --green-light: #F0FDF4;
+      --amber: #D97706; --amber-light: #FFFBEB;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: Calibri, 'Gill Sans', 'Segoe UI', sans-serif;
+    }
+    body { font-family: var(--font-body); font-size: 18px; line-height: 1.7; color: var(--slate); background: var(--white); -webkit-font-smoothing: antialiased; }
+    .container { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 5rem; }
+    .site-header { border-bottom: 1px solid var(--border); padding: 1.25rem 0; margin-bottom: 2.5rem; display: flex; align-items: center; justify-content: space-between; }
+    .site-header a { font-family: var(--font-heading); font-size: 1.2rem; color: var(--ink); text-decoration: none; }
+    .site-header a:hover { color: var(--muted); }
+    .badge { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--green); background: var(--green-light); padding: 0.25rem 0.65rem; border-radius: 4px; }
+    h1 { font-family: var(--font-heading); font-size: 2.4rem; line-height: 1.2; color: var(--ink); margin-bottom: 1rem; }
+    .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+    h2 { font-family: var(--font-heading); font-size: 1.6rem; color: var(--ink); margin-top: 3rem; margin-bottom: 0.75rem; }
+    h3 { font-family: var(--font-heading); font-size: 1.2rem; color: var(--ink); margin-top: 2rem; margin-bottom: 0.5rem; }
+    p { margin-bottom: 1.25rem; }
+    ul, ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+    a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--muted); }
+    hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+    .toc { background: var(--surface); border: 1px solid var(--border); padding: 1.5rem 2rem; margin-bottom: 3rem; border-radius: 4px; }
+    .toc h2 { font-size: 1rem; margin-top: 0; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+    .toc ol { margin: 0; padding-left: 1.25rem; }
+    .toc li { margin-bottom: 0.3rem; font-size: 0.95rem; }
+    .toc a { color: var(--slate); }
+    .callout { padding: 1.25rem 1.5rem; margin: 1.75rem 0; border-left: 4px solid var(--ink); background: var(--surface); }
+    .callout.green { border-color: var(--green); background: var(--green-light); }
+    .callout.amber { border-color: var(--amber); background: var(--amber-light); }
+    .callout.red { border-color: var(--red); background: var(--red-light); }
+    .callout p:last-child { margin-bottom: 0; }
+    .callout-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem; color: var(--muted); }
+    table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.92rem; }
+    th { background: var(--ink); color: var(--white); padding: 0.65rem 1rem; text-align: left; font-family: var(--font-heading); font-weight: normal; font-size: 0.9rem; }
+    td { padding: 0.65rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: var(--surface); }
+    .checklist { list-style: none; padding-left: 0; }
+    .checklist li { padding: 0.5rem 0.5rem 0.5rem 2rem; position: relative; border-bottom: 1px solid var(--border); margin-bottom: 0; font-size: 0.95rem; }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li::before { content: "☐"; position: absolute; left: 0; color: var(--muted); font-size: 1.1rem; }
+    /* GA4 steps */
+    .ga4-step { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1rem 0; border-bottom: 1px solid var(--border); }
+    .ga4-step:last-child { border-bottom: none; }
+    .ga4-num { background: var(--ink); color: var(--white); font-family: var(--font-heading); font-size: 1rem; width: 2rem; height: 2rem; min-width: 2rem; display: flex; align-items: center; justify-content: center; border-radius: 2px; }
+    .ga4-content h4 { font-family: var(--font-heading); color: var(--ink); font-size: 1rem; margin-bottom: 0.25rem; }
+    .ga4-content p { margin-bottom: 0; font-size: 0.92rem; }
+    /* Tool grid */
+    .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    .tool-card { border: 1px solid var(--border); padding: 1rem; border-radius: 4px; }
+    .tool-name { font-family: var(--font-heading); color: var(--ink); font-size: 0.95rem; margin-bottom: 0.2rem; }
+    .tool-category { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.35rem; }
+    .tool-desc { font-size: 0.87rem; margin-bottom: 0; }
+    .free-tag { display: inline-block; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--green); background: var(--green-light); padding: 0.15rem 0.4rem; border-radius: 3px; margin-left: 0.35rem; vertical-align: middle; }
+    /* Calendar */
+    .calendar-row { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; gap: 0; border: 1px solid var(--border); margin: 1.5rem 0; }
+    .cal-header { background: var(--ink); color: var(--white); padding: 0.5rem; text-align: center; font-size: 0.8rem; font-family: var(--font-heading); border-right: 1px solid rgba(255,255,255,0.15); }
+    .cal-header:last-child { border-right: none; }
+    .cal-cell { padding: 0.65rem 0.75rem; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); font-size: 0.85rem; min-height: 80px; vertical-align: top; }
+    .cal-cell:nth-child(5n) { border-right: none; }
+    .cal-week { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); margin-bottom: 0.35rem; }
+    /* Monthly review */
+    .review-section { border: 1px solid var(--border); margin: 1rem 0; }
+    .review-header { background: var(--surface); padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); font-family: var(--font-heading); color: var(--ink); font-size: 0.95rem; }
+    .review-items { padding: 0.5rem 0; }
+    .review-items li { padding: 0.4rem 1rem 0.4rem 2.5rem; font-size: 0.9rem; border-bottom: 1px solid var(--border); position: relative; list-style: none; }
+    .review-items li:last-child { border-bottom: none; }
+    .review-items li::before { content: "☐"; position: absolute; left: 0.75rem; color: var(--muted); }
+    .pdf-download { margin: 2.5rem 0; padding: 1.25rem 1.5rem; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .pdf-download p { margin: 0; font-size: 0.95rem; }
+    .pdf-download a { display: inline-block; padding: 0.5rem 1.25rem; background: var(--ink); color: var(--white); text-decoration: none; font-size: 0.9rem; font-weight: 600; white-space: nowrap; }
+    .pdf-download a:hover { background: var(--slate); color: var(--white); }
+    .author-bio { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.95rem; color: var(--muted); font-style: italic; }
+    .site-footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); text-align: center; font-size: 0.85rem; color: var(--subtle); }
+    @media (max-width: 600px) {
+      body { font-size: 16px; } h1 { font-size: 1.75rem; } h2 { font-size: 1.3rem; }
+      .container { padding: 1rem 1rem 3rem; }
+      .tool-grid { grid-template-columns: 1fr; }
+      .calendar-row { grid-template-columns: 1fr 1fr; }
+      .cal-cell:nth-child(5n) { border-right: 1px solid var(--border); }
+      .cal-cell:nth-child(2n) { border-right: none; }
+      .pdf-download { flex-direction: column; align-items: flex-start; }
+    }
+    @media print {
+      body { font-size: 12pt; color: #000; }
+      .site-header, .site-footer, .pdf-download { display: none; }
+      .container { max-width: 100%; padding: 0; }
+      a { text-decoration: none; color: #000; }
+    }
+  </style>
 </head>
 <body>
-<nav id="navbar">
-  <div class="nav-inner">
-    <a href="../" class="nav-brand">gonzalo.tech</a>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-links" id="navLinks">
-      <a href="../#about">About</a>
-<a href="../courses/ai-augmented-pm.html">Courses</a>
-<a href="../#resources" style="color:#0F172A;font-weight:600;">Resources</a>
-<a href="../#blog">Blog</a>
-<a href="../#newsletter" class="nav-cta">Get the Toolkit</a>
-    </div>
-  </div>
-</nav>
-
 <div class="container">
-  <div class="page-header">
-    <span style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:4px;background:#FFFBEB;color:#D97706;margin-bottom:12px;">COMING SOON</span>
-    <h1 class="page-title">Small Biz Digital Toolkit</h1>
-    <p class="page-desc">Landing page checklist, analytics setup, SEO basics, and conversion tips. Written for business owners who don't have a tech team.</p>
-    <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
-      <div class="price-box">
-        <div class="price">$9</div>
-      </div>
-      <a href="../#newsletter" class="btn-primary">Join waitlist &rarr;</a>
-    </div>
-  </div>
-  <div class="page-section">
-    <h2>What's included</h2>
-    <ul class="product-features">
-      <li>Landing page audit checklist (is your site actually converting?)</li>
-<li>Google Analytics setup guide — 15 minutes, zero code</li>
-<li>SEO basics that actually matter (skip the 200-point checklists)</li>
-<li>Three Questions Framework worksheet for your specific business</li>
-<li>Customer journey mapping template (fill-in-the-blank)</li>
-<li>AI prompt templates customized for small business use cases</li>
-    </ul>
-  </div>
-  <div class="page-section" style="border-top:1px solid var(--border);text-align:center;">
-    <h3 style="font-family:var(--font-h);font-size:22px;color:var(--ink);margin-bottom:8px;">Ready to start?</h3>
-    <p style="font-size:15px;color:var(--muted);margin-bottom:24px;">Every toolkit comes from real work, not theory. If it doesn't help, I want to know.</p>
-    <a href="../#newsletter" class="btn-primary" style="font-size:17px;padding:16px 36px;">Join waitlist &rarr;</a>
-  </div>
-</div>
+  <header class="site-header">
+    <a href="../index.html">gonzalo.tech</a>
+    <span class="badge">Free Toolkit</span>
+  </header>
 
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand">gonzalo.tech</div>
-        <div class="footer-tagline">Courses, toolkits, and frameworks for builders who use AI. Built with rigor, explained with care.</div>
-      </div>
-      <div class="footer-col">
-        <h4>Learn</h4>
-        <a href="../courses/ai-augmented-pm.html">Courses</a>
-        <a href="../#resources">Digital products</a>
-        <a href="../#blog">Blog</a>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <a href="https://linkedin.com/in/gonzaloeaguilar" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://medium.com/@gonzaloeaguilar" target="_blank" rel="noopener">Medium</a>
-        <a href="mailto:hello@gonzalo.tech">hello@gonzalo.tech</a>
+  <article>
+    <h1>Small Biz Digital Toolkit</h1>
+    <div class="meta">
+      By <strong>Gonzalo Aguilar</strong> &nbsp;·&nbsp; Free guide &nbsp;·&nbsp; No email required &nbsp;·&nbsp; Updated April 2026
+    </div>
+
+    <p>You don't need a big agency budget or a tech team to have a digital presence that actually works. What you need is a clear checklist, the right free tools, and the habit of checking in regularly.</p>
+    <p>This toolkit is everything a small business owner needs to go from "our website exists" to "our website actually brings in customers." No jargon. No $5,000/month tools. Just the real stuff that works.</p>
+
+    <nav class="toc">
+      <h2>Table of Contents</h2>
+      <ol>
+        <li><a href="#landing-page">Landing Page Checklist (50 Items)</a></li>
+        <li><a href="#ga4">GA4 Setup Guide — Step by Step</a></li>
+        <li><a href="#seo">SEO Basics: 10 Things Every Small Business Website Needs</a></li>
+        <li><a href="#email-capture">Email Capture Strategy: 5 Lead Magnet Ideas</a></li>
+        <li><a href="#content-calendar">Social Media Content Calendar Template</a></li>
+        <li><a href="#free-tools">Free Tools List: 20 Free Tools by Category</a></li>
+        <li><a href="#monthly-review">Monthly Review Template</a></li>
+      </ol>
+    </nav>
+
+    <div class="pdf-download">
+      <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
+      <a href="../pdfs/small-biz-digital-toolkit.pdf" download>Download PDF</a>
+    </div>
+
+    <hr>
+
+    <h2 id="landing-page">1. Landing Page Checklist (50 Items)</h2>
+
+    <p>A landing page has one job: turn a visitor into a customer, lead, or subscriber. Every element either helps or hurts that goal. Run through this list on any page you want to convert better.</p>
+
+    <h3>Above the Fold (what people see without scrolling)</h3>
+    <ul class="checklist">
+      <li>The headline tells me what this is in under 5 seconds</li>
+      <li>The headline is about what I get, not what you do</li>
+      <li>There is a visible, specific call-to-action (not just "Learn More")</li>
+      <li>The page loads in under 3 seconds (test at PageSpeed Insights)</li>
+      <li>The page looks good on mobile — no horizontal scrolling, readable text</li>
+      <li>The logo links back to your homepage</li>
+      <li>There is a phone number or contact method visible without scrolling</li>
+      <li>The hero image (if any) supports the message — not just stock-photo filler</li>
+    </ul>
+
+    <h3>Value and Clarity</h3>
+    <ul class="checklist">
+      <li>It's clear who this is for (name the customer type, problem, or situation)</li>
+      <li>The main benefit is stated in plain English, not jargon</li>
+      <li>You've described the outcome, not just the feature ("save 5 hours a week" not "automated scheduling")</li>
+      <li>There is a subheadline that adds context to the main headline</li>
+      <li>I understand what the product or service actually is within 10 seconds</li>
+      <li>The copy sounds like a human, not a corporate brochure</li>
+      <li>You've answered the question "why should I choose you over everyone else?"</li>
+      <li>Prices are visible (or there's a clear reason they aren't — like "call for a custom quote")</li>
+    </ul>
+
+    <h3>Trust Signals</h3>
+    <ul class="checklist">
+      <li>There is at least one testimonial from a real customer</li>
+      <li>Testimonials include the customer's name and context (not just "Great product! — J.S.")</li>
+      <li>If you have reviews on Google or Yelp, the rating is visible</li>
+      <li>If you have media mentions or awards, they are shown</li>
+      <li>There is a photo of a real person (you, your team, your work) — not just stock imagery</li>
+      <li>There's a clear explanation of what happens after someone submits a form or contacts you</li>
+      <li>If you collect payment online, there are security badges near the checkout</li>
+      <li>Your business address or service area is listed (shows you're real and local)</li>
+      <li>A privacy policy is linked (required legally and builds trust)</li>
+    </ul>
+
+    <h3>The Call to Action</h3>
+    <ul class="checklist">
+      <li>There is one primary CTA — not three or four competing buttons</li>
+      <li>The CTA button text is specific ("Book a Free Consultation" not "Submit")</li>
+      <li>The CTA button stands out visually — contrast in color, size, or whitespace</li>
+      <li>The CTA appears at least twice on the page (above the fold and near the bottom)</li>
+      <li>If there's a form, it asks only for what you actually need — every extra field costs conversions</li>
+      <li>After submitting the form, the user gets a confirmation message or email</li>
+      <li>The form works on mobile — fields are large enough to tap, keyboard doesn't obscure Submit</li>
+    </ul>
+
+    <h3>SEO and Technical</h3>
+    <ul class="checklist">
+      <li>The page title (browser tab) includes your primary keyword and location if local</li>
+      <li>The meta description is written (not auto-generated) and includes a call-to-action</li>
+      <li>Images have descriptive alt text (describes what's in the image)</li>
+      <li>The URL is clean: /services/plumbing-repair — not /page?id=4827</li>
+      <li>There is exactly one H1 (the main headline) — not zero, not three</li>
+      <li>The page is indexed by Google (search "site:yourdomain.com/page-url" to check)</li>
+      <li>HTTPS is enabled (padlock icon in browser) — visitors get a warning without it</li>
+    </ul>
+
+    <h3>Content Quality</h3>
+    <ul class="checklist">
+      <li>There are no spelling or grammar errors</li>
+      <li>All links on the page work (test every one)</li>
+      <li>No broken images or layout issues</li>
+      <li>The most important info is near the top, not buried</li>
+      <li>Paragraphs are short (3-4 sentences max) — walls of text lose readers</li>
+      <li>There is a clear answer to "what do I do next?" at every scroll depth</li>
+      <li>If you have a chat widget, it doesn't block the main content on mobile</li>
+    </ul>
+
+    <h3>For Local Businesses Specifically</h3>
+    <ul class="checklist">
+      <li>Your city and neighborhood are mentioned in the copy (not just the address)</li>
+      <li>Your Google Business Profile is claimed and linked</li>
+      <li>Your hours are correct and visible</li>
+      <li>An embedded Google Map is present on your contact or location page</li>
+      <li>Service area is clear if you travel to customers</li>
+    </ul>
+
+    <hr>
+
+    <h2 id="ga4">2. GA4 Setup Guide — Step by Step</h2>
+
+    <p>Google Analytics 4 is free and tells you a lot about how people find and use your website. The setup takes about 2 hours and pays dividends forever. Here's exactly how to do it.</p>
+
+    <div class="callout">
+      <div class="callout-label">Before You Start</div>
+      <p>You need: a Google account, access to your website's code or a CMS like WordPress/Squarespace/Wix, and about 90 minutes. That's it.</p>
+    </div>
+
+    <div class="ga4-step">
+      <div class="ga4-num">1</div>
+      <div class="ga4-content">
+        <h4>Create your GA4 property</h4>
+        <p>Go to <strong>analytics.google.com</strong>. Click "Start measuring." Give your account a name (your business name). Create a property (your website). Fill in your business category and size. Click Create. You'll get a Property ID that looks like "G-XXXXXXXXXX" — save this.</p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Gonzalo Aguilar. All rights reserved.</span>
-      <span>Built in Fort Lauderdale, FL</span>
+
+    <div class="ga4-step">
+      <div class="ga4-num">2</div>
+      <div class="ga4-content">
+        <h4>Add the tracking code to your website</h4>
+        <p><strong>WordPress:</strong> Install the "Google Site Kit" plugin, connect it with your Google account, and authorize GA4. It adds the code automatically.<br>
+        <strong>Squarespace:</strong> Settings → Integrations → Google Analytics → paste your G-XXXXXXXXXX code.<br>
+        <strong>Wix:</strong> Dashboard → Marketing & SEO → Marketing Integrations → Google Analytics.<br>
+        <strong>Custom website:</strong> Copy the "gtag.js" snippet from GA4 (Admin → Data Streams → your stream → View tag instructions) and paste it before the &lt;/head&gt; tag on every page.</p>
+      </div>
     </div>
-  </div>
-</footer>
-<script>
-const nav = document.getElementById('navbar');
-window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
-hamburger.addEventListener('click', () => { navLinks.classList.toggle('open'); });
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
-    const href = link.getAttribute('href');
-    if (href.startsWith('/#')) { return; }
-    e.preventDefault();
-    const target = document.querySelector(href);
-    if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); navLinks.classList.remove('open'); }
-  });
-});
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-</script>
+
+    <div class="ga4-step">
+      <div class="ga4-num">3</div>
+      <div class="ga4-content">
+        <h4>Verify the code is working</h4>
+        <p>Go to GA4 → Reports → Real-time. Open your website in another tab and navigate around. Within 30 seconds you should see "1 user in last 30 minutes." If you see zero, the code isn't installed correctly — double-check step 2. Also install the Chrome extension "Google Tag Assistant" to confirm tags are firing.</p>
+      </div>
+    </div>
+
+    <div class="ga4-step">
+      <div class="ga4-num">4</div>
+      <div class="ga4-content">
+        <h4>Set up a conversion event</h4>
+        <p>A conversion is the most important action on your site — a form submission, a phone call click, a booking. In GA4: Admin → Events. Find the event that fires when someone submits your contact form (usually "form_submit" or a "thank you page" page view). Click the three dots → Mark as conversion. Now GA4 tracks your most important business metric.</p>
+        <p>If you don't see a relevant event, use Google Tag Manager (free) to create a custom event that fires on your thank-you page URL.</p>
+      </div>
+    </div>
+
+    <div class="ga4-step">
+      <div class="ga4-num">5</div>
+      <div class="ga4-content">
+        <h4>Connect Google Search Console</h4>
+        <p>Search Console shows what search terms people used to find your site. In GA4: Admin → Property Settings → Search Console Links. Authorize. This connects your search data to your traffic data — you'll see which keywords bring people to your site AND what they do after they arrive.</p>
+      </div>
+    </div>
+
+    <div class="ga4-step">
+      <div class="ga4-num">6</div>
+      <div class="ga4-content">
+        <h4>Create a simple dashboard</h4>
+        <p>GA4 → Explore → Blank → create a free-form exploration with these rows: Page title. And these metrics: Sessions, Engagement rate, Conversions. This gives you a one-view snapshot of which pages drive business. Check this monthly (see Section 7 for the habit).</p>
+      </div>
+    </div>
+
+    <div class="ga4-step">
+      <div class="ga4-num">7</div>
+      <div class="ga4-content">
+        <h4>Filter out your own traffic</h4>
+        <p>If you visit your own website regularly, it pollutes your data. Admin → Data Streams → your stream → More tagging settings → Define internal traffic. Add your office IP address(es). Then Admin → Data Filters → activate the "Internal Traffic" filter. Now your own visits are excluded.</p>
+      </div>
+    </div>
+
+    <div class="callout green">
+      <div class="callout-label">The One Report to Check Monthly</div>
+      <p>Reports → Acquisition → Traffic Acquisition. It shows how people found you: organic search, direct, social, referral. This tells you where to invest your marketing time. If 80% of your traffic is "direct" (people typing your URL), you have an opportunity to grow your search and social presence.</p>
+    </div>
+
+    <hr>
+
+    <h2 id="seo">3. SEO Basics: 10 Things Every Small Business Website Needs</h2>
+
+    <p>SEO sounds technical but most of it is just: make your website clear about who you are, where you are, and what you do. Google is remarkably good at understanding clear, well-organized content.</p>
+
+    <ol>
+      <li>
+        <strong>A clear, keyword-rich title tag for every page.</strong><br>
+        Your title tag is the blue link Google shows in search results. It should include your main service and location. "Joe's Plumbing — Emergency Plumber in Austin, TX" beats "Joe's Plumbing Services."
+      </li>
+      <li>
+        <strong>A written meta description for every page.</strong><br>
+        The snippet that appears below your title in search results. Write it like a tiny ad: include what you do, who you help, and a call-to-action. 150-160 characters max.
+      </li>
+      <li>
+        <strong>One H1 tag per page that includes your main keyword.</strong><br>
+        The H1 is your page's main headline. Google reads it to understand what the page is about. "Emergency Plumbing Repair in Austin" is a good H1. "Welcome to our website" is not.
+      </li>
+      <li>
+        <strong>Your city and service area in your content — naturally.</strong><br>
+        If you're a local business, your location needs to be in the text, not just the footer. "We've been serving Austin homeowners since 2008" tells Google you're a local business.
+      </li>
+      <li>
+        <strong>A Google Business Profile (formerly Google My Business).</strong><br>
+        Free. Essential. If you have a physical location or serve a local area, this is the most important single SEO action you can take. It's what makes you appear in the Google Maps pack. Keep hours, phone, and address current.
+      </li>
+      <li>
+        <strong>Fast page speed — especially on mobile.</strong><br>
+        Google uses page speed as a ranking factor. Test with Google's PageSpeed Insights. Common culprits: unoptimized images, too many plugins, cheap hosting. Images should be under 200KB each.
+      </li>
+      <li>
+        <strong>HTTPS (secure connection).</strong><br>
+        Not optional anymore. Visitors see a "Not Secure" warning in browsers for HTTP sites. Most hosting providers now include free SSL certificates — turn it on if you haven't.
+      </li>
+      <li>
+        <strong>Content that answers the actual questions your customers ask.</strong><br>
+        A page titled "How much does a bathroom remodel cost in Denver?" will rank for that exact query. Think about what people type into Google before they hire someone like you — and write pages that answer those questions.
+      </li>
+      <li>
+        <strong>Internal links between your pages.</strong><br>
+        Link from your homepage to your main service pages. Link from blog posts to your service pages. This helps Google understand your site structure and spreads authority to your most important pages.
+      </li>
+      <li>
+        <strong>A consistent NAP (Name, Address, Phone) everywhere you appear online.</strong><br>
+        Your business name, address, and phone number should be identical on your website, Google Business Profile, Yelp, Facebook, and any directories. Inconsistency confuses both Google and customers.
+      </li>
+    </ol>
+
+    <div class="callout amber">
+      <div class="callout-label">What NOT to Waste Time On</div>
+      <p>Keyword stuffing (repeating your keyword 50 times), link schemes, fake reviews, or buying SEO software subscriptions you don't understand. These either don't work or actively hurt you. The fundamentals above will do more than any hack.</p>
+    </div>
+
+    <hr>
+
+    <h2 id="email-capture">4. Email Capture Strategy: 5 Lead Magnet Ideas</h2>
+
+    <p>Your email list is the one audience you own. Social platforms can change their algorithm or shut down tomorrow — your email list is yours. Here's how to grow it with something genuinely useful.</p>
+
+    <p>A lead magnet is a free resource you give visitors in exchange for their email address. The key word is "genuinely useful" — if it's not actually valuable, people will unsubscribe immediately or mark you as spam.</p>
+
+    <div class="callout">
+      <div class="callout-label">The Rule</div>
+      <p>Your lead magnet should be something people would pay a small amount for if you charged for it. If it's not that valuable, make it more valuable — don't make them more persuasive. Quality > quantity in email list building.</p>
+    </div>
+
+    <h3>Lead Magnet Idea 1: The "Before You Hire" Checklist</h3>
+    <p><strong>What it is:</strong> A downloadable PDF checklist that helps your target customer make a better buying decision — whether or not they hire you.</p>
+    <p><strong>Example:</strong> A landscaper creates "7 Questions to Ask Any Landscaper Before You Sign a Contract." A wedding photographer creates "What to Look for in a Wedding Photographer: The Complete Checklist."</p>
+    <p><strong>Why it works:</strong> It positions you as the trustworthy expert. It gets your name in their hands when they're actively in buying mode. It's easy to create (it's your expertise).</p>
+
+    <h3>Lead Magnet Idea 2: The "Quick Win" Guide</h3>
+    <p><strong>What it is:</strong> A short, actionable guide that helps your customer solve a small version of the problem you solve professionally.</p>
+    <p><strong>Example:</strong> A bookkeeper creates "3 Things to Do With Your Receipts Every Month to Make Tax Season Painless." A personal trainer creates "The 15-Minute Morning Routine That Actually Works."</p>
+    <p><strong>Why it works:</strong> It demonstrates your expertise without giving everything away. When they're ready for help with the big problem, they already trust you.</p>
+
+    <h3>Lead Magnet Idea 3: The Template or Swipe File</h3>
+    <p><strong>What it is:</strong> A ready-to-use template, spreadsheet, or script your customer can immediately use.</p>
+    <p><strong>Example:</strong> A social media consultant creates "The 30-Day Social Media Content Calendar (Filled In for You)." A lawyer creates "The 5 Contract Clauses Every Freelancer Needs." A florist creates "Wedding Flower Budget Template."</p>
+    <p><strong>Why it works:</strong> Templates are perceived as extremely high value because they save time immediately. The specificity tells customers this person really understands my situation.</p>
+
+    <h3>Lead Magnet Idea 4: The Email Course</h3>
+    <p><strong>What it is:</strong> A 5-7 email sequence delivered over 5-7 days, each email teaching one thing related to your expertise.</p>
+    <p><strong>Example:</strong> "5 Days to a Website That Actually Gets You Customers" or "The Week-1 Homeowner Maintenance Checklist."</p>
+    <p><strong>Why it works:</strong> Gives you 5+ touchpoints with the subscriber before they're ready to buy. Builds familiarity and trust systematically. More engaging than a single download.</p>
+
+    <h3>Lead Magnet Idea 5: The Local Discount or Priority Access</h3>
+    <p><strong>What it is:</strong> A simple offer — "Join our list for 10% off your first order" or "Get first access to new service openings."</p>
+    <p><strong>Example:</strong> A restaurant: "Join the list for our monthly special menu announcement — list members get early reservations." A contractor: "Email subscribers get priority scheduling during our busy season."</p>
+    <p><strong>Why it works:</strong> Straightforward and doesn't require creating a resource. Works especially well for service businesses with capacity constraints or retail businesses with returning customers.</p>
+
+    <div class="callout green">
+      <div class="callout-label">The Tool to Use</div>
+      <p>MailerLite and Brevo (formerly Sendinblue) both have free tiers that handle email collection and automated sequences for up to 1,000 subscribers. Start with either — they're both beginner-friendly and don't require a developer.</p>
+    </div>
+
+    <hr>
+
+    <h2 id="content-calendar">5. Social Media Content Calendar Template</h2>
+
+    <p>Consistency beats brilliance on social media. You don't need to go viral — you need to show up regularly so that when someone is ready to hire someone like you, they already know you exist.</p>
+
+    <p>This is a 4-week rolling template. Repeat it monthly with fresh content. Each week has a theme to keep you from staring at a blank page.</p>
+
+    <div style="overflow-x: auto;">
+      <div class="calendar-row">
+        <div class="cal-header">Monday</div>
+        <div class="cal-header">Tuesday</div>
+        <div class="cal-header">Wednesday</div>
+        <div class="cal-header">Thursday</div>
+        <div class="cal-header">Friday</div>
+      </div>
+      <div class="calendar-row">
+        <div class="cal-cell"><div class="cal-week">Week 1 — Educate</div>Share a tip your ideal customer doesn't know. "Did you know that..."</div>
+        <div class="cal-cell"><div class="cal-week">Week 1 — Educate</div>Myth vs. fact in your industry. Something customers commonly get wrong.</div>
+        <div class="cal-cell"><div class="cal-week">Week 1 — Educate</div>Behind the scenes: show how you do what you do. Process content builds trust.</div>
+        <div class="cal-cell"><div class="cal-week">Week 1 — Educate</div>Answer a question you get all the time. "The most common question I get is..."</div>
+        <div class="cal-cell"><div class="cal-week">Week 1 — Educate</div>Reshare something useful from another account + add your perspective.</div>
+      </div>
+      <div class="calendar-row">
+        <div class="cal-cell"><div class="cal-week">Week 2 — Social Proof</div>Customer story or testimonial. Use a real quote if you have permission.</div>
+        <div class="cal-cell"><div class="cal-week">Week 2 — Social Proof</div>Before/after or result you're proud of from recent work.</div>
+        <div class="cal-cell"><div class="cal-week">Week 2 — Social Proof</div>"We just finished..." — show completed work with a brief story.</div>
+        <div class="cal-cell"><div class="cal-week">Week 2 — Social Proof</div>A thank-you post to a happy customer (with their permission).</div>
+        <div class="cal-cell"><div class="cal-week">Week 2 — Social Proof</div>Milestone or anniversary worth celebrating. Numbers are engaging.</div>
+      </div>
+      <div class="calendar-row">
+        <div class="cal-cell"><div class="cal-week">Week 3 — Personality</div>Your story: why you started this business. Personal connection builds loyalty.</div>
+        <div class="cal-cell"><div class="cal-week">Week 3 — Personality</div>What you're currently working on or thinking about.</div>
+        <div class="cal-cell"><div class="cal-week">Week 3 — Personality</div>Something local: a community event, a shoutout to a local business you love.</div>
+        <div class="cal-cell"><div class="cal-week">Week 3 — Personality</div>Your opinion on something in your industry. Take a small stand.</div>
+        <div class="cal-cell"><div class="cal-week">Week 3 — Personality</div>A team member or collaborator spotlight. Humanizes the business.</div>
+      </div>
+      <div class="calendar-row">
+        <div class="cal-cell"><div class="cal-week">Week 4 — Convert</div>Promote your service or product directly. This is the ask. Keep it benefit-focused.</div>
+        <div class="cal-cell"><div class="cal-week">Week 4 — Convert</div>FAQ about your service. Removes buying objections before they form.</div>
+        <div class="cal-cell"><div class="cal-week">Week 4 — Convert</div>Promote your lead magnet (from Section 4). Grow the email list.</div>
+        <div class="cal-cell"><div class="cal-week">Week 4 — Convert</div>Limited offer, seasonal promotion, or early-access opportunity if you have one.</div>
+        <div class="cal-cell"><div class="cal-week">Week 4 — Convert</div>Direct CTA post. "If you need [X], I can help. Here's how to get started."</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">Practical Tips</div>
+      <p><strong>Pick 1-2 platforms, not 5.</strong> Where your customers actually spend time. For most local service businesses: Facebook + Instagram or just Google Business Profile posts.<br>
+      <strong>Batch your content.</strong> Set aside 2 hours on one day per month to plan and draft the entire month. Then schedule it.<br>
+      <strong>A photo of you or your work beats stock images</strong> every single time on social.</p>
+    </div>
+
+    <hr>
+
+    <h2 id="free-tools">6. Free Tools List: 20 Free Tools Organized by Category</h2>
+
+    <div class="tool-grid">
+      <div class="tool-card">
+        <div class="tool-category">Analytics</div>
+        <div class="tool-name">Google Analytics 4 <span class="free-tag">Free</span></div>
+        <div class="tool-desc">Track website traffic, user behavior, and conversions. The standard for a reason.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-category">Analytics</div>
+        <div class="tool-name">Google Search Console <span class="free-tag">Free</span></div>
+        <div class="tool-desc">See what Google search terms bring people to your site. Essential for SEO.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-category">Analytics</div>
+        <div class="tool-name">Hotjar (Free Tier) <span class="free-tag">Free</span></div>
+        <div class="tool-desc">Heatmaps and session recordings. See where visitors click and where they stop reading.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-category">Analytics</div>
+        <div class="tool-name">Microsoft Clarity <span class="free-tag">Free</span></div>
+        <div class="tool-desc">Heatmaps and session recordings with no traffic limits. Completely free alternative to Hotjar paid tiers.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-category">Email Marketing</div>
+        <div class="tool-name">MailerLite <span class="free-tag">Free</span></div>
+        <div class="tool-desc">Free up to 1,000 subscribers. Easy to use, solid templates, handles automations well.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-category">Email Marketing</div>
+        <div class="tool-name">Brevo (formerly Sendinblue) <span class="free-tag">Free</span></div>
+        <div class="tool-desc">Free up to 300 emails/day. Good for transactional emails and campaigns. No subscriber limit on free plan.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-category">Design</div>
+        <div class="tool-name">Canva <span class="free-tag">Free</span></div>
+        <div class="tool-desc">Social media graphics, flyers, presentations. Drag-and-drop. No design skills required.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-category">Design</div>
+        <div class="tool-name">Remove.bg <span class="free-tag">Free</span></div>
+        <div class="tool-desc">Remove image backgrounds in one click. Makes product photos look professional instantly.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-category">SEO</div>
+        <div class="tool-name">Google Business Profile <span class="free-tag">Free</span></div>
+        <div class="tool-desc">The most important local SEO tool. Shows you in Google Maps. Manage reviews. Post updates.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-category">SEO</div>
+        <div class="tool-name">Ubersuggest (Free Tier) <span class="free-tag">Free</span></div>
+        <div class="tool-desc">Keyword research, competitor analysis, and site audit. Free tier is limited but useful for basics.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-category">SEO</div>
+        <div class="tool-name">Google PageSpeed Insights <span class="free-tag">Free</span></div>
+        <div class="tool-desc">Test your page speed on mobile and desktop. Tells you exactly what's slowing you down.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-category">Scheduling &amp; Booking</div>
+        <div class="tool-name">Calendly (Free Tier) <span class="free-tag">Free</span></div>
+        <div class="tool-desc">Let customers book appointments without the back-and-forth emails. One event type free.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-category">Scheduling &amp; Booking</div>
+        <div class="tool-name">Square Appointments <span class="free-tag">Free</span></div>
+        <div class="tool-desc">Booking + payment in one. Free for individuals. Great for service businesses.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-category">Forms &amp; Surveys</div>
+        <div class="tool-name">Google Forms <span class="free-tag">Free</span></div>
+        <div class="tool-desc">Contact forms, surveys, job applications. Connects to Google Sheets automatically.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-category">Forms &amp; Surveys</div>
+        <div class="tool-name">Tally <span class="free-tag">Free</span></div>
+        <div class="tool-desc">More beautiful form builder than Google Forms. Free tier is generous. Great for embedded forms.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-category">Social Media</div>
+        <div class="tool-name">Buffer (Free Tier) <span class="free-tag">Free</span></div>
+        <div class="tool-desc">Schedule posts to 3 social channels. Great for batching your monthly content in one session.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-category">Social Media</div>
+        <div class="tool-name">Later (Free Tier) <span class="free-tag">Free</span></div>
+        <div class="tool-desc">Visual content calendar for Instagram, Facebook, TikTok. Drag-and-drop scheduling.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-category">AI Writing</div>
+        <div class="tool-name">ChatGPT (Free Tier) <span class="free-tag">Free</span></div>
+        <div class="tool-desc">Write social captions, email drafts, product descriptions, FAQs. First draft in 30 seconds.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-category">Photography</div>
+        <div class="tool-name">Unsplash / Pexels <span class="free-tag">Free</span></div>
+        <div class="tool-desc">High-quality free stock photos. No attribution required. Better than the obvious stock imagery.</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-category">Video</div>
+        <div class="tool-name">CapCut <span class="free-tag">Free</span></div>
+        <div class="tool-desc">Video editing with auto-captions, templates, and effects. Great for Reels and TikTok. No experience needed.</div>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2 id="monthly-review">7. Monthly Review Template</h2>
+
+    <p>The difference between businesses that grow online and those that don't is usually this: one has a regular habit of checking what's working and adjusting. This takes 30 minutes, once a month.</p>
+
+    <p>Schedule it on the same day every month — first Monday morning, last Friday afternoon, whatever works. Treat it like a real appointment.</p>
+
+    <div class="review-section">
+      <div class="review-header">Traffic Review (10 minutes)</div>
+      <ul class="review-items">
+        <li>Open GA4 → Compare this month vs. last month: Total sessions, new users, engagement rate</li>
+        <li>Which channel drove the most traffic? (organic, direct, social, referral)</li>
+        <li>Which channel grew the most vs. last month? Which shrank?</li>
+        <li>Which pages had the highest traffic? Are these the pages I want driving traffic?</li>
+        <li>What was my bounce rate (or engagement rate) on the top 5 pages?</li>
+      </ul>
+    </div>
+
+    <div class="review-section">
+      <div class="review-header">Conversion Review (5 minutes)</div>
+      <ul class="review-items">
+        <li>How many conversions (form fills, calls, bookings) came from the website this month?</li>
+        <li>What's my conversion rate? (conversions ÷ sessions × 100)</li>
+        <li>Which page had the most conversions? Which had zero?</li>
+        <li>Did I make any changes last month that might have affected conversions? Did they help or hurt?</li>
+      </ul>
+    </div>
+
+    <div class="review-section">
+      <div class="review-header">SEO Review (5 minutes)</div>
+      <ul class="review-items">
+        <li>Open Google Search Console → Check impressions and clicks vs. last month</li>
+        <li>What are my top 5 search queries? Am I showing up for the right terms?</li>
+        <li>Are any pages losing ranking? (Queries sorted by position decline)</li>
+        <li>Did I publish any new content this month? Is Google indexing it?</li>
+      </ul>
+    </div>
+
+    <div class="review-section">
+      <div class="review-header">Email Review (5 minutes)</div>
+      <ul class="review-items">
+        <li>How many new email subscribers did I gain this month?</li>
+        <li>Open rate on my last campaign: is it above 25%? Below 25% means subject line work needed.</li>
+        <li>Did I email my list at least once this month?</li>
+        <li>Any replies or replies that I should turn into a customer story?</li>
+      </ul>
+    </div>
+
+    <div class="review-section">
+      <div class="review-header">Social Media Review (5 minutes)</div>
+      <ul class="review-items">
+        <li>Which post got the most engagement this month? Why do you think it resonated?</li>
+        <li>How many followers did I gain or lose?</li>
+        <li>Did I post consistently? (At least 3x/week on primary platform)</li>
+        <li>Any comments or DMs I haven't responded to?</li>
+      </ul>
+    </div>
+
+    <div class="review-section">
+      <div class="review-header">One Action for Next Month</div>
+      <ul class="review-items">
+        <li>Based on this review, the one thing I'll do differently next month is: _______________</li>
+        <li>The one page I'll improve based on this month's data: _______________</li>
+        <li>The one piece of content I'll create that I know would help my customers: _______________</li>
+      </ul>
+    </div>
+
+    <div class="callout green">
+      <div class="callout-label">The Most Important Thing</div>
+      <p>You don't need to do everything at once. Pick one section of this toolkit, implement it well, and add the next section next month. A partial toolkit consistently executed beats a complete toolkit ignored. <strong>Progress beats perfection every time.</strong></p>
+    </div>
+
+    <div class="pdf-download">
+      <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
+      <a href="../pdfs/small-biz-digital-toolkit.pdf" download>Download PDF</a>
+    </div>
+
+    <div class="author-bio">
+      <p>Gonzalo Aguilar is a Senior Product Manager specializing in growth, identity, and onboarding in regulated markets. He writes about product strategy, conversion optimization, and practical AI workflows at <a href="../index.html">gonzalo.tech</a>.</p>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    &copy; 2026 gonzalo.tech — Gonzalo Aguilar &nbsp;·&nbsp; <a href="../index.html" style="color:inherit;">Home</a>
+  </footer>
+</div>
 </body>
 </html>

@@ -1,180 +1,843 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI for PMs Starter Kit — gonzalo.tech</title>
-<meta name="description" content="Real PM prompt library and workflow templates. Copy, paste, adapt — be faster tomorrow.">
-<meta property="og:title" content="AI for PMs Starter Kit — gonzalo.tech">
-<meta property="og:description" content="Real PM prompt library and workflow templates. Copy, paste, adapt — be faster tomorrow.">
-<link rel="canonical" href="https://gonzalo.tech">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--ink:#0F172A;--slate:#334155;--muted:#64748B;--subtle:#94A3B8;--border:#E2E8F0;--surface:#F8FAFC;--white:#FFFFFF;--red:#DC2626;--red-light:#FEF2F2;--green:#16A34A;--green-light:#F0FDF4;--amber:#D97706;--amber-light:#FFFBEB;--font-h:Georgia,'Times New Roman',serif;--font-b:Calibri,'Segoe UI',system-ui,sans-serif;--font-c:Consolas,'Courier New',monospace;--max-w:1080px}
-body{font-family:var(--font-b);color:var(--slate);background:var(--white);line-height:1.5;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
-.container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
-nav.scrolled{box-shadow:0 1px 8px rgba(15,23,42,0.06)}
-.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px}
-.nav-brand{font-family:var(--font-h);font-size:20px;font-weight:bold;color:var(--ink);letter-spacing:-0.5px}
-.nav-links{display:flex;gap:28px;align-items:center}
-.nav-links a{font-size:14px;color:var(--muted);font-weight:500;transition:color .2s}
-.nav-links a:hover{color:var(--ink)}
-.nav-cta{font-size:13px!important;font-weight:600!important;color:var(--white)!important;background:var(--ink);padding:8px 18px;border-radius:6px;transition:opacity .2s}
-.nav-cta:hover{opacity:.88}
-.hamburger{display:none;background:none;border:none;cursor:pointer;width:28px;height:20px;position:relative}
-.hamburger span{display:block;width:100%;height:2px;background:var(--ink);position:absolute;left:0;transition:all .3s}
-.hamburger span:nth-child(1){top:0}.hamburger span:nth-child(2){top:9px}.hamburger span:nth-child(3){top:18px}
-footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 32px}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;margin-bottom:32px}
-.footer-brand{font-family:var(--font-h);font-size:18px;font-weight:bold;color:var(--ink);margin-bottom:8px}
-.footer-tagline{font-size:13px;color:var(--muted);max-width:280px;line-height:1.5}
-.footer-col h4{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
-.footer-col a{display:block;font-size:14px;color:var(--slate);padding:4px 0;transition:color .2s}
-.footer-col a:hover{color:var(--ink)}
-.footer-bottom{border-top:1px solid var(--border);padding-top:24px;font-size:12px;color:var(--subtle);display:flex;justify-content:space-between;align-items:center}
-.btn-primary{display:inline-block;padding:14px 28px;background:var(--ink);color:var(--white);font-weight:600;font-size:15px;border-radius:6px;transition:opacity .2s;border:none;cursor:pointer}
-.btn-primary:hover{opacity:.88}
-.btn-secondary{display:inline-block;padding:14px 28px;border:1px solid var(--border);color:var(--ink);font-weight:600;font-size:15px;border-radius:6px;transition:all .2s;background:transparent;cursor:pointer}
-.btn-secondary:hover{border-color:var(--ink)}
-.fade-in{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
-.fade-in.visible{opacity:1;transform:translateY(0)}
-@media(max-width:768px){
-  .nav-links{display:none}.hamburger{display:block}
-  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);padding:20px 24px;gap:16px}
-  .footer-grid{grid-template-columns:1fr;gap:32px}
-}
-/* Article styles */
-.article-header{padding:120px 0 48px}
-.article-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
-.article-title{font-family:var(--font-h);font-size:38px;font-weight:bold;color:var(--ink);line-height:1.2;margin-bottom:16px;max-width:720px}
-.article-meta{font-size:14px;color:var(--subtle);margin-bottom:32px}
-.article-body{max-width:720px;margin:0 auto;padding:0 24px 96px}
-.article-body h2{font-family:var(--font-h);font-size:24px;color:var(--ink);margin:40px 0 16px;line-height:1.3}
-.article-body h3{font-size:18px;font-weight:600;color:var(--ink);margin:32px 0 12px}
-.article-body p{font-size:16px;color:var(--slate);line-height:1.7;margin-bottom:16px;max-width:65ch}
-.article-body strong{color:var(--ink)}
-.article-body blockquote{border-left:3px solid var(--border);padding:12px 20px;margin:24px 0;background:var(--surface);border-radius:0 6px 6px 0}
-.article-body blockquote p{color:var(--muted);font-size:15px;margin-bottom:0}
-.article-cta{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;margin:48px 0;text-align:center}
-.article-cta h3{font-family:var(--font-h);font-size:20px;color:var(--ink);margin-bottom:8px}
-.article-cta p{font-size:14px;color:var(--muted);margin-bottom:16px}
-.article-bio{border-top:1px solid var(--border);padding-top:24px;margin-top:48px;font-size:14px;color:var(--muted);font-style:italic;font-family:var(--font-h)}
-/* Course/product page styles */
-.page-header{padding:120px 0 48px;border-bottom:1px solid var(--border)}
-.page-title{font-family:var(--font-h);font-size:38px;font-weight:bold;color:var(--ink);line-height:1.2;margin-bottom:12px;max-width:640px}
-.page-desc{font-size:17px;color:var(--slate);line-height:1.65;max-width:600px;margin-bottom:24px}
-.page-section{padding:64px 0}
-.page-section h2{font-family:var(--font-h);font-size:26px;color:var(--ink);margin-bottom:24px}
-.module-list{list-style:none;counter-reset:module}
-.module-list li{counter-increment:module;padding:20px 0;border-bottom:1px solid var(--border);display:flex;gap:16px;align-items:start}
-.module-list li::before{content:counter(module,decimal-leading-zero);font-family:var(--font-h);font-size:24px;color:var(--subtle);font-weight:bold;min-width:36px}
-.module-title{font-weight:600;color:var(--ink);font-size:16px;margin-bottom:4px}
-.module-desc{font-size:14px;color:var(--muted);line-height:1.55}
-.price-box{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;display:inline-block}
-.price-box .price{font-family:var(--font-h);font-size:48px;font-weight:bold;color:var(--ink)}
-.price-box .note{font-size:14px;color:var(--subtle);margin-top:4px}
-.product-features{list-style:none}
-.product-features li{padding:10px 0;border-bottom:1px solid var(--border);font-size:15px;color:var(--slate);padding-left:24px;position:relative}
-.product-features li::before{content:"\2713";position:absolute;left:0;color:var(--green);font-weight:bold}
-@media(max-width:768px){
-  .article-title,.page-title{font-size:28px}
-  .article-body p{font-size:15px}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI for PMs Starter Kit — gonzalo.tech</title>
+  <meta name="description" content="15 copy-paste AI prompt templates for product managers. PRDs, user stories, competitive analysis, stakeholder emails. Tool comparison matrix. Free starter kit.">
+  <meta name="keywords" content="AI for product managers, PM prompts, ChatGPT for PMs, Claude prompts, product management AI, AI prompt templates, AI PM workflow">
+  <meta name="author" content="Gonzalo Aguilar">
+  <meta property="og:title" content="AI for PMs Starter Kit — gonzalo.tech">
+  <meta property="og:description" content="15 copy-paste AI prompt templates for product managers. Free starter kit by Gonzalo Aguilar.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://gonzalo.tech/products/ai-pms-starter-kit.html">
+  <link rel="canonical" href="https://gonzalo.tech/products/ai-pms-starter-kit.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "AI for PMs Starter Kit",
+    "description": "15 copy-paste prompt templates for product managers, a tool comparison matrix, and workflow integration guide.",
+    "author": { "@type": "Person", "name": "Gonzalo Aguilar", "url": "https://gonzalo.tech" },
+    "publisher": { "@type": "Organization", "name": "gonzalo.tech" },
+    "url": "https://gonzalo.tech/products/ai-pms-starter-kit.html",
+    "inLanguage": "en",
+    "isAccessibleForFree": true
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #0F172A; --slate: #334155; --muted: #64748B; --subtle: #94A3B8;
+      --border: #E2E8F0; --surface: #F8FAFC; --white: #FFFFFF;
+      --red: #DC2626; --red-light: #FEF2F2;
+      --green: #16A34A; --green-light: #F0FDF4;
+      --amber: #D97706; --amber-light: #FFFBEB;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: Calibri, 'Gill Sans', 'Segoe UI', sans-serif;
+      --font-code: Consolas, 'Courier New', monospace;
+    }
+    body { font-family: var(--font-body); font-size: 18px; line-height: 1.7; color: var(--slate); background: var(--white); -webkit-font-smoothing: antialiased; }
+    .container { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 5rem; }
+    .site-header { border-bottom: 1px solid var(--border); padding: 1.25rem 0; margin-bottom: 2.5rem; display: flex; align-items: center; justify-content: space-between; }
+    .site-header a { font-family: var(--font-heading); font-size: 1.2rem; color: var(--ink); text-decoration: none; }
+    .site-header a:hover { color: var(--muted); }
+    .badge { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--green); background: var(--green-light); padding: 0.25rem 0.65rem; border-radius: 4px; }
+    h1 { font-family: var(--font-heading); font-size: 2.4rem; line-height: 1.2; color: var(--ink); margin-bottom: 1rem; }
+    .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+    h2 { font-family: var(--font-heading); font-size: 1.6rem; color: var(--ink); margin-top: 3rem; margin-bottom: 0.75rem; }
+    h3 { font-family: var(--font-heading); font-size: 1.2rem; color: var(--ink); margin-top: 2rem; margin-bottom: 0.5rem; }
+    p { margin-bottom: 1.25rem; }
+    ul, ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--ink); }
+    a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--muted); }
+    hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+    .toc { background: var(--surface); border: 1px solid var(--border); padding: 1.5rem 2rem; margin-bottom: 3rem; border-radius: 4px; }
+    .toc h2 { font-size: 1rem; margin-top: 0; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+    .toc ol { margin: 0; padding-left: 1.25rem; }
+    .toc li { margin-bottom: 0.3rem; font-size: 0.95rem; }
+    .toc a { color: var(--slate); }
+    .callout { padding: 1.25rem 1.5rem; margin: 1.75rem 0; border-left: 4px solid var(--ink); background: var(--surface); }
+    .callout.green { border-color: var(--green); background: var(--green-light); }
+    .callout.amber { border-color: var(--amber); background: var(--amber-light); }
+    .callout.red { border-color: var(--red); background: var(--red-light); }
+    .callout p:last-child { margin-bottom: 0; }
+    .callout-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem; color: var(--muted); }
+    table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.92rem; }
+    th { background: var(--ink); color: var(--white); padding: 0.65rem 1rem; text-align: left; font-family: var(--font-heading); font-weight: normal; font-size: 0.9rem; }
+    td { padding: 0.65rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: var(--surface); }
+    /* Prompt cards */
+    .prompt-card { border: 1px solid var(--border); margin: 2rem 0; border-radius: 4px; overflow: hidden; }
+    .prompt-header { background: var(--surface); padding: 0.75rem 1.25rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .prompt-num { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+    .prompt-category { font-size: 0.75rem; color: var(--muted); background: var(--white); border: 1px solid var(--border); padding: 0.2rem 0.5rem; border-radius: 3px; }
+    .prompt-title { font-family: var(--font-heading); font-size: 1.05rem; color: var(--ink); padding: 0.75rem 1.25rem 0; }
+    .prompt-body { padding: 0 1.25rem 1.25rem; }
+    .prompt-template {
+      background: #0F172A;
+      color: #E2E8F0;
+      font-family: var(--font-code);
+      font-size: 0.85rem;
+      line-height: 1.6;
+      padding: 1.25rem;
+      margin: 0.75rem 0;
+      border-radius: 3px;
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+    .prompt-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.75rem; font-size: 0.88rem; }
+    .prompt-meta-item { padding: 0.5rem 0.75rem; background: var(--surface); border: 1px solid var(--border); border-radius: 3px; }
+    .prompt-meta-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.2rem; }
+    /* Workflow diagram */
+    .workflow { display: flex; gap: 0; margin: 1.5rem 0; flex-wrap: wrap; }
+    .workflow-step { flex: 1; min-width: 120px; border: 1px solid var(--border); border-right: none; padding: 0.75rem; text-align: center; background: var(--white); }
+    .workflow-step:last-child { border-right: 1px solid var(--border); }
+    .workflow-step.ai { background: var(--surface); }
+    .workflow-icon { font-size: 1.2rem; margin-bottom: 0.25rem; }
+    .workflow-label { font-size: 0.8rem; color: var(--muted); }
+    .workflow-title { font-family: var(--font-heading); font-size: 0.9rem; color: var(--ink); }
+    /* Red flag list */
+    .red-flag-list { list-style: none; padding-left: 0; }
+    .red-flag-list li { padding: 0.75rem 0.75rem 0.75rem 2.5rem; position: relative; border-bottom: 1px solid var(--border); margin-bottom: 0; }
+    .red-flag-list li:last-child { border-bottom: none; }
+    .red-flag-list li::before { content: "⚠"; position: absolute; left: 0.5rem; color: var(--red); }
+    .pdf-download { margin: 2.5rem 0; padding: 1.25rem 1.5rem; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .pdf-download p { margin: 0; font-size: 0.95rem; }
+    .pdf-download a { display: inline-block; padding: 0.5rem 1.25rem; background: var(--ink); color: var(--white); text-decoration: none; font-size: 0.9rem; font-weight: 600; white-space: nowrap; }
+    .pdf-download a:hover { background: var(--slate); color: var(--white); }
+    .author-bio { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.95rem; color: var(--muted); font-style: italic; }
+    .site-footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); text-align: center; font-size: 0.85rem; color: var(--subtle); }
+    @media (max-width: 600px) {
+      body { font-size: 16px; } h1 { font-size: 1.75rem; } h2 { font-size: 1.3rem; }
+      .container { padding: 1rem 1rem 3rem; }
+      .prompt-meta { grid-template-columns: 1fr; }
+      .workflow { flex-direction: column; }
+      .workflow-step { border-right: 1px solid var(--border); border-bottom: none; }
+      .workflow-step:last-child { border-bottom: 1px solid var(--border); }
+      .pdf-download { flex-direction: column; align-items: flex-start; }
+    }
+    @media print {
+      body { font-size: 12pt; color: #000; }
+      .site-header, .site-footer, .pdf-download { display: none; }
+      .container { max-width: 100%; padding: 0; }
+      a { text-decoration: none; color: #000; }
+      .prompt-template { background: #f0f0f0; color: #000; }
+    }
+  </style>
 </head>
 <body>
-<nav id="navbar">
-  <div class="nav-inner">
-    <a href="../" class="nav-brand">gonzalo.tech</a>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-links" id="navLinks">
-      <a href="../#about">About</a>
-<a href="../courses/ai-augmented-pm.html">Courses</a>
-<a href="../#resources" style="color:#0F172A;font-weight:600;">Resources</a>
-<a href="../#blog">Blog</a>
-<a href="../#newsletter" class="nav-cta">Get the Toolkit</a>
-    </div>
-  </div>
-</nav>
-
 <div class="container">
-  <div class="page-header">
-    <span style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:4px;background:#FFFBEB;color:#D97706;margin-bottom:12px;">COMING SOON</span>
-    <h1 class="page-title">AI for PMs Starter Kit</h1>
-    <p class="page-desc">The actual prompt library, workflow templates, and tool comparison I use daily. Copy, paste, adapt — you'll be faster by tomorrow.</p>
-    <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
-      <div class="price-box">
-        <div class="price">$15</div>
-      </div>
-      <a href="../#newsletter" class="btn-primary">Join waitlist &rarr;</a>
-    </div>
-  </div>
-  <div class="page-section">
-    <h2>What's included</h2>
-    <ul class="product-features">
-      <li>30+ tested prompts for spec writing, copy iteration, experiment analysis, and stakeholder updates</li>
-<li>Augment vs. Automate decision framework template</li>
-<li>Tool comparison matrix (Claude, ChatGPT, Gemini, Copilot) with honest strengths/weaknesses</li>
-<li>Rapid prototyping workflow guide</li>
-<li>Weekly AI integration checklist</li>
-    </ul>
-  </div>
-  <div class="page-section" style="border-top:1px solid var(--border);text-align:center;">
-    <h3 style="font-family:var(--font-h);font-size:22px;color:var(--ink);margin-bottom:8px;">Ready to start?</h3>
-    <p style="font-size:15px;color:var(--muted);margin-bottom:24px;">Every toolkit comes from real work, not theory. If it doesn't help, I want to know.</p>
-    <a href="../#newsletter" class="btn-primary" style="font-size:17px;padding:16px 36px;">Join waitlist &rarr;</a>
-  </div>
-</div>
+  <header class="site-header">
+    <a href="../index.html">gonzalo.tech</a>
+    <span class="badge">Free Toolkit</span>
+  </header>
 
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand">gonzalo.tech</div>
-        <div class="footer-tagline">Courses, toolkits, and frameworks for builders who use AI. Built with rigor, explained with care.</div>
+  <article>
+    <h1>AI for PMs Starter Kit</h1>
+    <div class="meta">
+      By <strong>Gonzalo Aguilar</strong> &nbsp;·&nbsp; Free guide &nbsp;·&nbsp; No email required &nbsp;·&nbsp; Updated April 2026
+    </div>
+
+    <p>AI can genuinely save a PM 3–5 hours a week on repetitive work. But most PMs either skip it entirely or try it once, get mediocre output, and conclude it doesn't work.</p>
+    <p>The secret is prompts. Vague inputs produce vague outputs. These 15 templates are the ones I actually use — built for real PM work, with enough specificity to get first-draft quality output you can actually use.</p>
+    <p><strong>Everything here is copy-paste ready. Grab a prompt, fill in the brackets, and run it.</strong></p>
+
+    <nav class="toc">
+      <h2>Table of Contents</h2>
+      <ol>
+        <li><a href="#prompts">15 Prompt Templates for PM Work</a></li>
+        <li><a href="#tool-comparison">Tool Comparison: ChatGPT vs. Claude vs. Gemini</a></li>
+        <li><a href="#workflow">Integrating AI into Your Sprint Cycle</a></li>
+        <li><a href="#red-flags">Red Flags: When AI Output Needs Human Override</a></li>
+      </ol>
+    </nav>
+
+    <div class="pdf-download">
+      <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
+      <a href="../pdfs/ai-pms-starter-kit.pdf" download>Download PDF</a>
+    </div>
+
+    <hr>
+
+    <h2 id="prompts">1. 15 Prompt Templates for PM Work</h2>
+
+    <p>Templates use [BRACKETS] for the parts you fill in. Prompts are written for ChatGPT or Claude — both work well. Tips: always add context about your audience and product. More context = better output.</p>
+
+    <!-- PRD -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-num">Prompt 01</span>
+        <span class="prompt-category">PRD / Spec Writing</span>
       </div>
-      <div class="footer-col">
-        <h4>Learn</h4>
-        <a href="../courses/ai-augmented-pm.html">Courses</a>
-        <a href="../#resources">Digital products</a>
-        <a href="../#blog">Blog</a>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <a href="https://linkedin.com/in/gonzaloeaguilar" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://medium.com/@gonzaloeaguilar" target="_blank" rel="noopener">Medium</a>
-        <a href="mailto:hello@gonzalo.tech">hello@gonzalo.tech</a>
+      <div class="prompt-title">PRD First Draft Generator</div>
+      <div class="prompt-body">
+        <div class="prompt-template">You are a senior product manager writing a PRD. Write a product requirements document for the following feature:
+
+Feature: [NAME OF FEATURE]
+Product: [PRODUCT NAME — what it does, who uses it]
+Problem: [THE USER PROBLEM THIS SOLVES IN 1-2 SENTENCES]
+Target user: [WHO IS THIS FOR SPECIFICALLY]
+Success metric: [HOW WILL YOU KNOW IF THIS WORKED]
+Out of scope: [WHAT THIS FEATURE DOES NOT DO]
+
+Write sections for: Problem Statement, Goals & Non-goals, User Stories (at least 5), Functional Requirements, Edge Cases, Open Questions. Use clear bullet points under each section. Keep it to 600-800 words — concise but complete.</div>
+        <div class="prompt-meta">
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">When to Use</div>
+            Start of a new feature. Gives you a skeleton in ~2 minutes that would take 30+ minutes to draft from scratch.
+          </div>
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">Important Note</div>
+            Always review and add your own context, stakeholder inputs, and technical constraints. Never ship an AI PRD un-edited.
+          </div>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Gonzalo Aguilar. All rights reserved.</span>
-      <span>Built in Fort Lauderdale, FL</span>
+
+    <!-- User Stories -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-num">Prompt 02</span>
+        <span class="prompt-category">User Stories</span>
+      </div>
+      <div class="prompt-title">User Story + Acceptance Criteria Generator</div>
+      <div class="prompt-body">
+        <div class="prompt-template">Write 5 user stories with acceptance criteria for the following feature:
+
+Feature: [FEATURE NAME]
+User persona: [WHO IS THE USER — e.g., "a freelancer who invoices clients monthly"]
+Core job to be done: [WHAT THEY'RE TRYING TO ACCOMPLISH]
+Current pain: [WHAT'S FRUSTRATING ABOUT THE CURRENT EXPERIENCE]
+
+Format each story as:
+- As a [user], I want [action] so that [outcome]
+- Acceptance Criteria: (3-5 specific, testable criteria using Given/When/Then format)
+- Edge case to consider: (1 edge case per story)
+
+Make the acceptance criteria concrete and testable, not vague.</div>
+        <div class="prompt-meta">
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">When to Use</div>
+            Sprint planning prep. Paste the output into Jira tickets as starting points.
+          </div>
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">Pro Tip</div>
+            Ask it to add a "negative story" — what the user should NOT be able to do. Prevents scope creep.
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</footer>
-<script>
-const nav = document.getElementById('navbar');
-window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
-hamburger.addEventListener('click', () => { navLinks.classList.toggle('open'); });
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
-    const href = link.getAttribute('href');
-    if (href.startsWith('/#')) { return; }
-    e.preventDefault();
-    const target = document.querySelector(href);
-    if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); navLinks.classList.remove('open'); }
-  });
-});
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-</script>
+
+    <!-- Competitive Analysis -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-num">Prompt 03</span>
+        <span class="prompt-category">Competitive Analysis</span>
+      </div>
+      <div class="prompt-title">Competitive Analysis Framework</div>
+      <div class="prompt-body">
+        <div class="prompt-template">Act as a product strategist. Analyze the competitive landscape for [YOUR PRODUCT CATEGORY].
+
+My product: [PRODUCT NAME + BRIEF DESCRIPTION]
+My target customer: [WHO YOU SERVE]
+Competitors to analyze: [LIST 3-5 COMPETITORS]
+
+For each competitor, cover:
+1. Core value proposition
+2. How they position themselves (what they lead with)
+3. Their apparent target customer
+4. 3 things they do better than most
+5. 3 observable weaknesses or gaps
+6. Their pricing model (if known)
+
+Then: Identify the top 2-3 whitespace opportunities — where are all these competitors weak or silent in a way that matters to customers?
+
+Note: flag any areas where your analysis may be incomplete or where I should verify with primary research.</div>
+        <div class="prompt-meta">
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">When to Use</div>
+            Quarterly strategy reviews, new feature evaluation, investor prep. Use as a starting framework, then verify with actual product research.
+          </div>
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">Important</div>
+            AI competitive analysis is based on training data (often outdated). Always validate key claims by actually using the competitor products.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Data Analysis -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-num">Prompt 04</span>
+        <span class="prompt-category">Data Analysis</span>
+      </div>
+      <div class="prompt-title">Metric Interpretation + Next Steps</div>
+      <div class="prompt-body">
+        <div class="prompt-template">You are a product analyst. Help me interpret this data and suggest next steps.
+
+Metric I'm looking at: [METRIC NAME — e.g., "7-day retention rate"]
+Current value: [NUMBER]
+Previous period: [NUMBER]
+Context: [WHAT'S HAPPENING IN THE PRODUCT — any recent releases, campaigns, or changes]
+Business context: [WHAT THIS METRIC MEANS FOR THE BUSINESS]
+
+Please:
+1. Identify the 3 most likely explanations for this change
+2. For each explanation, tell me what data I should look at to confirm or rule it out
+3. Suggest 3 concrete next steps — one short-term investigation, one medium-term test, one longer-term structural fix
+4. Flag any data quality issues I should sanity-check before drawing conclusions</div>
+        <div class="prompt-meta">
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">When to Use</div>
+            Weekly metric reviews, post-launch analysis, board prep. Helps you structure your thinking quickly.
+          </div>
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">Pro Tip</div>
+            Paste in the actual data table for richer analysis. The more context you give, the better the output.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stakeholder Email -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-num">Prompt 05</span>
+        <span class="prompt-category">Stakeholder Communication</span>
+      </div>
+      <div class="prompt-title">Difficult Stakeholder Email</div>
+      <div class="prompt-body">
+        <div class="prompt-template">Write a professional email to [STAKEHOLDER ROLE — e.g., "the VP of Sales"] about [TOPIC].
+
+Situation: [WHAT HAPPENED — be specific]
+What I want them to know: [THE KEY MESSAGE]
+What I want them to do: [CLEAR ASK, IF ANY]
+Tone: [e.g., "clear and direct but not defensive" or "empathetic but firm"]
+Things to avoid saying: [ANYTHING SENSITIVE OR OFF-LIMITS]
+
+Keep it under 200 words. Use plain language — no corporate jargon. Lead with the most important thing. End with a clear next step.</div>
+        <div class="prompt-meta">
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">When to Use</div>
+            Scope change announcements, timeline slips, pushing back on requests. Any time you need to write a careful email fast.
+          </div>
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">Pro Tip</div>
+            Ask for 3 versions at different tone levels — then pick the one that fits the relationship.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interview Questions -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-num">Prompt 06</span>
+        <span class="prompt-category">User Research</span>
+      </div>
+      <div class="prompt-title">User Interview Script Generator</div>
+      <div class="prompt-body">
+        <div class="prompt-template">Generate a 45-minute user interview script for the following research goal:
+
+What I'm trying to learn: [RESEARCH QUESTION — e.g., "Why do users abandon the checkout flow"]
+User segment being interviewed: [WHO — e.g., "first-time buyers who haven't converted"]
+What I already know: [EXISTING HYPOTHESES OR DATA]
+What I want to avoid: [LEADING QUESTIONS ABOUT, or topics to stay away from]
+
+Include:
+- 3 warm-up questions (to build rapport, not about the product)
+- 8-10 core questions using open-ended, non-leading language
+- 3 follow-up probes for each section ("tell me more about that", etc.)
+- A closing question about what would make their experience better
+- Timing estimate for each section
+
+Flag any questions that might be leading and suggest alternatives.</div>
+        <div class="prompt-meta">
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">When to Use</div>
+            Discovery research, usability studies, post-launch learning. Saves 2 hours of script drafting.
+          </div>
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">Important</div>
+            Review for leading questions. AI will flag some but not always catch subtle bias. Get a colleague to review.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OKR Writing -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-num">Prompt 07</span>
+        <span class="prompt-category">Strategy &amp; Planning</span>
+      </div>
+      <div class="prompt-title">OKR Writer</div>
+      <div class="prompt-body">
+        <div class="prompt-template">Write 3 OKRs for my team for the next quarter.
+
+Team: [TEAM NAME / FUNCTION]
+Company context: [WHAT THE COMPANY IS TRYING TO ACHIEVE THIS YEAR]
+Team's primary responsibility: [WHAT YOUR TEAM OWNS]
+Current biggest problem: [THE #1 THING HOLDING BACK PROGRESS]
+North star metric: [THE METRIC THAT DEFINES SUCCESS FOR YOUR TEAM]
+
+For each OKR:
+- Objective: 1 sentence, qualitative, inspiring but grounded
+- 3 Key Results: each must be specific, numeric, and achievable within the quarter
+- Confidence score (1-10): your gut check on whether this is achievable
+- Risk: 1 main risk to hitting this KR
+
+Avoid vanity metrics. Key Results should measure outcomes, not activity.</div>
+        <div class="prompt-meta">
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">When to Use</div>
+            Quarterly planning cycles. Get a draft in 5 minutes, then workshop it with the team.
+          </div>
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">Pro Tip</div>
+            Ask it to critique your existing OKRs too — "which of these measure activity rather than outcomes?"
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Release Notes -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-num">Prompt 08</span>
+        <span class="prompt-category">Communication</span>
+      </div>
+      <div class="prompt-title">Release Notes for Multiple Audiences</div>
+      <div class="prompt-body">
+        <div class="prompt-template">Write release notes for the following product update in 3 formats:
+
+Feature shipped: [WHAT SHIPPED]
+Technical summary: [WHAT IT DOES IN TECHNICAL TERMS]
+User benefit: [WHAT THE USER CAN NOW DO OR EXPERIENCE]
+Who it affects: [WHICH USERS]
+
+Write:
+1. Internal Slack update for the team (casual, highlights what shipped and any known issues, 50-75 words)
+2. Customer-facing release note for your changelog (clear, benefit-focused, no jargon, 75-100 words)
+3. Executive summary bullet for the weekly leadership update (1-2 sentences, metric-focused, ties to company goals)</div>
+        <div class="prompt-meta">
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">When to Use</div>
+            Every release. Saves 30-45 minutes of writing the same information in 3 different ways.
+          </div>
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">Pro Tip</div>
+            Feed it your changelog entries from the last 3 releases to keep the tone consistent.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prioritization -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-num">Prompt 09</span>
+        <span class="prompt-category">Prioritization</span>
+      </div>
+      <div class="prompt-title">Backlog Prioritization Framework</div>
+      <div class="prompt-body">
+        <div class="prompt-template">Help me prioritize the following backlog items using the RICE framework.
+
+Company stage: [EARLY STAGE / GROWTH / MATURE]
+Current biggest company goal: [e.g., "Increase trial to paid conversion from 8% to 15%"]
+Current biggest user complaint: [THE #1 THING USERS COMPLAIN ABOUT]
+
+Backlog items to prioritize:
+1. [ITEM 1 — brief description]
+2. [ITEM 2]
+3. [ITEM 3]
+4. [ITEM 4]
+5. [ITEM 5]
+
+For each item, score it on:
+- Reach: how many users/week would this impact?
+- Impact: how much would this move the needle? (1=minimal, 3=medium, 5=massive)
+- Confidence: how sure are we? (20%, 50%, 80%, 100%)
+- Effort: weeks of engineering work (estimate)
+- RICE Score: (Reach × Impact × Confidence) ÷ Effort
+
+Rank them by RICE score. Flag any assumptions I should challenge.</div>
+        <div class="prompt-meta">
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">When to Use</div>
+            Sprint planning, roadmap reviews, stakeholder negotiation. Makes prioritization conversations data-driven.
+          </div>
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">Important</div>
+            The scores are only as good as your estimates. Use the output to structure discussion, not to make decisions mechanically.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- A/B Test Design -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-num">Prompt 10</span>
+        <span class="prompt-category">Experimentation</span>
+      </div>
+      <div class="prompt-title">A/B Test Design Brief</div>
+      <div class="prompt-body">
+        <div class="prompt-template">Design an A/B test for the following hypothesis.
+
+Hypothesis: [YOUR HYPOTHESIS — e.g., "Showing social proof on the pricing page will increase paid sign-ups"]
+Current metric baseline: [CURRENT VALUE — e.g., "3.2% conversion from pricing page to sign-up"]
+Target metric: [WHAT YOU WANT TO MOVE]
+Why we believe this will work: [THE REASONING BEHIND THE HYPOTHESIS]
+What we'll change: [CONTROL VS. TREATMENT DESCRIPTION]
+Risk of being wrong: [WHAT HAPPENS IF THE TEST DOESN'T WORK]
+
+Design the test:
+1. Recommended sample size and duration (calculate for 80% power, 5% significance)
+2. How to split traffic
+3. What secondary metrics to watch (and what would indicate a tradeoff)
+4. Pre-mortems: what could cause false positive or false negative results?
+5. Decision criteria: what result do we need to call it a winner vs. loser vs. inconclusive?</div>
+        <div class="prompt-meta">
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">When to Use</div>
+            Before every experiment. Catch flawed test designs before you run them for 6 weeks.
+          </div>
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">Important</div>
+            Verify the sample size math with a dedicated stats calculator. AI math can be off.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Persona -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-num">Prompt 11</span>
+        <span class="prompt-category">User Research</span>
+      </div>
+      <div class="prompt-title">User Persona Builder</div>
+      <div class="prompt-body">
+        <div class="prompt-template">Create a detailed user persona based on the following research inputs.
+
+Product: [PRODUCT NAME AND PURPOSE]
+Research inputs: [PASTE IN: key quotes from interviews, survey data, behavioral patterns, support tickets — whatever you have]
+Segment focus: [WHICH USER SEGMENT — e.g., "power users who use the product daily"]
+
+Build a persona that includes:
+- Name, age, role, and context (make it realistic, not a stereotype)
+- Primary goal when using this product
+- The job to be done (what they're really trying to accomplish)
+- Top 3 frustrations with the current experience
+- Top 3 things they love or that work well
+- Quote that captures their mindset (based on research, not invented)
+- Decision-making style: how do they evaluate and choose tools?
+- What success looks like for them
+
+Flag which elements are well-supported by the data vs. which are inferred.</div>
+        <div class="prompt-meta">
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">When to Use</div>
+            After user research rounds, onboarding new team members, refocusing a product on a specific segment.
+          </div>
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">Pro Tip</div>
+            Ground it in real quotes. AI personas without research input are fictional and can mislead.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Executive Briefing -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-num">Prompt 12</span>
+        <span class="prompt-category">Stakeholder Communication</span>
+      </div>
+      <div class="prompt-title">Executive Briefing / Status Update</div>
+      <div class="prompt-body">
+        <div class="prompt-template">Write a crisp executive status update for the following situation.
+
+Audience: [WHO IS READING — e.g., "VP of Product + CFO in the weekly leadership sync"]
+Project/Initiative: [WHAT YOU'RE UPDATING THEM ON]
+Current status: [GREEN / YELLOW / RED and why]
+Key accomplishment since last update: [WHAT SHIPPED OR GOT DONE]
+Current blocker or risk: [IF ANY — be specific, not vague]
+What you need from them: [DECISION, APPROVAL, OR AWARENESS — be explicit]
+Relevant metrics: [ANY NUMBERS THAT SHOW PROGRESS OR LACK THEREOF]
+
+Write in this format:
+- Status: [color] — [one sentence explanation]
+- This week: [2-3 bullet points, past tense, outcome-focused]
+- Risk: [1 sentence if applicable, with mitigation]
+- Ask: [clear single ask, or "no action needed"]
+
+Under 150 words total. No fluff.</div>
+        <div class="prompt-meta">
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">When to Use</div>
+            Weekly syncs, board decks, all-hands updates. Executives read fast — this format respects that.
+          </div>
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">Pro Tip</div>
+            Always include the "ask" even if it's "no action needed." Removes ambiguity.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Jobs to Be Done -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-num">Prompt 13</span>
+        <span class="prompt-category">Discovery</span>
+      </div>
+      <div class="prompt-title">Jobs-to-Be-Done Analysis</div>
+      <div class="prompt-body">
+        <div class="prompt-template">Apply the Jobs-to-Be-Done framework to help me understand why users are "hiring" my product.
+
+Product: [PRODUCT NAME AND BRIEF DESCRIPTION]
+Known use cases: [HOW USERS DESCRIBE USING IT]
+Data I have: [ANY USAGE PATTERNS, COHORTS, OR SEGMENTS I CAN SEE]
+Problem I'm trying to solve: [WHAT STRATEGIC QUESTION THIS ANALYSIS IS FOR]
+
+Using JTBD methodology, analyze:
+1. Functional job: what practical task are users trying to complete?
+2. Emotional job: how do they want to feel (or avoid feeling) when they use this?
+3. Social job: how do they want to be perceived by others when using this?
+4. For each of the 3 job layers: what are the underserved outcomes — where are current solutions (including mine) falling short?
+5. Which competitor or substitute solution is being "fired" when a user hires my product?
+6. Implications: what features or positioning changes does this analysis suggest?</div>
+        <div class="prompt-meta">
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">When to Use</div>
+            Strategic reviews, positioning work, discovery sprints, new market entry analysis.
+          </div>
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">Pro Tip</div>
+            Feed in real customer quotes for the best output. The emotional and social layers especially benefit from real language.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post-Mortem -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-num">Prompt 14</span>
+        <span class="prompt-category">Retrospectives</span>
+      </div>
+      <div class="prompt-title">Post-Mortem Facilitator</div>
+      <div class="prompt-body">
+        <div class="prompt-template">Help me structure a blameless post-mortem for the following incident or failed project.
+
+What happened: [DESCRIBE THE INCIDENT OR FAILURE — timeline, impact, who was affected]
+What we expected to happen: [THE INTENDED OUTCOME]
+Timeline of events: [KEY MOMENTS — what decisions were made and when]
+Immediate causes: [WHAT DIRECTLY CAUSED THE PROBLEM]
+Contributing factors: [SYSTEM, PROCESS, OR COMMUNICATION ISSUES THAT ALLOWED IT]
+
+Facilitate the post-mortem by:
+1. Reframing each cause in blameless terms (system/process failure, not personal failure)
+2. Asking "5 Whys" for the top 2-3 contributing factors
+3. Generating action items in this format: [What], [Who owns it], [By when], [How we'll know it worked]
+4. Identifying 1-2 early warning indicators we could monitor to catch this earlier next time
+5. Drafting a 3-sentence summary we can share with stakeholders</div>
+        <div class="prompt-meta">
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">When to Use</div>
+            After any significant incident, missed deadline, or failed launch. Gets past blame-finding to actual fixes.
+          </div>
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">Important</div>
+            Still run it live with the team — AI gives you structure, but the conversation is where learning happens.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Roadmap -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-num">Prompt 15</span>
+        <span class="prompt-category">Strategy &amp; Planning</span>
+      </div>
+      <div class="prompt-title">Outcome-Based Roadmap Draft</div>
+      <div class="prompt-body">
+        <div class="prompt-template">Help me draft a 6-month outcome-based roadmap.
+
+Product: [PRODUCT NAME AND BRIEF DESCRIPTION]
+Company goal this year: [THE #1 BUSINESS OBJECTIVE]
+Current product state: [WHERE THE PRODUCT IS TODAY — key capabilities and gaps]
+Known user problems (in priority order): [LIST THE TOP 3-5 PROBLEMS YOU KNOW ABOUT]
+Technical debt or platform work to account for: [ANY MUST-DO INFRASTRUCTURE WORK]
+Team size: [NUMBER OF ENGINEERS, DESIGNERS, AND PMs]
+
+Draft a roadmap organized by outcome (not feature):
+- Month 1-2: Foundation (what must be true for everything else to work)
+- Month 3-4: Acceleration (what drives the core metric)
+- Month 5-6: Expansion (what opens new opportunity)
+
+For each phase:
+- The outcome we're trying to achieve (measurable)
+- 3-5 bets that could achieve that outcome
+- Dependencies and risks
+- What "done" looks like
+
+Format it so I can drop it into a slide or doc immediately.</div>
+        <div class="prompt-meta">
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">When to Use</div>
+            Planning cycles, new PM onboarding, alignment conversations with leadership.
+          </div>
+          <div class="prompt-meta-item">
+            <div class="prompt-meta-label">Pro Tip</div>
+            Run this, then ask it to "steelman the 3 biggest criticisms of this roadmap." The pushback is useful.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2 id="tool-comparison">2. Tool Comparison: ChatGPT vs. Claude vs. Gemini for PM Work</h2>
+
+    <table>
+      <thead>
+        <tr><th>Task</th><th>ChatGPT (GPT-4o)</th><th>Claude (Sonnet/Opus)</th><th>Gemini (Advanced)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>PRD &amp; spec writing</strong></td>
+          <td>Excellent. Strong structure, good at following format templates</td>
+          <td>Excellent. Especially good at nuance and avoiding generic language</td>
+          <td>Good. Can be more verbose; needs tighter prompts</td>
+        </tr>
+        <tr>
+          <td><strong>User stories + ACs</strong></td>
+          <td>Very good. Follows Given/When/Then well</td>
+          <td>Very good. Strong at edge cases when prompted</td>
+          <td>Good. Sometimes misses testability requirement</td>
+        </tr>
+        <tr>
+          <td><strong>Data analysis &amp; interpretation</strong></td>
+          <td>Good. GPT-4o can run code and analyze actual CSV data</td>
+          <td>Good at frameworks; weaker at running live calculations</td>
+          <td>Good integration with Google Sheets; strong for Google-ecosystem users</td>
+        </tr>
+        <tr>
+          <td><strong>Long document analysis</strong></td>
+          <td>Good; 128K context window</td>
+          <td>Best-in-class; 200K context. Excellent at following instructions across long docs</td>
+          <td>Very good; 1M context window (Gemini 1.5)</td>
+        </tr>
+        <tr>
+          <td><strong>Stakeholder emails</strong></td>
+          <td>Very good. Versatile tone control</td>
+          <td>Excellent. Tone nuance is a Claude strength</td>
+          <td>Good but can sound slightly stiff</td>
+        </tr>
+        <tr>
+          <td><strong>Competitive research</strong></td>
+          <td>Good but training cutoff applies</td>
+          <td>Same limitation but strong structured analysis</td>
+          <td>Can access live Google search data (with web grounding)</td>
+        </tr>
+        <tr>
+          <td><strong>Code-adjacent tasks (tech specs)</strong></td>
+          <td>Best. GPT-4o is strong at technical writing and code</td>
+          <td>Very good at technical writing; excellent at code</td>
+          <td>Good; especially for Google Cloud / GCP context</td>
+        </tr>
+        <tr>
+          <td><strong>Price (as of mid-2025)</strong></td>
+          <td>$20/mo consumer; API pricing varies</td>
+          <td>$20/mo consumer; API pricing varies</td>
+          <td>$20/mo (Google One AI Premium)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <div class="callout-label">My Recommendation</div>
+      <p><strong>For pure PM writing work</strong> (PRDs, emails, user stories): Claude is slightly better at tone and nuance.<br>
+      <strong>For data analysis</strong>: ChatGPT with code interpreter, or Gemini if you're Google-native.<br>
+      <strong>For long document analysis</strong>: Claude (200K context) or Gemini 1.5 (1M context).<br>
+      <strong>For current information</strong>: Gemini (web grounding) or ChatGPT with browsing enabled.</p>
+    </div>
+
+    <hr>
+
+    <h2 id="workflow">3. Integrating AI into Your Sprint Cycle</h2>
+
+    <p>The goal isn't to use AI on every task — it's to identify where you have repetitive high-effort work and let AI take the first draft. Here's how it fits across a typical sprint:</p>
+
+    <h3>Before Sprint Planning</h3>
+    <ul>
+      <li>Use Prompt 09 to draft RICE scores for backlog items — paste into planning doc for discussion</li>
+      <li>Use Prompt 07 to draft OKRs for the quarter — workshop them with the team</li>
+      <li>Use Prompt 03 to refresh competitive context if new features are being planned</li>
+    </ul>
+
+    <h3>During the Sprint</h3>
+    <ul>
+      <li>Use Prompt 01 (PRD) and Prompt 02 (User Stories) for any new feature work — start with AI draft, edit, share</li>
+      <li>Use Prompt 05 for any difficult stakeholder communication — never send un-edited</li>
+      <li>Use Prompt 04 if you're investigating a metric movement mid-sprint</li>
+    </ul>
+
+    <h3>Sprint Review / Retrospective</h3>
+    <ul>
+      <li>Use Prompt 08 to generate release notes across 3 audiences in one pass</li>
+      <li>Use Prompt 12 for executive status updates</li>
+      <li>Use Prompt 14 for post-mortems if something went wrong</li>
+    </ul>
+
+    <h3>Discovery and Research Work</h3>
+    <ul>
+      <li>Use Prompt 06 (interview script) before any user research session</li>
+      <li>Use Prompt 11 to synthesize research into personas</li>
+      <li>Use Prompt 13 for JTBD analysis when doing strategic reviews</li>
+    </ul>
+
+    <div class="callout green">
+      <div class="callout-label">The Rule I Follow</div>
+      <p>AI handles the first draft. I handle the judgment. I've never shipped a PRD, email, or roadmap that came directly from AI without human review. The output gets me to 70% faster — the final 30% is still mine.</p>
+    </div>
+
+    <hr>
+
+    <h2 id="red-flags">4. Red Flags: When AI Output Needs Human Override</h2>
+
+    <ul class="red-flag-list">
+      <li><strong>The output sounds confident but cites specific numbers you haven't verified.</strong> Always check any statistics, market size claims, or competitor data. AI is trained on text that contains errors.</li>
+      <li><strong>The tone is too smooth and generic.</strong> Good communication requires voice and specificity. If it reads like a template rather than a message from a real person, edit it heavily before sending.</li>
+      <li><strong>You're using AI for a decision, not a document.</strong> AI is excellent at producing documents. It's not a substitute for judgment on calls like "should we build this feature" or "is this user research finding significant?"</li>
+      <li><strong>Legal, compliance, or regulated-industry content.</strong> AI doesn't know the specific legal or regulatory environment you're operating in. Get a human expert involved before anything touches legal or compliance territory.</li>
+      <li><strong>The output doesn't match what users actually said.</strong> If an AI-generated persona or problem statement contradicts your qualitative research, trust the research. AI summarizes text patterns — you have direct access to your users.</li>
+      <li><strong>It's writing about interpersonal situations.</strong> Conflict resolution, performance conversations, difficult feedback — these require human judgment about relationship dynamics. Use AI to prepare, not to replace the conversation.</li>
+      <li><strong>The output is technically correct but misses the real problem.</strong> AI solves the problem you described. If you described the wrong problem, the output will be well-executed but irrelevant. Your job is to make sure the prompt captures the real situation.</li>
+    </ul>
+
+    <div class="pdf-download">
+      <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
+      <a href="../pdfs/ai-pms-starter-kit.pdf" download>Download PDF</a>
+    </div>
+
+    <div class="author-bio">
+      <p>Gonzalo Aguilar is a Senior Product Manager specializing in growth, identity, and onboarding in regulated markets. He writes about product strategy, conversion optimization, and practical AI workflows at <a href="../index.html">gonzalo.tech</a>.</p>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    &copy; 2026 gonzalo.tech — Gonzalo Aguilar &nbsp;·&nbsp; <a href="../index.html" style="color:inherit;">Home</a>
+  </footer>
+</div>
 </body>
 </html>

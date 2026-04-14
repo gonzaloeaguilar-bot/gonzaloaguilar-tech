@@ -1,204 +1,810 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Break Into Product Management — gonzalo.tech</title>
-<meta name="description" content="Break into product management without a tech background. Portfolio building, interview prep, and positioning strategy.">
-<meta property="og:title" content="Break Into Product Management — gonzalo.tech">
-<meta property="og:description" content="Break into product management without a tech background. Portfolio building, interview prep, and positioning strategy.">
-<link rel="canonical" href="https://gonzalo.tech">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--ink:#0F172A;--slate:#334155;--muted:#64748B;--subtle:#94A3B8;--border:#E2E8F0;--surface:#F8FAFC;--white:#FFFFFF;--red:#DC2626;--red-light:#FEF2F2;--green:#16A34A;--green-light:#F0FDF4;--amber:#D97706;--amber-light:#FFFBEB;--font-h:Georgia,'Times New Roman',serif;--font-b:Calibri,'Segoe UI',system-ui,sans-serif;--font-c:Consolas,'Courier New',monospace;--max-w:1080px}
-body{font-family:var(--font-b);color:var(--slate);background:var(--white);line-height:1.5;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
-.container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
-nav.scrolled{box-shadow:0 1px 8px rgba(15,23,42,0.06)}
-.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px}
-.nav-brand{font-family:var(--font-h);font-size:20px;font-weight:bold;color:var(--ink);letter-spacing:-0.5px}
-.nav-links{display:flex;gap:28px;align-items:center}
-.nav-links a{font-size:14px;color:var(--muted);font-weight:500;transition:color .2s}
-.nav-links a:hover{color:var(--ink)}
-.nav-cta{font-size:13px!important;font-weight:600!important;color:var(--white)!important;background:var(--ink);padding:8px 18px;border-radius:6px;transition:opacity .2s}
-.nav-cta:hover{opacity:.88}
-.hamburger{display:none;background:none;border:none;cursor:pointer;width:28px;height:20px;position:relative}
-.hamburger span{display:block;width:100%;height:2px;background:var(--ink);position:absolute;left:0;transition:all .3s}
-.hamburger span:nth-child(1){top:0}.hamburger span:nth-child(2){top:9px}.hamburger span:nth-child(3){top:18px}
-footer{background:var(--surface);border-top:1px solid var(--border);padding:48px 0 32px}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;margin-bottom:32px}
-.footer-brand{font-family:var(--font-h);font-size:18px;font-weight:bold;color:var(--ink);margin-bottom:8px}
-.footer-tagline{font-size:13px;color:var(--muted);max-width:280px;line-height:1.5}
-.footer-col h4{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
-.footer-col a{display:block;font-size:14px;color:var(--slate);padding:4px 0;transition:color .2s}
-.footer-col a:hover{color:var(--ink)}
-.footer-bottom{border-top:1px solid var(--border);padding-top:24px;font-size:12px;color:var(--subtle);display:flex;justify-content:space-between;align-items:center}
-.btn-primary{display:inline-block;padding:14px 28px;background:var(--ink);color:var(--white);font-weight:600;font-size:15px;border-radius:6px;transition:opacity .2s;border:none;cursor:pointer}
-.btn-primary:hover{opacity:.88}
-.btn-secondary{display:inline-block;padding:14px 28px;border:1px solid var(--border);color:var(--ink);font-weight:600;font-size:15px;border-radius:6px;transition:all .2s;background:transparent;cursor:pointer}
-.btn-secondary:hover{border-color:var(--ink)}
-.fade-in{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
-.fade-in.visible{opacity:1;transform:translateY(0)}
-@media(max-width:768px){
-  .nav-links{display:none}.hamburger{display:block}
-  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);padding:20px 24px;gap:16px}
-  .footer-grid{grid-template-columns:1fr;gap:32px}
-}
-/* Article styles */
-.article-header{padding:120px 0 48px}
-.article-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
-.article-title{font-family:var(--font-h);font-size:38px;font-weight:bold;color:var(--ink);line-height:1.2;margin-bottom:16px;max-width:720px}
-.article-meta{font-size:14px;color:var(--subtle);margin-bottom:32px}
-.article-body{max-width:720px;margin:0 auto;padding:0 24px 96px}
-.article-body h2{font-family:var(--font-h);font-size:24px;color:var(--ink);margin:40px 0 16px;line-height:1.3}
-.article-body h3{font-size:18px;font-weight:600;color:var(--ink);margin:32px 0 12px}
-.article-body p{font-size:16px;color:var(--slate);line-height:1.7;margin-bottom:16px;max-width:65ch}
-.article-body strong{color:var(--ink)}
-.article-body blockquote{border-left:3px solid var(--border);padding:12px 20px;margin:24px 0;background:var(--surface);border-radius:0 6px 6px 0}
-.article-body blockquote p{color:var(--muted);font-size:15px;margin-bottom:0}
-.article-cta{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;margin:48px 0;text-align:center}
-.article-cta h3{font-family:var(--font-h);font-size:20px;color:var(--ink);margin-bottom:8px}
-.article-cta p{font-size:14px;color:var(--muted);margin-bottom:16px}
-.article-bio{border-top:1px solid var(--border);padding-top:24px;margin-top:48px;font-size:14px;color:var(--muted);font-style:italic;font-family:var(--font-h)}
-/* Course/product page styles */
-.page-header{padding:120px 0 48px;border-bottom:1px solid var(--border)}
-.page-title{font-family:var(--font-h);font-size:38px;font-weight:bold;color:var(--ink);line-height:1.2;margin-bottom:12px;max-width:640px}
-.page-desc{font-size:17px;color:var(--slate);line-height:1.65;max-width:600px;margin-bottom:24px}
-.page-section{padding:64px 0}
-.page-section h2{font-family:var(--font-h);font-size:26px;color:var(--ink);margin-bottom:24px}
-.module-list{list-style:none;counter-reset:module}
-.module-list li{counter-increment:module;padding:20px 0;border-bottom:1px solid var(--border);display:flex;gap:16px;align-items:start}
-.module-list li::before{content:counter(module,decimal-leading-zero);font-family:var(--font-h);font-size:24px;color:var(--subtle);font-weight:bold;min-width:36px}
-.module-title{font-weight:600;color:var(--ink);font-size:16px;margin-bottom:4px}
-.module-desc{font-size:14px;color:var(--muted);line-height:1.55}
-.price-box{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;display:inline-block}
-.price-box .price{font-family:var(--font-h);font-size:48px;font-weight:bold;color:var(--ink)}
-.price-box .note{font-size:14px;color:var(--subtle);margin-top:4px}
-.product-features{list-style:none}
-.product-features li{padding:10px 0;border-bottom:1px solid var(--border);font-size:15px;color:var(--slate);padding-left:24px;position:relative}
-.product-features li::before{content:"\2713";position:absolute;left:0;color:var(--green);font-weight:bold}
-@media(max-width:768px){
-  .article-title,.page-title{font-size:28px}
-  .article-body p{font-size:15px}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Break Into Product Management — Free Course — gonzalo.tech</title>
+  <meta name="description" content="A free, complete career-switching course for people without CS or FAANG backgrounds. Real talk on portfolios, resumes, interview frameworks, and your first 90 days as a PM.">
+  <meta name="keywords" content="how to become a product manager, break into product management, PM career switch, product manager without CS degree, PM portfolio, PM interview prep, STAR method product management">
+  <meta name="author" content="Gonzalo Aguilar">
+  <meta property="og:title" content="Break Into Product Management — Free Course — gonzalo.tech">
+  <meta property="og:description" content="For career switchers without CS or FAANG backgrounds. Real portfolios, real resume templates, real interview frameworks.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gonzalo.tech/courses/break-into-pm.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Break Into Product Management — Free Course">
+  <meta name="twitter:description" content="Career switching into PM without a CS degree. Free course, no paywall.">
+  <link rel="canonical" href="https://gonzalo.tech/courses/break-into-pm.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Break Into Product Management",
+    "description": "A free, comprehensive course for career switchers without CS or FAANG backgrounds. Covers what PMs actually do, non-traditional background advantages, portfolio building, resume writing, interview frameworks, and the first 90 days on the job.",
+    "provider": {
+      "@type": "Person",
+      "name": "Gonzalo Aguilar",
+      "url": "https://gonzalo.tech"
+    },
+    "url": "https://gonzalo.tech/courses/break-into-pm.html",
+    "isAccessibleForFree": true,
+    "educationalLevel": "Beginner",
+    "inLanguage": "en",
+    "teaches": ["Product management fundamentals", "PM portfolio building", "PM resume writing", "PM interview preparation", "STAR method", "Product case studies", "First 90 days as PM"]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0F172A;
+      --slate: #334155;
+      --muted: #64748B;
+      --subtle: #94A3B8;
+      --border: #E2E8F0;
+      --surface: #F8FAFC;
+      --white: #FFFFFF;
+      --red: #DC2626;
+      --green: #16A34A;
+      --amber: #D97706;
+      --font-heading: Georgia, 'Times New Roman', serif;
+      --font-body: Calibri, 'Gill Sans', 'Segoe UI', sans-serif;
+      --font-code: Consolas, 'Courier New', monospace;
+    }
+
+    body { font-family: var(--font-body); font-size: 17px; line-height: 1.7; color: var(--slate); background: var(--white); -webkit-font-smoothing: antialiased; }
+    a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--muted); }
+    strong { color: var(--ink); }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); transition: box-shadow .3s; }
+    nav.scrolled { box-shadow: 0 1px 8px rgba(15,23,42,0.06); }
+    .nav-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-brand { font-family: var(--font-heading); font-size: 20px; font-weight: bold; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: 14px; color: var(--muted); font-weight: 500; text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta { font-size: 13px !important; font-weight: 600 !important; color: var(--white) !important; background: var(--ink); padding: 8px 18px; border-radius: 6px; }
+
+    .page-wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+    .course-hero { padding: 100px 0 48px; border-bottom: 1px solid var(--border); }
+    .course-badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; background: #F0FDF4; color: var(--green); margin-bottom: 12px; }
+    .course-hero h1 { font-family: var(--font-heading); font-size: 40px; font-weight: bold; color: var(--ink); line-height: 1.2; margin-bottom: 16px; max-width: 700px; }
+    .course-hero .subtitle { font-size: 18px; color: var(--slate); line-height: 1.65; max-width: 600px; margin-bottom: 24px; }
+    .course-meta { display: flex; gap: 24px; flex-wrap: wrap; font-size: 14px; color: var(--muted); margin-bottom: 32px; }
+
+    .course-body { display: grid; grid-template-columns: 1fr 280px; gap: 48px; padding: 48px 0 96px; align-items: start; }
+
+    .toc { position: sticky; top: 80px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 24px; }
+    .toc h3 { font-family: var(--font-heading); font-size: 14px; font-weight: bold; color: var(--ink); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
+    .toc ol { list-style: none; padding: 0; counter-reset: toc; }
+    .toc li { counter-increment: toc; margin-bottom: 10px; }
+    .toc a { font-size: 13px; color: var(--muted); text-decoration: none; display: flex; gap: 8px; line-height: 1.4; transition: color .2s; }
+    .toc a::before { content: counter(toc); font-weight: 700; color: var(--subtle); min-width: 16px; flex-shrink: 0; }
+    .toc a:hover { color: var(--ink); }
+    .toc .toc-free { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); font-size: 12px; color: var(--green); font-weight: 600; text-align: center; }
+
+    .course-content h2 { font-family: var(--font-heading); font-size: 26px; color: var(--ink); margin-top: 56px; margin-bottom: 16px; line-height: 1.3; padding-top: 24px; border-top: 2px solid var(--ink); }
+    .course-content h2:first-child { margin-top: 0; border-top: none; padding-top: 0; }
+    .course-content h3 { font-family: var(--font-heading); font-size: 19px; color: var(--ink); margin-top: 32px; margin-bottom: 12px; }
+    .course-content p { margin-bottom: 16px; max-width: 65ch; }
+    .course-content ul, .course-content ol { margin-bottom: 16px; padding-left: 24px; }
+    .course-content li { margin-bottom: 6px; }
+
+    .module-header { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 24px 28px; margin-bottom: 24px; }
+    .module-number { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .module-header h2 { font-family: var(--font-heading); font-size: 22px; color: var(--ink); margin: 0 0 8px; border: none; padding: 0; }
+    .module-objectives { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+    .module-objectives p { font-size: 13px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+    .module-objectives ul { font-size: 14px; color: var(--slate); margin: 0; padding-left: 20px; }
+    .module-objectives li { margin-bottom: 4px; }
+
+    .callout { border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
+    .callout-key { background: #F0FDF4; border-left: 4px solid var(--green); }
+    .callout-exercise { background: #FFFBEB; border-left: 4px solid var(--amber); }
+    .callout-warning { background: #FEF2F2; border-left: 4px solid var(--red); }
+    .callout-insight { background: var(--surface); border-left: 4px solid var(--ink); }
+    .callout strong.callout-label { display: block; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; color: var(--muted); }
+    .callout p { margin-bottom: 8px; }
+    .callout p:last-child { margin-bottom: 0; }
+    .callout ul { margin-bottom: 0; }
+
+    .template-block { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 20px 24px; margin: 20px 0; font-family: var(--font-code); font-size: 14px; line-height: 1.6; color: var(--slate); white-space: pre-wrap; overflow-x: auto; }
+    .template-label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; font-family: var(--font-body); }
+
+    .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+    .data-table th { background: var(--surface); border: 1px solid var(--border); padding: 10px 14px; text-align: left; font-weight: 700; color: var(--ink); }
+    .data-table td { border: 1px solid var(--border); padding: 10px 14px; vertical-align: top; color: var(--slate); }
+    .data-table tr:nth-child(even) td { background: var(--surface); }
+
+    .star-box { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin: 20px 0; }
+    .star-row { display: grid; grid-template-columns: 80px 1fr; border-bottom: 1px solid var(--border); }
+    .star-row:last-child { border-bottom: none; }
+    .star-label { background: var(--surface); padding: 12px 16px; font-weight: 700; font-size: 13px; color: var(--ink); display: flex; align-items: center; }
+    .star-content { padding: 12px 16px; font-size: 14px; }
+
+    .days-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
+    .days-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 20px; }
+    .days-card h4 { font-family: var(--font-heading); font-size: 15px; color: var(--ink); margin-bottom: 12px; }
+    .days-card ul { list-style: none; padding: 0; margin: 0; }
+    .days-card li { font-size: 13px; color: var(--slate); padding: 4px 0; border-bottom: 1px solid var(--border); }
+    .days-card li:last-child { border-bottom: none; }
+
+    blockquote { border-left: 3px solid var(--border); padding: 12px 20px; margin: 24px 0; background: var(--surface); border-radius: 0 6px 6px 0; font-style: italic; color: var(--muted); }
+    blockquote cite { display: block; font-size: 13px; margin-top: 8px; font-style: normal; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 48px 0 32px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; margin-bottom: 32px; max-width: 1080px; margin-left: auto; margin-right: auto; padding: 0 24px; }
+    .footer-brand { font-family: var(--font-heading); font-size: 18px; font-weight: bold; color: var(--ink); margin-bottom: 8px; }
+    .footer-tagline { font-size: 13px; color: var(--muted); max-width: 280px; line-height: 1.5; }
+    .footer-col h4 { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+    .footer-col a { display: block; font-size: 14px; color: var(--slate); padding: 4px 0; text-decoration: none; transition: color .2s; }
+    .footer-col a:hover { color: var(--ink); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; font-size: 12px; color: var(--subtle); display: flex; justify-content: space-between; align-items: center; max-width: 1080px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+
+    @media (max-width: 768px) {
+      .course-hero h1 { font-size: 28px; }
+      .course-body { grid-template-columns: 1fr; }
+      .toc { display: none; }
+      .days-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
 </head>
 <body>
+
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="../" class="nav-brand">gonzalo.tech</a>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-links" id="navLinks">
-      <a href="../#about">About</a>
-<a href="./ai-augmented-pm.html" style="color:#0F172A;font-weight:600;">Courses</a>
-<a href="../#resources">Resources</a>
-<a href="../#blog">Blog</a>
-<a href="../#newsletter" class="nav-cta">Get the Toolkit</a>
+    <a href="../index.html" class="nav-brand">gonzalo.tech</a>
+    <div class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="./break-into-pm.html" style="color:var(--ink);font-weight:600;">Courses</a>
+      <a href="../index.html#resources">Resources</a>
+      <a href="../index.html#blog">Blog</a>
+      <a href="../index.html#newsletter" class="nav-cta">Get the Toolkit</a>
     </div>
   </div>
 </nav>
 
-<div class="container">
-  <div class="page-header">
-    <span style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:4px;background:#FFFBEB;color:#D97706;margin-bottom:12px;">COMING SOON</span>
-    <h1 class="page-title">Break Into Product Management</h1>
-    <p class="page-desc">The non-traditional path into PM — for career switchers who don't have a CS degree or FAANG on their resume.</p>
-    <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
-      <div class="price-box">
-        <div class="price">$39</div>
-        <div class="note">Pre-order pricing</div>
-      </div>
-      <a href="../#newsletter" class="btn-primary">Join waitlist</a>
+<div class="page-wrap">
+  <div class="course-hero">
+    <span class="course-badge">FREE COURSE</span>
+    <h1>Break Into Product Management</h1>
+    <p class="subtitle">For career switchers without CS degrees or FAANG credentials. Honest frameworks, real templates, and the unspoken truths about what PMs actually do — and how to get hired to do it.</p>
+    <div class="course-meta">
+      <span>6 modules</span>
+      <span>·</span>
+      <span>~5 hours of reading</span>
+      <span>·</span>
+      <span>Templates + frameworks</span>
+      <span>·</span>
+      <span>No sign-up required</span>
     </div>
   </div>
-  <div class="page-section">
-    <h2>What you'll learn</h2>
-    <ul class="module-list">
-      <li>
-  <div><div class="module-title">What PMs Actually Do</div>
-  <div class="module-desc">Not the job description version. The real daily work — meetings, decisions, trade-offs, and the judgment calls nobody trains you for.</div></div>
-</li>
-<li>
-  <div><div class="module-title">Why Non-Traditional Backgrounds Win</div>
-  <div class="module-desc">Hospitality, sales, teaching, operations — these backgrounds give you user empathy most CS grads don't have.</div></div>
-</li>
-<li>
-  <div><div class="module-title">Building Your Portfolio From Scratch</div>
-  <div class="module-desc">Create 3-4 case studies that prove you can think like a PM — even without PM experience.</div></div>
-</li>
-<li>
-  <div><div class="module-title">The Resume That Gets Past ATS</div>
-  <div class="module-desc">Formatting, keywords, structure, and the specific phrases hiring managers scan for in 6 seconds.</div></div>
-</li>
-<li>
-  <div><div class="module-title">Interview Frameworks That Work</div>
-  <div class="module-desc">STAR method, product case studies, estimation questions — with practice templates for each.</div></div>
-</li>
 
-    </ul>
-  </div>
-  <div class="page-section" style="border-top:1px solid var(--border);">
-    <h2>Who this is for</h2>
-    <ul class="product-features">
-      <li>You want practical workflows, not theory or "50 AI use cases" listicles</li>
-      <li>You learn by doing — every module has exercises that produce something tangible</li>
-      <li>You want frameworks from someone who uses them daily in a real product role</li>
-      <li>You're comfortable with ambiguity and want tools to navigate it faster</li>
-    </ul>
-  </div>
-  <div style="padding:64px 0;text-align:center;">
-    <a href="../#newsletter" class="btn-primary" style="font-size:17px;padding:16px 36px;">Join waitlist &rarr;</a>
+  <div class="course-body">
+    <main class="course-content" id="course-main">
+
+      <p><strong>Let's start with the thing no one says out loud:</strong> the PM hiring process is biased toward people who look like they already are PMs. Engineering background? Recognized MBA? FAANG internship? You get fast-tracked. Everyone else has to be twice as good at the specific thing that matters: demonstrating product thinking.</p>
+
+      <p>This course is about building that demonstration. Not faking it — building it. Because if you've been a teacher, a nurse, a retail manager, a journalist, or literally any other profession, you have more real product thinking than you think. You just haven't learned to package and communicate it yet.</p>
+
+      <p>That's what we're fixing here. No fluff. No mindset shifts. Real templates, real frameworks, and the actual steps that get people hired.</p>
+
+      <hr>
+
+      <!-- MODULE 1 -->
+      <div class="module-header" id="module-1">
+        <div class="module-number">Module 1</div>
+        <h2>What PMs Actually Do (Not the Job Description)</h2>
+        <div class="module-objectives">
+          <p>Real talk</p>
+          <ul>
+            <li>Understand the four actual PM activities that drive outcomes</li>
+            <li>Identify the difference between PM at small vs. large companies</li>
+            <li>Know which type of PM role fits your background</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>The job description is a fantasy</h3>
+
+      <p>Most PM job descriptions list 20 responsibilities. In practice, the role is about 4 things: talking to users to understand problems, making decisions about what to build and in what order, working with engineers and designers to ship something, and measuring whether it worked. That's it.</p>
+
+      <p>Everything else — "defines product vision," "drives cross-functional alignment," "communicates with C-suite" — that's what happens when you do those four things well at scale. It's not a separate skill set. It's the output of being good at the core job.</p>
+
+      <h3>The four things that actually matter</h3>
+
+      <p><strong>1. User understanding.</strong> Not user research as an academic exercise — actually being in the room with people who have the problem you're trying to solve, hearing their language, feeling their frustration, understanding what they already tried. This is the hardest skill to fake and the most important one to develop.</p>
+
+      <p><strong>2. Prioritization under pressure.</strong> Every PM has more requests than capacity. The skill is not managing everyone's feelings about your roadmap. The skill is making defensible decisions about what gets worked on first, and communicating those decisions in a way that moves forward rather than creating resentment.</p>
+
+      <p><strong>3. Writing clearly under ambiguity.</strong> PMs write more than any other role on the product team. Specs, updates, briefs, analyses. The ability to take a fuzzy situation and produce a document that gives a team a clear direction — that's a PM's primary output.</p>
+
+      <p><strong>4. Cross-functional influence without authority.</strong> PMs don't manage engineers or designers. They earn trust and get people to prioritize their work based on the quality of their thinking and their relationships — not their title. This is especially true at larger companies.</p>
+
+      <h3>Small company vs. large company PM</h3>
+
+      <p><strong>Small company (under 100 people):</strong> You'll do all four things every week. You'll also write your own acceptance criteria, handle customer support when something breaks, and prototype features because there's no designer available. The upside: you see the full feedback loop. You build something, it ships, you watch what happens. The learning velocity is unmatched.</p>
+
+      <p><strong>Large company (200+ people):</strong> You'll specialize. You might own one metric on one surface of one product. Your days will be meetings. The upside: structure, process, and the ability to learn how high-functioning product orgs operate at scale. The downside: it can take 18 months before you feel like you've actually shipped something.</p>
+
+      <div class="callout callout-insight">
+        <strong class="callout-label">Career Switcher Advice</strong>
+        <p>If you're breaking into PM, start at a company with fewer than 200 people. Not because the work is easier — it isn't — but because you'll see more of the job faster. Every week will teach you something that would take 6 months to learn in a large org. Get the reps first. Scale later.</p>
+      </div>
+
+      <h3>Which PM role fits your background?</h3>
+
+      <ul>
+        <li><strong>Growth PM:</strong> Obsessed with acquisition, activation, retention, revenue. If you've worked in marketing, sales ops, or analytics, this is your path.</li>
+        <li><strong>Platform PM:</strong> Builds the infrastructure other teams build on. More technical. Better fit for people with engineering-adjacent backgrounds.</li>
+        <li><strong>Consumer PM:</strong> B2C products, millions of users, design and copy matter enormously. If you've worked in journalism, content, or UX — strong fit.</li>
+        <li><strong>B2B / Enterprise PM:</strong> Customer-facing, relationship-heavy, requirements driven by sales. If you came from customer success, account management, or consulting — this is your fastest path in.</li>
+        <li><strong>Ops / Internal tools PM:</strong> Often overlooked. Builds tools used by internal teams. Lower glamour, faster hiring, and you'll ship more in year one than most PMs do in three years at a large company.</li>
+      </ul>
+
+      <div class="callout callout-key">
+        <strong class="callout-label">Key Takeaway — Module 1</strong>
+        <p>The job description doesn't tell you what the job is. The job is: understand users, prioritize relentlessly, write clearly, and build trust without authority. Everything else follows from those four things.</p>
+      </div>
+
+      <div class="callout callout-exercise">
+        <strong class="callout-label">Exercise 1</strong>
+        <p>Write a one-paragraph answer to this question: "What is a problem you've seen users of any product, service, or process experience — and what would you have done differently if you owned that product?" This is the PM interview question. Practice it now. You'll use it in every interview you have.</p>
+      </div>
+
+      <hr>
+
+      <!-- MODULE 2 -->
+      <div class="module-header" id="module-2">
+        <div class="module-number">Module 2</div>
+        <h2>Your Non-Traditional Background Is an Advantage</h2>
+        <div class="module-objectives">
+          <p>Real talk</p>
+          <ul>
+            <li>Reframe your previous experience as product thinking evidence</li>
+            <li>Identify the 3 transferable skills you already have that PMs struggle to develop</li>
+            <li>Write your story in PM language without misrepresenting anything</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>What career switchers get wrong</h3>
+
+      <p>The most common mistake: trying to minimize your previous career and emphasize your PM-adjacent activities. This is backwards. A hiring manager looking at 50 PM resumes from people who all did the same "I pivoted to PM after my first job" arc wants the person who has something different to say. Your background is the differentiator — as long as you learn to tell the story correctly.</p>
+
+      <p>The story isn't "I was a teacher but now I want to be a PM." The story is: "I managed a curriculum for 120 students, which meant I was constantly balancing user research (student feedback), stakeholder communication (parents and administration), and prioritization under resource constraints (32 kids, 45 minutes, one whiteboard). I'm a PM who already has the soft skills — I'm here to learn the craft."</p>
+
+      <h3>The three skills non-traditional backgrounds develop that PMs struggle to get</h3>
+
+      <p><strong>1. User empathy without condescension.</strong> People who've worked in healthcare, education, social services, or retail have spent years in actual service of other humans' problems. Most CS-to-PM converts have to work hard to develop genuine empathy. You already have it. That's your edge.</p>
+
+      <p><strong>2. Communication across wildly different audiences.</strong> If you've worked in journalism, teaching, community organizing, or sales, you've developed the ability to take complex information and make it understandable for people who don't share your context. That's 60% of the PM's communication job.</p>
+
+      <p><strong>3. Decision-making under ambiguity without data.</strong> Most structured engineering or finance roles train people to wait for more information before deciding. PMs almost never have enough information. If you've worked in a role where you regularly had to act on incomplete information — emergency room, courtroom, startup operations, event production — you've built a muscle that matters enormously.</p>
+
+      <h3>How to translate your background into PM language</h3>
+
+      <p>The translation is not fabrication. It's reframing what you actually did using vocabulary that makes product teams recognize the skill:</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>What you did</th>
+            <th>PM translation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Managed a team of customer support agents</td>
+            <td>Owned the customer feedback loop for a product used by X customers; identified the top 3 support-driven feature requests that reduced ticket volume 20%</td>
+          </tr>
+          <tr>
+            <td>Taught English to 30 students</td>
+            <td>Designed and iterated a learning experience for 30 users with varying skill levels; measured progress, identified friction, and adjusted the product (curriculum) weekly</td>
+          </tr>
+          <tr>
+            <td>Ran operations for a restaurant chain</td>
+            <td>Managed end-to-end process optimization across 3 locations; reduced customer wait time 18% by redesigning the ordering flow based on staff and customer observation</td>
+          </tr>
+          <tr>
+            <td>Worked in healthcare as a nurse</td>
+            <td>Coordinated care across cross-functional teams under time pressure; primary user advocate in a system where patients rarely had a voice</td>
+          </tr>
+          <tr>
+            <td>Built and sold an Etsy store</td>
+            <td>Founded a consumer product business: defined the product, set pricing, managed customer feedback, shipped improvements based on reviews — all while managing supply chain constraints</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout callout-warning">
+        <strong class="callout-label">The line you must not cross</strong>
+        <p>Translation is fine. Fabrication is not. You cannot say you "owned" a product you weren't responsible for, or claim metrics you don't have evidence of. Interviewers ask follow-up questions. If your story doesn't hold up to "tell me more about that number," it will hurt you more than the original experience would have. Be honest about what you contributed — and be bold about claiming the full value of that contribution.</p>
+      </div>
+
+      <div class="callout callout-key">
+        <strong class="callout-label">Key Takeaway — Module 2</strong>
+        <p>You don't have a gap on your resume. You have a different on-ramp to the same destination. The skills that make great PMs — empathy, communication, decisions under ambiguity — are built in many careers. You just need to learn the vocabulary to make them visible.</p>
+      </div>
+
+      <div class="callout callout-exercise">
+        <strong class="callout-label">Exercise 2</strong>
+        <p>List 5 things you did in your previous career. For each one, write the PM translation using the framework above. Focus on: what was the user problem? What did you do? What was the measurable outcome? Then ask a working PM to review your translations for accuracy. LinkedIn is full of PMs who will give you 15 minutes of feedback if you ask directly.</p>
+      </div>
+
+      <hr>
+
+      <!-- MODULE 3 -->
+      <div class="module-header" id="module-3">
+        <div class="module-number">Module 3</div>
+        <h2>Building a Portfolio from Scratch</h2>
+        <div class="module-objectives">
+          <p>Frameworks</p>
+          <ul>
+            <li>Know exactly what goes in a PM portfolio (and what doesn't)</li>
+            <li>Build at least one portfolio piece this week using the teardown format</li>
+            <li>Understand how to use portfolio work to demonstrate thinking, not just output</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>What a PM portfolio is (and isn't)</h3>
+
+      <p>A PM portfolio is not a design portfolio. You don't need beautiful mockups or Figma files. A PM portfolio is evidence of product thinking — specifically: how you identify problems, how you frame solutions, and how you make tradeoff decisions.</p>
+
+      <p>Nobody is hiring you to have opinions about products. They're hiring you to have structured opinions about products, backed by evidence, communicated clearly. The portfolio is how you show that before you're in the room.</p>
+
+      <h3>The four portfolio piece types — choose two</h3>
+
+      <p><strong>1. Product teardown.</strong> Take a product you use daily. Write a 1-2 page analysis: what job is this product hired to do? Who is the primary user? Where does it delight them? Where does it fail them? What would you change, and why? This is the most universally applicable portfolio piece — most people write them at a surface level, so going deep is how you stand out.</p>
+
+      <p><strong>2. Redesign concept.</strong> Pick a specific friction point in a product and propose a solution. This doesn't need polished design — a sketch, a wireframe, or a well-written spec is enough. What matters is the reasoning: why is this a problem worth solving? Why this solution over alternatives? What would you measure to know if it worked?</p>
+
+      <p><strong>3. Original mini-PRD.</strong> Write a spec for a feature that doesn't exist yet. Keep it small — one feature, 2-3 user stories, clear acceptance criteria, and a success metric. This demonstrates spec writing, prioritization, and product thinking simultaneously.</p>
+
+      <p><strong>4. Case study from your previous work.</strong> A structured story about a problem you solved that involved user needs, tradeoffs, and measurable outcomes. Even if it's not from a tech product role, this is often the most authentic and compelling portfolio piece.</p>
+
+      <h3>The teardown template</h3>
+
+      <div class="template-label">Product Teardown Template — Copy and use</div>
+      <div class="template-block">PRODUCT TEARDOWN: [Product Name]
+Date: [Month Year] | Author: [Your Name]
+
+---
+
+WHAT JOB IS THIS PRODUCT HIRED TO DO?
+[One paragraph. Jobs-to-Be-Done framing:
+"When [situation], users hire [product] to [job they're trying to do]"]
+
+WHO IS THE PRIMARY USER?
+[Be specific. Not "adults 25-45" — describe the actual person with the
+actual problem. What are they trying to accomplish? What have they
+already tried?]
+
+WHERE DOES THE PRODUCT EXCEL?
+[2-3 specific examples with detail. Why do these work? What design
+or product decision made them work?]
+
+WHERE DOES THE PRODUCT FAIL ITS USERS?
+[2-3 specific friction points. What is the user trying to do, where
+does the product let them down, and what is the cost of that failure?]
+
+ONE IMPROVEMENT I WOULD PRIORITIZE
+[Describe the problem to solve, the proposed solution, the success
+metric, and the tradeoff — what you'd deprioritize to make room for this]
+
+SOURCES AND EVIDENCE
+[User reviews, App Store ratings, personal observation, cited research —
+document what you referenced]</div>
+
+      <h3>Where to host your portfolio</h3>
+
+      <ul>
+        <li><strong>Notion:</strong> Fastest to set up. Professional enough for most roles under director level.</li>
+        <li><strong>Personal website:</strong> Best for roles at product-forward companies. Shows initiative.</li>
+        <li><strong>Google Docs (shared link):</strong> Only if everything else is strong. Plain docs without context look unpolished.</li>
+        <li><strong>PDF attached to your email:</strong> Appropriate when reaching out to a specific person and you want to make it easy to forward.</li>
+      </ul>
+
+      <div class="callout callout-key">
+        <strong class="callout-label">Key Takeaway — Module 3</strong>
+        <p>One deep portfolio piece beats five shallow ones. Your goal is to make a hiring manager think "I want to talk to this person about how they think" — not "this person has a lot of opinions." Depth, structure, and honest tradeoff reasoning are the signals they're looking for.</p>
+      </div>
+
+      <div class="callout callout-exercise">
+        <strong class="callout-label">Exercise 3</strong>
+        <p>Write a product teardown for the last app you complained about. Use the template above. Aim for 600-900 words. When you're done, ask yourself: does this show how I think, or does it just show that I noticed problems? If it's the latter, go back and add the "One Improvement" section with a real prioritization argument.</p>
+      </div>
+
+      <hr>
+
+      <!-- MODULE 4 -->
+      <div class="module-header" id="module-4">
+        <div class="module-number">Module 4</div>
+        <h2>The Resume That Gets Past ATS</h2>
+        <div class="module-objectives">
+          <p>Templates</p>
+          <ul>
+            <li>Structure your resume for ATS systems AND human readers</li>
+            <li>Write bullet points that show impact, not activity</li>
+            <li>Customize the resume without rewriting it from scratch for every application</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>How ATS actually works</h3>
+
+      <p>Applicant Tracking Systems are keyword-matching tools. They're looking for terms from the job description in your resume. For every role you apply to, your resume should include the specific words they used — not synonyms, not paraphrases. The exact words.</p>
+
+      <p>This sounds mechanical because it is. But it's also a 10-minute task, not a full rewrite. Pull the job description. Highlight the key responsibilities and required skills. Cross-reference with your resume. Add any missing terms that honestly describe your experience. Done.</p>
+
+      <h3>The PM resume structure</h3>
+
+      <div class="template-label">Resume Structure Template</div>
+      <div class="template-block">1. HEADER
+   Name — Location — Phone — Email — LinkedIn — Portfolio URL
+
+2. SUMMARY (recommended for career switchers)
+   2-3 sentences. Explain why your non-traditional background is a
+   feature, not a bug. Lead with your value, not your career history.
+
+   Example: "Former [role] with 6 years of [transferable experience].
+   [Measurable outcome]. Bringing [specific skill] to a PM role where
+   [what you want to work on]."
+
+3. EXPERIENCE (reverse chronological)
+   Each role: Company | Title | Dates | Location
+   3-5 bullet points per role using the impact formula below
+
+4. SKILLS
+   Keep it short. PM tools (Jira, Amplitude, Figma), methodologies
+   (Agile, Scrum, user research), domain knowledge relevant to your
+   target roles
+
+5. EDUCATION
+   Degree, school, year. Don't list GPA unless it's 3.8+.
+
+6. PORTFOLIO / SIDE PROJECTS
+   Link to your portfolio. Any PM-adjacent side projects with a
+   one-line description of what you built and who it was for.</div>
+
+      <h3>The impact bullet formula</h3>
+
+      <p>Every resume bullet: <strong>[Action verb] + [what you did] + [the measurable result]</strong>. Most people write the first two parts and leave out the third. The third part is the only part the hiring manager cares about.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr><th>Activity bullet (weak)</th><th>Impact bullet (strong)</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Worked with engineering team on new features</td>
+            <td>Led cross-functional delivery of 3 features per quarter; reduced time-to-launch 25% by standardizing the spec process</td>
+          </tr>
+          <tr>
+            <td>Conducted user research sessions</td>
+            <td>Ran 20 user interviews in 6 weeks; identified 3 friction points that became the next quarter's roadmap priorities, reducing support tickets 18%</td>
+          </tr>
+          <tr>
+            <td>Managed customer feedback process</td>
+            <td>Built and owned a feedback triage system processing 200+ monthly submissions; surfaced 2 features now in production</td>
+          </tr>
+          <tr>
+            <td>Created onboarding documentation</td>
+            <td>Redesigned onboarding documentation for 40+ enterprise clients; reduced time-to-first-value from 14 days to 6</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Numbers you think you don't have</h3>
+
+      <p>The common objection: "I don't have metrics from my previous job." You have more than you think:</p>
+
+      <ul>
+        <li>Team size you coordinated (people affected)</li>
+        <li>Volume of work (orders processed, customers served, documents produced)</li>
+        <li>Timeline compression (how much faster did you make something?)</li>
+        <li>Scale (how many locations, channels, users, students?)</li>
+        <li>Before/after comparison (what was the baseline? What changed?)</li>
+      </ul>
+
+      <p>"Led onboarding for 3 enterprise clients representing $2M in ARR" is a number. "Managed curriculum for a Title I school district serving 800 students" is a number. Find the number.</p>
+
+      <div class="callout callout-key">
+        <strong class="callout-label">Key Takeaway — Module 4</strong>
+        <p>Your resume needs to do two jobs: survive ATS keyword matching, and make a human want to call you. Optimize for ATS with exact language from the job description. Optimize for humans with impact bullets that tell a clear story of what changed because you were there.</p>
+      </div>
+
+      <div class="callout callout-exercise">
+        <strong class="callout-label">Exercise 4</strong>
+        <p>Take your current resume and rewrite every bullet point using the impact formula. If you can't identify the measurable result for a bullet, cut it — it's not earning its space. Then paste a PM job description you're interested in and identify every keyword that isn't on your resume. Add the ones that honestly apply. This is your customized resume for that role.</p>
+      </div>
+
+      <hr>
+
+      <!-- MODULE 5 -->
+      <div class="module-header" id="module-5">
+        <div class="module-number">Module 5</div>
+        <h2>Interview Frameworks — STAR Method and Case Studies</h2>
+        <div class="module-objectives">
+          <p>Frameworks</p>
+          <ul>
+            <li>Answer behavioral questions using the STAR method with PM-specific content</li>
+            <li>Structure a product case study answer in under 10 minutes</li>
+            <li>Prepare for the 5 most common PM interview scenarios</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>The two types of PM interviews</h3>
+
+      <p><strong>Behavioral interviews</strong> are about your past. "Tell me about a time you had to make a decision with incomplete information." "Describe a conflict with an engineer and how you resolved it." These are answered with the STAR method.</p>
+
+      <p><strong>Case study / product design interviews</strong> are about your thinking. "Design a product for elderly users." "How would you improve our mobile app?" "A metric dropped 20% — walk me through how you'd diagnose it." These are answered with a structured framework.</p>
+
+      <p>Most PM interviews use both types. You need to prepare for both.</p>
+
+      <h3>STAR method for PMs</h3>
+
+      <div class="star-box">
+        <div class="star-row">
+          <div class="star-label">S</div>
+          <div class="star-content"><strong>Situation:</strong> 1-2 sentences of context. The product, the team, the moment. Keep it brief — the interviewer doesn't need the full backstory.</div>
+        </div>
+        <div class="star-row">
+          <div class="star-label">T</div>
+          <div class="star-content"><strong>Task:</strong> What was your specific responsibility? What were you trying to accomplish or solve?</div>
+        </div>
+        <div class="star-row">
+          <div class="star-label">A</div>
+          <div class="star-content"><strong>Action:</strong> What did YOU specifically do? Not "we" — "I." This is the most important part. Be specific about the steps, the reasoning, and the decisions you made.</div>
+        </div>
+        <div class="star-row">
+          <div class="star-label">R</div>
+          <div class="star-content"><strong>Result:</strong> What happened? Include a metric if possible. If not, describe the qualitative outcome — and what you'd measure next time.</div>
+        </div>
+      </div>
+
+      <h3>A full STAR example for a career switcher</h3>
+
+      <p><em>Question: "Tell me about a time you had to balance competing priorities."</em></p>
+
+      <div class="template-label">Example Answer Using STAR</div>
+      <div class="template-block">SITUATION: In my previous role as a customer success manager, I was
+simultaneously responsible for onboarding three new enterprise clients
+during Q4 — our busiest period — while also being asked to lead a process
+audit that leadership wanted completed by year-end.
+
+TASK: I needed to deliver all three onboardings on schedule (each
+representing a significant first-year contract) while producing a
+credible audit with real findings — not just a checklist.
+
+ACTION: First, I mapped the time requirements for each. Audits could be
+done in concentrated blocks; client work required distributed daily
+attention. I batched audit work into Tuesday and Thursday afternoons
+and blocked mornings for clients. I also negotiated a 2-week extension
+on Client C's onboarding after their stakeholder became unavailable —
+proactively, before it became a crisis.
+
+RESULT: All three clients completed onboarding within the quarter.
+Clients A and B on schedule; Client C 9 days late, communicated in
+advance. The audit produced 7 findings, 3 of which were implemented
+in Q1. My manager cited this in my performance review as an example
+of operating at higher scope.</div>
+
+      <h3>The product case study framework</h3>
+
+      <p>When asked to design a product or diagnose a problem, use this structure:</p>
+
+      <ol>
+        <li><strong>Clarify the goal.</strong> "Before I jump in — are we optimizing for engagement, revenue, retention, or acquisition?" Always ask before you answer.</li>
+        <li><strong>Define the user.</strong> "Let me pick a primary user segment and explain why." Describe that user with specificity — not a demographic, a situation and a job to be done.</li>
+        <li><strong>Identify the problem.</strong> "What is the user trying to get done? What are the 3 biggest friction points in that job today?"</li>
+        <li><strong>Generate solutions.</strong> "Here are 3 approaches with different tradeoffs." Showing that you generate options before committing is the signal interviewers want.</li>
+        <li><strong>Prioritize and justify.</strong> "I'd prioritize [option] because [impact, feasibility, alignment with goals]."</li>
+        <li><strong>Define success.</strong> "I'd measure success by [metric], and I'd want to see [benchmark] within [timeframe]."</li>
+      </ol>
+
+      <h3>The 5 most common PM interview questions</h3>
+
+      <ul>
+        <li><strong>"Tell me about yourself."</strong> Your 90-second story: where you came from, the through-line of your experience, why PM, why this company. Practice it until you can say it without thinking.</li>
+        <li><strong>"What product would you improve and how?"</strong> Pick one product you use every day. Have a prepared analysis using the teardown template. Don't say "I'd add AI." Go deeper.</li>
+        <li><strong>"How do you decide what to build next?"</strong> Describe your prioritization framework. Impact vs. effort. User pain intensity times frequency. Name the framework. Show you actually use it.</li>
+        <li><strong>"Tell me about a product failure."</strong> Pick something real. Show you understand what went wrong, take accountability without catastrophizing, and extract a lesson you applied later.</li>
+        <li><strong>"Why do you want to be a PM?"</strong> Don't say "I've always been interested in products." Say: "I spent X years doing Y, and the pattern I kept noticing was [insight]. I want to solve that type of problem full-time."</li>
+      </ul>
+
+      <div class="callout callout-key">
+        <strong class="callout-label">Key Takeaway — Module 5</strong>
+        <p>PM interviews test product thinking, not product knowledge. The interviewers know more about their product than you do. What they're evaluating is: how do you structure a problem, how do you make decisions, and how do you communicate under pressure. STAR handles the behavioral side. The case framework handles the product side. Both require rehearsal.</p>
+      </div>
+
+      <div class="callout callout-exercise">
+        <strong class="callout-label">Exercise 5</strong>
+        <p>Record yourself answering each of the 5 common questions above. Watch it back with the sound off — your body language tells you something. Then listen with the sound on. Where do you hedge, trail off, or use filler words? Those are the moments where you haven't finished thinking through your answer. Go back and get specific.</p>
+      </div>
+
+      <hr>
+
+      <!-- MODULE 6 -->
+      <div class="module-header" id="module-6">
+        <div class="module-number">Module 6</div>
+        <h2>Your First 90 Days as a PM</h2>
+        <div class="module-objectives">
+          <p>Frameworks</p>
+          <ul>
+            <li>Know what to prioritize in your first 30, 60, and 90 days</li>
+            <li>Build a listening tour plan before your first day</li>
+            <li>Avoid the 3 most common new PM mistakes</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>The impulse to prove yourself</h3>
+
+      <p>Most new PMs make the same mistake: they try to produce too much, too fast. They propose roadmap changes in week two. They write a spec before understanding the codebase. They schedule customer interviews before knowing who the current customers are.</p>
+
+      <p>The pressure to justify the hiring decision is real. But the PMs who succeed in new roles — especially career switchers — almost always describe the same behavior in their first 90 days: they listened more than they talked, asked more than they answered, and waited to propose changes until they understood why things were the way they were.</p>
+
+      <h3>The 30-60-90 day framework</h3>
+
+      <div class="days-grid">
+        <div class="days-card">
+          <h4>Days 1-30: Listen</h4>
+          <ul>
+            <li>Run a listening tour</li>
+            <li>Read every existing spec and PRD</li>
+            <li>Attend every team ritual once</li>
+            <li>Shadow 3 customer interactions</li>
+            <li>Map all existing metrics</li>
+            <li>Write nothing public yet</li>
+          </ul>
+        </div>
+        <div class="days-card">
+          <h4>Days 31-60: Contribute</h4>
+          <ul>
+            <li>Identify one small, scoped win</li>
+            <li>Write one complete user story</li>
+            <li>Share your learning doc with manager</li>
+            <li>Start facilitating meetings</li>
+            <li>Run 5 user interviews solo</li>
+            <li>Ask for one piece of feedback</li>
+          </ul>
+        </div>
+        <div class="days-card">
+          <h4>Days 61-90: Own</h4>
+          <ul>
+            <li>Propose a prioritization hypothesis</li>
+            <li>Deliver one shipped thing</li>
+            <li>Build a stakeholder map</li>
+            <li>Define your success metrics</li>
+            <li>Identify your working style gaps</li>
+            <li>Set 90-day goals with manager</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>The listening tour</h3>
+
+      <p>In your first two weeks, meet with every stakeholder you'll work with regularly. The goal is not to introduce yourself — it's to understand what they need, what frustrates them, and what they wish the PM role delivered that it currently doesn't.</p>
+
+      <p>Ask these five questions in every meeting:</p>
+
+      <ol>
+        <li>What are you working on right now that you're most focused on?</li>
+        <li>What's the biggest thing slowing you down?</li>
+        <li>What do you wish a PM would do differently than PMs you've worked with before?</li>
+        <li>What do I need to understand about this product that isn't obvious from the outside?</li>
+        <li>Who else should I talk to in my first 30 days?</li>
+      </ol>
+
+      <p>Take notes. Share a summary with each person after the meeting. This one behavior alone will differentiate you from 80% of new PMs.</p>
+
+      <h3>The three mistakes to avoid</h3>
+
+      <p><strong>1. Proposing before understanding.</strong> "Have you considered just...?" is the new PM's most damaging habit. Every feature someone didn't build was a considered decision. You don't know why yet. Ask before you propose.</p>
+
+      <p><strong>2. Over-documenting at the expense of shipping.</strong> Good process is invisible — it accelerates the work. If you're writing specs that slow down engineers, your process is bad. The goal is shared understanding, not documentation coverage.</p>
+
+      <p><strong>3. Trying to own relationships that aren't yours yet.</strong> Trust with engineers, designers, and stakeholders is earned over time. Show up consistently, follow through on commitments, and stay curious. That's the relationship strategy that works.</p>
+
+      <div class="callout callout-insight">
+        <strong class="callout-label">What "good" looks like at 90 days</strong>
+        <p>At 90 days, you should know: who the users are and what their top 3 problems are. What the team's working norms are. What the team is shipping this quarter and why. What success looks like for your role. And one thing you've improved — even something small. If you have those five things, you're ahead.</p>
+      </div>
+
+      <div class="callout callout-key">
+        <strong class="callout-label">Key Takeaway — Module 6</strong>
+        <p>The first 90 days is not a grace period. It's your most information-dense window — a period where you can ask questions that would seem ignorant six months in, and where every observation is fresh. Use it. You'll never see the product through a new user's eyes again.</p>
+      </div>
+
+      <div class="callout callout-exercise">
+        <strong class="callout-label">Exercise 6 — Capstone</strong>
+        <p>Write your Day 1 plan. Assuming you start a PM role tomorrow: who are the first 8 people you'd schedule for your listening tour? What 3 documents would you ask to read first? What single question would you ask your manager before your first week is over? The specificity of your answer tells you how ready you actually are.</p>
+      </div>
+
+      <hr>
+
+      <h2>What's Next</h2>
+
+      <p>You have everything you need to start. The portfolio template. The resume formula. The interview frameworks. The 90-day plan. The only thing left is doing it.</p>
+
+      <p>Start with one portfolio piece. Write the teardown. Then do the resume. Then apply to roles you're not perfectly qualified for — that's how you find out where your gaps actually are.</p>
+
+      <p>Once you're in a PM role, the <a href="./ai-augmented-pm.html">AI-Augmented PM course</a> will help you build the workflows that make you fast. And if you're building something of your own, the <a href="./founders-pm-playbook.html">Founder's PM Playbook</a> applies these skills to building a business.</p>
+
+      <blockquote>
+        "The PM role is learnable. It's not a talent. It's a practice. Show up, stay curious, follow through. The rest is reps."
+        <cite>— Gonzalo Aguilar</cite>
+      </blockquote>
+
+    </main>
+
+    <aside>
+      <div class="toc">
+        <h3>Course Modules</h3>
+        <ol>
+          <li><a href="#module-1">What PMs Actually Do</a></li>
+          <li><a href="#module-2">Your Background Is an Advantage</a></li>
+          <li><a href="#module-3">Building a Portfolio</a></li>
+          <li><a href="#module-4">The Resume That Gets Past ATS</a></li>
+          <li><a href="#module-5">Interview Frameworks</a></li>
+          <li><a href="#module-6">Your First 90 Days</a></li>
+        </ol>
+        <div class="toc-free">100% free — no paywall</div>
+      </div>
+    </aside>
   </div>
 </div>
 
 <footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand">gonzalo.tech</div>
-        <div class="footer-tagline">Courses, toolkits, and frameworks for builders who use AI. Built with rigor, explained with care.</div>
-      </div>
-      <div class="footer-col">
-        <h4>Learn</h4>
-        <a href="./ai-augmented-pm.html">Courses</a>
-        <a href="../#resources">Digital products</a>
-        <a href="../#blog">Blog</a>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <a href="https://linkedin.com/in/gonzaloeaguilar" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://medium.com/@gonzaloeaguilar" target="_blank" rel="noopener">Medium</a>
-        <a href="mailto:hello@gonzalo.tech">hello@gonzalo.tech</a>
-      </div>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">gonzalo.tech</div>
+      <div class="footer-tagline">Courses, toolkits, and frameworks for builders who use AI. Built with rigor, explained with care.</div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Gonzalo Aguilar. All rights reserved.</span>
-      <span>Built in Fort Lauderdale, FL</span>
+    <div class="footer-col">
+      <h4>Courses</h4>
+      <a href="./ai-augmented-pm.html">AI-Augmented PM</a>
+      <a href="./break-into-pm.html">Break Into PM</a>
+      <a href="./founders-pm-playbook.html">Founder's PM Playbook</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="https://linkedin.com/in/gonzaloeaguilar" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://medium.com/@gonzaloeaguilar" target="_blank" rel="noopener">Medium</a>
+      <a href="mailto:hello@gonzalo.tech">hello@gonzalo.tech</a>
     </div>
   </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Gonzalo Aguilar. All rights reserved.</span>
+    <span>Built in Fort Lauderdale, FL</span>
+  </div>
 </footer>
+
 <script>
-const nav = document.getElementById('navbar');
-window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
-hamburger.addEventListener('click', () => { navLinks.classList.toggle('open'); });
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
-    const href = link.getAttribute('href');
-    if (href.startsWith('/#')) { return; }
-    e.preventDefault();
-    const target = document.querySelector(href);
-    if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); navLinks.classList.remove('open'); }
-  });
-});
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
+  const sections = document.querySelectorAll('[id^="module-"]');
+  const tocLinks = document.querySelectorAll('.toc a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(l => l.style.fontWeight = '400');
+        const id = entry.target.id;
+        const active = document.querySelector('.toc a[href="#' + id + '"]');
+        if (active) active.style.fontWeight = '700';
+      }
+    });
+  }, { rootMargin: '-80px 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
 </script>
 </body>
 </html>
