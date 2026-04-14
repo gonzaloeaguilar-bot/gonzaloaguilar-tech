@@ -552,8 +552,7 @@
       ],
       "framework": "Three Questions Framework",
       "language": "EN",
-      "status": "published",
-      "publishedAt": "2026-04-14T12:21:39.948Z"
+      "status": "generating"
     },
     {
       "slug": "ai-cost-per-task-calculator",
@@ -565,7 +564,7 @@
       "framework": "Three Questions Framework",
       "language": "EN",
       "status": "published",
-      "publishedAt": "2026-04-14T12:22:40.708Z"
+      "publishedAt": "2026-04-14T12:21:44.333Z"
     },
     {
       "slug": "ai-brand-voice-guide",
@@ -577,7 +576,7 @@
       "framework": "Friction-to-Trust Pipeline",
       "language": "EN",
       "status": "published",
-      "publishedAt": "2026-04-14T12:23:44.817Z"
+      "publishedAt": "2026-04-14T12:22:49.417Z"
     },
     {
       "slug": "ai-refund-policy-writer",
@@ -589,7 +588,7 @@
       "framework": "Anxiety Map",
       "language": "EN",
       "status": "published",
-      "publishedAt": "2026-04-14T12:24:49.576Z"
+      "publishedAt": "2026-04-14T12:23:51.321Z"
     },
     {
       "slug": "ai-newsletter-automation",
@@ -601,7 +600,7 @@
       "framework": "Friction-to-Trust Pipeline",
       "language": "EN",
       "status": "published",
-      "publishedAt": "2026-04-14T12:25:49.758Z"
+      "publishedAt": "2026-04-14T12:25:01.197Z"
     },
     {
       "slug": "ai-local-marketing",
@@ -613,7 +612,7 @@
       "framework": "Three Questions Framework",
       "language": "EN",
       "status": "published",
-      "publishedAt": "2026-04-14T12:26:42.030Z"
+      "publishedAt": "2026-04-14T12:26:11.053Z"
     },
     {
       "slug": "ai-image-generation-products",
@@ -625,7 +624,7 @@
       "framework": "Anxiety Map",
       "language": "EN",
       "status": "published",
-      "publishedAt": "2026-04-14T12:27:44.506Z"
+      "publishedAt": "2026-04-14T12:27:13.566Z"
     },
     {
       "slug": "ai-strategy-one-page",
@@ -637,7 +636,7 @@
       "framework": "Three Questions Framework",
       "language": "EN",
       "status": "published",
-      "publishedAt": "2026-04-14T12:28:36.817Z"
+      "publishedAt": "2026-04-14T12:28:07.888Z"
     },
     {
       "slug": "ai-churn-prediction",
@@ -649,7 +648,7 @@
       "framework": "Anxiety Map",
       "language": "EN",
       "status": "published",
-      "publishedAt": "2026-04-14T12:29:31.846Z"
+      "publishedAt": "2026-04-14T12:29:08.381Z"
     },
     {
       "slug": "ai-automation-zapier-make",
@@ -661,7 +660,7 @@
       "framework": "Three Questions Framework",
       "language": "EN",
       "status": "published",
-      "publishedAt": "2026-04-14T12:30:34.498Z"
+      "publishedAt": "2026-04-14T12:30:04.212Z"
     },
     {
       "slug": "ai-repeat-customer-campaigns",
@@ -673,7 +672,7 @@
       "framework": "Friction-to-Trust Pipeline",
       "language": "EN",
       "status": "published",
-      "publishedAt": "2026-04-14T12:31:37.323Z"
+      "publishedAt": "2026-04-14T12:31:05.710Z"
     },
     {
       "slug": "ai-proposal-writing",
@@ -684,7 +683,8 @@
       ],
       "framework": "Three Questions Framework",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:32:01.080Z"
     },
     {
       "slug": "ai-google-business-profile",
@@ -695,7 +695,8 @@
       ],
       "framework": "Friction-to-Trust Pipeline",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:33:00.018Z"
     },
     {
       "slug": "ai-hallucination-risk",
@@ -706,7 +707,8 @@
       ],
       "framework": "Anxiety Map",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:34:00.835Z"
     },
     {
       "slug": "ai-knowledge-base-builder",
@@ -717,7 +719,8 @@
       ],
       "framework": "Three Questions Framework",
       "language": "EN",
-      "status": "pending"
+      "status": "published",
+      "publishedAt": "2026-04-14T12:35:05.362Z"
     },
     {
       "slug": "ai-discount-offer-optimizer",

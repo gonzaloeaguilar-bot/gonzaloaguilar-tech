@@ -271,12 +271,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-appointment-scheduling.html</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://gonzalo.tech/output/ai-cost-per-task-calculator.html</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -332,6 +326,30 @@
   </url>
   <url>
     <loc>https://gonzalo.tech/output/ai-repeat-customer-campaigns.html</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gonzalo.tech/output/ai-proposal-writing.html</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gonzalo.tech/output/ai-google-business-profile.html</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gonzalo.tech/output/ai-hallucination-risk.html</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gonzalo.tech/output/ai-knowledge-base-builder.html</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
