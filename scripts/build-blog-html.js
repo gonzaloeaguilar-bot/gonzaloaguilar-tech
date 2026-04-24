@@ -32,16 +32,21 @@ if (metaLine) {
 // Determine slug from filename
 const slug = path.basename(file, '.md');
 
-// Try to load meta JSON for keywords
+// Load meta JSON for keywords and language
 let keywords = '';
+let meta = {};
 const metaJsonPath = path.join(__dirname, '..', 'posts', 'meta', `${slug}.json`);
 if (fs.existsSync(metaJsonPath)) {
-  const meta = JSON.parse(fs.readFileSync(metaJsonPath, 'utf-8'));
+  meta = JSON.parse(fs.readFileSync(metaJsonPath, 'utf-8'));
   keywords = (meta.keywords || []).join(', ');
 }
 
-// Detect language
-const lang = slug.match(/_(ES|es)$/) || markdown.includes('Tranquilo') ? 'es' : 'en';
+// Detect language from meta JSON, slug suffix, or markdown language line
+let lang = 'en';
+if (meta.language === 'ES') lang = 'es';
+if (slug.match(/_(ES|es)$/)) lang = 'es';
+const langLine = lines.find(l => /^language:\s*es/i.test(l));
+if (langLine) lang = 'es';
 
 // Strip meta description line from body content (it goes in <head>, not article)
 const cleanedMarkdown = markdown.replace(/^\*?[Mm]eta [Dd]escription:.*\*?$/m, '').trim();
@@ -53,6 +58,9 @@ marked.setOptions({
 });
 const htmlContent = marked.parse(cleanedMarkdown);
 
+// Get publish date from meta JSON or fallback to today
+const datePublished = (meta.generatedAt || meta.publishedAt || new Date().toISOString()).split('T')[0];
+
 // Fill template
 const html = template
   .replace(/\{\{TITLE\}\}/g, title)
@@ -60,6 +68,7 @@ const html = template
   .replace(/\{\{KEYWORDS\}\}/g, keywords)
   .replace(/\{\{SLUG\}\}/g, slug)
   .replace(/\{\{LANG\}\}/g, lang)
+  .replace(/\{\{DATE_PUBLISHED\}\}/g, datePublished)
   .replace(/\{\{YEAR\}\}/g, new Date().getFullYear().toString())
   .replace('{{CONTENT}}', htmlContent);
 

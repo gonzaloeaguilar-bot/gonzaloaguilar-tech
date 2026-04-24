@@ -10,14 +10,16 @@
     "qa-pdf": "node scripts/qa-pdf.js pdfs/latest.pdf",
     "resources": "node scripts/build-resources-page.js",
     "repurpose": "node scripts/repurpose.js posts/latest.md",
+    "build-index": "node scripts/build-index.js",
+    "build-sitemap": "node scripts/build-sitemap.js",
     "pipeline": "node scripts/orchestrator.js"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "latest",
+    "@anthropic-ai/sdk": "^0.88.0",
     "dotenv": "^17.4.1",
-    "marked": "latest"
+    "marked": "^18.0.0"
   },
   "devDependencies": {
-    "playwright": "latest"
+    "playwright": "^1.59.1"
   }
 }

@@ -2,534 +2,582 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://gonzalo.tech/</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/resources.html</loc>
-    <lastmod>2026-04-14</lastmod>
+    <loc>https://gonzalo.tech/resources</loc>
+    <lastmod>2026-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-tool-trap.html</loc>
+    <loc>https://gonzalo.tech/courses/ai-augmented-pm</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gonzalo.tech/courses/break-into-pm</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gonzalo.tech/courses/founders-pm-playbook</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gonzalo.tech/products/ai-pms-starter-kit</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gonzalo.tech/products/eli5-ai-explained</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gonzalo.tech/products/funnel-audit-playbook</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gonzalo.tech/products/pm-interview-toolkit</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gonzalo.tech/products/small-biz-digital-toolkit</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gonzalo.tech/output/ai-tool-trap</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/friction-to-trust.html</loc>
+    <loc>https://gonzalo.tech/output/friction-to-trust</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-readiness-checklist.html</loc>
+    <loc>https://gonzalo.tech/output/ai-readiness-checklist</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/anxiety-map-guide.html</loc>
+    <loc>https://gonzalo.tech/output/anxiety-map-guide</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-setup-mistakes.html</loc>
+    <loc>https://gonzalo.tech/output/ai-setup-mistakes</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/product-thinking-founders.html</loc>
+    <loc>https://gonzalo.tech/output/product-thinking-founders</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/conversion-audit-diy.html</loc>
+    <loc>https://gonzalo.tech/output/conversion-audit-diy</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-workflow-automation.html</loc>
+    <loc>https://gonzalo.tech/output/ai-workflow-automation</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/trampa-herramientas-ia.html</loc>
+    <loc>https://gonzalo.tech/output/trampa-herramientas-ia</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/pensamiento-producto.html</loc>
+    <loc>https://gonzalo.tech/output/pensamiento-producto</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/first-ai-project.html</loc>
+    <loc>https://gonzalo.tech/output/first-ai-project</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/chatbot-waste.html</loc>
+    <loc>https://gonzalo.tech/output/chatbot-waste</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/data-before-ai.html</loc>
+    <loc>https://gonzalo.tech/output/data-before-ai</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/pm-ai-workflow.html</loc>
+    <loc>https://gonzalo.tech/output/pm-ai-workflow</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/onboarding-friction.html</loc>
+    <loc>https://gonzalo.tech/output/onboarding-friction</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/mapa-ansiedad-clientes.html</loc>
+    <loc>https://gonzalo.tech/output/mapa-ansiedad-clientes</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-consultant-guide.html</loc>
+    <loc>https://gonzalo.tech/output/ai-consultant-guide</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/measure-ai-roi.html</loc>
+    <loc>https://gonzalo.tech/output/measure-ai-roi</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/flujo-conversion-diy.html</loc>
+    <loc>https://gonzalo.tech/output/flujo-conversion-diy</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/trust-signals.html</loc>
+    <loc>https://gonzalo.tech/output/trust-signals</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ux-design-developers.html</loc>
+    <loc>https://gonzalo.tech/output/ux-design-developers</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/qa-mindset-product.html</loc>
+    <loc>https://gonzalo.tech/output/qa-mindset-product</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ui-mistakes-conversions.html</loc>
+    <loc>https://gonzalo.tech/output/ui-mistakes-conversions</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/design-system-small-team.html</loc>
+    <loc>https://gonzalo.tech/output/design-system-small-team</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/user-testing-budget.html</loc>
+    <loc>https://gonzalo.tech/output/user-testing-budget</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/errores-ux-conversiones.html</loc>
+    <loc>https://gonzalo.tech/output/errores-ux-conversiones</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-email-responses-small-business.html</loc>
+    <loc>https://gonzalo.tech/output/ai-email-responses-small-business</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/chatgpt-vs-gemini-small-business.html</loc>
+    <loc>https://gonzalo.tech/output/chatgpt-vs-gemini-small-business</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-social-media-content.html</loc>
+    <loc>https://gonzalo.tech/output/ai-social-media-content</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/when-not-to-use-ai.html</loc>
+    <loc>https://gonzalo.tech/output/when-not-to-use-ai</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-invoicing-bookkeeping.html</loc>
+    <loc>https://gonzalo.tech/output/ai-invoicing-bookkeeping</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-hiring-job-descriptions.html</loc>
+    <loc>https://gonzalo.tech/output/ai-hiring-job-descriptions</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-customer-support-playbook.html</loc>
+    <loc>https://gonzalo.tech/output/ai-customer-support-playbook</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-product-description-ecommerce.html</loc>
+    <loc>https://gonzalo.tech/output/ai-product-description-ecommerce</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-pricing-strategy.html</loc>
+    <loc>https://gonzalo.tech/output/ai-pricing-strategy</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-meeting-notes-summaries.html</loc>
+    <loc>https://gonzalo.tech/output/ai-meeting-notes-summaries</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-vendor-evaluation-framework.html</loc>
+    <loc>https://gonzalo.tech/output/ai-vendor-evaluation-framework</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-content-calendar-builder.html</loc>
+    <loc>https://gonzalo.tech/output/ai-content-calendar-builder</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-faq-page-generator.html</loc>
+    <loc>https://gonzalo.tech/output/ai-faq-page-generator</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-legal-document-review.html</loc>
+    <loc>https://gonzalo.tech/output/ai-legal-document-review</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-translation-multilingual-business.html</loc>
+    <loc>https://gonzalo.tech/output/ai-translation-multilingual-business</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-onboarding-new-employees.html</loc>
+    <loc>https://gonzalo.tech/output/ai-onboarding-new-employees</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-competitive-analysis.html</loc>
+    <loc>https://gonzalo.tech/output/ai-competitive-analysis</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-survey-analysis.html</loc>
+    <loc>https://gonzalo.tech/output/ai-survey-analysis</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-ad-copy-generator.html</loc>
+    <loc>https://gonzalo.tech/output/ai-ad-copy-generator</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-appointment-scheduling.html</loc>
+    <loc>https://gonzalo.tech/output/ai-appointment-scheduling</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-cost-per-task-calculator.html</loc>
+    <loc>https://gonzalo.tech/output/ai-cost-per-task-calculator</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-brand-voice-guide.html</loc>
+    <loc>https://gonzalo.tech/output/ai-brand-voice-guide</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-refund-policy-writer.html</loc>
+    <loc>https://gonzalo.tech/output/ai-refund-policy-writer</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-newsletter-automation.html</loc>
+    <loc>https://gonzalo.tech/output/ai-newsletter-automation</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-local-marketing.html</loc>
+    <loc>https://gonzalo.tech/output/ai-local-marketing</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-image-generation-products.html</loc>
+    <loc>https://gonzalo.tech/output/ai-image-generation-products</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-strategy-one-page.html</loc>
+    <loc>https://gonzalo.tech/output/ai-strategy-one-page</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-churn-prediction.html</loc>
+    <loc>https://gonzalo.tech/output/ai-churn-prediction</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-automation-zapier-make.html</loc>
+    <loc>https://gonzalo.tech/output/ai-automation-zapier-make</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-repeat-customer-campaigns.html</loc>
+    <loc>https://gonzalo.tech/output/ai-repeat-customer-campaigns</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-proposal-writing.html</loc>
+    <loc>https://gonzalo.tech/output/ai-proposal-writing</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-google-business-profile.html</loc>
+    <loc>https://gonzalo.tech/output/ai-google-business-profile</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-hallucination-risk.html</loc>
+    <loc>https://gonzalo.tech/output/ai-hallucination-risk</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-knowledge-base-builder.html</loc>
+    <loc>https://gonzalo.tech/output/ai-knowledge-base-builder</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-discount-offer-optimizer.html</loc>
+    <loc>https://gonzalo.tech/output/ai-discount-offer-optimizer</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-voice-search-content.html</loc>
+    <loc>https://gonzalo.tech/output/ai-voice-search-content</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-testimonial-requests.html</loc>
+    <loc>https://gonzalo.tech/output/ai-testimonial-requests</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-returns-management.html</loc>
+    <loc>https://gonzalo.tech/output/ai-returns-management</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-multi-channel-inbox.html</loc>
+    <loc>https://gonzalo.tech/output/ai-multi-channel-inbox</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ai-website-copy-rewrite.html</loc>
+    <loc>https://gonzalo.tech/output/ai-website-copy-rewrite</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/landing-page-above-fold.html</loc>
+    <loc>https://gonzalo.tech/output/landing-page-above-fold</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/pricing-page-psychology.html</loc>
+    <loc>https://gonzalo.tech/output/pricing-page-psychology</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/checkout-abandonment-fix.html</loc>
+    <loc>https://gonzalo.tech/output/checkout-abandonment-fix</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/ab-test-beginners-guide.html</loc>
+    <loc>https://gonzalo.tech/output/ab-test-beginners-guide</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/email-signup-form-cro.html</loc>
+    <loc>https://gonzalo.tech/output/email-signup-form-cro</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/cta-button-copy-guide.html</loc>
+    <loc>https://gonzalo.tech/output/cta-button-copy-guide</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/free-trial-to-paid-conversion.html</loc>
+    <loc>https://gonzalo.tech/output/free-trial-to-paid-conversion</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/upsell-timing-strategy.html</loc>
+    <loc>https://gonzalo.tech/output/upsell-timing-strategy</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/social-proof-placement.html</loc>
+    <loc>https://gonzalo.tech/output/social-proof-placement</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/urgency-scarcity-tactics.html</loc>
+    <loc>https://gonzalo.tech/output/urgency-scarcity-tactics</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/mobile-checkout-optimization.html</loc>
+    <loc>https://gonzalo.tech/output/mobile-checkout-optimization</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/referral-program-design.html</loc>
+    <loc>https://gonzalo.tech/output/referral-program-design</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/popup-exit-intent-strategy.html</loc>
+    <loc>https://gonzalo.tech/output/popup-exit-intent-strategy</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/product-page-conversion-checklist.html</loc>
+    <loc>https://gonzalo.tech/output/product-page-conversion-checklist</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/funnel-drop-off-diagnosis.html</loc>
+    <loc>https://gonzalo.tech/output/funnel-drop-off-diagnosis</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/retention-vs-acquisition-cost.html</loc>
+    <loc>https://gonzalo.tech/output/retention-vs-acquisition-cost</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/pricing-anchor-effect.html</loc>
+    <loc>https://gonzalo.tech/output/pricing-anchor-effect</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/welcome-email-sequence.html</loc>
+    <loc>https://gonzalo.tech/output/welcome-email-sequence</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/homepage-vs-landing-page.html</loc>
+    <loc>https://gonzalo.tech/output/homepage-vs-landing-page</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/google-ads-quality-score.html</loc>
+    <loc>https://gonzalo.tech/output/google-ads-quality-score</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gonzalo.tech/output/win-back-email-strategy.html</loc>
+    <loc>https://gonzalo.tech/output/win-back-email-strategy</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

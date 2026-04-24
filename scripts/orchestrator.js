@@ -101,9 +101,15 @@ async function pipeline() {
   // Step 8: Rebuild resources page (lists all available PDFs)
   run('node scripts/build-resources-page.js', 'BUILD RESOURCES PAGE');
 
-  // Step 9: Git commit (only in CI or if GIT_COMMIT env is set)
+  // Step 9: Rebuild homepage blog grid
+  run('node scripts/build-index.js', 'REBUILD HOMEPAGE INDEX');
+
+  // Step 10: Rebuild sitemap
+  run('node scripts/build-sitemap.js', 'REBUILD SITEMAP');
+
+  // Step 11: Git commit (only in CI or if GIT_COMMIT env is set)
   if (process.env.CI || process.env.GIT_COMMIT) {
-    run(`git add -A && git commit -m "publish: ${slug}" --author="gonzalo-bot <bot@gonzalo.tech>"`,
+    run(`git add -A && git commit -m "content: publish ${slug}" --author="gonzalo-bot <bot@gonzalo.tech>"`,
       'GIT COMMIT');
   }
 

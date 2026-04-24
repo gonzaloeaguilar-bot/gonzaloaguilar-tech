@@ -1,20 +1,23 @@
 # gonzalo.tech — Project Instructions
 
 ## Quick Facts
-- **Stack:** Static HTML (GitHub Pages), Node.js scripts, Claude API
+- **Stack:** Static HTML (Vercel), Node.js content pipeline, Claude API
 - **Repo:** gonzaloeaguilar-bot/gonzaloaguilar-tech
-- **Live URL:** https://gonzaloeaguilar-bot.github.io/gonzaloaguilar-tech/
-- **Custom domain:** gonzalo.tech (DNS pending)
+- **Live URL:** https://gonzalo.tech (Vercel — DNS pending registrar config)
+- **Vercel preview:** https://gonzaloaguilar-tech.vercel.app
 - **Brand:** Clean Minimal — Georgia headings, Calibri body, flat ink/slate palette
 - **Audience:** Non-technical small business owners (EN + ES)
 
 ## Key Directories
-- `scripts/` — Pipeline automation (generate, QA, build, PDF, repurpose)
-- `posts/` — Generated blog markdown + meta
-- `content/` — topics.json, lead magnets
-- `output/` — Generated HTML blog pages
+- `scripts/` — Pipeline automation (generate, QA, build, PDF, repurpose, index, sitemap)
+- `posts/` — Generated blog markdown + `posts/meta/` JSON
+- `content/` — topics.json (169 topics, source of truth)
+- `output/` — Generated HTML blog pages (88 posts)
+- `courses/` — 3 course landing pages
+- `products/` — 5 product pages
 - `pdfs/` — Generated PDFs
 - `repurposed/` — Social content packages
+- `templates/` — blog-template.html, pdf-template.html
 
 ## Commands
 - `npm run generate` — Generate next blog post from topics.json
@@ -22,14 +25,18 @@
 - `npm run build-html` — Convert markdown to branded HTML
 - `npm run pdf` — Generate PDF from HTML via Playwright
 - `npm run repurpose` — Generate 18+ social content pieces
-- `npm run pipeline` — Full pipeline: generate → QA → HTML → PDF → repurpose
+- `npm run build-index` — Rebuild homepage blog grid from topics.json
+- `npm run build-sitemap` — Regenerate sitemap.xml (posts + courses + products)
+- `npm run pipeline` — Full pipeline: generate → QA → HTML → PDF → repurpose → index → sitemap
 
 ## Conventions
 - All content is GREEN tier — NEVER reference employer names, internal tools, or colleagues
 - Use `claude-sonnet-4-20250514` for API generation
 - Use Playwright Chromium for PDFs, NEVER wkhtmltopdf
-- GitHub Pages requires RELATIVE paths, not absolute
+- Vercel deployment — use ABSOLUTE paths (e.g., `/output/slug`, not `../output/slug.html`)
+- Vercel `cleanUrls: true` — never use `.html` extensions in links, canonicals, or sitemap
 - Run QA gate before any publish — zero-tolerance for failures
+- Deploy: `npx vercel --prod` from repo root
 
 ## Brand Constants
 ```javascript

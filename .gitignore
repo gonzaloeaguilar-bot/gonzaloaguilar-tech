@@ -1,6 +1,25 @@
 node_modules/
-.env
 .DS_Store
 *.log
+
+# Environment & secrets
+.env
+.env.*
+.env.local
+.env.production
+
+# Internal tooling
+.mcp.json
+.vercel
+
+# IDE
+.vscode/
+.idea/
+
+# Pipeline temp files
 posts/latest.md
 output/latest.html
+
+# Playwright
+/test-results/
+/playwright-report/

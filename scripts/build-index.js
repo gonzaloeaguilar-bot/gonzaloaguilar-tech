@@ -49,7 +49,7 @@ const blogCards = published.map((topic, i) => {
           <div class="blog-meta"><span>${category}</span><span class="reading-time">${readTime} min read</span></div>
           <h3>${topic.title}</h3>
           <div class="blog-keywords">${keywords}</div>
-          <a href="output/${topic.slug}.html" class="blog-link">Read article &rarr;</a>
+          <a href="/output/${topic.slug}" class="blog-link">Read article &rarr;</a>
         </div>
       </div>`;
 }).join('\n');

@@ -10,11 +10,11 @@
   <meta property="og:title" content="{{TITLE}} — gonzalo.tech">
   <meta property="og:description" content="{{META_DESCRIPTION}}">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://gonzalo.tech/output/{{SLUG}}.html">
+  <meta property="og:url" content="https://gonzalo.tech/output/{{SLUG}}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{TITLE}}">
   <meta name="twitter:description" content="{{META_DESCRIPTION}}">
-  <link rel="canonical" href="https://gonzalo.tech/output/{{SLUG}}.html">
+  <link rel="canonical" href="https://gonzalo.tech/output/{{SLUG}}">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -30,8 +30,10 @@
       "@type": "Organization",
       "name": "gonzalo.tech"
     },
-    "url": "https://gonzalo.tech/output/{{SLUG}}.html",
-    "inLanguage": "{{LANG}}"
+    "url": "https://gonzalo.tech/output/{{SLUG}}",
+    "inLanguage": "{{LANG}}",
+    "datePublished": "{{DATE_PUBLISHED}}",
+    "dateModified": "{{DATE_PUBLISHED}}"
   }
   </script>
   <style>
@@ -245,7 +247,7 @@
 <body>
   <div class="container">
     <header class="site-header">
-      <a href="../index.html">gonzalo.tech</a>
+      <a href="/">gonzalo.tech</a>
     </header>
 
     <article>
@@ -253,7 +255,7 @@
 
       <div class="pdf-download">
         <p><strong>Prefer a PDF?</strong> Download this guide free — no email required.</p>
-        <a href="../pdfs/{{SLUG}}.pdf" download>Download PDF</a>
+        <a href="/pdfs/{{SLUG}}.pdf" download>Download PDF</a>
       </div>
     </article>
 
