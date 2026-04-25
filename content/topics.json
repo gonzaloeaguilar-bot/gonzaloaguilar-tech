@@ -2908,6 +2908,36 @@
       "framework": "Anxiety Map",
       "language": "ES",
       "status": "pending"
+    },
+    {
+      "slug": "ergonomics-hub",
+      "title": "Coding Ergonomics: The Gear That Saved My Hands (And Will Save Yours)",
+      "keywords": [
+        "ergonomic gear for programmers",
+        "developer wrist pain",
+        "RSI prevention coding",
+        "carpal tunnel programmer"
+      ],
+      "framework": "Pain Map",
+      "language": "EN",
+      "category": "Coding Ergonomics",
+      "status": "published",
+      "publishedAt": "2026-04-25T00:00:00.000Z"
+    },
+    {
+      "slug": "review-logitech-wave-keys",
+      "title": "Logitech Wave Keys for Mac Review — The $60 Keyboard That Eased My Carpal Pain",
+      "keywords": [
+        "Logitech Wave Keys review",
+        "ergonomic keyboard carpal tunnel programmers",
+        "best ergonomic keyboard wrist pain coding",
+        "Logitech Wave Keys Mac developer"
+      ],
+      "framework": "Ergonomic Investment Ladder",
+      "language": "EN",
+      "category": "Coding Ergonomics",
+      "status": "published",
+      "publishedAt": "2026-04-25T00:00:00.000Z"
     }
   ]
 }
