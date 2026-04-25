@@ -4,6 +4,8 @@
 
 # Logitech Wave Keys for Mac Review — The $60 Keyboard That Eased My Carpal Pain
 
+![Logitech Wave Keys for Mac ergonomic keyboard — top-angle view showing the wave-shaped key layout and integrated palm rest](https://resource.logitech.com/w_800,h_686,ar_7:6,c_pad,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/wave-keys/2025/wave-keys-top-angle-graphite-gallery-1.png)
+
 **VERDICT UP FRONT:** If you code daily and your wrists are starting to ache — but you're not at the point of diagnosed carpal tunnel — the [Logitech Wave Keys](https://amzn.to/4ttElSo) (affiliate link) is the most painless entry into ergonomic typing I've found. Sixty dollars, zero learning curve, noticeable relief within two weeks. It won't fix severe RSI, but it may keep you from getting there.
 
 ---
@@ -21,6 +23,8 @@ What scared me wasn't the pain itself. It was the math. If my hands stop working
 The Logitech Wave Keys for Mac is a wireless membrane keyboard — meaning the keys use rubber domes under each keycap (membrane) instead of individual mechanical switches. It's not split down the middle like a Microsoft Ergonomic keyboard. It's not tented at a steep angle. From a distance, it looks like a fairly normal compact keyboard.
 
 The difference is the wave. The key rows follow a subtle curved path — higher in the center, lower on the edges — that matches the natural arc your fingers make when your hands are relaxed. Logitech calls this their "wave design," and it's certified by United States Ergonomics as promoting a more natural hand position.
+
+![Logitech Wave Keys in use — developer typing on the ergonomic keyboard showing the natural wrist position and cushioned palm rest](https://resource.logitech.com/w_800,h_800,ar_1,c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/wave-keys/2025/wave-keys-person-using-graphite-lifestyle-gallery-2.png)
 
 Here's what's in the box and what matters:
 
@@ -123,6 +127,8 @@ For me, this one keyboard helped so much for my carpal pain that it changed how 
 ---
 
 ## Product Specs at a Glance
+
+![Logitech Wave Keys for Mac — graphite colorway product shot showing the compact layout and memory foam palm rest](https://resource.logitech.com/w_800,h_800,ar_1,c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/wave-keys/2025/wave-keys-graphite-4.jpg)
 
 | Spec | Detail |
 |------|--------|
